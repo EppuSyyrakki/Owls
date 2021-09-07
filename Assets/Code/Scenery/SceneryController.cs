@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace Owls.Scenery
@@ -15,8 +16,13 @@ namespace Owls.Scenery
 
 	public class SceneryController : MonoBehaviour
 	{
+		public float overallSpeed = 1;
+
 		[SerializeField]
-		private List<SceneryTexture> sprites;
+		private List<SceneryTexture> textures;
+
+		[SerializeField]
+		private GameObject bgPrefab;
 
 		private void Awake()
 		{
@@ -25,7 +31,10 @@ namespace Owls.Scenery
 
 		private void OnValidate()
 		{
-			CreateScenery();
+			if (!EditorApplication.isPlaying)
+			{
+				CreateScenery();
+			}
 		}
 
 		private void CreateScenery()
@@ -34,11 +43,14 @@ namespace Owls.Scenery
 			{
 				StartCoroutine(DestroyChild(child.gameObject));
 			}
+			
+			Material material = bgPrefab.GetComponent<MeshRenderer>().sharedMaterial;
 
-			foreach (var s in sprites)
+			foreach (var texture in textures)
 			{
-				var go = new GameObject(s.texture.name, typeof(RollingScenery));
-				go.GetComponent<RollingScenery>().Init(s, transform);
+				var go = Instantiate(bgPrefab, transform);
+				go.GetComponent<RollingScenery>().Init(texture, material, this);
+				go.name = texture.texture.name;
 			}
 		}
 

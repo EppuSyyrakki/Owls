@@ -4,29 +4,35 @@ using UnityEngine;
 
 namespace Owls.Scenery
 {
-	[RequireComponent(typeof(SpriteRenderer))]
 	public class RollingScenery : MonoBehaviour
 	{
-		private SpriteRenderer _spriteRenderer;
+		private SceneryController _controller;
+		private MeshRenderer _mesh;
 		private float _speed;
 
 		private void Update()
 		{
-			if (_speed > 0)
-			{
+			if (_speed <= 0) { return; }
 
-			}
+			float multiplier = _controller.overallSpeed * 0.01f;
+			Vector2 offset = new Vector2(_speed * Time.deltaTime * multiplier, 0);
+			_mesh.material.mainTextureOffset += offset;
 		}
 
-		public void Init(SceneryTexture sceneryTexture, Transform parent)
+		/// <summary>
+		/// Sets up the new background.
+		/// </summary>
+		/// <param name="sceneryTexture">The SceneTexture that holds the speed, sorting layer and texture.</param>
+		/// <param name="template">Material template that will be copied as a new material for this object.</param>
+		/// <param name="controller">The SceneryController that created this object.</param>
+		public void Init(SceneryTexture sceneryTexture, Material template, SceneryController controller)
 		{
-			_spriteRenderer = GetComponent<SpriteRenderer>();
+			_controller = controller;
+			_mesh = GetComponent<MeshRenderer>();
 			_speed = sceneryTexture.rollSpeed;
-			_spriteRenderer.sortingOrder = sceneryTexture.layerOrder;
-			var shader = Shader.Find("Standard");
-			_spriteRenderer.material = new Material(shader) {mainTexture = sceneryTexture.texture };
-			transform.parent = parent;
+			_mesh = GetComponent<MeshRenderer>();
+			_mesh.sortingOrder = sceneryTexture.layerOrder;
+			_mesh.material = new Material(template) {mainTexture = sceneryTexture.texture };
 		}
 	}
-
 }
