@@ -29,20 +29,20 @@ namespace Owls.Scenery
 			CreateScenery();
 		}
 
-		private void OnValidate()
-		{
-			if (!EditorApplication.isPlaying)
-			{
-				CreateScenery();
-			}
-		}
+		//private void OnValidate()
+		//{
+		//	if (!EditorApplication.isPlaying)
+		//	{
+		//		CreateScenery();
+		//	}
+		//}
 
 		private void CreateScenery()
 		{
-			foreach (Transform child in transform)
-			{
-				StartCoroutine(DestroyChild(child.gameObject));
-			}
+			//foreach (Transform child in transform)
+			//{
+			//	StartCoroutine(DestroyChild(child.gameObject));
+			//}
 			
 			Material material = bgPrefab.GetComponent<MeshRenderer>().sharedMaterial;
 
