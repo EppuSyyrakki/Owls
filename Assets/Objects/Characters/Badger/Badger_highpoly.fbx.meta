@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: ef49d9ed145f90748b89d2e853cd5b58
+guid: 0b23c1b17e367214f82864b9c2709c0c
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -4701664323599742320
+    second: rig|WalkCycle
   externalObjects: {}
   materials:
     materialImportMode: 2
