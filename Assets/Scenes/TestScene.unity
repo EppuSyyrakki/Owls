@@ -372,6 +372,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 603915050686675149, guid: 107809d9e01ae8e4681028ebcbcc47be,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 48a28a4f2616b3a4a9bced4050615415, type: 2}
     - target: {fileID: 1280397287129873839, guid: 107809d9e01ae8e4681028ebcbcc47be,
         type: 3}
       propertyPath: m_RootOrder
@@ -432,6 +437,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Badger
       objectReference: {fileID: 0}
+    - target: {fileID: 6740173129939148498, guid: 107809d9e01ae8e4681028ebcbcc47be,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 7753280985716092521, guid: 107809d9e01ae8e4681028ebcbcc47be,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -447,5 +457,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 603915050686675149, guid: 107809d9e01ae8e4681028ebcbcc47be, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 107809d9e01ae8e4681028ebcbcc47be, type: 3}
