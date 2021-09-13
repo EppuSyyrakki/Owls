@@ -21,7 +21,7 @@ namespace Owls.Scenery
 				return;
 			}
 
-			var sceneryAll = Resources.FindObjectsOfTypeAll(typeof(Scenery));
+			var sceneryAll = Resources.LoadAll("Scenery", typeof(Scenery));
 
 			if (sceneryAll.Length == 0)
 			{

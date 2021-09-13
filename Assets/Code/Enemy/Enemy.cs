@@ -2,17 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+namespace Owls.Enemy
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Enemy : MonoBehaviour
     {
-        
-    }
+	    [SerializeField]
+	    private ParticleSystem[] deathFx;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+	    private bool _isAlive = true;
+
+	    private void Awake()
+	    {
+		    foreach (var fx in deathFx)
+		    {
+			    fx.gameObject.SetActive(false);
+		    }
+	    }   
+
+        private void Update()
+        {
+	        if (Input.GetKeyDown(KeyCode.Space) && _isAlive)
+	        {
+		        Kill();
+	        }
+        }
+
+        private void Kill()
+        {
+	        foreach (Transform child in transform)
+	        { 
+		        child.gameObject.SetActive(false);   
+	        }
+
+	        foreach (var fx in deathFx)
+	        {
+		        var ps = Instantiate(fx, transform);
+				ps.gameObject.SetActive(true);
+	        }
+
+	        _isAlive = false;
+        }
     }
 }
