@@ -14,25 +14,28 @@ namespace Owls.Scenery
 		{
 			if (_speed <= 0) { return; }
 
-			float multiplier = _controller.overallSpeed * 0.01f;
+			float multiplier = _controller.OverallSpeed * 0.01f;
 			Vector2 offset = new Vector2(_speed * Time.deltaTime * multiplier, 0);
 			_mesh.material.mainTextureOffset += offset;
 		}
 
 		/// <summary>
-		/// Sets up the new background.
+		/// Sets up this scenery item.
 		/// </summary>
-		/// <param name="sceneryTexture">The SceneTexture that holds the speed, sorting layer and texture.</param>
+		/// <param name="item">The SceneTexture that holds the speed, sorting layer and texture.</param>
 		/// <param name="template">Material template that will be copied as a new material for this object.</param>
-		/// <param name="controller">The SceneryController that created this object.</param>
-		public void Init(SceneryTexture sceneryTexture, Material template, SceneryController controller)
+		/// <param name="controller">The host controller that created this scenery object.</param>
+		public void Init(SceneryItem item, Material template, SceneryController controller)
 		{
 			_controller = controller;
+			_speed = item.rollSpeed;
 			_mesh = GetComponent<MeshRenderer>();
-			_speed = sceneryTexture.rollSpeed;
-			_mesh = GetComponent<MeshRenderer>();
-			_mesh.sortingOrder = sceneryTexture.layerOrder;
-			_mesh.material = new Material(template) {mainTexture = sceneryTexture.texture };
+			_mesh.sortingOrder = item.layerOrder;
+			_mesh.material = new Material(template) {mainTexture = item.texture };
+			var distance = controller.DistanceFromZero;
+
+			if (item.isForeground) { transform.position += Vector3.back * distance; }
+			else { transform.position += Vector3.forward * distance; }
 		}
 	}
 }

@@ -1,63 +1,41 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Owls.Scenery
 {
-	[System.Serializable]
-	public class SceneryTexture
-	{
-		public Texture texture;
-		public float rollSpeed;
-		public int layerOrder;
-	}
-
 	public class SceneryController : MonoBehaviour
 	{
-		public float overallSpeed = 1;
+		private Scenery _sourceScenery;
 
-		[SerializeField]
-		private List<SceneryTexture> textures;
-
-		[SerializeField]
-		private GameObject bgPrefab;
+		public float OverallSpeed => _sourceScenery.overallSpeed;
+		public float DistanceFromZero => _sourceScenery.textureDistance;
 
 		private void Awake()
 		{
-			CreateScenery();
+			var sceneryAll = Resources.FindObjectsOfTypeAll(typeof(Scenery));
+
+			if (sceneryAll.Length == 0)
+			{
+				Debug.LogError("Could not find any Scenery objects in Resources folder!");
+				return;
+			}
+
+			var chosenScenery = sceneryAll[Random.Range(0, sceneryAll.Length)] as Scenery;
+			CreateScenery(chosenScenery);
 		}
 
-		//private void OnValidate()
-		//{
-		//	if (!EditorApplication.isPlaying)
-		//	{
-		//		CreateScenery();
-		//	}
-		//}
-
-		private void CreateScenery()
+		private void CreateScenery(Scenery scenery)
 		{
-			//foreach (Transform child in transform)
-			//{
-			//	StartCoroutine(DestroyChild(child.gameObject));
-			//}
-			
+			_sourceScenery = scenery;
+			var bgPrefab = Resources.Load<GameObject>("BGTemplate");
 			Material material = bgPrefab.GetComponent<MeshRenderer>().sharedMaterial;
 
-			foreach (var texture in textures)
+			foreach (var texture in scenery.textures)
 			{
 				var go = Instantiate(bgPrefab, transform);
 				go.GetComponent<RollingScenery>().Init(texture, material, this);
 				go.name = texture.texture.name;
 			}
-		}
-
-		private IEnumerator DestroyChild(GameObject go)
-		{
-			yield return new WaitForEndOfFrame();
-			DestroyImmediate(go);
 		}
 	}
 }

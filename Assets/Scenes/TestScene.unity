@@ -298,7 +298,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &869687598
 GameObject:
@@ -5134,7 +5134,7 @@ Transform:
   - {fileID: 1326040248}
   - {fileID: 869687599}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1326040247
 GameObject:
@@ -9969,28 +9969,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfbbb4ea7edb7164bbb131619713d934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overallSpeed: 2
-  textures:
-  - texture: {fileID: 2800000, guid: 050c89bcacb5fbf4b8fc6eed80593de8, type: 3}
-    rollSpeed: 0
-    layerOrder: 0
-  - texture: {fileID: 2800000, guid: 670f5f426701531498fbd6dc6064e772, type: 3}
-    rollSpeed: 0.25
-    layerOrder: 10
-  - texture: {fileID: 2800000, guid: d97d3ba5c583ce446b74553a1c5ac2c8, type: 3}
-    rollSpeed: 0.5
-    layerOrder: 20
-  - texture: {fileID: 2800000, guid: 2c3775ac3c42c3d4684172a3197ba8d4, type: 3}
-    rollSpeed: 0.75
-    layerOrder: 30
-  - texture: {fileID: 2800000, guid: 2a8dbfdae13265e468aba2650d86b078, type: 3}
-    rollSpeed: 1
-    layerOrder: 40
-  - texture: {fileID: 2800000, guid: 192ce9f1affaaad48974e1cac84db8d0, type: 3}
-    rollSpeed: 1.25
-    layerOrder: 50
-  bgPrefab: {fileID: 6872501170520401287, guid: 51a294516dedec8468d5bbe43b1d1681,
-    type: 3}
 --- !u!4 &1422546968
 Transform:
   m_ObjectHideFlags: 0
@@ -10034,28 +10012,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfbbb4ea7edb7164bbb131619713d934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overallSpeed: 2
-  textures:
-  - texture: {fileID: 2800000, guid: 1c12df8307dbaff469a27aebc8a3f7bd, type: 3}
-    rollSpeed: 0
-    layerOrder: 0
-  - texture: {fileID: 2800000, guid: 62118e20be3b4424fae765ebacb0c57f, type: 3}
-    rollSpeed: 0.25
-    layerOrder: 10
-  - texture: {fileID: 2800000, guid: 72ac2a4daf06ccb48b22e699de8ec013, type: 3}
-    rollSpeed: 0.5
-    layerOrder: 20
-  - texture: {fileID: 2800000, guid: ee5793f0f4eb098439f4100a6bbea034, type: 3}
-    rollSpeed: 0.75
-    layerOrder: 30
-  - texture: {fileID: 2800000, guid: 1f62a088d14349443956c373d970f382, type: 3}
-    rollSpeed: 1
-    layerOrder: 40
-  - texture: {fileID: 2800000, guid: d6dc6d1eb70db424683d01a89b7b69f6, type: 3}
-    rollSpeed: 1.25
-    layerOrder: 50
-  bgPrefab: {fileID: 6872501170520401287, guid: 51a294516dedec8468d5bbe43b1d1681,
-    type: 3}
 --- !u!4 &1489327437
 Transform:
   m_ObjectHideFlags: 0
@@ -10070,31 +10026,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2065859776 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6251620172761105512, guid: 107809d9e01ae8e4681028ebcbcc47be,
-    type: 3}
-  m_PrefabInstance: {fileID: 778851200816806975}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &2065859777
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2065859776}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 48a28a4f2616b3a4a9bced4050615415, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &110099245992839419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10120,7 +10051,7 @@ PrefabInstance:
     - target: {fileID: 110099244726871683, guid: 0e995dd012b65774184dbd990df86ac1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.18975
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 110099244726871683, guid: 0e995dd012b65774184dbd990df86ac1,
         type: 3}
@@ -10171,15 +10102,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 603915050686675149, guid: 107809d9e01ae8e4681028ebcbcc47be,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 48a28a4f2616b3a4a9bced4050615415, type: 2}
     - target: {fileID: 1280397287129873839, guid: 107809d9e01ae8e4681028ebcbcc47be,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1280397287129873839, guid: 107809d9e01ae8e4681028ebcbcc47be,
         type: 3}
@@ -10236,28 +10162,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Badger
       objectReference: {fileID: 0}
-    - target: {fileID: 6740173129939148498, guid: 107809d9e01ae8e4681028ebcbcc47be,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7753280985716092521, guid: 107809d9e01ae8e4681028ebcbcc47be,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7753280985716092521, guid: 107809d9e01ae8e4681028ebcbcc47be,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7753280985716092521, guid: 107809d9e01ae8e4681028ebcbcc47be,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 4
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 603915050686675149, guid: 107809d9e01ae8e4681028ebcbcc47be, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 107809d9e01ae8e4681028ebcbcc47be, type: 3}
 --- !u!1001 &2183764407669555937
 PrefabInstance:
@@ -10284,7 +10189,7 @@ PrefabInstance:
     - target: {fileID: 2183764408382162648, guid: 38cd1e61e6b10fe4cad79cb5d4c1cd30,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.5003567
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2183764408382162648, guid: 38cd1e61e6b10fe4cad79cb5d4c1cd30,
         type: 3}
