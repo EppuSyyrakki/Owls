@@ -18,7 +18,8 @@ namespace Owls.Scenery
 	public class Scenery : ScriptableObject
 	{
 		public float overallSpeed = 2;
-		public float textureDistance = 2;
+		[Range(0, 100)]
+		public int chanceOfRain, chanceOfFog;
 		public List<SceneryItem> textures;
 	}
 }

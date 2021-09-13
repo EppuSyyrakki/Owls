@@ -32,10 +32,10 @@ namespace Owls.Scenery
 			_mesh = GetComponent<MeshRenderer>();
 			_mesh.sortingOrder = item.layerOrder;
 			_mesh.material = new Material(template) {mainTexture = item.texture };
-			var distance = controller.DistanceFromZero;
 
-			if (item.isForeground) { transform.position += Vector3.back * distance; }
-			else { transform.position += Vector3.forward * distance; }
+			// Magic number 2 is the distance from 0 on Z axis.
+			if (item.isForeground) { transform.position += Vector3.back * 2; }
+			else { transform.position += Vector3.forward * 2; }
 		}
 	}
 }

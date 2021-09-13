@@ -8,7 +8,6 @@ namespace Owls.Scenery
 		private Scenery _sourceScenery;
 
 		public float OverallSpeed => _sourceScenery.overallSpeed;
-		public float DistanceFromZero => _sourceScenery.textureDistance;
 
 		private void Awake()
 		{
@@ -27,14 +26,24 @@ namespace Owls.Scenery
 		private void CreateScenery(Scenery scenery)
 		{
 			_sourceScenery = scenery;
-			var bgPrefab = Resources.Load<GameObject>("BGTemplate");
-			Material material = bgPrefab.GetComponent<MeshRenderer>().sharedMaterial;
+			var bgTemplate = Resources.Load<GameObject>("Scenery/BGTemplate");
+			Material material = bgTemplate.GetComponent<MeshRenderer>().sharedMaterial;
 
 			foreach (var texture in scenery.textures)
 			{
-				var go = Instantiate(bgPrefab, transform);
+				var go = Instantiate(bgTemplate, transform);
 				go.GetComponent<RollingScenery>().Init(texture, material, this);
 				go.name = texture.texture.name;
+			}
+
+			if (scenery.chanceOfFog > Random.Range(0, 101))
+			{
+				Instantiate(Resources.Load("Scenery/Fog"), transform);
+			}
+
+			if (scenery.chanceOfRain > Random.Range(0, 101))
+			{
+				Instantiate(Resources.Load("Scenery/Rain"), transform);
 			}
 		}
 	}
