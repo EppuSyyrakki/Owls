@@ -329,7 +329,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &869687598
 GameObject:
@@ -5165,7 +5165,7 @@ Transform:
   - {fileID: 1326040248}
   - {fileID: 869687599}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1306029327
 GameObject:
@@ -14840,6 +14840,71 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1489327435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1489327437}
+  - component: {fileID: 1489327436}
+  m_Layer: 0
+  m_Name: Scenery2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1489327436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489327435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfbbb4ea7edb7164bbb131619713d934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overallSpeed: 2
+  textures:
+  - texture: {fileID: 2800000, guid: 1c12df8307dbaff469a27aebc8a3f7bd, type: 3}
+    rollSpeed: 0
+    layerOrder: 0
+  - texture: {fileID: 2800000, guid: 62118e20be3b4424fae765ebacb0c57f, type: 3}
+    rollSpeed: 0.25
+    layerOrder: 10
+  - texture: {fileID: 2800000, guid: 72ac2a4daf06ccb48b22e699de8ec013, type: 3}
+    rollSpeed: 0.5
+    layerOrder: 20
+  - texture: {fileID: 2800000, guid: ee5793f0f4eb098439f4100a6bbea034, type: 3}
+    rollSpeed: 0.75
+    layerOrder: 30
+  - texture: {fileID: 2800000, guid: 1f62a088d14349443956c373d970f382, type: 3}
+    rollSpeed: 1
+    layerOrder: 40
+  - texture: {fileID: 2800000, guid: d6dc6d1eb70db424683d01a89b7b69f6, type: 3}
+    rollSpeed: 1.25
+    layerOrder: 50
+  bgPrefab: {fileID: 6872501170520401287, guid: 51a294516dedec8468d5bbe43b1d1681,
+    type: 3}
+--- !u!4 &1489327437
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489327435}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1787528248
 GameObject:
   m_ObjectHideFlags: 0
@@ -14870,7 +14935,7 @@ Transform:
   - {fileID: 85420400}
   - {fileID: 1306029328}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2065859776 stripped
 GameObject:
@@ -14981,7 +15046,7 @@ PrefabInstance:
     - target: {fileID: 1280397287129873839, guid: 107809d9e01ae8e4681028ebcbcc47be,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1280397287129873839, guid: 107809d9e01ae8e4681028ebcbcc47be,
         type: 3}
