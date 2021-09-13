@@ -5,12 +5,22 @@ namespace Owls.Scenery
 {
 	public class SceneryController : MonoBehaviour
 	{
+		[Header("Must be empty for random scenery to work.")]
+		[SerializeField]
+		private Scenery testScenery;
+
 		private Scenery _sourceScenery;
 
 		public float OverallSpeed => _sourceScenery.overallSpeed;
 
 		private void Awake()
 		{
+			if (testScenery != null)
+			{
+				CreateScenery(testScenery);
+				return;
+			}
+
 			var sceneryAll = Resources.FindObjectsOfTypeAll(typeof(Scenery));
 
 			if (sceneryAll.Length == 0)
@@ -19,8 +29,8 @@ namespace Owls.Scenery
 				return;
 			}
 
-			var chosenScenery = sceneryAll[Random.Range(0, sceneryAll.Length)] as Scenery;
-			CreateScenery(chosenScenery);
+			_sourceScenery = sceneryAll[Random.Range(0, sceneryAll.Length)] as Scenery;
+			CreateScenery(_sourceScenery);
 		}
 
 		private void CreateScenery(Scenery scenery)
