@@ -46,14 +46,12 @@ namespace Owls.Scenery
 				go.name = texture.texture.name;
 			}
 
-			if (scenery.chanceOfFog > Random.Range(0, 101))
+			foreach (var effect in scenery.effects)
 			{
-				Instantiate(Resources.Load("Scenery/Fog"), transform);
-			}
-
-			if (scenery.chanceOfRain > Random.Range(0, 101))
-			{
-				Instantiate(Resources.Load("Scenery/Rain"), transform);
+				if (effect.chance > Random.Range(0, 101))
+				{
+					Instantiate(effect.particles, transform);
+				}
 			}
 		}
 	}

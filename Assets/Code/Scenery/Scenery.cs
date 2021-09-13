@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,12 +13,19 @@ namespace Owls.Scenery
 		public bool isForeground;
 	}
 
+	[Serializable]
+	public class ParticleItem
+	{
+		public ParticleSystem particles;
+		[Range(0,100)]
+		public int chance;
+	}
+
 	[CreateAssetMenu(fileName = "Scenery", menuName = "Scenery/New Scenery", order = 1)]
 	public class Scenery : ScriptableObject
 	{
 		public float overallSpeed = 2;
-		[Range(0, 100)]
-		public int chanceOfRain, chanceOfFog;
 		public List<SceneryItem> textures;
+		public List<ParticleItem> effects;
 	}
 }
