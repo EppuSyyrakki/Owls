@@ -13,26 +13,24 @@ MonoBehaviour:
   m_Name: WinterRuins
   m_EditorClassIdentifier: 
   overallSpeed: 1
-  chanceOfRain: 88
-  chanceOfFog: 76
   textures:
-  - texture: {fileID: 2800000, guid: 1c12df8307dbaff469a27aebc8a3f7bd, type: 3}
+  - texture: {fileID: 2800000, guid: b3aa185b6e484894ab37d1c3a4c04d64, type: 3}
     rollSpeed: 0
     layerOrder: 0
     isForeground: 0
-  - texture: {fileID: 2800000, guid: 62118e20be3b4424fae765ebacb0c57f, type: 3}
+  - texture: {fileID: 2800000, guid: b5e5e486dc505d74ea57279d16b28a64, type: 3}
     rollSpeed: 0.6
     layerOrder: 10
     isForeground: 0
-  - texture: {fileID: 2800000, guid: 72ac2a4daf06ccb48b22e699de8ec013, type: 3}
+  - texture: {fileID: 2800000, guid: 9078c465e57815c4abf60d348509f768, type: 3}
     rollSpeed: 1
     layerOrder: 11
     isForeground: 0
-  - texture: {fileID: 2800000, guid: ee5793f0f4eb098439f4100a6bbea034, type: 3}
+  - texture: {fileID: 2800000, guid: ced730985271f9c42aff6934511319ec, type: 3}
     rollSpeed: 2
     layerOrder: 12
     isForeground: 0
-  - texture: {fileID: 2800000, guid: 1f62a088d14349443956c373d970f382, type: 3}
+  - texture: {fileID: 2800000, guid: eb060aa9dccfd7d4d8260e8d6e4554f3, type: 3}
     rollSpeed: 3
     layerOrder: 13
     isForeground: 0
@@ -40,3 +38,4 @@ MonoBehaviour:
     rollSpeed: 4
     layerOrder: 14
     isForeground: 1
+  effects: []
