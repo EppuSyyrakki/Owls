@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: Graveyard
   m_EditorClassIdentifier: 
   overallSpeed: 1
-  chanceOfRain: 88
-  chanceOfFog: 76
   textures:
   - texture: {fileID: 2800000, guid: 1c12df8307dbaff469a27aebc8a3f7bd, type: 3}
     rollSpeed: 0
@@ -40,3 +38,10 @@ MonoBehaviour:
     rollSpeed: 4
     layerOrder: 14
     isForeground: 1
+  effects:
+  - particles: {fileID: 3357061594799007397, guid: fcdfbe5019c33494691d95f382f11e0c,
+      type: 3}
+    chance: 42
+  - particles: {fileID: 1088968852699649018, guid: 3355e419787749d46af30a7af54ae4db,
+      type: 3}
+    chance: 84
