@@ -432,6 +432,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Birdy1
       objectReference: {fileID: 0}
+    - target: {fileID: 110099244726871692, guid: 0e995dd012b65774184dbd990df86ac1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e995dd012b65774184dbd990df86ac1, type: 3}
 --- !u!1001 &778851200816806975
@@ -584,6 +589,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Owl1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183764408382162649, guid: 38cd1e61e6b10fe4cad79cb5d4c1cd30,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2183764408966148081, guid: 38cd1e61e6b10fe4cad79cb5d4c1cd30,
         type: 3}
