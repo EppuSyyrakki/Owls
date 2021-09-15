@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc82c4c8d01a6e84e81853341c7d0486, type: 3}
+  m_Name: OwlCave
+  m_EditorClassIdentifier: 
+  overallSpeed: 1
+  textures:
+  - texture: {fileID: 2800000, guid: d2b53e13216bd6c40834621aaa921509, type: 3}
+    rollSpeed: 0
+    layerOrder: 0
+    isForeground: 0
+  - texture: {fileID: 2800000, guid: 08241349aeeaaa2478470a278fa101ed, type: 3}
+    rollSpeed: 0.6
+    layerOrder: 10
+    isForeground: 0
+  - texture: {fileID: 2800000, guid: 159cd996f36f2f54cb1759be5a009c2b, type: 3}
+    rollSpeed: 1
+    layerOrder: 11
+    isForeground: 0
+  - texture: {fileID: 2800000, guid: ad8bd0b1ad4b29a4881f2e2aaeecedf6, type: 3}
+    rollSpeed: 2
+    layerOrder: 12
+    isForeground: 0
+  - texture: {fileID: 2800000, guid: a41a575ad854a504e9d1147774fa94e8, type: 3}
+    rollSpeed: 3
+    layerOrder: 13
+    isForeground: 0
+  - texture: {fileID: 2800000, guid: 0db18c0f44e651342a59ba9b0ba7f8b1, type: 3}
+    rollSpeed: 4
+    layerOrder: 14
+    isForeground: 1
+  effects:
+  - particles: {fileID: 1088968852699649018, guid: 3355e419787749d46af30a7af54ae4db,
+      type: 3}
+    chance: 100
