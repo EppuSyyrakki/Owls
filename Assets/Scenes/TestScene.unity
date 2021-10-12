@@ -420,6 +420,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5271918789995956225, guid: c7dc1ed0c46b6b04494a5f4182761b7f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5271918789995956225, guid: c7dc1ed0c46b6b04494a5f4182761b7f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5271918789995956225, guid: c7dc1ed0c46b6b04494a5f4182761b7f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5271918790088558377, guid: c7dc1ed0c46b6b04494a5f4182761b7f,
         type: 3}
       propertyPath: m_RootOrder
@@ -479,6 +494,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BoneOwl
+      objectReference: {fileID: 0}
+    - target: {fileID: 5271918790088558390, guid: c7dc1ed0c46b6b04494a5f4182761b7f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5271918790088558390, guid: c7dc1ed0c46b6b04494a5f4182761b7f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5271918790088558390, guid: c7dc1ed0c46b6b04494a5f4182761b7f,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7dc1ed0c46b6b04494a5f4182761b7f, type: 3}
