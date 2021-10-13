@@ -1,52 +1,43 @@
 fileFormatVersion: 2
-guid: 8d66fb5da8ecc274588fdea188a4cccb
+guid: c0e479dacdd5cf64f84105bb6f79c08f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 339640900391855073
-    second: ThreeEyeOwlSpriteSheet_0
+      213: 7708591083701990655
+    second: HornedWhiteOwlSpriteSheet_0
   - first:
-      213: 8608635424689744723
-    second: ThreeEyeOwlSpriteSheet_1
+      213: 1794258653318267299
+    second: HornedWhiteOwlSpriteSheet_1
   - first:
-      213: 1166825283297767930
-    second: ThreeEyeOwlSpriteSheet_2
+      213: 1159311620931455122
+    second: HornedWhiteOwlSpriteSheet_2
   - first:
-      213: 7170785137702141677
-    second: ThreeEyeOwlSpriteSheet_3
+      213: -3183551239402631874
+    second: HornedWhiteOwlSpriteSheet_3
   - first:
-      213: -3069261547339418404
-    second: ThreeEyeOwlSpriteSheet_4
+      213: -5916440285612740208
+    second: HornedWhiteOwlSpriteSheet_4
   - first:
-      213: 7260789726051499322
-    second: ThreeEyeOwlSpriteSheet_5
+      213: -7128715227981368119
+    second: HornedWhiteOwlSpriteSheet_5
   - first:
-      213: -2492198594035059753
-    second: ThreeEyeOwlSpriteSheet_6
+      213: -8009762739512079735
+    second: HornedWhiteOwlSpriteSheet_6
   - first:
-      213: -6802831932860716829
-    second: ThreeEyeOwlSpriteSheet_7
+      213: 8870772684164211186
+    second: HornedWhiteOwlSpriteSheet_7
   - first:
-      213: -4092793396716321244
-    second: ThreeEyeOwlSpriteSheet_8
+      213: -2895318107431338566
+    second: HornedWhiteOwlSpriteSheet_8
   - first:
-      213: 6103280057986437518
-    second: ThreeEyeOwlSpriteSheet_9
+      213: 5071916166118179720
+    second: HornedWhiteOwlSpriteSheet_9
   - first:
-      213: 6603229455968812050
-    second: ThreeEyeOwlSpriteSheet_10
+      213: -8438787159174096165
+    second: HornedWhiteOwlSpriteSheet_10
   - first:
-      213: -1097326742035567995
-    second: ThreeEyeOwlSpriteSheet_11
-  - first:
-      213: -6725538580101220285
-    second: ThreeEyeOwlSpriteSheet_12
-  - first:
-      213: 1789413157899999196
-    second: ThreeEyeOwlSpriteSheet_13
-  - first:
-      213: 2360107016424169850
-    second: ThreeEyeOwlSpriteSheet_14
+      213: 5888762121648089437
+    second: HornedWhiteOwlSpriteSheet_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -160,316 +151,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ThreeEyeOwlSpriteSheet_0
+      name: HornedWhiteOwlSpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 27
+        x: 11
         y: 0
-        width: 227
+        width: 394
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e3ec037995a6b400800000000000000
-      internalID: 339640900391855073
+      spriteID: ff4fcceafba6afa60800000000000000
+      internalID: 7708591083701990655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ThreeEyeOwlSpriteSheet_1
+      name: HornedWhiteOwlSpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 258
+        x: 411
         y: 0
-        width: 232
+        width: 399
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35be979ee44087770800000000000000
-      internalID: 8608635424689744723
+      spriteID: 3a1c4322dbc76e810800000000000000
+      internalID: 1794258653318267299
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ThreeEyeOwlSpriteSheet_2
+      name: HornedWhiteOwlSpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 495
+        x: 816
         y: 0
-        width: 211
+        width: 415
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af178edb965613010800000000000000
-      internalID: 1166825283297767930
+      spriteID: 2980a95e6c3b61010800000000000000
+      internalID: 1159311620931455122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ThreeEyeOwlSpriteSheet_3
+      name: HornedWhiteOwlSpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 714
+        x: 1238
         y: 0
-        width: 204
+        width: 397
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: deef26d171fb38360800000000000000
-      internalID: 7170785137702141677
+      spriteID: e3dc623d301c1d3d0800000000000000
+      internalID: -3183551239402631874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ThreeEyeOwlSpriteSheet_4
-      rect:
-        serializedVersion: 2
-        x: 921
-        y: 0
-        width: 186
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd4711462eac765d0800000000000000
-      internalID: -3069261547339418404
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ThreeEyeOwlSpriteSheet_5
-      rect:
-        serializedVersion: 2
-        x: 1113
-        y: 0
-        width: 179
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3dfa1a59c183c460800000000000000
-      internalID: 7260789726051499322
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ThreeEyeOwlSpriteSheet_6
-      rect:
-        serializedVersion: 2
-        x: 1294
-        y: 0
-        width: 178
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d3ffcc359ee96dd0800000000000000
-      internalID: -2492198594035059753
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ThreeEyeOwlSpriteSheet_7
-      rect:
-        serializedVersion: 2
-        x: 1477
-        y: 0
-        width: 182
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 1, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e82727666c7791a0800000000000000
-      internalID: -6802831932860716829
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ThreeEyeOwlSpriteSheet_8
+      name: HornedWhiteOwlSpriteSheet_4
       rect:
         serializedVersion: 2
         x: 1660
         y: 0
-        width: 177
+        width: 384
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 426c8a9171a7337c0800000000000000
-      internalID: -4092793396716321244
+      spriteID: 091fd3928e494eda0800000000000000
+      internalID: -5916440285612740208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ThreeEyeOwlSpriteSheet_9
+      name: HornedWhiteOwlSpriteSheet_5
       rect:
         serializedVersion: 2
-        x: 1843
+        x: 2053
         y: 0
-        width: 178
+        width: 372
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e81d10d40e433b450800000000000000
-      internalID: 6103280057986437518
+      spriteID: 9c4b04b0547b11d90800000000000000
+      internalID: -7128715227981368119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ThreeEyeOwlSpriteSheet_10
+      name: HornedWhiteOwlSpriteSheet_6
       rect:
         serializedVersion: 2
-        x: 2026
+        x: 2474
         y: 0
-        width: 178
+        width: 367
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21cba6d643263ab50800000000000000
-      internalID: 6603229455968812050
+      spriteID: 98a0938d93b97d090800000000000000
+      internalID: -8009762739512079735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ThreeEyeOwlSpriteSheet_11
+      name: HornedWhiteOwlSpriteSheet_7
       rect:
         serializedVersion: 2
-        x: 2207
+        x: 2889
         y: 0
-        width: 195
+        width: 384
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58aee6a542385c0f0800000000000000
-      internalID: -1097326742035567995
+      spriteID: 2f1a8d2c1c05b1b70800000000000000
+      internalID: 8870772684164211186
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ThreeEyeOwlSpriteSheet_12
+      name: HornedWhiteOwlSpriteSheet_8
       rect:
         serializedVersion: 2
-        x: 2404
+        x: 3324
         y: 0
-        width: 213
+        width: 394
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 348b1e97b461aa2a0800000000000000
-      internalID: -6725538580101220285
+      spriteID: abd7cc67583c1d7d0800000000000000
+      internalID: -2895318107431338566
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ThreeEyeOwlSpriteSheet_13
+      name: HornedWhiteOwlSpriteSheet_9
       rect:
         serializedVersion: 2
-        x: 2619
+        x: 3766
         y: 0
-        width: 231
+        width: 397
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd71a0159c545d810800000000000000
-      internalID: 1789413157899999196
+      spriteID: 883090481e0136640800000000000000
+      internalID: 5071916166118179720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ThreeEyeOwlSpriteSheet_14
+      name: HornedWhiteOwlSpriteSheet_10
       rect:
         serializedVersion: 2
-        x: 2851
+        x: 4211
         y: 0
-        width: 244
+        width: 392
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a71aed9b3d8c0c020800000000000000
-      internalID: 2360107016424169850
+      spriteID: bdadc421ac763ea80800000000000000
+      internalID: -8438787159174096165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HornedWhiteOwlSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 4652
+        y: 0
+        width: 391
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d592c9b13f519b150800000000000000
+      internalID: 5888762121648089437
       vertices: []
       indices: 
       edges: []
