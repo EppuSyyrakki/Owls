@@ -1,0 +1,492 @@
+fileFormatVersion: 2
+guid: 8d66fb5da8ecc274588fdea188a4cccb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 339640900391855073
+    second: ThreeEyeOwlSpriteSheet_0
+  - first:
+      213: 8608635424689744723
+    second: ThreeEyeOwlSpriteSheet_1
+  - first:
+      213: 1166825283297767930
+    second: ThreeEyeOwlSpriteSheet_2
+  - first:
+      213: 7170785137702141677
+    second: ThreeEyeOwlSpriteSheet_3
+  - first:
+      213: -3069261547339418404
+    second: ThreeEyeOwlSpriteSheet_4
+  - first:
+      213: 7260789726051499322
+    second: ThreeEyeOwlSpriteSheet_5
+  - first:
+      213: -2492198594035059753
+    second: ThreeEyeOwlSpriteSheet_6
+  - first:
+      213: -6802831932860716829
+    second: ThreeEyeOwlSpriteSheet_7
+  - first:
+      213: -4092793396716321244
+    second: ThreeEyeOwlSpriteSheet_8
+  - first:
+      213: 6103280057986437518
+    second: ThreeEyeOwlSpriteSheet_9
+  - first:
+      213: 6603229455968812050
+    second: ThreeEyeOwlSpriteSheet_10
+  - first:
+      213: -1097326742035567995
+    second: ThreeEyeOwlSpriteSheet_11
+  - first:
+      213: -6725538580101220285
+    second: ThreeEyeOwlSpriteSheet_12
+  - first:
+      213: 1789413157899999196
+    second: ThreeEyeOwlSpriteSheet_13
+  - first:
+      213: 2360107016424169850
+    second: ThreeEyeOwlSpriteSheet_14
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ThreeEyeOwlSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 0
+        width: 227
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e3ec037995a6b400800000000000000
+      internalID: 339640900391855073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 0
+        width: 232
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35be979ee44087770800000000000000
+      internalID: 8608635424689744723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 0
+        width: 211
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af178edb965613010800000000000000
+      internalID: 1166825283297767930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 0
+        width: 204
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deef26d171fb38360800000000000000
+      internalID: 7170785137702141677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 0
+        width: 186
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd4711462eac765d0800000000000000
+      internalID: -3069261547339418404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 0
+        width: 179
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3dfa1a59c183c460800000000000000
+      internalID: 7260789726051499322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 0
+        width: 178
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d3ffcc359ee96dd0800000000000000
+      internalID: -2492198594035059753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 1477
+        y: 0
+        width: 189
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e82727666c7791a0800000000000000
+      internalID: -6802831932860716829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 1671
+        y: 0
+        width: 165
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 426c8a9171a7337c0800000000000000
+      internalID: -4092793396716321244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 1843
+        y: 0
+        width: 178
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e81d10d40e433b450800000000000000
+      internalID: 6103280057986437518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 2026
+        y: 0
+        width: 178
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21cba6d643263ab50800000000000000
+      internalID: 6603229455968812050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 2207
+        y: 0
+        width: 195
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58aee6a542385c0f0800000000000000
+      internalID: -1097326742035567995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 2404
+        y: 0
+        width: 213
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 348b1e97b461aa2a0800000000000000
+      internalID: -6725538580101220285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 2619
+        y: 0
+        width: 231
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd71a0159c545d810800000000000000
+      internalID: 1789413157899999196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 2851
+        y: 0
+        width: 244
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a71aed9b3d8c0c020800000000000000
+      internalID: 2360107016424169850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
