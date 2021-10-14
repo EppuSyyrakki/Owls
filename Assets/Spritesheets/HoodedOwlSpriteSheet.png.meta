@@ -1,0 +1,516 @@
+fileFormatVersion: 2
+guid: de4c856539d770841bb806075bd04815
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6114323715240304597
+    second: HoodedOwlSpriteSheet_0
+  - first:
+      213: -7873717487257111027
+    second: HoodedOwlSpriteSheet_1
+  - first:
+      213: 8022391540791172845
+    second: HoodedOwlSpriteSheet_2
+  - first:
+      213: -5636627549694255227
+    second: HoodedOwlSpriteSheet_3
+  - first:
+      213: 1375006914605734044
+    second: HoodedOwlSpriteSheet_4
+  - first:
+      213: 2500088072649782167
+    second: HoodedOwlSpriteSheet_5
+  - first:
+      213: -6813088805550110026
+    second: HoodedOwlSpriteSheet_6
+  - first:
+      213: -1607361475492194502
+    second: HoodedOwlSpriteSheet_7
+  - first:
+      213: -3535633999769452104
+    second: HoodedOwlSpriteSheet_8
+  - first:
+      213: -7862447405616690995
+    second: HoodedOwlSpriteSheet_9
+  - first:
+      213: -6637438726287064295
+    second: HoodedOwlSpriteSheet_10
+  - first:
+      213: -2433066906959429217
+    second: HoodedOwlSpriteSheet_11
+  - first:
+      213: -5219275568515293563
+    second: HoodedOwlSpriteSheet_12
+  - first:
+      213: -1019129033291158591
+    second: HoodedOwlSpriteSheet_13
+  - first:
+      213: -6603489181397900315
+    second: HoodedOwlSpriteSheet_14
+  - first:
+      213: -3108999675988176846
+    second: HoodedOwlSpriteSheet_15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HoodedOwlSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 0
+        width: 213
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df15a026017ad450800000000000000
+      internalID: 6114323715240304597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HoodedOwlSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 0
+        width: 228
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d06324e79afeab290800000000000000
+      internalID: -7873717487257111027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HoodedOwlSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 0
+        width: 240
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deed4f51a92455f60800000000000000
+      internalID: 8022391540791172845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HoodedOwlSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 0
+        width: 252
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f1b419b1da6c1b0800000000000000
+      internalID: -5636627549694255227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HoodedOwlSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 0
+        width: 239
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c98d7c4f081051310800000000000000
+      internalID: 1375006914605734044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HoodedOwlSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 0
+        width: 235
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7933b752bd812b220800000000000000
+      internalID: 2500088072649782167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HoodedOwlSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 0
+        width: 236
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bacef124db0371a0800000000000000
+      internalID: -6813088805550110026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HoodedOwlSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 2021
+        y: 0
+        width: 239
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a37d3a3114181b9e0800000000000000
+      internalID: -1607361475492194502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HoodedOwlSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 2293
+        y: 0
+        width: 234
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b1c2fb1c97eeeec0800000000000000
+      internalID: -3535633999769452104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HoodedOwlSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 2574
+        y: 0
+        width: 234
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc8860bddb9f2e290800000000000000
+      internalID: -7862447405616690995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HoodedOwlSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 2853
+        y: 0
+        width: 238
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9130d3525a413e3a0800000000000000
+      internalID: -6637438726287064295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HoodedOwlSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 3158
+        y: 0
+        width: 245
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f91cceff9820c3ed0800000000000000
+      internalID: -2433066906959429217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HoodedOwlSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 3407
+        y: 0
+        width: 248
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58e55c9f5886197b0800000000000000
+      internalID: -5219275568515293563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HoodedOwlSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 3676
+        y: 0
+        width: 244
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cba4663b835bd1f0800000000000000
+      internalID: -1019129033291158591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HoodedOwlSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 3963
+        y: 0
+        width: 234
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e3a4a88391bb54a0800000000000000
+      internalID: -6603489181397900315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HoodedOwlSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 4262
+        y: 0
+        width: 220
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2309be1544d9ad4d0800000000000000
+      internalID: -3108999675988176846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
