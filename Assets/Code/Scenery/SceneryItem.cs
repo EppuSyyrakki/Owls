@@ -2,6 +2,7 @@
 
 namespace Owls.Scenery
 {
+	[RequireComponent(typeof(SpriteRenderer))]
 	public class SceneryItem : MonoBehaviour
 	{
 		[Header("Speed as fraction of the Controller's speed"), Range(0, 1f)]
