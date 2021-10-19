@@ -197,6 +197,27 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &105027508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7046678256630003489, guid: f5cbbe843b2c35d41a1b18aa8484fa94,
+    type: 3}
+  m_PrefabInstance: {fileID: 7046678258076317883}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &105027512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105027508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6445c94ef78ed0f458e7b874dcde1428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathFx:
+  - {fileID: 7772438533054457462, guid: b54e745f0f16e874aad5fe96d6753ca5, type: 3}
+  - {fileID: 1568288446607928962, guid: dac36fe65bb67d445960f308bf84ea7d, type: 3}
 --- !u!1 &164305062
 GameObject:
   m_ObjectHideFlags: 0
