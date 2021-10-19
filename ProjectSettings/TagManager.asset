@@ -41,6 +41,30 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: bg1
+    uniqueID: 3239844829
+    locked: 0
+  - name: bg2
+    uniqueID: 1055960089
+    locked: 0
+  - name: bg3
+    uniqueID: 2802292471
+    locked: 0
+  - name: bg4
+    uniqueID: 3290049723
+    locked: 0
+  - name: bg5
+    uniqueID: 4083340767
+    locked: 0
   - name: Effects
     uniqueID: 3796014669
+    locked: 0
+  - name: Characters
+    uniqueID: 8698893
+    locked: 0
+  - name: Enemies
+    uniqueID: 3953419673
+    locked: 0
+  - name: bg6
+    uniqueID: 4187659701
     locked: 0
