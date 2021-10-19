@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Owls.Scenery
 {
 	[Serializable]
-	public class SceneryItem
+	public class SceneryThing
 	{
 		public Texture texture;
 		public float rollSpeed;
@@ -25,7 +25,7 @@ namespace Owls.Scenery
 	public class Scenery : ScriptableObject
 	{
 		public float overallSpeed = 2;
-		public List<SceneryItem> textures;
+		public List<SceneryThing> textures;
 		public List<ParticleItem> effects;
 	}
 }

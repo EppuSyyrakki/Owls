@@ -5,53 +5,63 @@ namespace Owls.Scenery
 {
 	public class SceneryController : MonoBehaviour
 	{
-		[Header("Must be empty for random scenery to work.")]
-		[SerializeField]
-		private Scenery testScenery;
+		[SerializeField, Range(0.1f, 10f)]
+		private float totalSpeed = 10f;
 
-		private Scenery _sourceScenery;
+		[SerializeField, Range(20f, 80f)]
+		private float wrapDistance = 40f;
 
-		public float OverallSpeed => _sourceScenery.overallSpeed;
+		private SceneryItem[] _childItems = null;
 
 		private void Awake()
 		{
-			if (testScenery != null)
+			int childCount = transform.childCount;
+			var items = new List<SceneryItem>();
+
+			for (int i = 0; i <  childCount; i++)
 			{
-				CreateScenery(testScenery);
-				return;
+				var item = transform.GetChild(i).GetComponent<SceneryItem>();
+
+				if (item == null)
+				{
+					Debug.LogError(name + " has a child that does not have SceneryItem component.");
+					break;
+				}
+
+				items.Add(item);
+
+				if (item.scrollSpeed > 0)
+				{
+					var itemClone = DuplicateItem(item);
+					items.Add(itemClone);
+				}
 			}
 
-			var sceneryAll = Resources.LoadAll("Scenery", typeof(Scenery));
-
-			if (sceneryAll.Length == 0)
-			{
-				Debug.LogError("Could not find any Scenery objects in Resources folder!");
-				return;
-			}
-
-			_sourceScenery = sceneryAll[Random.Range(0, sceneryAll.Length)] as Scenery;
-			CreateScenery(_sourceScenery);
+			_childItems = items.ToArray();
 		}
 
-		private void CreateScenery(Scenery scenery)
+		private SceneryItem DuplicateItem(SceneryItem item)
 		{
-			_sourceScenery = scenery;
-			var bgTemplate = Resources.Load<GameObject>("Scenery/BGTemplate");
-			Material material = bgTemplate.GetComponent<MeshRenderer>().sharedMaterial;
+			var pos = transform.position + new Vector3(item.GetWidth(), 0, 0);
+			return Instantiate(item, pos, Quaternion.identity, transform);
+		}
 
-			foreach (var texture in scenery.textures)
+		private void Update()
+		{
+			foreach (var item in _childItems)
 			{
-				var go = Instantiate(bgTemplate, transform);
-				go.GetComponent<RollingScenery>().Init(texture, material, this);
-				go.name = texture.texture.name;
-			}
-
-			foreach (var effect in scenery.effects)
-			{
-				if (effect.chance > Random.Range(0, 101))
+				Vector3 translation;
+				
+				if (item.transform.position.x < -wrapDistance)
 				{
-					Instantiate(effect.particles, transform);
+					translation = new Vector3(item.GetWidth() * 2, 0, 0);
 				}
+				else
+				{
+					translation = new Vector3(-1f * totalSpeed * item.scrollSpeed * Time.deltaTime, 0, 0);
+				}
+
+				item.transform.Translate(translation);
 			}
 		}
 	}
