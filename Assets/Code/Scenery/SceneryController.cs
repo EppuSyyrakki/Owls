@@ -12,50 +12,44 @@ namespace Owls.Scenery
 		[SerializeField, Range(20f, 80f)]
 		private float wrapDistance = 40f;
 
-		private GameObject[] _childItems = null;
+		private List<SceneryItem> _movingItems = new List<SceneryItem>();
 
 		private void Awake()
 		{
 			int childCount = transform.childCount;
-			var items = new List<GameObject>();
-
+			
 			for (int i = 0; i <  childCount; i++)
 			{
 				var child = transform.GetChild(i);
 
 				if (!child.TryGetComponent(out SceneryItem item))
 				{
-					Debug.LogError(name + " has a obj that does not have SceneryItem component.");
-					return;
+					continue;
 				}
-
-				items.Add(child.gameObject);
 
 				if (item.scrollSpeed > 0)
 				{
-					var childClone = DuplicateItem(child.gameObject, item);
-					items.Add(childClone);
+					var childClone = DuplicateItem(child.gameObject, item.GetWidth());
+					_movingItems.Add(item);
+					_movingItems.Add(childClone.GetComponent<SceneryItem>());
 				}
 			}
 
-			_childItems = items.ToArray();
 		}
 
-		private GameObject DuplicateItem(GameObject obj, SceneryItem item)
+		private GameObject DuplicateItem(GameObject obj, float xPos)
 		{
-			var pos = transform.position + new Vector3(item.GetWidth(), 0, 0);
+			var pos = transform.position + new Vector3(xPos, 0, 0);
 			return Instantiate(obj, pos, Quaternion.identity, transform);
 		}
 
 		private void Update()
 		{
-			foreach (var child in _childItems)
+			foreach (var item in _movingItems)
 			{
 				Vector3 translation;
 
-				if (!child.TryGetComponent(out SceneryItem item)) { continue; }
-				
-				if (child.transform.position.x < -wrapDistance)
+				if (item.transform.position.x < -wrapDistance)
 				{
 					translation = new Vector3(item.GetWidth() * 2, 0, 0);
 				}
@@ -64,7 +58,7 @@ namespace Owls.Scenery
 					translation = new Vector3(-1f * totalSpeed * item.scrollSpeed * Time.deltaTime, 0, 0);
 				}
 
-				child.transform.Translate(translation);
+				item.transform.Translate(translation);
 			}
 		}
 	}
