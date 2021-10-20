@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace Owls.Scenery
@@ -11,48 +12,50 @@ namespace Owls.Scenery
 		[SerializeField, Range(20f, 80f)]
 		private float wrapDistance = 40f;
 
-		private SceneryItem[] _childItems = null;
+		private GameObject[] _childItems = null;
 
 		private void Awake()
 		{
 			int childCount = transform.childCount;
-			var items = new List<SceneryItem>();
+			var items = new List<GameObject>();
 
 			for (int i = 0; i <  childCount; i++)
 			{
-				var item = transform.GetChild(i).GetComponent<SceneryItem>();
+				var child = transform.GetChild(i);
 
-				if (item == null)
+				if (!child.TryGetComponent(out SceneryItem item))
 				{
-					Debug.LogError(name + " has a child that does not have SceneryItem component.");
-					break;
+					Debug.LogError(name + " has a obj that does not have SceneryItem component.");
+					return;
 				}
 
-				items.Add(item);
+				items.Add(child.gameObject);
 
 				if (item.scrollSpeed > 0)
 				{
-					var itemClone = DuplicateItem(item);
-					items.Add(itemClone);
+					var childClone = DuplicateItem(child.gameObject, item);
+					items.Add(childClone);
 				}
 			}
 
 			_childItems = items.ToArray();
 		}
 
-		private SceneryItem DuplicateItem(SceneryItem item)
+		private GameObject DuplicateItem(GameObject obj, SceneryItem item)
 		{
 			var pos = transform.position + new Vector3(item.GetWidth(), 0, 0);
-			return Instantiate(item, pos, Quaternion.identity, transform);
+			return Instantiate(obj, pos, Quaternion.identity, transform);
 		}
 
 		private void Update()
 		{
-			foreach (var item in _childItems)
+			foreach (var child in _childItems)
 			{
 				Vector3 translation;
+
+				if (!child.TryGetComponent(out SceneryItem item)) { continue; }
 				
-				if (item.transform.position.x < -wrapDistance)
+				if (child.transform.position.x < -wrapDistance)
 				{
 					translation = new Vector3(item.GetWidth() * 2, 0, 0);
 				}
@@ -61,7 +64,7 @@ namespace Owls.Scenery
 					translation = new Vector3(-1f * totalSpeed * item.scrollSpeed * Time.deltaTime, 0, 0);
 				}
 
-				item.transform.Translate(translation);
+				child.transform.Translate(translation);
 			}
 		}
 	}
