@@ -133,10 +133,10 @@ TextureImporter:
       name: OwlEyeSpritesheet_0
       rect:
         serializedVersion: 2
-        x: 33
-        y: 6
-        width: 967
-        height: 964
+        x: 8
+        y: 8
+        width: 960
+        height: 960
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,90 +146,6 @@ TextureImporter:
       bones: []
       spriteID: 9664795fa7ae3b030800000000000000
       internalID: 3509406348478989929
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OwlEyeSpritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 6
-        width: 967
-        height: 964
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a7a21b478f760360800000000000000
-      internalID: 7135530878671955879
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OwlEyeSpritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 2018
-        y: 6
-        width: 964
-        height: 964
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fa92c62daa253cbf0800000000000000
-      internalID: -305309456102839889
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OwlEyeSpritesheet_3
-      rect:
-        serializedVersion: 2
-        x: 3004
-        y: 6
-        width: 967
-        height: 964
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 538a2fe5e172878b0800000000000000
-      internalID: -5154326762130069451
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OwlEyeSpritesheet_4
-      rect:
-        serializedVersion: 2
-        x: 4005
-        y: 6
-        width: 967
-        height: 964
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba8a773e2d1a6d8b0800000000000000
-      internalID: -5127733198583256917
       vertices: []
       indices: 
       edges: []
