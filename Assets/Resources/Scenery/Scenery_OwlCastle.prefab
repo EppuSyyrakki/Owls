@@ -12,6 +12,16 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 41372037088663549, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 41372037088663549, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[0]
+      value: -1055122467
+      objectReference: {fileID: 0}
     - target: {fileID: 41372037187065672, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -60,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 41372037536997254, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 41372037536997255, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
@@ -530,7 +540,7 @@ PrefabInstance:
     - target: {fileID: 41372038672178466, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 41372038695848568, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
@@ -565,7 +575,12 @@ PrefabInstance:
     - target: {fileID: 41372038728727054, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 41372038728727054, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[0]
+      value: 1055960089
       objectReference: {fileID: 0}
     - target: {fileID: 41372038728727054, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
@@ -590,7 +605,7 @@ PrefabInstance:
     - target: {fileID: 41372038728727054, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[5]
-      value: -1004917573
+      value: 1055960089
       objectReference: {fileID: 0}
     - target: {fileID: 41372038728727054, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}

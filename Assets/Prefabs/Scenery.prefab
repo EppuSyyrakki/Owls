@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Color: {r: 0.4575472, g: 1, b: 0.992855, a: 1}
   m_Intensity: 4.91
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 000000004d9642e219acf03ef79607a7b59d9af9
+  m_ApplyToSortingLayers: 19acf03e
   m_LightCookieSprite: {fileID: 21300000, guid: 9104e1caac170fe478754ae9e3fbaa41,
     type: 3}
   m_UseNormalMap: 0
@@ -246,7 +246,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 41372038695848570}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &41372037593926607
 MonoBehaviour:
@@ -289,79 +289,6 @@ MonoBehaviour:
   - {x: 4.4845037, y: -9.219461, z: 0}
   - {x: 4.332821, y: 1.2698584, z: 0}
   - {x: -13.801215, y: 1.2330952, z: 0}
---- !u!1 &41372037729552033
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 41372037729552034}
-  - component: {fileID: 41372037729552035}
-  m_Layer: 0
-  m_Name: Moonbeam (5)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &41372037729552034
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41372037729552033}
-  m_LocalRotation: {x: 0.27311942, y: 0.8936781, z: -0.17525885, w: 0.3098864}
-  m_LocalPosition: {x: -4.33, y: 0.58, z: 10.91}
-  m_LocalScale: {x: 0.6534074, y: 0.6534074, z: 0.6534074}
-  m_Children: []
-  m_Father: {fileID: 41372037895990935}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 28.85, y: 148.462, z: 25.679}
---- !u!114 &41372037729552035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41372037729552033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_LightType: 2
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
-  m_Color: {r: 0.4575472, g: 1, b: 0.992855, a: 1}
-  m_Intensity: 4.91
-  m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 000000004d9642e2f79607a7bb2c1ac4b59d9af919acf03e
-  m_LightCookieSprite: {fileID: 21300000, guid: 9104e1caac170fe478754ae9e3fbaa41,
-    type: 3}
-  m_UseNormalMap: 0
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_ShadowIntensity: 0
-  m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
-  m_PointLightDistance: 3
-  m_PointLightQuality: 1
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &41372037895990934
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,10 +320,6 @@ Transform:
   - {fileID: 41372037536997255}
   - {fileID: 41372038760646422}
   - {fileID: 41372038728727055}
-  - {fileID: 41372038432156001}
-  - {fileID: 41372037729552034}
-  - {fileID: 41372038989330469}
-  - {fileID: 41372039015988270}
   m_Father: {fileID: 41372038695848570}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -429,7 +352,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 41372038695848570}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &41372037928039018
 MonoBehaviour:
@@ -449,7 +372,7 @@ MonoBehaviour:
   m_Color: {r: 0.7647059, g: 0.38039216, b: 0.019607844, a: 1}
   m_Intensity: 1.81
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 000000004d9642e2dd1b1cc119acf03ef79607a7bb2c1ac4dfd562f30dbc8400b59d9af9
+  m_ApplyToSortingLayers: 0dbc840019acf03e
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -544,239 +467,6 @@ MonoBehaviour:
   - {x: -0.640896, y: -4.928012, z: 0}
   - {x: 1.7001972, y: -4.651311, z: 0}
   - {x: -5.2727566, y: -4.5495954, z: 0}
---- !u!1 &41372038362163737
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 41372038362163739}
-  - component: {fileID: 41372038362163738}
-  m_Layer: 0
-  m_Name: MoonOnTrees2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &41372038362163739
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41372038362163737}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.350227, y: 4.0112305, z: 1.7850448}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 41372038695848570}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &41372038362163738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41372038362163737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_LightType: 1
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
-  m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 19acf03e
-  m_LightCookieSprite: {fileID: 0}
-  m_UseNormalMap: 0
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_ShadowIntensity: 0
-  m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
-  m_PointLightDistance: 3
-  m_PointLightQuality: 1
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -3.9028358, y: -3.8948631, z: 0}
-  - {x: -4.0169487, y: -5.9810767, z: 0}
-  - {x: -3.9504404, y: -5.382502, z: 0}
-  - {x: -3.4516282, y: -2.7221704, z: 0}
-  - {x: -3.78417, y: -1.8243089, z: 0}
-  - {x: -3.9663095, y: 0.4259057, z: 0}
-  - {x: -4.152531, y: 2.1657882, z: 0}
-  - {x: -4.3499293, y: 1.7667317, z: 0}
-  - {x: -4.3162355, y: 0.5034814, z: 0}
-  - {x: -3.95044, y: -0.52739716, z: 0}
-  - {x: -3.850678, y: -1.1259718, z: 0}
-  - {x: -3.8839312, y: -3.1544747, z: 0}
---- !u!1 &41372038432156000
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 41372038432156001}
-  - component: {fileID: 41372038432156002}
-  m_Layer: 0
-  m_Name: Moonbeam (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &41372038432156001
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41372038432156000}
-  m_LocalRotation: {x: -0, y: 0.95061725, z: -0, w: 0.31036577}
-  m_LocalPosition: {x: -4.82, y: -2.99, z: 11.59}
-  m_LocalScale: {x: 0.6534074, y: 0.6534074, z: 0.6534074}
-  m_Children: []
-  m_Father: {fileID: 41372037895990935}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 143.837, z: 0}
---- !u!114 &41372038432156002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41372038432156000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_LightType: 2
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
-  m_Color: {r: 0.4575472, g: 1, b: 0.992855, a: 1}
-  m_Intensity: 4.91
-  m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 000000004d9642e219acf03ef79607a7b59d9af9
-  m_LightCookieSprite: {fileID: 21300000, guid: 9104e1caac170fe478754ae9e3fbaa41,
-    type: 3}
-  m_UseNormalMap: 0
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_ShadowIntensity: 0
-  m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
-  m_PointLightDistance: 3
-  m_PointLightQuality: 1
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
---- !u!1 &41372038532804832
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 41372038532804834}
-  - component: {fileID: 41372038532804833}
-  m_Layer: 0
-  m_Name: MoonOnTrees
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &41372038532804834
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41372038532804832}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.0281067, y: 4.0112305, z: 1.7850448}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 41372038695848570}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &41372038532804833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41372038532804832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_LightType: 1
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
-  m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 19acf03e
-  m_LightCookieSprite: {fileID: 0}
-  m_UseNormalMap: 0
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_ShadowIntensity: 0
-  m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
-  m_PointLightDistance: 3
-  m_PointLightQuality: 1
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -5.3992724, y: -3.9281175, z: 0}
-  - {x: -5.1143355, y: -5.615281, z: 0}
-  - {x: -4.981319, y: -4.251861, z: 0}
-  - {x: -5.081081, y: -3.1877286, z: 0}
-  - {x: -4.981319, y: -1.7578006, z: 0}
-  - {x: -4.3986135, y: 0.6254301, z: 0}
-  - {x: -4.2855477, y: 2.0327716, z: 0}
-  - {x: -4.549454, y: 1.5672069, z: 0}
-  - {x: -4.682031, y: 1.1353097, z: 0}
-  - {x: -4.881556, y: 0.13768578, z: 0}
-  - {x: -5.0478272, y: -0.9264469, z: 0}
-  - {x: -5.1143346, y: -2.7221706, z: 0}
 --- !u!1 &41372038672178465
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,7 +516,7 @@ MonoBehaviour:
   m_Color: {r: 0.4575472, g: 1, b: 0.992855, a: 1}
   m_Intensity: 4.79
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 000000004d9642e219acf03ef79607a7bb2c1ac4dfd562f3b59d9af9
+  m_ApplyToSortingLayers: 19acf03e
   m_LightCookieSprite: {fileID: 21300000, guid: 9104e1caac170fe478754ae9e3fbaa41,
     type: 3}
   m_UseNormalMap: 0
@@ -882,8 +572,6 @@ Transform:
   - {fileID: 41372037088663550}
   - {fileID: 41372037895990935}
   - {fileID: 41372038137736768}
-  - {fileID: 41372038532804834}
-  - {fileID: 41372038362163739}
   - {fileID: 41372037928039019}
   - {fileID: 41372037593926592}
   - {fileID: 41372038881917150}
@@ -958,7 +646,7 @@ MonoBehaviour:
   m_Color: {r: 0.4575472, g: 1, b: 0.992855, a: 1}
   m_Intensity: 4.91
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 000000004d9642e219acf03ef79607a7bb2c1ac40dbc8400b59d9af9
+  m_ApplyToSortingLayers: dd1b1cc1
   m_LightCookieSprite: {fileID: 21300000, guid: 9104e1caac170fe478754ae9e3fbaa41,
     type: 3}
   m_UseNormalMap: 0
@@ -1031,7 +719,7 @@ MonoBehaviour:
   m_Color: {r: 0.4575472, g: 1, b: 0.992855, a: 1}
   m_Intensity: 4.91
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 000000004d9642e219acf03ef79607a7b59d9af9bb2c1ac4
+  m_ApplyToSortingLayers: 19acf03e
   m_LightCookieSprite: {fileID: 21300000, guid: 9104e1caac170fe478754ae9e3fbaa41,
     type: 3}
   m_UseNormalMap: 0
@@ -1084,7 +772,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 41372038695848570}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &41372038881917149
 MonoBehaviour:
@@ -1143,152 +831,6 @@ MonoBehaviour:
   - {x: -11.271498, y: -6.418337, z: 0}
   - {x: -11.713343, y: -6.563672, z: 0}
   - {x: -12.079102, y: -6.7884855, z: 0}
---- !u!1 &41372038989330468
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 41372038989330469}
-  - component: {fileID: 41372038989330470}
-  m_Layer: 0
-  m_Name: Moonbeam (6)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &41372038989330469
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41372038989330468}
-  m_LocalRotation: {x: 0.2745214, y: 0.95132726, z: -0.13880286, w: -0.018661309}
-  m_LocalPosition: {x: -5.37, y: 1.55, z: 9.72}
-  m_LocalScale: {x: 0.6534074, y: 0.6534074, z: 0.6534074}
-  m_Children: []
-  m_Father: {fileID: 41372037895990935}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 14.705, y: 186.632, z: 33.05}
---- !u!114 &41372038989330470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41372038989330468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_LightType: 2
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
-  m_Color: {r: 0.4575472, g: 1, b: 0.992855, a: 1}
-  m_Intensity: 7.7
-  m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 000000004d9642e219acf03ef79607a7bb2c1ac4b59d9af9
-  m_LightCookieSprite: {fileID: 21300000, guid: 9104e1caac170fe478754ae9e3fbaa41,
-    type: 3}
-  m_UseNormalMap: 0
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_ShadowIntensity: 0
-  m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
-  m_PointLightDistance: 3
-  m_PointLightQuality: 1
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
---- !u!1 &41372039015988269
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 41372039015988270}
-  - component: {fileID: 41372039015988271}
-  m_Layer: 0
-  m_Name: Moonbeam (7)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &41372039015988270
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41372039015988269}
-  m_LocalRotation: {x: -0, y: -0, z: -0.37495673, w: 0.92704237}
-  m_LocalPosition: {x: 8.9, y: -1.84, z: 0.43392467}
-  m_LocalScale: {x: 2.4661133, y: 2.4661133, z: 2.4661133}
-  m_Children: []
-  m_Father: {fileID: 41372037895990935}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -44.043}
---- !u!114 &41372039015988271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41372039015988269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_LightType: 2
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 6
-  m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 000000004d9642e219acf03ef79607a7bb2c1ac40dbc8400b59d9af9
-  m_LightCookieSprite: {fileID: 21300000, guid: 9104e1caac170fe478754ae9e3fbaa41,
-    type: 3}
-  m_UseNormalMap: 0
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_ShadowIntensity: 0
-  m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
-  m_PointLightDistance: 3
-  m_PointLightQuality: 1
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &1413646569568113795
 GameObject:
   m_ObjectHideFlags: 0
