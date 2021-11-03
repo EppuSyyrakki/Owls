@@ -642,7 +642,7 @@ PrefabInstance:
     - target: {fileID: 8763105674410848529, guid: ddd46ac84e95a3744a5b95d8058f3a40,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8763105674410848543, guid: ddd46ac84e95a3744a5b95d8058f3a40,
         type: 3}
@@ -1551,6 +1551,26 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8471682413505465428, guid: 81623ff9c1476d541823ec40f5b5ae6e,
         type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471682413505465428, guid: 81623ff9c1476d541823ec40f5b5ae6e,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471682413505465428, guid: 81623ff9c1476d541823ec40f5b5ae6e,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471682413505465428, guid: 81623ff9c1476d541823ec40f5b5ae6e,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471682413505465428, guid: 81623ff9c1476d541823ec40f5b5ae6e,
+        type: 3}
       propertyPath: m_SortingLayer
       value: 7
       objectReference: {fileID: 0}
@@ -1736,7 +1756,7 @@ PrefabInstance:
     - target: {fileID: 6788314029713741130, guid: 951d6eadee817644f8b6b56caa662a1b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8985430961581162978, guid: 951d6eadee817644f8b6b56caa662a1b,
         type: 3}
