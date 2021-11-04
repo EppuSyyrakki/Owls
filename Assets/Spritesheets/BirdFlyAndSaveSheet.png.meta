@@ -1,0 +1,636 @@
+fileFormatVersion: 2
+guid: c313d0d9ea116fe4c8d588760cc1c32b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6756278619792756958
+    second: BirdFlyAndSaveSheet_0
+  - first:
+      213: 5197488087388646851
+    second: BirdFlyAndSaveSheet_1
+  - first:
+      213: -5797400655371455091
+    second: BirdFlyAndSaveSheet_2
+  - first:
+      213: 3022607235308872498
+    second: BirdFlyAndSaveSheet_3
+  - first:
+      213: 477960945697597263
+    second: BirdFlyAndSaveSheet_4
+  - first:
+      213: 836846810776998379
+    second: BirdFlyAndSaveSheet_5
+  - first:
+      213: 2083413397180139396
+    second: BirdFlyAndSaveSheet_6
+  - first:
+      213: 7586658883972652643
+    second: BirdFlyAndSaveSheet_7
+  - first:
+      213: -4614785080219022815
+    second: BirdFlyAndSaveSheet_8
+  - first:
+      213: 8870467119882715303
+    second: BirdFlyAndSaveSheet_9
+  - first:
+      213: -3561846197880592712
+    second: BirdFlyAndSaveSheet_10
+  - first:
+      213: -591494135883568040
+    second: BirdFlyAndSaveSheet_11
+  - first:
+      213: -4701311893485771001
+    second: BirdFlyAndSaveSheet_12
+  - first:
+      213: 1858245353406782132
+    second: BirdFlyAndSaveSheet_13
+  - first:
+      213: -921271582034671347
+    second: BirdFlyAndSaveSheet_14
+  - first:
+      213: 2422855970515743310
+    second: BirdFlyAndSaveSheet_15
+  - first:
+      213: -7723216798340360458
+    second: BirdFlyAndSaveSheet_16
+  - first:
+      213: -4125377886437075941
+    second: BirdFlyAndSaveSheet_17
+  - first:
+      213: -3237571979837534982
+    second: BirdFlyAndSaveSheet_18
+  - first:
+      213: 8147369265373241793
+    second: BirdFlyAndSaveSheet_19
+  - first:
+      213: 95016806519797201
+    second: BirdFlyAndSaveSheet_20
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 180
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BirdFlyAndSaveSheet_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 196
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed05050cb9f13cd50800000000000000
+      internalID: 6756278619792756958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdFlyAndSaveSheet_1
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 0
+        width: 206
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cdef15c0ef212840800000000000000
+      internalID: 5197488087388646851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdFlyAndSaveSheet_2
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 0
+        width: 216
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85b7f3e1de7b8fa0800000000000000
+      internalID: -5797400655371455091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdFlyAndSaveSheet_3
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 0
+        width: 219
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2336c1c144572f920800000000000000
+      internalID: 3022607235308872498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdFlyAndSaveSheet_4
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 0
+        width: 221
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f47a0d0a2fe02a600800000000000000
+      internalID: 477960945697597263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdFlyAndSaveSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 0
+        width: 218
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be118c79db31d9b00800000000000000
+      internalID: 836846810776998379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdFlyAndSaveSheet_6
+      rect:
+        serializedVersion: 2
+        x: 1399
+        y: 0
+        width: 221
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48746334275c9ec10800000000000000
+      internalID: 2083413397180139396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdFlyAndSaveSheet_7
+      rect:
+        serializedVersion: 2
+        x: 1636
+        y: 0
+        width: 216
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36e50432f0a394960800000000000000
+      internalID: 7586658883972652643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdFlyAndSaveSheet_8
+      rect:
+        serializedVersion: 2
+        x: 1864
+        y: 0
+        width: 199
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12ac5c27b6df4ffb0800000000000000
+      internalID: -4614785080219022815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdFlyAndSaveSheet_9
+      rect:
+        serializedVersion: 2
+        x: 2090
+        y: 0
+        width: 197
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a0446809da3a1b70800000000000000
+      internalID: 8870467119882715303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdFlyAndSaveSheet_10
+      rect:
+        serializedVersion: 2
+        x: 2448
+        y: 0
+        width: 214
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b660c621c7c19ec0800000000000000
+      internalID: -3561846197880592712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdFlyAndSaveSheet_11
+      rect:
+        serializedVersion: 2
+        x: 2698
+        y: 0
+        width: 201
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ceeef97379ac7f0800000000000000
+      internalID: -591494135883568040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdFlyAndSaveSheet_12
+      rect:
+        serializedVersion: 2
+        x: 2926
+        y: 0
+        width: 187
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7072672ddb591ceb0800000000000000
+      internalID: -4701311893485771001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdFlyAndSaveSheet_13
+      rect:
+        serializedVersion: 2
+        x: 3128
+        y: 0
+        width: 166
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bad453bd40d9c910800000000000000
+      internalID: 1858245353406782132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdFlyAndSaveSheet_14
+      rect:
+        serializedVersion: 2
+        x: 3358
+        y: 0
+        width: 171
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d094923906cf633f0800000000000000
+      internalID: -921271582034671347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdFlyAndSaveSheet_15
+      rect:
+        serializedVersion: 2
+        x: 3546
+        y: 0
+        width: 202
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4276881ba6bf9120800000000000000
+      internalID: 2422855970515743310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdFlyAndSaveSheet_16
+      rect:
+        serializedVersion: 2
+        x: 3758
+        y: 0
+        width: 204
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f6d793cd3f91d490800000000000000
+      internalID: -7723216798340360458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdFlyAndSaveSheet_17
+      rect:
+        serializedVersion: 2
+        x: 3998
+        y: 0
+        width: 211
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b149aa26ba6bfb6c0800000000000000
+      internalID: -4125377886437075941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdFlyAndSaveSheet_18
+      rect:
+        serializedVersion: 2
+        x: 4257
+        y: 0
+        width: 195
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afc860f0075d113d0800000000000000
+      internalID: -3237571979837534982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdFlyAndSaveSheet_19
+      rect:
+        serializedVersion: 2
+        x: 4510
+        y: 0
+        width: 168
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c1e1842e25411170800000000000000
+      internalID: 8147369265373241793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdFlyAndSaveSheet_20
+      rect:
+        serializedVersion: 2
+        x: 4731
+        y: 0
+        width: 146
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d5fd483841915100800000000000000
+      internalID: 95016806519797201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
