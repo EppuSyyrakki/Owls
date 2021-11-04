@@ -109,7 +109,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 180
+  spritePixelsToUnits: 160
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -181,9 +181,9 @@ TextureImporter:
       name: BirdFlyAndSaveSheet_0
       rect:
         serializedVersion: 2
-        x: 16
+        x: 15
         y: 0
-        width: 196
+        width: 197
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -202,9 +202,9 @@ TextureImporter:
       name: BirdFlyAndSaveSheet_1
       rect:
         serializedVersion: 2
-        x: 225
+        x: 224
         y: 0
-        width: 206
+        width: 207
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -225,7 +225,7 @@ TextureImporter:
         serializedVersion: 2
         x: 458
         y: 0
-        width: 216
+        width: 215
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -244,7 +244,7 @@ TextureImporter:
       name: BirdFlyAndSaveSheet_3
       rect:
         serializedVersion: 2
-        x: 686
+        x: 687
         y: 0
         width: 219
         height: 512
@@ -267,7 +267,7 @@ TextureImporter:
         serializedVersion: 2
         x: 919
         y: 0
-        width: 221
+        width: 219
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -288,7 +288,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1167
         y: 0
-        width: 218
+        width: 220
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -328,9 +328,9 @@ TextureImporter:
       name: BirdFlyAndSaveSheet_7
       rect:
         serializedVersion: 2
-        x: 1636
+        x: 1637
         y: 0
-        width: 216
+        width: 213
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -370,9 +370,9 @@ TextureImporter:
       name: BirdFlyAndSaveSheet_9
       rect:
         serializedVersion: 2
-        x: 2090
+        x: 2091
         y: 0
-        width: 197
+        width: 194
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -393,7 +393,7 @@ TextureImporter:
         serializedVersion: 2
         x: 2448
         y: 0
-        width: 214
+        width: 213
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -412,9 +412,9 @@ TextureImporter:
       name: BirdFlyAndSaveSheet_11
       rect:
         serializedVersion: 2
-        x: 2698
+        x: 2697
         y: 0
-        width: 201
+        width: 202
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -435,7 +435,7 @@ TextureImporter:
         serializedVersion: 2
         x: 2926
         y: 0
-        width: 187
+        width: 189
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -454,9 +454,9 @@ TextureImporter:
       name: BirdFlyAndSaveSheet_13
       rect:
         serializedVersion: 2
-        x: 3128
+        x: 3127
         y: 0
-        width: 166
+        width: 165
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -496,9 +496,9 @@ TextureImporter:
       name: BirdFlyAndSaveSheet_15
       rect:
         serializedVersion: 2
-        x: 3546
+        x: 3545
         y: 0
-        width: 202
+        width: 203
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -519,7 +519,7 @@ TextureImporter:
         serializedVersion: 2
         x: 3758
         y: 0
-        width: 204
+        width: 205
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -538,9 +538,9 @@ TextureImporter:
       name: BirdFlyAndSaveSheet_17
       rect:
         serializedVersion: 2
-        x: 3998
+        x: 3999
         y: 0
-        width: 211
+        width: 210
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -559,9 +559,9 @@ TextureImporter:
       name: BirdFlyAndSaveSheet_18
       rect:
         serializedVersion: 2
-        x: 4257
+        x: 4269
         y: 0
-        width: 195
+        width: 144
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -580,9 +580,9 @@ TextureImporter:
       name: BirdFlyAndSaveSheet_19
       rect:
         serializedVersion: 2
-        x: 4510
+        x: 4453
         y: 0
-        width: 168
+        width: 125
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -601,9 +601,9 @@ TextureImporter:
       name: BirdFlyAndSaveSheet_20
       rect:
         serializedVersion: 2
-        x: 4731
+        x: 4616
         y: 0
-        width: 146
+        width: 108
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
