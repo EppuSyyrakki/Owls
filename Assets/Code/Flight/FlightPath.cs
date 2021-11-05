@@ -7,11 +7,11 @@ namespace Owls.Flight
     [RequireComponent(typeof(LineRenderer))]
     public class FlightPath : MonoBehaviour
     {
-        [SerializeField]
-        private GameObject pointPrefab = null;
-
         [SerializeField, Range(0.01f, 0.1f), Tooltip("Only used in editor to visualize flight path")]
         private float lineRendererPrecision = 0.01f;
+
+        [SerializeField, Range(0.01f, 0.1f), Tooltip("Only used in editor to visualize flight path")]
+        private float lineWidth = 0.05f;
 
         [SerializeField]
         private float gizmoRadius = 0.1f;
@@ -20,8 +20,8 @@ namespace Owls.Flight
         private Color gizmoColor = Color.white;
 
         private LineRenderer _lr;
-        private List<FlightPoint> _points = new List<FlightPoint>();
-        private List<Vector2> _pointsV2 = new List<Vector2>();
+        private readonly List<FlightPoint> _points = new List<FlightPoint>();
+        private readonly List<Vector2> _pointsV2 = new List<Vector2>();
 
 		private void Awake()
 		{
@@ -44,6 +44,16 @@ namespace Owls.Flight
 		        _pointsV2.Add(fp.transform.position);
 	        }
         }
+
+        private void InitNewPoint(Transform current, int siblingIndex)
+        {
+	        current.SetParent(transform);
+	        current.SetSiblingIndex(siblingIndex);
+	        var previous = transform.GetChild(current.GetSiblingIndex() - 1).position;
+	        var next = transform.GetChild(current.GetSiblingIndex() + 1).position;
+	        var offset = (next - previous) / 2;
+	        current.position = previous + offset;
+        }
         
         public void DrawPath()
         {
@@ -60,6 +70,48 @@ namespace Owls.Flight
             {
                 _lr.SetPosition(i, points2[i]);
             }
+        }
+
+        public GameObject CreatePoint(int siblingIndex)
+        {
+	        Transform first = null, last = null;
+	        var startName = Names.Tags.FlightStart;
+	        var endName = Names.Tags.FlightEnd;
+
+	        foreach (Transform child in transform)
+	        {
+		        if (child.CompareTag(startName)) { first = child; }
+		        if (child.CompareTag(endName)) { last = child; }
+	        }
+
+	        if (first == null || last == null)
+	        {
+                Debug.LogError("Could not find tags " + startName + " and " + endName + " in hierarchy");
+                return null;
+	        }
+
+	        var newPoint = new GameObject(Names.Objects.MidPoint, typeof(FlightPoint));
+	        newPoint.GetComponent<FlightPoint>().SetGizmo(gizmoRadius, gizmoColor);
+	        InitNewPoint(newPoint.transform, siblingIndex);
+            return newPoint;
+        }
+
+        public void SetGizmos()
+        {
+            SetFlightPoints();
+
+	        foreach (var fp in _points)
+	        {
+		        fp.SetGizmo(gizmoRadius, gizmoColor);
+	        }
+
+	        if (_lr == null)
+	        {
+		        _lr = GetComponent<LineRenderer>();
+	        }
+
+	        _lr.startWidth = lineWidth;
+	        _lr.endWidth = lineWidth;
         }
 
         /// <summary>

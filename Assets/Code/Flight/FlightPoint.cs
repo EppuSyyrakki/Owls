@@ -1,25 +1,39 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Owls.Flight
 {
+    [ExecuteInEditMode]
     public class FlightPoint : MonoBehaviour
     {   
         private float _gizmoRadius = 0.1f;
         private Color _gizmoColor = Color.white;
+        private FlightPath _flightPath;
 
-        private FlightPath _flightPath = null;
-
-        private void Awake()
+        public FlightPath Path
         {
-            _flightPath = transform.parent.GetComponent<FlightPath>();
+	        get
+	        {
+		        if (_flightPath == null) { _flightPath = GetComponentInParent<FlightPath>(); }
+		        return _flightPath;
+	        }
         }
-
+        
         private void OnDrawGizmos()
         {
             Gizmos.color = _gizmoColor;
             Gizmos.DrawSphere(transform.position, _gizmoRadius);
+        }
+
+
+        private void Update()
+        {
+	        if (transform.hasChanged)
+	        {
+		        Path.DrawPath();
+	        }
         }
 
         public void SetGizmo(float radius, Color color)
