@@ -1,0 +1,444 @@
+fileFormatVersion: 2
+guid: 765f9d901a9bcc142b99903988612ac3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3172011818955152926
+    second: ThreeEyeOwlMenuSheet_0
+  - first:
+      213: -7366949741767315247
+    second: ThreeEyeOwlMenuSheet_1
+  - first:
+      213: -6773586846349883176
+    second: ThreeEyeOwlMenuSheet_2
+  - first:
+      213: 1322170457926175120
+    second: ThreeEyeOwlMenuSheet_3
+  - first:
+      213: 3783825065870102589
+    second: ThreeEyeOwlMenuSheet_4
+  - first:
+      213: 6827740702572701244
+    second: ThreeEyeOwlMenuSheet_5
+  - first:
+      213: -5065063338423935945
+    second: ThreeEyeOwlMenuSheet_6
+  - first:
+      213: 8823060238113862355
+    second: ThreeEyeOwlMenuSheet_7
+  - first:
+      213: -6868569918908732584
+    second: ThreeEyeOwlMenuSheet_8
+  - first:
+      213: 413158781920233231
+    second: ThreeEyeOwlMenuSheet_9
+  - first:
+      213: 5309223881020996269
+    second: ThreeEyeOwlMenuSheet_10
+  - first:
+      213: -4786355599309630872
+    second: ThreeEyeOwlMenuSheet_11
+  - first:
+      213: 1032514216908679812
+    second: ThreeEyeOwlMenuSheet_12
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ThreeEyeOwlMenuSheet_0
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 755
+        width: 797
+        height: 492
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1e992c71ff350c20800000000000000
+      internalID: 3172011818955152926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlMenuSheet_1
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 755
+        width: 843
+        height: 496
+      alignment: 9
+      pivot: {x: 0.5211299, y: 0.49551034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d0bdcbdd3653c990800000000000000
+      internalID: -7366949741767315247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlMenuSheet_2
+      rect:
+        serializedVersion: 2
+        x: 2033
+        y: 755
+        width: 926
+        height: 507
+      alignment: 9
+      pivot: {x: 0.5495529, y: 0.4907478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d88e08b6a26ff1a0800000000000000
+      internalID: -6773586846349883176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlMenuSheet_3
+      rect:
+        serializedVersion: 2
+        x: 3057
+        y: 755
+        width: 1031
+        height: 512
+      alignment: 9
+      pivot: {x: 0.51199275, y: 0.49278104}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 099843db60b495210800000000000000
+      internalID: 1322170457926175120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlMenuSheet_4
+      rect:
+        serializedVersion: 2
+        x: 4178
+        y: 755
+        width: 1117
+        height: 516
+      alignment: 9
+      pivot: {x: 0.46906036, y: 0.49005672}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d30186f89d8d28430800000000000000
+      internalID: 3783825065870102589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlMenuSheet_5
+      rect:
+        serializedVersion: 2
+        x: 5443
+        y: 755
+        width: 1153
+        height: 519
+      alignment: 9
+      pivot: {x: 0.44623443, y: 0.48483482}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c36625b7ef101ce50800000000000000
+      internalID: 6827740702572701244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlMenuSheet_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 107
+        width: 1152
+        height: 519
+      alignment: 9
+      pivot: {x: 0.44577911, y: 0.48911726}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73c1364cab745b9b0800000000000000
+      internalID: -5065063338423935945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlMenuSheet_7
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 108
+        width: 1132
+        height: 515
+      alignment: 9
+      pivot: {x: 0.41081697, y: 0.5118415}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d276ac3a8ec17a70800000000000000
+      internalID: 8823060238113862355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlMenuSheet_8
+      rect:
+        serializedVersion: 2
+        x: 2739
+        y: 104
+        width: 1052
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5029445, y: 0.49930304}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85be28ccc00fda0a0800000000000000
+      internalID: -6868569918908732584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlMenuSheet_9
+      rect:
+        serializedVersion: 2
+        x: 3909
+        y: 104
+        width: 929
+        height: 504
+      alignment: 9
+      pivot: {x: 0.5530224, y: 0.5029908}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f07403029b5dbb500800000000000000
+      internalID: 413158781920233231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlMenuSheet_10
+      rect:
+        serializedVersion: 2
+        x: 4987
+        y: 107
+        width: 867
+        height: 500
+      alignment: 9
+      pivot: {x: 0.5047662, y: 0.5030147}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daaf6458df62ea940800000000000000
+      internalID: 5309223881020996269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlMenuSheet_11
+      rect:
+        serializedVersion: 2
+        x: 6018
+        y: 105
+        width: 820
+        height: 496
+      alignment: 9
+      pivot: {x: 0.5123928, y: 0.50911796}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 862927e01f2739db0800000000000000
+      internalID: -4786355599309630872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeEyeOwlMenuSheet_12
+      rect:
+        serializedVersion: 2
+        x: 6959
+        y: 114
+        width: 797
+        height: 493
+      alignment: 9
+      pivot: {x: 0.49761924, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48ae164b53a345e00800000000000000
+      internalID: 1032514216908679812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
