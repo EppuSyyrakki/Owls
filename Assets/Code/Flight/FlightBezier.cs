@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Owls.Enemy
+namespace Owls.Flight
 {
-    public static class EnemyFlightBezier
+    public static class FlightBezier
     {
         // factorial is capped at 16
-        private static float[] Factorial = new float[]
+        private static readonly float[] Factorial = new float[]
         {
             1.0f,
             1.0f,
