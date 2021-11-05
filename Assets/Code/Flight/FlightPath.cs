@@ -10,7 +10,7 @@ namespace Owls.Flight
         [SerializeField, Range(0.01f, 0.1f), Tooltip("Only used in editor to visualize flight path")]
         private float lineRendererPrecision = 0.01f;
 
-        [SerializeField, Range(0.01f, 0.1f), Tooltip("Only used in editor to visualize flight path")]
+        [SerializeField, Range(0.01f, 0.2f), Tooltip("Only used in editor to visualize flight path")]
         private float lineWidth = 0.05f;
 
         [SerializeField]
@@ -19,11 +19,20 @@ namespace Owls.Flight
         [SerializeField]
         private Color gizmoColor = Color.white;
 
-        private LineRenderer _lr;
         private readonly List<FlightPoint> _points = new List<FlightPoint>();
         private readonly List<Vector2> _pointsV2 = new List<Vector2>();
+        private LineRenderer _lr;
 
-		private void Awake()
+        public LineRenderer LineRenderer
+        {
+	        get
+	        {
+		        if (_lr == null) { _lr = GetComponent<LineRenderer>(); }
+		        return _lr;
+	        }
+        }
+
+        private void Awake()
 		{
 			_lr = GetComponent<LineRenderer>();
 			DrawPath();
@@ -117,8 +126,8 @@ namespace Owls.Flight
         /// <summary>
         /// Returns a point along the bezier curve constructed from the flight path.
         /// </summary>
-        /// <param name="t">The point of the curve. 0 = start, 1 = end</param>
-        /// <returns>The point of the </returns>
+        /// <param name="t">Point in the curve. 0 = start, 1 = end</param>
+        /// <returns>The point along the curve as Vector2</returns>
         public Vector2 GetPoint(float t)
         {
 	        return FlightBezier.Point2(Mathf.Clamp01(t), _pointsV2);

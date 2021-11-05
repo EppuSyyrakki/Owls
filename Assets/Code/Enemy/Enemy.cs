@@ -1,46 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Owls.Flight;
 
 namespace Owls.Enemy
 {
+	[RequireComponent(typeof(SpriteRenderer), typeof(Animator))]
     public class Enemy : MonoBehaviour
     {
 	    [SerializeField]
-	    private ParticleSystem[] deathFx;
+	    private List<FlightPath> flightPaths = new List<FlightPath>();
 
-	    private bool _isAlive = true;
+	    [SerializeField]
+	    private float flightSpeed = 50f;
 
-	    private void Awake()
+	    private int _currentPathIndex = 0;
+	    private Vector3[] _path3;
+	    private float _t = 0;
+
+	    private void Start()
 	    {
-		    foreach (var fx in deathFx)
+		    if (flightPaths.Count == 0) { Debug.LogError("No FlightPaths found for " + gameObject.name); }
+
+		    var path = flightPaths[Random.Range(0, flightPaths.Count)];
+		    var count = path.LineRenderer.positionCount;
+		    _path3 = new Vector3[count];
+
+		    for (int i = 0; i < count; i++)
 		    {
-			    fx.gameObject.SetActive(false);
+			    _path3[i] = transform.TransformPoint(path.LineRenderer.GetPosition(i));
 		    }
+
+		    transform.position = _path3[_currentPathIndex];
 	    }   
 
         private void Update()
         {
-	        if (Input.GetKeyDown(KeyCode.Space) && _isAlive)
-	        {
-		        Kill();
-	        }
+	        MoveOnPath();
         }
 
-        private void Kill()
+        private void MoveOnPath()
         {
-	        foreach (Transform child in transform)
-	        { 
-		        child.gameObject.SetActive(false);   
-	        }
-
-	        foreach (var fx in deathFx)
+	        if (_currentPathIndex + 1 >= _path3.Length)
 	        {
-		        var ps = Instantiate(fx, transform);
-				ps.gameObject.SetActive(true);
+		        // End of path reached, don't move.
+		        return;
 	        }
 
-	        _isAlive = false;
+	        _t += Time.deltaTime;
+	        var time = _t * flightSpeed;
+	        transform.position = Vector3.Lerp(_path3[_currentPathIndex], _path3[_currentPathIndex + 1], time);
+
+	        if (transform.position != _path3[_currentPathIndex + 1])
+	        {
+				// Next point not reached yet, don't change path index.
+		        return;
+	        }
+
+			// position is equal to next position on path. Increase index so we can move to next point.
+	        _currentPathIndex++;
+	        _t = 0;
         }
     }
 }

@@ -6,6 +6,8 @@ namespace Owls.Enemy
 {
     public class EnemySpawner : MonoBehaviour
     {
+	    public List<Enemy> enemies = new List<Enemy>();
+
         // Start is called before the first frame update
         void Start()
         {

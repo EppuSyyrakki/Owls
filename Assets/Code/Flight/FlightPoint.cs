@@ -8,7 +8,7 @@ namespace Owls.Flight
     [ExecuteInEditMode]
     public class FlightPoint : MonoBehaviour
     {   
-        private float _gizmoRadius = 0.1f;
+        private float _gizmoRadius = 0.2f;
         private Color _gizmoColor = Color.white;
         private FlightPath _flightPath;
 

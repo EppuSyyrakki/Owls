@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace Owls.Flight
 {
-    public static class FlightBezier
+	public static class FlightBezier
     {
-        // factorial is capped at 16
+        // factorial is capped at 20
         private static readonly float[] Factorial = new float[]
         {
             1.0f,
@@ -26,6 +26,10 @@ namespace Owls.Flight
             87178291200.0f,
             1307674368000.0f,
             20922789888000.0f,
+            355687428096000.0f,
+            6402373705728000f,
+            121645100408832000f,
+            2432902008176640000f,
         };
 
         // Calculates a point on the curve at interval t. t = 0 means start point, t = 1 is end point.
@@ -56,13 +60,15 @@ namespace Owls.Flight
             List<Vector2> points = new List<Vector2>();
             for (float t = 0.0f; t <= 1.0f + interval - 0.0001f; t += interval)
             {
-            Vector2 p = new Vector2();
-            for (int i = 0; i < controlPoints.Count; ++i)
-            {
-                Vector2 bn = Bernstein(N, i, t) * controlPoints[i];
-                p += bn;
-            }
-            points.Add(p);
+				Vector2 p = new Vector2();
+		            
+				for (int i = 0; i < controlPoints.Count; ++i)
+				{
+					Vector2 bn = Bernstein(N, i, t) * controlPoints[i];
+					p += bn;
+	            }
+
+				points.Add(p);
             }
 
             return points;
@@ -70,10 +76,10 @@ namespace Owls.Flight
 
         private static List<Vector2> CheckPointRange(int N, List<Vector2> controlPoints)
         {
-            if (N > 16)
+            if (N > 20)
             {
-                Debug.LogError("Maximum points for the flight curve 16.");
-                controlPoints.RemoveRange(16, controlPoints.Count - 16);
+                Debug.LogError("Maximum points for the flight curve 20.");
+                controlPoints.RemoveRange(16, controlPoints.Count - 20);
             }
 
             return controlPoints;
