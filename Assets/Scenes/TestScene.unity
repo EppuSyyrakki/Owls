@@ -5332,6 +5332,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6564709284062635449, guid: ddd46ac84e95a3744a5b95d8058f3a40,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6564709284161365262, guid: ddd46ac84e95a3744a5b95d8058f3a40,
         type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
@@ -5370,6 +5375,11 @@ PrefabInstance:
     - target: {fileID: 6564709286071487191, guid: ddd46ac84e95a3744a5b95d8058f3a40,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763105674410848528, guid: ddd46ac84e95a3744a5b95d8058f3a40,
+        type: 3}
+      propertyPath: effectPrefabs.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8763105674410848529, guid: ddd46ac84e95a3744a5b95d8058f3a40,

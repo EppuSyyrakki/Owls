@@ -17,10 +17,16 @@ namespace Owls.Enemy
 	    private int _currentPathIndex = 0;
 	    private Vector3[] _path3;
 	    private float _t = 0;
+		private bool _isMoving = true;
 
 	    private void Start()
 	    {
-		    if (flightPaths.Count == 0) { Debug.LogError("No FlightPaths found for " + gameObject.name); }
+		    if (flightPaths.Count == 0) 
+			{ 
+				Debug.LogWarning("No FlightPaths found for " + gameObject.name);
+				_isMoving = false;
+				return;
+			}
 
 		    var path = flightPaths[Random.Range(0, flightPaths.Count)];
 		    var count = path.LineRenderer.positionCount;
@@ -36,7 +42,7 @@ namespace Owls.Enemy
 
         private void Update()
         {
-	        MoveOnPath();
+	        if (_isMoving) { MoveOnPath(); }
         }
 
         private void MoveOnPath()

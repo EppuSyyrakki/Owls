@@ -12,6 +12,9 @@ namespace Owls.Scenery
 		[SerializeField, Range(20f, 80f)]
 		private float wrapDistance = 40f;
 
+		[SerializeField]
+		private List<GameObject> effectPrefabs = new List<GameObject>();
+
 		private List<SceneryItem> _movingItems = new List<SceneryItem>();
 
 		private void Awake()
