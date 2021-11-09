@@ -18,6 +18,7 @@ namespace Owls.Enemy
 	    private Vector3[] _path3;
 	    private float _t = 0;
 		private bool _isMoving = true;
+		private bool _destroyed = false;
 
 	    private void Start()
 	    {
@@ -49,6 +50,13 @@ namespace Owls.Enemy
         {
 	        if (_currentPathIndex + 1 >= _path3.Length)
 	        {
+				// TODO: Remove. Testing for controls
+				if (!_destroyed)
+				{
+					Destroy(gameObject, 2f);
+					_destroyed = true;
+				}
+
 		        // End of path reached, don't move.
 		        return;
 	        }

@@ -38,6 +38,17 @@ namespace Owls.Flight
 			DrawPath();
 		}
 
+        private void OnDrawGizmos()
+		{
+            Gizmos.color = gizmoColor;
+
+            for (int i = 0; i < transform.childCount - 1; i++)
+			{
+                var current = transform.GetChild(i).position;
+                Gizmos.DrawLine(current, transform.GetChild(i + 1).position);
+			}
+		}
+
 		private void SetFlightPoints()
         {
 	        _points.Clear();
