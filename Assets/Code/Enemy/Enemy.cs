@@ -90,6 +90,7 @@ namespace Owls.Enemy
 				if (!_attackInvoked) 
 				{ 
 					Invoke(nameof(ChangeToAttackState), waitBeforeAttack);
+					_animator.SetTrigger(Names.Animator.Prepare);
 					_attackInvoked = true;
 					_t = 0;
 				}
@@ -116,6 +117,7 @@ namespace Owls.Enemy
 		private void ChangeToAttackState()
 		{
 			_state = State.Attacking;
+			_animator.SetTrigger(Names.Animator.Attack);
 		}
 
 		private void Attack()

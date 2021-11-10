@@ -12,5 +12,11 @@
 		{
 			public const string MidPoint = "MidPoint";
 		}
+
+		public static class Animator 
+		{
+			public const string Prepare = "PrepareAttack";
+			public const string Attack = "Attack";
+		}
 	}
 }

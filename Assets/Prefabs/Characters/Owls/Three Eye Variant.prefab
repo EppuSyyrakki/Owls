@@ -4849,6 +4849,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
+      propertyPath: waitBeforeAttack
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
       propertyPath: animationOverride
       value: 
       objectReference: {fileID: 22100000, guid: 20f33f92657367b448f685c3c6e4e95c,
@@ -4887,12 +4892,12 @@ PrefabInstance:
     - target: {fileID: 5350819179134436460, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.31
+      value: 1.54
       objectReference: {fileID: 0}
     - target: {fileID: 5350819179134436460, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 5.1230707
+      value: 3.415381
       objectReference: {fileID: 0}
     - target: {fileID: 5350819179134436460, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
