@@ -24,6 +24,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 41372037187065672, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
+      propertyPath: m_TagString
+      value: GlobalLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 41372037187065672, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}

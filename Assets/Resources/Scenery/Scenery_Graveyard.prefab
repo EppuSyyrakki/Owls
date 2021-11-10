@@ -126,6 +126,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 41372037187065672, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
+      propertyPath: m_TagString
+      value: GlobalLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 41372037187065672, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -172,7 +177,7 @@ PrefabInstance:
     - target: {fileID: 41372037593926592, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 41372037593926606, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
@@ -202,7 +207,7 @@ PrefabInstance:
     - target: {fileID: 41372037928039019, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 41372038137736768, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
@@ -392,7 +397,7 @@ PrefabInstance:
     - target: {fileID: 41372038881917150, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 41372038989330468, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}

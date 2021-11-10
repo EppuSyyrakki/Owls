@@ -37,7 +37,11 @@ namespace Owls.Scenery
 
 		private void CreateScenery(SceneryController scenery)
 		{
-			_sourceScenery = Instantiate(scenery);
+			_sourceScenery = Instantiate(scenery, transform);
+			
+			if (scenery.effectPrefabs.Count == 0) { return; }
+
+
 		}
 	}
 }

@@ -6,11 +6,12 @@ TagManager:
   tags:
   - FlightStart
   - FlightEnd
+  - GlobalLight
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - World Plane
   - Water
   - UI
   - 

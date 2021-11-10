@@ -116,6 +116,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 41372037187065672, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
+      propertyPath: m_TagString
+      value: GlobalLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 41372037187065672, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -167,7 +172,7 @@ PrefabInstance:
     - target: {fileID: 41372037593926592, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 41372037593926606, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
@@ -272,7 +277,7 @@ PrefabInstance:
     - target: {fileID: 41372037928039019, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 41372038137736768, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
@@ -522,7 +527,7 @@ PrefabInstance:
     - target: {fileID: 41372038881917150, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 41372038989330468, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
@@ -610,6 +615,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2455796434820105187, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: effectPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2455796434820105187, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: effectPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 3357061594799007418, guid: cf76ab92b981d2044a8e4d8a7442b45e,
+        type: 3}
     - target: {fileID: 2455796434820105196, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
       propertyPath: m_RootOrder

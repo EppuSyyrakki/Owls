@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3946550093942952319}
   - component: {fileID: 388735065255822742}
   - component: {fileID: 7325521231673738652}
+  - component: {fileID: 5350819179134436460}
   m_Layer: 0
   m_Name: Base Owl
   m_TagString: Untagged
@@ -45,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6445c94ef78ed0f458e7b874dcde1428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathFx: []
-  possibleFlightPaths: []
+  flightPaths: []
+  flightSpeed: 14
 --- !u!212 &388735065255822742
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -117,3 +118,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!60 &5350819179134436460
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203326170542532374}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.5, y: 0.5}
+      - {x: -0.5, y: 0.5}
+      - {x: -0.5, y: -0.5}
+      - {x: 0.5, y: -0.5}
