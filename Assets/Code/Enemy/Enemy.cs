@@ -5,6 +5,11 @@ using Owls.Flight;
 
 namespace Owls.Enemy
 {
+	public enum State
+	{
+		Moving, Attacking, Dead
+	}
+
 	[RequireComponent(typeof(SpriteRenderer), typeof(Animator))]
     public class Enemy : MonoBehaviour
     {
@@ -12,49 +17,81 @@ namespace Owls.Enemy
 	    private List<FlightPath> flightPaths = new List<FlightPath>();
 
 	    [SerializeField]
-	    private float flightSpeed = 50f;
+	    private float flightSpeed = 20f;
+
+		[SerializeField]
+		private float waitBeforeAttack = 0.25f;
+
+		[SerializeField]
+		private float attackSpeed = 30f;
+
+		[SerializeField]
+		private AnimatorOverrideController animationOverride = null;
 
 	    private int _currentPathIndex = 0;
 	    private Vector3[] _path3;
 	    private float _t = 0;
-		private bool _isMoving = true;
-		private bool _destroyed = false;
+		private bool _attackInvoked = false;
+		private Animator _animator = null;
+		private State _state = State.Moving;
+		private GameObject _player = null;
 
-	    private void Start()
-	    {
-		    if (flightPaths.Count == 0) 
-			{ 
+		private void Awake()
+		{
+			_animator = GetComponent<Animator>();
+			_player = GameObject.FindGameObjectWithTag(Names.Tags.Player);
+		}
+
+		private void Start()
+		{
+			if (flightPaths.Count == 0)
+			{
 				Debug.LogWarning("No FlightPaths found for " + gameObject.name);
-				_isMoving = false;
+				_state = State.Dead;
 				return;
 			}
 
-		    var path = flightPaths[Random.Range(0, flightPaths.Count)];
-		    var count = path.LineRenderer.positionCount;
-		    _path3 = new Vector3[count];
+			if (animationOverride == null)
+			{
+				Debug.LogWarning("No Animation Override Controller found for " + gameObject.name);
+				_state = State.Dead;
+				return;
+			}
 
-		    for (int i = 0; i < count; i++)
-		    {
-			    _path3[i] = transform.TransformPoint(path.LineRenderer.GetPosition(i));
-		    }
+			_state = State.Moving;
+			_animator.runtimeAnimatorController = animationOverride;
+			GetPath3();
+			transform.position = _path3[_currentPathIndex];
+		}
 
-		    transform.position = _path3[_currentPathIndex];
-	    }   
+		private void GetPath3()
+		{
+			var path = flightPaths[Random.Range(0, flightPaths.Count)];
+			var count = path.LineRenderer.positionCount;
+			_path3 = new Vector3[count];
 
-        private void Update()
+			for (int i = 0; i < count; i++)
+			{
+				_path3[i] = transform.TransformPoint(path.LineRenderer.GetPosition(i));
+			}
+		}
+
+		private void Update()
         {
-	        if (_isMoving) { MoveOnPath(); }
+	        if (_state == State.Moving) { MoveOnPath(); }
+			else if (_state == State.Attacking) { Attack(); }
+			else if (_state == State.Dead) { Kill(); }
         }
 
-        private void MoveOnPath()
+		private void MoveOnPath()
         {
 	        if (_currentPathIndex + 1 >= _path3.Length)
 	        {
-				// TODO: Remove. Testing for controls
-				if (!_destroyed)
-				{
-					Destroy(gameObject, 2f);
-					_destroyed = true;
+				if (!_attackInvoked) 
+				{ 
+					Invoke(nameof(ChangeToAttackState), waitBeforeAttack);
+					_attackInvoked = true;
+					_t = 0;
 				}
 
 		        // End of path reached, don't move.
@@ -75,5 +112,29 @@ namespace Owls.Enemy
 	        _currentPathIndex++;
 	        _t = 0;
         }
-    }
+
+		private void ChangeToAttackState()
+		{
+			_state = State.Attacking;
+		}
+
+		private void Attack()
+		{
+			var time = _t * attackSpeed * 0.1f;
+			transform.position = Vector3.Lerp(_path3[_path3.Length - 1], _player.transform.position, time);
+			_t += Time.deltaTime;
+
+			if (transform.position == _player.transform.position)
+			{
+				// Do something to player here
+				_state = State.Dead;
+			}
+		}
+
+		private void Kill()
+		{
+			
+		}
+
+	}
 }
