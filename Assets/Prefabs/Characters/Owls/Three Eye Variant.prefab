@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8877364009713191685}
   m_LocalRotation: {x: -0.011953917, y: 0.7112869, z: 0.012100139, w: 0.70269597}
-  m_LocalPosition: {x: -0.721, y: -0.188, z: 1.02}
+  m_LocalPosition: {x: -0.46, y: -0.18, z: 1.02}
   m_LocalScale: {x: 0.3391722, y: 0.11503366, z: 0.44977626}
   m_Children: []
   m_Father: {fileID: 1892292699445179494}
@@ -4776,8 +4776,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -498952627
+  m_SortingLayer: 6
   m_SortingOrder: 12
   m_RenderMode: 0
   m_SortMode: 0
