@@ -47,7 +47,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flightPaths: []
+  deathFx:
+  - {fileID: 7772438533054457417, guid: b54e745f0f16e874aad5fe96d6753ca5, type: 3}
+  - {fileID: 7772438533054457417, guid: 501bc2bbf8aefbe4fa8b4db9386f432e, type: 3}
+  hitPlayerFx:
+  - {fileID: 7772438533054457417, guid: b54e745f0f16e874aad5fe96d6753ca5, type: 3}
+  - {fileID: 7772438533054457417, guid: 501bc2bbf8aefbe4fa8b4db9386f432e, type: 3}
   flightSpeed: 14
+  waitBeforeAttack: 0.25
+  attackSpeed: 30
+  bottomSafetyMargin: 2
+  topSafetyMargin: 0.5
+  animationOverride: {fileID: 0}
 --- !u!212 &388735065255822742
 SpriteRenderer:
   m_ObjectHideFlags: 0
