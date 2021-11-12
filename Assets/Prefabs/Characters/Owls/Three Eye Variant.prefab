@@ -4840,7 +4840,7 @@ PrefabInstance:
     - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
       propertyPath: attackSpeed
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
@@ -4867,7 +4867,7 @@ PrefabInstance:
         type: 3}
       propertyPath: flightPaths.Array.data[0]
       value: 
-      objectReference: {fileID: 6514970619091594926, guid: 2f033df587f79f149bfc89b85b80bc0e,
+      objectReference: {fileID: 6514970619091594926, guid: 3b7438b439aa857428838eb55ac046c9,
         type: 3}
     - target: {fileID: 5350819179134436460, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
