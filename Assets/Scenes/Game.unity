@@ -140,12 +140,12 @@ PrefabInstance:
     - target: {fileID: 2687556118339370052, guid: 10c4599c696e4ef4198a46169ec4c613,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.76
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2687556118339370052, guid: 10c4599c696e4ef4198a46169ec4c613,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.74
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2687556118339370052, guid: 10c4599c696e4ef4198a46169ec4c613,
         type: 3}
@@ -190,7 +190,7 @@ PrefabInstance:
     - target: {fileID: 2687556118339370059, guid: 10c4599c696e4ef4198a46169ec4c613,
         type: 3}
       propertyPath: m_Name
-      value: Drag Fx
+      value: Player Touch
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10c4599c696e4ef4198a46169ec4c613, type: 3}
@@ -379,12 +379,12 @@ PrefabInstance:
     - target: {fileID: 8471682413505465435, guid: 81623ff9c1476d541823ec40f5b5ae6e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.67
+      value: -6.5
       objectReference: {fileID: 0}
     - target: {fileID: 8471682413505465435, guid: 81623ff9c1476d541823ec40f5b5ae6e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.22
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 8471682413505465435, guid: 81623ff9c1476d541823ec40f5b5ae6e,
         type: 3}
@@ -551,6 +551,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1860848292, guid: 4045a69ee8b09074589188faab85bf99, type: 3}
+      propertyPath: m_Size.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860848292, guid: 4045a69ee8b09074589188faab85bf99, type: 3}
+      propertyPath: m_Size.y
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860848292, guid: 4045a69ee8b09074589188faab85bf99, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7719918813805790765, guid: 4045a69ee8b09074589188faab85bf99,
         type: 3}
       propertyPath: m_RootOrder
