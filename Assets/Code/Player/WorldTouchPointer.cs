@@ -8,88 +8,84 @@ using System;
 
 namespace Owls.Player
 {
-	public class WorldTouchPointer : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+	public class WorldTouchPointer : MonoBehaviour
 	{
 		[SerializeField]
-		private float timeToExecute, dragTreshold;
+		private ParticleSystem particle;
 
 		[SerializeField]
-		private ParticleSystem dragFx;
+		private TrailRenderer trail;
 
 		[SerializeField]
 		private StrokeGraphic glyph;
 
-		public struct PositionData
-		{
-			public float ScreenWidth;
-			public float ScreenHeight;
-			public Vector2 start;
-			public Vector2 previous;
-			public Vector2 current;
-			public Vector2 next;
-			public Vector2 end;
-		}
-	
-		private PointerEventData _pointerEvent = null;
-		private PositionData _position;
-		private List<Vector2> _path = null;
-		private float _timeRemaining;
-		private float _timeSinceLast;
-		private Coroutine _pathSaver = null;
+		[SerializeField]
+		private LayerMask worldPlane;
 
-		public string SavePositions { get; private set; }
+		private Vector3 _startPos;
+		private bool _swipeComplete = false;
+		private Camera _cam;
 
 		private void Awake()
 		{
-			_position.ScreenHeight = Screen.height;
-			_position.ScreenWidth = Screen.width;
-			_timeRemaining = timeToExecute;
-			dragFx.Pause();
+			particle.Stop();
+			trail.emitting = false;
+			_cam = Camera.main;
 		}
 
 		private void Update()
 		{
-			if (_pointerEvent == null) { return; }
-
-			_timeRemaining -= Time.deltaTime;
-			_timeSinceLast += Time.deltaTime;
-			transform.position = _pointerEvent.pointerCurrentRaycast.worldPosition;
-		}
-
-		public void OnBeginDrag(PointerEventData eventData)
-		{
-			dragFx.Play();
-			// _pathSaver = StartCoroutine(nameof(SavePath));
-			_pointerEvent = eventData;
-			Debug.Log("Spell begun at " + transform.position);
-		}
-
-		public void OnDrag(PointerEventData eventData)
-		{
-			if (_timeRemaining < 0)
+			if (Input.touchCount > 0)
 			{
-				dragFx.Pause();
-				_timeRemaining = float.MaxValue;
-				return;
+				Touch touch = Input.GetTouch(0);
+				
+				if (touch.phase == TouchPhase.Began) { BeginTouch(touch); }
+				else if (touch.phase == TouchPhase.Moved) { ContinueTouch(touch); }
+				else if (touch.phase == TouchPhase.Ended) { CompleteTouch(touch); }
+				else if (touch.phase == TouchPhase.Stationary) { CancelTouch(touch); }
 			}
 		}
 
-		public void OnEndDrag(PointerEventData eventData)
+		private void BeginTouch(Touch touch)
 		{
-			if (glyph == null)
-			{
-				dragFx.Pause();
-				_pointerEvent = null;
-			}
-
-			Debug.Log("Spell ended at " + transform.position);
-			_timeRemaining = float.MaxValue;
+			Debug.Log("Touch began");
+			_startPos = touch.position;
+			_swipeComplete = false;
+			Move(touch.position);
+			trail.emitting = true;
+			particle.Play();
 		}
 
-		private IEnumerator SavePath()
+		private void ContinueTouch(Touch touch)
 		{
-			yield return new WaitForEndOfFrame();
+			Move(touch.position);
 		}
 
+		private void CompleteTouch(Touch touch)
+		{
+			Debug.Log("Touch complete");
+			Move(touch.position);
+			_swipeComplete = true;
+			trail.emitting = false;
+			particle.Stop();
+		}
+
+		private void CancelTouch(Touch touch)
+		{
+			Debug.Log("Touch canceled");
+			_swipeComplete = true;
+			trail.emitting = false;
+			particle.Stop();
+		}
+
+		private void Move(Vector2 screenPos)
+		{
+			Ray ray = _cam.ScreenPointToRay(screenPos);
+			var hit = Physics2D.Raycast(ray.origin, ray.direction * 20f);
+			
+			if (hit.collider == null) { return; }
+
+			transform.position = hit.point;
+		}
 	}
 }
