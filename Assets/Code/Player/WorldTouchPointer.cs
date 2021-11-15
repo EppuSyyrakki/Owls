@@ -1,8 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using AdVd.GlyphRecognition;
-using Owls.Flight;
 using System.Collections.Generic;
 using System;
 
@@ -17,19 +14,18 @@ namespace Owls.Player
 		private TrailRenderer trailPrefab;
 
 		[SerializeField]
-		private StrokeGraphic glyph;
-
-		[SerializeField]
 		private LayerMask worldPlane;
 
-		private Vector3 _startPos;
 		private Camera _cam;
 		private TrailRenderer _activeTrail = null;
+		private List<Vector2> _stroke = null;
+		private GameObject _oldTrails;
 
 		private void Awake()
 		{
 			particle.Stop();
 			_cam = Camera.main;
+			_oldTrails = new GameObject("Old trails");
 		}
 
 		private void Update()
@@ -47,11 +43,11 @@ namespace Owls.Player
 
 		private void BeginTouch(Touch touch)
 		{
-			Debug.Log("Touch began");
-			_startPos = touch.position;
+			_stroke = new List<Vector2>();
+			_stroke.Add(touch.position);
 			Move(touch.position);
-			_activeTrail = Instantiate(trailPrefab, transform.position, Quaternion.identity, transform);
 			particle.Play();
+			_activeTrail = Instantiate(trailPrefab, transform.position, Quaternion.identity, transform);
 		}
 
 		private void ContinueTouch(Touch touch)
@@ -61,21 +57,28 @@ namespace Owls.Player
 
 		private void CompleteTouch(Touch touch)
 		{
-			Debug.Log("Touch complete");
+			// TODO: send _stroke list to glyph input
+			StopActiveTrail();
 			Move(touch.position);
 			particle.Stop();
 		}
 
+		private void StopActiveTrail()
+		{
+			_activeTrail.transform.parent = _oldTrails.transform;
+			_activeTrail = null;
+		}
+
 		private void CancelTouch(Touch touch)
 		{
-			Debug.Log("Touch canceled");
+			StopActiveTrail();
 			particle.Stop();
 		}
 
 		private void Move(Vector2 screenPos)
 		{
 			Ray ray = _cam.ScreenPointToRay(screenPos);
-			var hit = Physics2D.Raycast(ray.origin, ray.direction * 20f);
+			var hit = Physics2D.Raycast(ray.origin, ray.direction * 20f, 40f, worldPlane);
 			
 			if (hit.collider == null) { return; }
 
