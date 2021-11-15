@@ -1,19 +1,25 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Owls.Flight;
+using Owls.Player;
+using Random = UnityEngine.Random;
 
 namespace Owls.Enemy
 {
 	public enum State
 	{
-		Moving, Attacking, HitPlayer, Dead
+		Moving, Attacking, HitPlayer, Killed
 	}
 
 	[RequireComponent(typeof(SpriteRenderer), typeof(Animator))]
     public class Enemy : MonoBehaviour
     {
-	    [SerializeField]
+		private const string ANIM_PREPARE = "PrepareAttack";
+		private const string ANIM_ATTACK = "Attack";
+		private const string TAG_PLAYER = "Player";
+
+		[SerializeField]
 	    private List<FlightPath> flightPaths = new List<FlightPath>();
 
 		[SerializeField]
@@ -31,6 +37,12 @@ namespace Owls.Enemy
 		[SerializeField]
 		private float attackSpeed = 30f;
 
+		[SerializeField, Range(0, 1f), Tooltip("0 = no damage, 1 = instakill")]
+		private float damage = 0.1f;
+
+		[SerializeField]
+		private int scoreReward = 100;
+
 		[SerializeField, Range(0, 5f)]
 		private float bottomSafetyMargin = 2f, topSafetyMargin = 0.5f;
 
@@ -46,6 +58,8 @@ namespace Owls.Enemy
 		private Animator _animator;
 		private GameObject _player;
 		private EnemySpawner _spawner;
+
+		public Action<int> enemyKilled;
 		
 		private void Awake()
 		{
@@ -61,14 +75,14 @@ namespace Owls.Enemy
 			if (flightPaths.Count == 0)
 			{
 				Debug.LogWarning("No FlightPaths found for " + gameObject.name);
-				_state = State.Dead;
+				_state = State.Killed;
 				return;
 			}
 
 			if (animationOverride == null)
 			{
 				Debug.LogWarning("No Animation Override Controller found for " + gameObject.name);
-				_state = State.Dead;
+				_state = State.Killed;
 				return;
 			}
 
@@ -105,13 +119,22 @@ namespace Owls.Enemy
 			}
 			else if (_state == State.HitPlayer) 
 			{ 
-				Kill(hitPlayerFx); 
+				Remove(hitPlayerFx, false); 
 			}
-			else if (_state == State.Dead) 
+			else if (_state == State.Killed) 
 			{ 
-				Kill(deathFx); 
+				Remove(deathFx, true); 
 			}
         }
+
+		private void OnTriggerEnter2D(Collider2D col)
+		{
+			if (!col.gameObject.CompareTag(TAG_PLAYER)) { return; }
+
+			var badger = col.gameObject.GetComponent<Badger>();
+			badger.TakeDamage(damage);
+			_state = State.HitPlayer;
+		}
 
 		private void MoveOnPath()
         {
@@ -120,7 +143,7 @@ namespace Owls.Enemy
 				if (!_attackInvoked) 
 				{ 
 					Invoke(nameof(ChangeToAttackState), waitBeforeAttack);
-					_animator.SetTrigger(Names.Animator.Prepare);
+					_animator.SetTrigger(ANIM_PREPARE);
 					_attackInvoked = true;
 					_t = 0;
 				}
@@ -147,7 +170,7 @@ namespace Owls.Enemy
 		private void ChangeToAttackState()
 		{
 			_state = State.Attacking;
-			_animator.SetTrigger(Names.Animator.Attack);
+			_animator.SetTrigger(ANIM_ATTACK);
 		}
 
 		private void Attack()
@@ -156,17 +179,11 @@ namespace Owls.Enemy
 			var self = transform.position;
 			var player = _player.transform.position;
 			var target = transform.TransformPoint((player - self).normalized);
-			transform.position = Vector3.LerpUnclamped(_path3[_path3.Length - 1], target, time);
+			transform.position = Vector3.Lerp(_path3[_path3.Length - 1], target, time);
 			_t += Time.deltaTime;
-			
-			if (self.y < player.y && self.x < player.x)
-			{
-				// Do something to player here
-				_state = State.HitPlayer;
-			}
 		}
 
-		private void Kill(List<GameObject> effects)
+		private void Remove(List<GameObject> effects, bool killedByPlayer)
 		{
 			if (_destroyInvoked) { return; }
 
@@ -174,6 +191,11 @@ namespace Owls.Enemy
 			{
 				var fx = Instantiate(e, transform.position, Quaternion.identity, transform.parent);
 				_spawner.DestroyObject(fx);
+			}
+
+			if (killedByPlayer)
+			{
+				enemyKilled?.Invoke(scoreReward);
 			}
 
 			Destroy(gameObject, Time.deltaTime);

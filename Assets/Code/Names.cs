@@ -7,6 +7,7 @@
 			public const string FlightStart = "FlightStart";
 			public const string FlightEnd = "FlightEnd";
 			public const string Player = "Player";
+			public const string Enemy = "Enemy";
 		}
 		public static class Objects
 		{
@@ -15,8 +16,9 @@
 
 		public static class Animator 
 		{
-			public const string Prepare = "PrepareAttack";
-			public const string Attack = "Attack";
+
+			
+
 		}
 	}
 }

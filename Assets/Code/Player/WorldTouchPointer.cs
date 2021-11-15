@@ -14,7 +14,7 @@ namespace Owls.Player
 		private ParticleSystem particle;
 
 		[SerializeField]
-		private TrailRenderer trail;
+		private TrailRenderer trailPrefab;
 
 		[SerializeField]
 		private StrokeGraphic glyph;
@@ -23,13 +23,12 @@ namespace Owls.Player
 		private LayerMask worldPlane;
 
 		private Vector3 _startPos;
-		private bool _swipeComplete = false;
 		private Camera _cam;
+		private TrailRenderer _activeTrail = null;
 
 		private void Awake()
 		{
 			particle.Stop();
-			trail.emitting = false;
 			_cam = Camera.main;
 		}
 
@@ -50,9 +49,8 @@ namespace Owls.Player
 		{
 			Debug.Log("Touch began");
 			_startPos = touch.position;
-			_swipeComplete = false;
 			Move(touch.position);
-			trail.emitting = true;
+			_activeTrail = Instantiate(trailPrefab, transform.position, Quaternion.identity, transform);
 			particle.Play();
 		}
 
@@ -65,16 +63,12 @@ namespace Owls.Player
 		{
 			Debug.Log("Touch complete");
 			Move(touch.position);
-			_swipeComplete = true;
-			trail.emitting = false;
 			particle.Stop();
 		}
 
 		private void CancelTouch(Touch touch)
 		{
 			Debug.Log("Touch canceled");
-			_swipeComplete = true;
-			trail.emitting = false;
 			particle.Stop();
 		}
 

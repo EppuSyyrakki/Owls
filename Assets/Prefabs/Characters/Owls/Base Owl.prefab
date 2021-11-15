@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5350819179134436460}
   m_Layer: 0
   m_Name: Base Owl
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,6 +56,7 @@ MonoBehaviour:
   flightSpeed: 14
   waitBeforeAttack: 0.25
   attackSpeed: 30
+  damage: 0.1
   bottomSafetyMargin: 2
   topSafetyMargin: 0.5
   animationOverride: {fileID: 0}
@@ -139,7 +140,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
