@@ -4860,7 +4860,22 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
+      propertyPath: deathFx.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: deathFx.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
       propertyPath: flightPaths.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: hitPlayerFx.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
@@ -4869,6 +4884,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6514970619091594926, guid: 2479e2ca002c75340a73ab27554c8b43,
         type: 3}
+    - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: hitPlayerFx.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5350819179134436460, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
