@@ -7,7 +7,7 @@ namespace Owls.Enemy
 {
 	public enum State
 	{
-		Moving, Attacking, Dead
+		Moving, Attacking, HitPlayer, Dead
 	}
 
 	[RequireComponent(typeof(SpriteRenderer), typeof(Animator))]
@@ -16,7 +16,13 @@ namespace Owls.Enemy
 	    [SerializeField]
 	    private List<FlightPath> flightPaths = new List<FlightPath>();
 
-	    [SerializeField]
+		[SerializeField]
+		private List<GameObject> deathFx = new List<GameObject>();
+
+		[SerializeField]
+		private List<GameObject> hitPlayerFx = new List<GameObject>();
+
+		[SerializeField]
 	    private float flightSpeed = 20f;
 
 		[SerializeField]
@@ -25,21 +31,29 @@ namespace Owls.Enemy
 		[SerializeField]
 		private float attackSpeed = 30f;
 
+		[SerializeField, Range(0, 5f)]
+		private float bottomSafetyMargin = 2f, topSafetyMargin = 0.5f;
+
 		[SerializeField]
 		private AnimatorOverrideController animationOverride = null;
 
 	    private int _currentPathIndex = 0;
 	    private Vector3[] _path3;
 	    private float _t = 0;
-		private bool _attackInvoked = false;
-		private Animator _animator = null;
+		private bool _attackInvoked = false, _destroyInvoked = false;
 		private State _state = State.Moving;
-		private GameObject _player = null;
-
+		private float _maxY, _minY;
+		private Animator _animator;
+		private GameObject _player;
+		private EnemySpawner _spawner;
+		
 		private void Awake()
 		{
 			_animator = GetComponent<Animator>();
 			_player = GameObject.FindGameObjectWithTag(Names.Tags.Player);
+			float orthoSize = Camera.main.orthographicSize;
+			_maxY = orthoSize - topSafetyMargin;
+			_minY = -orthoSize + bottomSafetyMargin;
 		}
 
 		private void Start()
@@ -72,15 +86,31 @@ namespace Owls.Enemy
 
 			for (int i = 0; i < count; i++)
 			{
-				_path3[i] = transform.TransformPoint(path.LineRenderer.GetPosition(i));
+				var pos = transform.TransformPoint(path.LineRenderer.GetPosition(i));
+				if (pos.y > _maxY) { pos.y = _maxY; }
+				else if (pos.y < _minY) { pos.y = _minY; }
+				_path3[i] = pos;
 			}
 		}
 
 		private void Update()
         {
-	        if (_state == State.Moving) { MoveOnPath(); }
-			else if (_state == State.Attacking) { Attack(); }
-			else if (_state == State.Dead) { Kill(); }
+	        if (_state == State.Moving) 
+			{ 
+				MoveOnPath(); 
+			}
+			else if (_state == State.Attacking) 
+			{ 
+				Attack(); 
+			}
+			else if (_state == State.HitPlayer) 
+			{ 
+				Kill(hitPlayerFx); 
+			}
+			else if (_state == State.Dead) 
+			{ 
+				Kill(deathFx); 
+			}
         }
 
 		private void MoveOnPath()
@@ -123,20 +153,36 @@ namespace Owls.Enemy
 		private void Attack()
 		{
 			var time = _t * attackSpeed * 0.1f;
-			transform.position = Vector3.Lerp(_path3[_path3.Length - 1], _player.transform.position, time);
+			var self = transform.position;
+			var player = _player.transform.position;
+			var target = transform.TransformPoint((player - self).normalized);
+			transform.position = Vector3.LerpUnclamped(_path3[_path3.Length - 1], target, time);
 			_t += Time.deltaTime;
-
-			if (transform.position == _player.transform.position)
+			
+			if (self.y < player.y && self.x < player.x)
 			{
 				// Do something to player here
-				_state = State.Dead;
+				_state = State.HitPlayer;
 			}
 		}
 
-		private void Kill()
+		private void Kill(List<GameObject> effects)
 		{
-			
+			if (_destroyInvoked) { return; }
+
+			foreach (var e in effects)
+			{
+				var fx = Instantiate(e, transform.position, Quaternion.identity, transform.parent);
+				_spawner.DestroyObject(fx);
+			}
+
+			Destroy(gameObject, Time.deltaTime);
+			_destroyInvoked = true;
 		}
 
+		public void SetSpawner(EnemySpawner spawner)
+		{
+			_spawner = spawner;
+		}
 	}
 }

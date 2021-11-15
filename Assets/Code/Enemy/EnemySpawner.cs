@@ -9,19 +9,23 @@ namespace Owls.Enemy
 		[SerializeField, Range(1f, 5f)]
 		private float spawnFrequency = 1.5f, spawnPreWait = 3f;
 
-		[SerializeField, Range(0.33f, 0.95f)]
+		[SerializeField, Range(0.1f, 0.9f)]
 		private float spawnRandomizer = 0.5f;
+
+		[SerializeField]
+		private float deathFxLifeTime = 3f;
 		
-		private EdgeCollider2D _edge;
+		private BoxCollider2D _edge;
 		private float _spawnTimer = 0f;
 		private float _targetTime = 0f;
 		private bool _spawnEnabled = false;
 
 	    public List<Enemy> enemies = new List<Enemy>();
+		
 
 		private void Awake()
 		{
-			_edge = GetComponent<EdgeCollider2D>();
+			_edge = GetComponent<BoxCollider2D>();
 		}
 
 		private void Start()
@@ -40,6 +44,7 @@ namespace Owls.Enemy
 			if (_spawnTimer > _targetTime)
 			{
 				Spawn(enemies[Random.Range(0, enemies.Count)]);
+				
 				_targetTime = RandomTime();
 				_spawnTimer = 0;
 			}
@@ -48,13 +53,14 @@ namespace Owls.Enemy
         private void Spawn(Enemy enemy)
 		{
 			var pos = RandomPosition();
-			Instantiate(enemy.gameObject, pos, Quaternion.identity, transform);
+			var go = Instantiate(enemy.gameObject, pos, Quaternion.identity, transform);
+			go.GetComponent<Enemy>().SetSpawner(this);
 		}
 
 		private Vector2 RandomPosition()
 		{
 			var bounds = _edge.bounds;
-			return new Vector3(
+			return new Vector2(
 				Random.Range(bounds.min.x, bounds.max.x),
 				Random.Range(bounds.min.y, bounds.max.y)
 			);
@@ -63,15 +69,18 @@ namespace Owls.Enemy
 		private float RandomTime()
 		{
 			float variation = Mathf.Abs(spawnFrequency * Random.Range(-spawnRandomizer, spawnRandomizer));
-			float max = spawnFrequency + variation;
-			float t = Random.Range(0, max);
-			Debug.Log("Random time is " + t);
+			float t = Random.Range(spawnFrequency - variation, spawnFrequency + variation);
 			return t;
 		}
 
 		private void EnableSpawning()
 		{
 			_spawnEnabled = true;
+		}
+
+		public void DestroyObject(GameObject go)
+		{
+			Destroy(go, deathFxLifeTime);
 		}
 	}
 }

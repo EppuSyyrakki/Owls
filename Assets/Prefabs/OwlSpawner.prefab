@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8721067814351000288}
   - component: {fileID: 8721067814351000223}
-  - component: {fileID: 1336626879}
+  - component: {fileID: 2022157400024682575}
   m_Layer: 0
   m_Name: OwlSpawner
   m_TagString: Untagged
@@ -44,10 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79397d65a6c530b428950d9fc4973ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnFrequency: 1.5
+  spawnPreWait: 3
+  spawnRandomizer: 0.5
   enemies:
   - {fileID: 3687147190431596773, guid: 380edf0971b533e4d94fd2ac2dcb1d98, type: 3}
---- !u!68 &1336626879
-EdgeCollider2D:
+--- !u!61 &2022157400024682575
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -60,11 +63,15 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3, y: 4}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: 10, y: 1}
-  - {x: 10, y: 4}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
