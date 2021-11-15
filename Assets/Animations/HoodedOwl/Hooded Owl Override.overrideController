@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hooded Owl Override
+  m_Controller: {fileID: 9100000, guid: 83f611e035de54d4ca34612bbf292eb0, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: e62c739fb39d97a49915b08c5536b5a5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 72245f28c2253ea41880bc8b3a7d23b4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d7b018406a99f204993313d7435c581d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3344f69d1087a384f97d54e34384d1c2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 835f4cb7d093b464d84f3285acf9a576, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 890c84e6c16fddf4393ca73ba615c255, type: 2}

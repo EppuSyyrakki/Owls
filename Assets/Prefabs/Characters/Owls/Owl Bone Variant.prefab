@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3344565690867562580
 Transform:
   m_ObjectHideFlags: 0
@@ -4844,9 +4844,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
+      propertyPath: attackSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
       propertyPath: flightSpeed
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: animationOverride
+      value: 
+      objectReference: {fileID: 22100000, guid: 7e7a1052ae943c7499ece6789a0e33b0,
+        type: 2}
     - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
       propertyPath: flightPaths.Array.size
@@ -4856,7 +4867,7 @@ PrefabInstance:
         type: 3}
       propertyPath: flightPaths.Array.data[0]
       value: 
-      objectReference: {fileID: 6514970619091594926, guid: 2f033df587f79f149bfc89b85b80bc0e,
+      objectReference: {fileID: 6514970619091594926, guid: 2479e2ca002c75340a73ab27554c8b43,
         type: 3}
     - target: {fileID: 5350819179134436460, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}

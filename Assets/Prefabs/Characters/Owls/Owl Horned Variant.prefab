@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &771283102585963265
 Transform:
   m_ObjectHideFlags: 0
@@ -4837,11 +4837,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Owl Horned Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1203326170542532374, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
       propertyPath: flightSpeed
-      value: 14
+      value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: animationOverride
+      value: 
+      objectReference: {fileID: 22100000, guid: 0330e2cb8631b954dac2f2444b71341a,
+        type: 2}
     - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
       propertyPath: flightPaths.Array.size
@@ -4851,7 +4862,7 @@ PrefabInstance:
         type: 3}
       propertyPath: flightPaths.Array.data[0]
       value: 
-      objectReference: {fileID: 6514970619091594926, guid: 2f033df587f79f149bfc89b85b80bc0e,
+      objectReference: {fileID: 6514970619091594926, guid: 55b06da8ed89a9f4fb87b1bdb7091de6,
         type: 3}
     - target: {fileID: 5350819179134436460, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
