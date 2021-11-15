@@ -979,6 +979,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalSpeed: 1.5
   wrapDistance: 40
+  effectPrefabs: []
 --- !u!1 &4614905677843342134
 GameObject:
   m_ObjectHideFlags: 0
