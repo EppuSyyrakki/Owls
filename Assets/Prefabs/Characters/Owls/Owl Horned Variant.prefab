@@ -4856,13 +4856,19 @@ PrefabInstance:
     - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
       propertyPath: deathFx.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
       propertyPath: deathFx.Array.data[0]
       value: 
       objectReference: {fileID: 7772438533054457417, guid: 501bc2bbf8aefbe4fa8b4db9386f432e,
+        type: 3}
+    - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: deathFx.Array.data[1]
+      value: 
+      objectReference: {fileID: 1568288446607928975, guid: dac36fe65bb67d445960f308bf84ea7d,
         type: 3}
     - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
