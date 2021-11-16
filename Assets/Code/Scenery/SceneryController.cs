@@ -18,6 +18,8 @@ namespace Owls.Scenery
 		
 		public List<GameObject> effectPrefabs = new List<GameObject>();
 
+		public Transform EffectContainer { get; private set; }
+
 		private void Awake()
 		{
 			int childCount = transform.childCount;
@@ -38,6 +40,8 @@ namespace Owls.Scenery
 					_movingItems.Add(childClone.GetComponent<SceneryItem>());
 				}
 			}
+
+			EffectContainer = new GameObject("Effect Container").transform;
 		}
 
 		private GameObject DuplicateItem(GameObject obj, float xPos)

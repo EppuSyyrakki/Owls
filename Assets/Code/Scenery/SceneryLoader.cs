@@ -41,7 +41,10 @@ namespace Owls.Scenery
 			
 			if (scenery.effectPrefabs.Count == 0) { return; }
 
-
+			foreach (var effect in scenery.effectPrefabs)
+			{
+				Instantiate(effect, _sourceScenery.EffectContainer);
+			}
 		}
 	}
 }
