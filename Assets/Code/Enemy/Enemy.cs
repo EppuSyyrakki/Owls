@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Owls.Flight;
-using Owls.Player;
+// using Owls.Player;
 using Random = UnityEngine.Random;
+using Owls.Spells;
 
 namespace Owls.Enemy
 {
@@ -13,7 +14,7 @@ namespace Owls.Enemy
 	}
 
 	[RequireComponent(typeof(SpriteRenderer), typeof(Animator))]
-    public class Enemy : MonoBehaviour
+    public class Enemy : MonoBehaviour, ITargetable
     {
 		private const string ANIM_PREPARE = "PrepareAttack";
 		private const string ANIM_ATTACK = "Attack";
@@ -56,15 +57,16 @@ namespace Owls.Enemy
 		private State _state = State.Moving;
 		private float _maxY, _minY;
 		private Animator _animator;
-		private GameObject _player;
+		private Transform _player;
 		private EnemySpawner _spawner;
 
 		public Action<int> enemyKilled;
+		public bool IsAlive { get; private set; } = true;
 		
 		private void Awake()
 		{
 			_animator = GetComponent<Animator>();
-			_player = GameObject.FindGameObjectWithTag(Names.Tags.Player);
+			_player = GameObject.FindGameObjectWithTag(Names.Tags.Player).transform;
 			float orthoSize = Camera.main.orthographicSize;
 			_maxY = orthoSize - topSafetyMargin;
 			_minY = -orthoSize + bottomSafetyMargin;
@@ -109,6 +111,8 @@ namespace Owls.Enemy
 
 		private void Update()
         {
+			if (!IsAlive) { return; }
+
 	        if (_state == State.Moving) 
 			{ 
 				MoveOnPath(); 
@@ -119,11 +123,13 @@ namespace Owls.Enemy
 			}
 			else if (_state == State.HitPlayer) 
 			{ 
-				Remove(hitPlayerFx, false); 
+				Remove(hitPlayerFx, false);
+				IsAlive = false;
 			}
 			else if (_state == State.Killed) 
 			{ 
-				Remove(deathFx, true); 
+				Remove(deathFx, true);
+				IsAlive = false;
 			}
         }
 
@@ -131,8 +137,8 @@ namespace Owls.Enemy
 		{
 			if (!col.gameObject.CompareTag(TAG_PLAYER)) { return; }
 
-			var badger = col.gameObject.GetComponent<Badger>();
-			badger.TakeDamage(damage);
+			var target = col.gameObject.GetComponent<ITargetable>();
+			target.TargetedBySpell(damage);
 			_state = State.HitPlayer;
 		}
 
@@ -177,7 +183,7 @@ namespace Owls.Enemy
 		{
 			var time = _t * attackSpeed * 0.1f;
 			var self = transform.position;
-			var player = _player.transform.position;
+			var player = _player.position;
 			var target = transform.TransformPoint((player - self).normalized);
 			transform.position = Vector3.Lerp(_path3[_path3.Length - 1], target, time);
 			_t += Time.deltaTime;
@@ -205,6 +211,12 @@ namespace Owls.Enemy
 		public void SetSpawner(EnemySpawner spawner)
 		{
 			_spawner = spawner;
+		}
+
+		public void TargetedBySpell(float amount)
+		{
+			if (amount > 0) { return; }
+			_state = State.Killed;
 		}
 	}
 }
