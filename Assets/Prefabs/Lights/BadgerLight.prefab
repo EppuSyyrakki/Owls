@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &725996044963532272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 725996044963532274}
+  - component: {fileID: 725996044963532273}
+  m_Layer: 0
+  m_Name: BadgerLight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &725996044963532274
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725996044963532272}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.350227, y: 4.0112305, z: 1.7850448}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &725996044963532273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725996044963532272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 1
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.62
+  m_LightVolumeOpacity: 0
+  m_ApplyToSortingLayers: 0dbc8400
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_ShadowIntensity: 0
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -11.822466, y: -6.7201204, z: 0}
+  - {x: -11.548389, y: -6.5844727, z: 0}
+  - {x: -11.077673, y: -6.5152493, z: 0}
+  - {x: -10.565422, y: -6.5429387, z: 0}
+  - {x: -9.665523, y: -6.736763, z: 0}
+  - {x: -9.460532, y: -6.9076214, z: 0}
+  - {x: -8.946214, y: -7.2349153, z: 0}
+  - {x: -8.213699, y: -7.328428, z: 0}
+  - {x: -8.61892, y: -7.0478907, z: 0}
+  - {x: -8.694862, y: -6.7790513, z: 0}
+  - {x: -9.540921, y: -6.626006, z: 0}
+  - {x: -9.942415, y: -6.5429387, z: 0}
+  - {x: -10.28853, y: -6.4598713, z: 0}
+  - {x: -10.703869, y: -6.3768034, z: 0}
+  - {x: -10.80078, y: -5.089255, z: 0}
+  - {x: -10.814625, y: -6.1829786, z: 0}
+  - {x: -10.897693, y: -6.3768034, z: 0}
+  - {x: -11.271498, y: -6.418337, z: 0}
+  - {x: -11.713343, y: -6.563672, z: 0}
+  - {x: -12.079102, y: -6.7884855, z: 0}
