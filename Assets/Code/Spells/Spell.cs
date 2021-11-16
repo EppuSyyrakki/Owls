@@ -13,7 +13,6 @@ namespace Owls.Spells
 
 		public Info info;
 
-		public GameObject Caster { get; private set; }
 		public List<ITargetable> Target { get; private set; }
 		public List<Vector2> Stroke { get; private set; }
 		public bool TimerPassed => _timeLived > info.lifeTime;
@@ -26,16 +25,14 @@ namespace Owls.Spells
 			}
 		}
 
-		public virtual void Execute()
+		public virtual void Update()
 		{
 			if (TimerPassed) { Destroy(gameObject); }
 			_timeLived += Time.deltaTime;
 		}
 
-		public virtual void Init(GameObject caster, List<Vector2> stroke)
+		public virtual void Init(List<Vector2> stroke)
 		{
-			Caster = caster;
-
 			if (info.castType == CastType.Swipe)
 			{
 				Stroke = new List<Vector2>(stroke);
@@ -56,7 +53,7 @@ namespace Owls.Spells
 			}
 			else if (info.target == CastTarget.TouchedEnemies)
 			{
-				// Raycast from point to point to find all ITargetables
+				RaycastForTouchedTargets();
 			}
 		}
 
@@ -74,6 +71,27 @@ namespace Owls.Spells
 			foreach (var e in enemies) 
 			{ 
 				Target.Add(e.GetComponent<ITargetable>()); 
+			}
+		}
+
+		private void RaycastForTouchedTargets()
+		{
+			Target = new List<ITargetable>();
+
+			for (int i = 0; i < Stroke.Count - 1; i++)
+			{
+				var from = Stroke[i];
+				var to = Stroke[i + 1];
+				var hits = Physics2D.LinecastAll(from, to);
+
+				foreach (var hit in hits)
+				{
+					if (hit.transform.TryGetComponent(typeof(ITargetable), out var t))
+					{
+						var target = t as ITargetable;
+						Target.Add(target);
+					}
+				}
 			}
 		}
 

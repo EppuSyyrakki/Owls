@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using Owls.Spells;
 
 namespace Owls.Player
 {
@@ -23,12 +24,19 @@ namespace Owls.Player
 		private TrailRenderer _activeTrail = null;
 		private List<Vector2> _stroke = null;
 		private Transform _oldTrails;
+		private SpellLookup _lookUp;
 
 		private void Awake()
 		{
 			particle.Stop();
 			_cam = Camera.main;
 			_oldTrails = new GameObject("Old trails").transform;
+			_lookUp = Resources.Load<SpellLookup>("SpellLookup");
+
+			if (_lookUp == null) 
+			{
+				Debug.LogError(name + " couldn't find Resources/SpellLookup!");
+			}
 		}
 
 		private void Update()
@@ -59,11 +67,12 @@ namespace Owls.Player
 
 		private void CompleteTouch(Touch touch)
 		{
-			Move(touch.position);
+			// Move(touch.position);
 
-			if (CompareStrokeAngles()) 
+			if (IsStrokeStraight()) 
 			{
-				// Do the lightning Spell
+				var go = Instantiate(_lookUp.basicSpell);
+				go.GetComponent<Spell>().Init(_stroke);
 			}
 			//else if (glyphRrecognition.match(_stroke, out var glyph) 
 			//		var spell = spellLookUp(glyph)
@@ -81,7 +90,6 @@ namespace Owls.Player
 
 		private void Move(Vector2 screenPos)
 		{
-			
 			Ray ray = _cam.ScreenPointToRay(screenPos);
 			var hit = Physics2D.Raycast(ray.origin, ray.direction * 20f, 40f, worldPlane);
 
@@ -91,11 +99,16 @@ namespace Owls.Player
 			transform.position = hit.point;
 		}
 
-		private bool CompareStrokeAngles()
+		private bool IsStrokeStraight()
 		{
-			for (int i = 0; i < _stroke.Count - 1; i++)
+			Debug.Log("Checking stroke straightness. for " + _stroke.Count + " positions");
+
+			for (int i = 0; i < _stroke.Count - 2; i++)
 			{
-				var angle = Vector2.Angle(_stroke[i], _stroke[i + 1]);
+				var from = _stroke[i + 1] - _stroke[i];
+				var to = _stroke[i + 2] - _stroke[i + 1];
+				var angle = Vector2.Angle(from, to);
+				Debug.Log("angle: " + angle);
 				if (angle > swipeAngleMax) { return false; }
 			}
 

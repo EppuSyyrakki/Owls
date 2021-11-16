@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Owls.Flight;
-// using Owls.Player;
 using Random = UnityEngine.Random;
 using Owls.Spells;
 
@@ -62,6 +61,7 @@ namespace Owls.Enemy
 
 		public Action<int> enemyKilled;
 		public bool IsAlive { get; private set; } = true;
+		public Vector3 Position => transform.position;
 		
 		private void Awake()
 		{
@@ -137,8 +137,8 @@ namespace Owls.Enemy
 		{
 			if (!col.gameObject.CompareTag(TAG_PLAYER)) { return; }
 
-			var target = col.gameObject.GetComponent<ITargetable>();
-			target.TargetedBySpell(damage);
+			var target = col.gameObject.GetComponent<Player.Badger>();
+			target.TakeDamage(-damage);
 			_state = State.HitPlayer;
 		}
 
@@ -213,9 +213,9 @@ namespace Owls.Enemy
 			_spawner = spawner;
 		}
 
-		public void TargetedBySpell(float amount)
+		public void TargetedBySpell(Info info)
 		{
-			if (amount > 0) { return; }
+			if (info.effectAmount > 0) { return; }
 			_state = State.Killed;
 		}
 	}
