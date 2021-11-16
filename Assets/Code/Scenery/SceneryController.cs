@@ -13,8 +13,8 @@ namespace Owls.Scenery
 		private float wrapDistance = 40f;
 
 		private List<SceneryItem> _movingItems = new List<SceneryItem>();
-		private float _currentSpeed = 0;
-		private float _groundSpeed = 0;
+		//private float _currentSpeed = 0;
+		//private float _groundSpeed = 0;
 		
 		public List<GameObject> effectPrefabs = new List<GameObject>();
 

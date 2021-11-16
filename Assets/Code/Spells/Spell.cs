@@ -9,10 +9,14 @@ namespace Owls.Spells
 		private const string TAG_PLAYER = "Player";
 		private const string TAG_ENEMY = "Enemy";
 
+		private float _timeLived = 0;
+
 		public Info info;
 
+		public GameObject Caster { get; private set; }
 		public List<ITargetable> Target { get; private set; }
 		public List<Vector2> Stroke { get; private set; }
+		public bool TimerPassed => _timeLived > info.lifeTime;
 
 		private void Awake()
 		{
@@ -22,8 +26,16 @@ namespace Owls.Spells
 			}
 		}
 
-		public void Init(List<Vector2> stroke)
+		public virtual void Execute()
 		{
+			if (TimerPassed) { Destroy(gameObject); }
+			_timeLived += Time.deltaTime;
+		}
+
+		public virtual void Init(GameObject caster, List<Vector2> stroke)
+		{
+			Caster = caster;
+
 			if (info.castType == CastType.Swipe)
 			{
 				Stroke = new List<Vector2>(stroke);
@@ -64,6 +76,24 @@ namespace Owls.Spells
 				Target.Add(e.GetComponent<ITargetable>()); 
 			}
 		}
+
+		private void OnDrawGizmos()
+		{
+			Gizmos.color = Color.yellow;
+
+			if (info.effectRange > 0)
+			{
+				Gizmos.DrawWireSphere(transform.position, info.effectRange);
+			}
+
+			if (Stroke != null && info.castType == CastType.Swipe)
+			{
+				for (int i = 0; i < Stroke.Count - 1; i++)
+				{
+					Gizmos.DrawLine(Stroke[i], Stroke[i + 1]);
+				}
+			}
+		}
 	}
 
 	public enum CastType
@@ -86,7 +116,8 @@ namespace Owls.Spells
 	{
 		public CastType castType;
 		public CastTarget target;
-		public Vector2 effectOffset;
+		public float effectRange;
 		public float effectAmount;
+		public float lifeTime;
 	}
 }

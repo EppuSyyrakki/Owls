@@ -6,6 +6,7 @@ namespace Owls.Spells
 	public interface ITargetable
 	{
 		public bool IsAlive { get; }
-		public void TargetedBySpell(float amount);
+		public Vector3 Position { get; }
+		public void TargetedBySpell(Info info);
 	}
 }

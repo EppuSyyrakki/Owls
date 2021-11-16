@@ -16,6 +16,7 @@ namespace Owls.Player
 		private Animator _animator;
 
 		public bool IsAlive { get; private set; } = true;
+		public Vector3 Position => transform.position;
 
 		/// <summary>
 		/// Delegate that is called when Badger health changes. First parameter is
@@ -28,10 +29,10 @@ namespace Owls.Player
 			_animator = GetComponent<Animator>();
 		}
 
-		public void TargetedBySpell(float amount)
+		public void TargetedBySpell(Info info)
 		{
-			if (amount < 0) { TakeDamage(Mathf.Abs(amount)); }
-			else if (amount > 0) { HealDamage(Mathf.Abs(amount)); }
+			if (info.effectAmount < 0) { TakeDamage(Mathf.Abs(info.effectAmount)); }
+			else if (info.effectAmount > 0) { HealDamage(Mathf.Abs(info.effectAmount)); }
 		}
 
 		public void TakeDamage(float amount)
