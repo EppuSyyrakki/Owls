@@ -39,7 +39,7 @@ namespace Owls.Player
 			}
 		}
 
-		private void Update()
+		private void FixedUpdate()
 		{
 			if (Input.touchCount > 0)
 			{
@@ -69,7 +69,7 @@ namespace Owls.Player
 		{
 			// Move(touch.position);
 
-			if (IsStrokeStraight()) 
+			if (IsStrokeLightning()) 
 			{
 				var go = Instantiate(_lookUp.basicSpell);
 				go.GetComponent<Spell>().Init(_stroke);
@@ -99,17 +99,20 @@ namespace Owls.Player
 			transform.position = hit.point;
 		}
 
-		private bool IsStrokeStraight()
+		private bool IsStrokeLightning()
 		{
-			Debug.Log("Checking stroke straightness. for " + _stroke.Count + " positions");
+			Debug.Log("Checking stroke straightness for " + _stroke.Count + " positions");
 
 			for (int i = 0; i < _stroke.Count - 2; i++)
 			{
 				var from = _stroke[i + 1] - _stroke[i];
 				var to = _stroke[i + 2] - _stroke[i + 1];
 				var angle = Vector2.Angle(from, to);
-				Debug.Log("angle: " + angle);
-				if (angle > swipeAngleMax) { return false; }
+								
+				if (angle > swipeAngleMax) 
+				{ 
+					return false; 
+				}
 			}
 
 			return true;

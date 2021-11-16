@@ -9,13 +9,13 @@ namespace Owls.Spells
 		private const string TAG_PLAYER = "Player";
 		private const string TAG_ENEMY = "Enemy";
 
-		private float _timeLived = 0;
+		protected float timeLived = 0;
 
 		public Info info;
 
 		public List<ITargetable> Target { get; private set; }
 		public List<Vector2> Stroke { get; private set; }
-		public bool TimerPassed => _timeLived > info.lifeTime;
+		public bool TimerPassed => timeLived > info.lifeTime;
 
 		private void Awake()
 		{
@@ -28,7 +28,7 @@ namespace Owls.Spells
 		public virtual void Update()
 		{
 			if (TimerPassed) { Destroy(gameObject); }
-			_timeLived += Time.deltaTime;
+			timeLived += Time.deltaTime;
 		}
 
 		public virtual void Init(List<Vector2> stroke)

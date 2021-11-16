@@ -49,7 +49,9 @@ MonoBehaviour:
     target: 2
     effectRange: 0
     effectAmount: -1
-    lifeTime: 1
+    lifeTime: 0.5
+  flashTime: 0.25
+  flashIntensity: 4
 --- !u!120 &6329843866113282793
 LineRenderer:
   m_ObjectHideFlags: 0

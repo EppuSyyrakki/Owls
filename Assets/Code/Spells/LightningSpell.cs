@@ -7,6 +7,12 @@ namespace Owls.Spells
 {
 	public class LightningSpell : Spell
 	{
+		[SerializeField, Range(0.1f, 0.5f)]
+		private float flashTime = 0.25f;
+
+		[SerializeField]
+		private float flashIntensity = 8f;
+
 		private const string TAG_GLOBAL_LIGHT = "GlobalLight";
 		private Light2D _globalLight;
 		private LineRenderer _lr;
@@ -29,10 +35,7 @@ namespace Owls.Spells
 			}
 		}
 
-		/// <summary>
-		/// This gets called by the caster every frame.
-		/// </summary>
-		public override void Update()
+		private void Start()
 		{
 			var lr = GetComponent<LineRenderer>();
 
@@ -41,19 +44,27 @@ namespace Owls.Spells
 				lr.SetPosition(i, new Vector3(Stroke[i].x, Stroke[i].y, 0));
 			}
 
-			if (Target.Count > 0)
+			foreach (var t in Target)
 			{
-				foreach (var t in Target)
-				{
-					t.TargetedBySpell(info);
-				}
-
-				Target.Clear();
+				t.TargetedBySpell(info);
 			}
 
-			// Advance a timer in base. Destroys gameObject if lifetime passed. 
-			// Base.Execute can be called  before or after this spell's logic.
-			base.Update();
+			Target.Clear();
+			StartCoroutine(Flash());
+		}
+
+		private void OnDisable()
+		{
+			if (_globalLight.intensity != 1) { _globalLight.intensity = 1; }
+		}
+
+		private IEnumerator Flash()
+		{
+			float t = info.lifeTime * flashTime;
+			float intensity = _globalLight.intensity;
+			_globalLight.intensity = flashIntensity;
+			yield return new WaitForSeconds(t);
+			_globalLight.intensity = intensity;
 		}
 	}
 }
