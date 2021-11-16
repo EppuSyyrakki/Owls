@@ -425,6 +425,29 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2455796434820105187, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: effectPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2455796434820105187, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: effectPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 3357061594799007418, guid: fcdfbe5019c33494691d95f382f11e0c,
+        type: 3}
+    - target: {fileID: 2455796434820105187, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: effectPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1088968852699649015, guid: 0537efbc91110e440b6874155e303be0,
+        type: 3}
+    - target: {fileID: 2455796434820105187, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: effectPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 1088968852699649015, guid: 3355e419787749d46af30a7af54ae4db,
+        type: 3}
     - target: {fileID: 2455796434820105196, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
       propertyPath: m_RootOrder

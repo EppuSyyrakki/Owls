@@ -878,6 +878,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2455796434820105187, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: effectPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2455796434820105187, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: effectPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1088968852699649015, guid: 0537efbc91110e440b6874155e303be0,
+        type: 3}
     - target: {fileID: 2455796434820105196, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
       propertyPath: m_RootOrder
