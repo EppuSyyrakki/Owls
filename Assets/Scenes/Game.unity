@@ -132,6 +132,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
+        type: 3}
+      propertyPath: deltaTreshold
+      value: 0.005
+      objectReference: {fileID: 0}
     - target: {fileID: 3918892694000362373, guid: a1063e6b4fbee3647866567f171f2752,
         type: 3}
       propertyPath: m_Name
@@ -592,6 +597,11 @@ PrefabInstance:
     - target: {fileID: 1860848292, guid: 4045a69ee8b09074589188faab85bf99, type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7719918813805790764, guid: 4045a69ee8b09074589188faab85bf99,
+        type: 3}
+      propertyPath: testScenery
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7719918813805790765, guid: 4045a69ee8b09074589188faab85bf99,
         type: 3}
