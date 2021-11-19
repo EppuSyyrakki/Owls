@@ -8,12 +8,15 @@ namespace Owls.Player
 {
 	public class Badger : MonoBehaviour, ITargetable
 	{
+		[SerializeField]
+		private float health = 1f;
+
 		private const string ANIM_TAKEDAMAGE = "TakeDamage";
 		private const string ANIM_DIE = "Die";
-
-		private float _health = 1f;
+		
 		private Animator _animator;
 
+		public float MaxHealth { get; private set; }
 		public bool IsAlive { get; private set; } = true;
 		public Vector3 Position => transform.position;
 
@@ -26,32 +29,33 @@ namespace Owls.Player
 		private void Awake()
 		{
 			_animator = GetComponent<Animator>();
+			MaxHealth = health;
 		}
 
 		public void TargetedBySpell(Info info)
 		{
-			if (info.effectAmount < 0) { TakeDamage(Mathf.Abs(info.effectAmount)); }
-			else if (info.effectAmount > 0) { HealDamage(Mathf.Abs(info.effectAmount)); }
+			if (info.effectAmount < 0) { TakeDamage(info.effectAmount); }
+			else if (info.effectAmount > 0) { HealDamage(info.effectAmount); }
 		}
 
 		public void TakeDamage(float amount)
 		{
 			if (!IsAlive) { return; }
 
-			_health = Mathf.Clamp01(_health - amount);
+			health = Mathf.Clamp01(health - amount);
 
-			if (_health == 0) { Die(); }
+			if (health == 0) { Die(); }
 			else { _animator.SetTrigger(ANIM_TAKEDAMAGE); }
 
-			healthChanged?.Invoke(amount, _health);
+			healthChanged?.Invoke(amount, health);
 		}
 
 		private void HealDamage(float amount)
 		{
 			if (!IsAlive) { return; }
 
-			_health = Mathf.Clamp01(_health + amount);
-			healthChanged?.Invoke(amount, _health);
+			health = Mathf.Clamp01(health + amount);
+			healthChanged?.Invoke(amount, health);
 		}
 
 		private void Die()

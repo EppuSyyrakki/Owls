@@ -138,7 +138,7 @@ namespace Owls.Enemy
 			if (!col.gameObject.CompareTag(TAG_PLAYER)) { return; }
 
 			var target = col.gameObject.GetComponent<Player.Badger>();
-			target.TakeDamage(-damage);
+			target.TakeDamage(damage);
 			_state = State.HitPlayer;
 		}
 
