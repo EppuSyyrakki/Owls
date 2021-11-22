@@ -39,12 +39,12 @@ namespace Owls.Player
 			}
 		}
 
-		private void FixedUpdate()
+		private void Update()
 		{
 			if (Input.touchCount > 0)
 			{
 				Touch touch = Input.GetTouch(0);
-				
+
 				if (touch.phase == TouchPhase.Began) { BeginTouch(touch); }
 				else if (touch.phase == TouchPhase.Moved) { ContinueTouch(touch); }
 				else if (touch.phase == TouchPhase.Ended) { CompleteTouch(touch); }
@@ -101,8 +101,6 @@ namespace Owls.Player
 
 		private bool IsStrokeLightning()
 		{
-			Debug.Log("Checking stroke straightness for " + _stroke.Count + " positions");
-
 			for (int i = 0; i < _stroke.Count - 2; i++)
 			{
 				var from = _stroke[i + 1] - _stroke[i];
@@ -110,11 +108,13 @@ namespace Owls.Player
 				var angle = Vector2.Angle(from, to);
 								
 				if (angle > swipeAngleMax) 
-				{ 
+				{
+					Debug.Log("Stroke straightness check failed");
 					return false; 
 				}
 			}
 
+			Debug.Log("Stroke straightness check succeeded");
 			return true;
 		}
 
