@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 0.5666981, b: 0, a: 1}
   m_Intensity: 0.6
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 000000004d9642e2dd1b1cc119acf03ef79607a7bb2c1ac4dfd562f3b59d9af9
+  m_ApplyToSortingLayers: dd1b1cc1
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -108,6 +108,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PointLightOuterRadius
       value: 2.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 41372037088663549, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 41372037088663549, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[0]
+      value: -1055122467
       objectReference: {fileID: 0}
     - target: {fileID: 41372037088663550, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
@@ -177,7 +187,7 @@ PrefabInstance:
     - target: {fileID: 41372037593926592, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 41372037593926606, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
@@ -434,7 +444,7 @@ PrefabInstance:
         type: 3}
       propertyPath: effectPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 3357061594799007418, guid: fcdfbe5019c33494691d95f382f11e0c,
+      objectReference: {fileID: 3357061594799007418, guid: f85c5c4f52e9a47449b732d2f1b0bf5f,
         type: 3}
     - target: {fileID: 2455796434820105187, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
