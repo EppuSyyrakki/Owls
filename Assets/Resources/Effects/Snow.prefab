@@ -41,7 +41,7 @@ ParticleSystem:
   m_GameObject: {fileID: 3357061594799007418}
   serializedVersion: 7
   lengthInSec: 5
-  simulationSpeed: 0.3
+  simulationSpeed: 0.15
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -606,7 +606,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.3
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -2682,7 +2682,7 @@ ParticleSystem:
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.78
+      scalar: 4.72
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2838,7 +2838,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    separateAxes: 1
+    separateAxes: 0
     frequency: 1.46
     damping: 1
     octaves: 1
@@ -2848,7 +2848,7 @@ ParticleSystem:
     scrollSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1.47
       minScalar: 0
       maxCurve:
         serializedVersion: 2
