@@ -1,7 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
-using UnityEngine.Rendering;
 
 namespace Owls.Flight
 {

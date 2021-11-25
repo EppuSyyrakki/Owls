@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   glyphs:
   - {fileID: 11400000, guid: d5f1a5d955c5c4048a7346423c790e2b, type: 2}
+  - {fileID: 11400000, guid: bcf12bef25ce157498a83e770b648c00, type: 2}

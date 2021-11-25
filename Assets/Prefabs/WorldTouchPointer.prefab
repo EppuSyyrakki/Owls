@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3918892694000362378}
   - component: {fileID: 1337170366206072629}
   m_Layer: 0
-  m_Name: Finger
+  m_Name: WorldTouchPointer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,10 +47,10 @@ MonoBehaviour:
   particle: {fileID: 3918892694373735456}
   trailPrefab: {fileID: 2583062481648215827, guid: 15e7e6ab3ea4d2d47a1c0df0056a5974,
     type: 3}
-  glyph: {fileID: 0}
-  worldPlane:
-    serializedVersion: 2
-    m_Bits: 8
+  swipeAngleMax: 15
+  strokeTreshold: 20
+  debuggingInfo: 0
+  glyphInput: {fileID: 0}
 --- !u!1 &3918892694373735485
 GameObject:
   m_ObjectHideFlags: 0

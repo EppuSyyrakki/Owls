@@ -3,9 +3,17 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 using Owls.Spells;
+using AdVd.GlyphRecognition;
 
 namespace Owls.Player
 {
+	[Serializable]
+	public class GlyphSpellPair
+	{
+		public Glyph glyph;
+		public Spell spell;
+	}
+
 	public class WorldTouchPointer : MonoBehaviour
 	{
 		[SerializeField]
@@ -14,32 +22,36 @@ namespace Owls.Player
 		[SerializeField]
 		private TrailRenderer trailPrefab;
 
-		[SerializeField]
-		private LayerMask worldPlane;
-
 		[SerializeField, Tooltip("Max deviation from a straight line allowed to cast basic spell")]
 		private float swipeAngleMax = 15f;
 
 		[SerializeField]
 		private float strokeTreshold = 0.1f;
 
+		[SerializeField]
+		private bool debuggingInfo = false;
+
+		[SerializeField]
+		private GlyphDrawInput glyphInput = null;
+
+		[SerializeField]
+		private List<GlyphSpellPair> glyphSpellPairs;
+
 		private Camera _cam;
 		private TrailRenderer _activeTrail = null;
 		private List<Vector2> _stroke = null;
 		private Transform _oldTrails;
-		private SpellLookup _lookUp;
+		private Spell _currentSpell;
+		private Dictionary<Glyph, Spell> _spells;
+		private bool _castCurrent = false;
 
 		private void Awake()
 		{
+			FillSpells();
 			particle.Stop();
 			_cam = Camera.main;
 			_oldTrails = new GameObject("Old trails").transform;
-			_lookUp = Resources.Load<SpellLookup>("SpellLookup");
-
-			if (_lookUp == null) 
-			{
-				Debug.LogError(name + " couldn't find Resources/SpellLookup!");
-			}
+			glyphInput.OnGlyphCast.AddListener(GlyphCastHandler);
 		}
 
 		private void Update()
@@ -52,6 +64,26 @@ namespace Owls.Player
 				else if (touch.phase == TouchPhase.Moved) { ContinueTouch(touch); }
 				else if (touch.phase == TouchPhase.Ended) { CompleteTouch(touch); }
 				else if (touch.phase == TouchPhase.Stationary) { CancelTouch(); }
+			}
+		}
+
+		private void LateUpdate()
+		{
+			if (!_castCurrent) { return; }
+
+			var spell = Instantiate(_currentSpell);
+			spell.Init(_stroke);
+			_castCurrent = false;
+			_currentSpell = null;
+		}
+
+		private void FillSpells()
+		{
+			_spells = new Dictionary<Glyph, Spell>(glyphSpellPairs.Count);
+
+			foreach (var entry in glyphSpellPairs)
+			{
+				_spells.Add(entry.glyph, entry.spell);
 			}
 		}
 
@@ -70,17 +102,13 @@ namespace Owls.Player
 
 		private void CompleteTouch(Touch touch)
 		{
-			// Move(touch.position);
+			Move(touch.position);
+			glyphInput.Cast();
 
-			if (IsStrokeLightning()) 
+			if (_currentSpell is LightningSpell)
 			{
-				var go = Instantiate(_lookUp.basicSpell);
-				go.GetComponent<Spell>().Init(_stroke);
+				_castCurrent = true;
 			}
-
-			//else if (glyphRrecognition.match(_stroke, out var glyph) 
-			//		var spell = spellLookUp(glyph)
-			//		instantiate(spell)
 
 			StopActiveTrail();
 			particle.Stop();
@@ -94,31 +122,24 @@ namespace Owls.Player
 
 		private void Move(Vector2 screenPos)
 		{
-			var worldPos = _cam.ScreenToWorldPoint(screenPos);
+			Vector2 worldPos = _cam.ScreenToWorldPoint(screenPos);
 			transform.position = worldPos;
 
-			if (IsOverTreshold(worldPos))
-			{
-
-			}
-			
-			//Ray ray = _cam.ScreenPointToRay(screenPos);
-			//var hit = Physics2D.Raycast(ray.origin, ray.direction * 20f, 40f, worldPlane);
-
-			//if (hit.collider == null) { return; }
-
-			//_stroke.Add(hit.point);
-			//transform.position = hit.point;
+			if (_stroke.Count < 2 || IsOverTreshold(worldPos)) { _stroke.Add(worldPos); }
 		}
 
-		private bool IsOverTreshold(Vector3 newPos)
+		private bool IsOverTreshold(Vector2 newPos)
 		{
-			if (_stroke.Count < 2) { return true; }
+			float sqrMag = (_stroke[_stroke.Count - 1] - newPos).sqrMagnitude;
+			float treshold = strokeTreshold * Time.deltaTime;
+			bool isOver = sqrMag > treshold;
 
-			return false;
+			if (debuggingInfo) Debug.Log(string.Format("sqrMagnitude: {0}, treshold: {1}", sqrMag, treshold));
+
+			return isOver;
 		}
 
-		private bool IsStrokeLightning()
+		private bool IsStrokeStraight()
 		{
 			for (int i = 0; i < _stroke.Count - 2; i++)
 			{
@@ -128,12 +149,12 @@ namespace Owls.Player
 								
 				if (angle > swipeAngleMax) 
 				{
-					Debug.Log("Stroke straightness check failed");
+					if (debuggingInfo) Debug.Log("Stroke straightness check failed for " + _stroke.Count + " points.");
 					return false; 
 				}
 			}
 
-			Debug.Log("Stroke straightness check succeeded");
+			if (debuggingInfo) Debug.Log("Stroke straightness check succeeded for " + _stroke.Count + " points.");
 			return true;
 		}
 
@@ -143,6 +164,19 @@ namespace Owls.Player
 
 			_activeTrail.transform.parent = _oldTrails;
 			_activeTrail = null;
+		}
+
+		public void GlyphCastHandler(int index, GlyphMatch match)
+		{
+			if (match == null) { return; }
+			string m = match.target.name;
+
+			if (_spells.ContainsKey(match.target))
+			{
+				_currentSpell = _spells[match.target];
+			}
+
+			if (debuggingInfo) Debug.Log("WorldTouchPointer.OnGlyphCast() called. Source: " + m);
 		}
 	}
 }
