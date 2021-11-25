@@ -1136,7 +1136,8 @@ PrefabInstance:
         type: 3}
       propertyPath: testScenery
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 557608294592373712, guid: 54692238b3b997b40849d6070494cb04,
+        type: 3}
     - target: {fileID: 7719918813805790765, guid: 4045a69ee8b09074589188faab85bf99,
         type: 3}
       propertyPath: m_RootOrder
