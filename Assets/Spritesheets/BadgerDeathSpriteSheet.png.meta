@@ -1,64 +1,7 @@
 fileFormatVersion: 2
 guid: 1fb1b16ae59a2ac4f873153894228b5b
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -3132267486342822823
-    second: BadgerDeathSpriteSheet_0
-  - first:
-      213: -4656295419967163783
-    second: BadgerDeathSpriteSheet_1
-  - first:
-      213: 8385882134153056599
-    second: BadgerDeathSpriteSheet_2
-  - first:
-      213: 3797359175605201848
-    second: BadgerDeathSpriteSheet_4
-  - first:
-      213: -2799421124040348864
-    second: BadgerDeathSpriteSheet_5
-  - first:
-      213: -4484473939249462879
-    second: BadgerDeathSpriteSheet_6
-  - first:
-      213: 5287133991814963112
-    second: BadgerDeathSpriteSheet_7
-  - first:
-      213: 63164803173838017
-    second: BadgerDeathSpriteSheet_8
-  - first:
-      213: -1633975136183611706
-    second: BadgerDeathSpriteSheet_9
-  - first:
-      213: 1186428853309880250
-    second: BadgerDeathSpriteSheet_10
-  - first:
-      213: -7941369584514817943
-    second: BadgerDeathSpriteSheet_11
-  - first:
-      213: 8883634035208347591
-    second: BadgerDeathSpriteSheet_12
-  - first:
-      213: -3195596374303065603
-    second: BadgerDeathSpriteSheet_13
-  - first:
-      213: 8831609614770923194
-    second: BadgerDeathSpriteSheet_14
-  - first:
-      213: -6054234853213817080
-    second: BadgerDeathSpriteSheet_15
-  - first:
-      213: -2642720285061810380
-    second: BadgerDeathSpriteSheet_18
-  - first:
-      213: -7605953537929889884
-    second: BadgerDeathSpriteSheet_20
-  - first:
-      213: 5802137702329688958
-    second: BadgerDeathSpriteSheet_21
-  - first:
-      213: 934889327695542280
-    second: BadgerDeathSpriteSheet_26
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -172,57 +115,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BadgerDeathSpriteSheet_0
-      rect:
-        serializedVersion: 2
-        x: 6962
-        y: 585
-        width: 12
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 954c70f0153f784d0800000000000000
-      internalID: -3132267486342822823
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BadgerDeathSpriteSheet_1
-      rect:
-        serializedVersion: 2
-        x: 7001
-        y: 577
-        width: 14
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 97234935cf3816fb0800000000000000
-      internalID: -4656295419967163783
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: BadgerDeathSpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 7688
+        x: 7189
         y: 0
-        width: 756
+        width: 731
         height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -238,12 +139,12 @@ TextureImporter:
       name: BadgerDeathSpriteSheet_4
       rect:
         serializedVersion: 2
-        x: 8538
+        x: 9012
         y: 0
-        width: 756
+        width: 758
         height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -259,12 +160,12 @@ TextureImporter:
       name: BadgerDeathSpriteSheet_5
       rect:
         serializedVersion: 2
-        x: 9456
+        x: 6398
         y: 0
-        width: 850
+        width: 719
         height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -277,57 +178,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BadgerDeathSpriteSheet_6
-      rect:
-        serializedVersion: 2
-        x: 199
-        y: 3
-        width: 590
-        height: 597
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a10a8646b2f3c1c0800000000000000
-      internalID: -4484473939249462879
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BadgerDeathSpriteSheet_7
-      rect:
-        serializedVersion: 2
-        x: 872
-        y: 0
-        width: 590
-        height: 600
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8af16066a5caf5940800000000000000
-      internalID: 5287133991814963112
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: BadgerDeathSpriteSheet_8
       rect:
         serializedVersion: 2
-        x: 1555
+        x: 244
         y: 3
-        width: 590
-        height: 597
+        width: 592
+        height: 489
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -343,12 +202,12 @@ TextureImporter:
       name: BadgerDeathSpriteSheet_9
       rect:
         serializedVersion: 2
-        x: 2228
-        y: 3
-        width: 590
-        height: 597
+        x: 944
+        y: 2
+        width: 592
+        height: 492
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -364,12 +223,12 @@ TextureImporter:
       name: BadgerDeathSpriteSheet_10
       rect:
         serializedVersion: 2
-        x: 2911
-        y: 3
-        width: 590
-        height: 597
+        x: 1664
+        y: 2
+        width: 592
+        height: 490
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -385,12 +244,12 @@ TextureImporter:
       name: BadgerDeathSpriteSheet_11
       rect:
         serializedVersion: 2
-        x: 3579
-        y: 3
-        width: 590
-        height: 597
+        x: 2333
+        y: 2
+        width: 591
+        height: 492
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -406,12 +265,12 @@ TextureImporter:
       name: BadgerDeathSpriteSheet_12
       rect:
         serializedVersion: 2
-        x: 4299
-        y: 3
-        width: 588
-        height: 597
+        x: 2976
+        y: 2
+        width: 591
+        height: 494
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -427,12 +286,12 @@ TextureImporter:
       name: BadgerDeathSpriteSheet_13
       rect:
         serializedVersion: 2
-        x: 5536
-        y: 3
-        width: 594
-        height: 597
+        x: 3686
+        y: 2
+        width: 591
+        height: 490
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -448,12 +307,12 @@ TextureImporter:
       name: BadgerDeathSpriteSheet_14
       rect:
         serializedVersion: 2
-        x: 6167
-        y: 0
-        width: 634
-        height: 600
+        x: 4381
+        y: 2
+        width: 592
+        height: 490
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -466,64 +325,22 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BadgerDeathSpriteSheet_15
+      name: BadgerDeathSpriteSheet_16
       rect:
         serializedVersion: 2
-        x: 7058
-        y: 458
-        width: 14
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 807b66b4a790bfba0800000000000000
-      internalID: -6054234853213817080
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BadgerDeathSpriteSheet_18
-      rect:
-        serializedVersion: 2
-        x: 6902
+        x: 5668
         y: 0
-        width: 714
+        width: 631
         height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 437fb2807eb235bd0800000000000000
-      internalID: -2642720285061810380
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BadgerDeathSpriteSheet_20
-      rect:
-        serializedVersion: 2
-        x: 8673
-        y: 334
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a730992e89327690800000000000000
-      internalID: -7605953537929889884
+      spriteID: e59a10ac12e8b6b90800000000000000
+      internalID: -7247542899548509858
       vertices: []
       indices: 
       edges: []
@@ -532,12 +349,12 @@ TextureImporter:
       name: BadgerDeathSpriteSheet_21
       rect:
         serializedVersion: 2
-        x: 8704
-        y: 308
-        width: 14
-        height: 15
+        x: 8035
+        y: 0
+        width: 747
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -545,27 +362,6 @@ TextureImporter:
       bones: []
       spriteID: e73234dcf75558050800000000000000
       internalID: 5802137702329688958
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BadgerDeathSpriteSheet_26
-      rect:
-        serializedVersion: 2
-        x: 4889
-        y: 0
-        width: 596
-        height: 600
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 808b899e3e469fc00800000000000000
-      internalID: 934889327695542280
       vertices: []
       indices: 
       edges: []
