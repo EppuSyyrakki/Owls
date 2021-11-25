@@ -21,7 +21,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 2
+        time: 2.5833333
         value: 1
         inSlope: 0
         outSlope: 0
@@ -40,7 +40,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 2
+        time: 2.5833333
         value: 1
         inSlope: 0
         outSlope: 0
@@ -59,7 +59,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 2
+        time: 2.5833333
         value: 1
         inSlope: 0
         outSlope: 0
@@ -79,7 +79,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 3.11
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -87,16 +87,16 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.45833334
+        time: 0.25
         value: 1
-        inSlope: -3.3927271
-        outSlope: -3.3927271
+        inSlope: 0
+        outSlope: 0
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.9166667
+        time: 0.375
         value: 0
         inSlope: 0
         outSlope: 0
@@ -105,7 +105,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
+        time: 2.5833333
         value: 0
         inSlope: 0
         outSlope: 0
@@ -133,7 +133,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 2
+        time: 2.5833333
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -161,7 +161,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.45833334
+        time: 0.41666666
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -189,7 +189,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.45833334
+        time: 0.41666666
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -216,20 +216,11 @@ AnimationClip:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 0.041666668
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: BadgerDeathParts
+    path: BadgerDeathSpirit
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -248,28 +239,68 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: BadgerDeathSpirit
+    path: BadgerDeatFragments
     classID: 1
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.45833334
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: DeathFadeToBlack
+    classID: 1
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.45833334
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.4583333
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Color.a
+    path: DeathFadeToBlack
+    classID: 212
     script: {fileID: 0}
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -4484473939249462879, guid: 1fb1b16ae59a2ac4f873153894228b5b,
-        type: 3}
+      value: {fileID: 63164803173838017, guid: 1fb1b16ae59a2ac4f873153894228b5b, type: 3}
     - time: 0.041666668
-      value: {fileID: -1400237796595134425, guid: 68ce94c420290f94584673ad3e5e9663,
+      value: {fileID: 8883634035208347591, guid: 1fb1b16ae59a2ac4f873153894228b5b,
+        type: 3}
+    - time: 0.083333336
+      value: {fileID: -3195596374303065603, guid: 1fb1b16ae59a2ac4f873153894228b5b,
         type: 3}
     - time: 0.125
-      value: {fileID: -2642720285061810380, guid: 1fb1b16ae59a2ac4f873153894228b5b,
-        type: 3}
-    - time: 0.20833333
-      value: {fileID: 8385882134153056599, guid: 1fb1b16ae59a2ac4f873153894228b5b,
-        type: 3}
-    - time: 0.375
-      value: {fileID: 3797359175605201848, guid: 1fb1b16ae59a2ac4f873153894228b5b,
-        type: 3}
-    - time: 0.45833334
-      value: {fileID: -2799421124040348864, guid: 1fb1b16ae59a2ac4f873153894228b5b,
+      value: {fileID: 8831609614770923194, guid: 1fb1b16ae59a2ac4f873153894228b5b,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -311,17 +342,31 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1093267237
+      path: 646135147
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 646135147
+      path: 544998091
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 462338164
+      attribute: 2086281974
+      script: {fileID: 0}
+      typeID: 1
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 462338164
+      attribute: 304273561
+      script: {fileID: 0}
+      typeID: 212
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
@@ -353,18 +398,16 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     pptrCurveMapping:
-    - {fileID: -4484473939249462879, guid: 1fb1b16ae59a2ac4f873153894228b5b, type: 3}
-    - {fileID: -1400237796595134425, guid: 68ce94c420290f94584673ad3e5e9663, type: 3}
-    - {fileID: -2642720285061810380, guid: 1fb1b16ae59a2ac4f873153894228b5b, type: 3}
-    - {fileID: 8385882134153056599, guid: 1fb1b16ae59a2ac4f873153894228b5b, type: 3}
-    - {fileID: 3797359175605201848, guid: 1fb1b16ae59a2ac4f873153894228b5b, type: 3}
-    - {fileID: -2799421124040348864, guid: 1fb1b16ae59a2ac4f873153894228b5b, type: 3}
+    - {fileID: 63164803173838017, guid: 1fb1b16ae59a2ac4f873153894228b5b, type: 3}
+    - {fileID: 8883634035208347591, guid: 1fb1b16ae59a2ac4f873153894228b5b, type: 3}
+    - {fileID: -3195596374303065603, guid: 1fb1b16ae59a2ac4f873153894228b5b, type: 3}
+    - {fileID: 8831609614770923194, guid: 1fb1b16ae59a2ac4f873153894228b5b, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 2
+    m_StopTime: 2.5833333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -384,7 +427,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 2
+        time: 2.5833333
         value: 1
         inSlope: 0
         outSlope: 0
@@ -403,7 +446,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 2
+        time: 2.5833333
         value: 1
         inSlope: 0
         outSlope: 0
@@ -422,7 +465,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 2
+        time: 2.5833333
         value: 1
         inSlope: 0
         outSlope: 0
@@ -442,7 +485,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 3.11
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -450,16 +493,16 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.45833334
+        time: 0.25
         value: 1
-        inSlope: -3.3927271
-        outSlope: -3.3927271
+        inSlope: 0
+        outSlope: 0
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.9166667
+        time: 0.375
         value: 0
         inSlope: 0
         outSlope: 0
@@ -468,7 +511,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
+        time: 2.5833333
         value: 0
         inSlope: 0
         outSlope: 0
@@ -496,7 +539,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 2
+        time: 2.5833333
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -524,7 +567,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.45833334
+        time: 0.41666666
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -552,7 +595,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.45833334
+        time: 0.41666666
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -579,20 +622,11 @@ AnimationClip:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 0.041666668
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: BadgerDeathParts
+    path: BadgerDeathSpirit
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -611,8 +645,55 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: BadgerDeathSpirit
+    path: BadgerDeatFragments
     classID: 1
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.45833334
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: DeathFadeToBlack
+    classID: 1
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.45833334
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.4583333
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Color.a
+    path: DeathFadeToBlack
+    classID: 212
     script: {fileID: 0}
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
