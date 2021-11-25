@@ -45,11 +45,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info:
+    glyph: {fileID: 11400000, guid: bcf12bef25ce157498a83e770b648c00, type: 2}
     castType: 1
     target: 2
     effectRange: 0
     effectAmount: -1
     lifeTime: 0.5
+    castImmediately: 1
   flashTime: 0.25
   flashIntensity: 3
 --- !u!120 &6329843866113282793

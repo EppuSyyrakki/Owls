@@ -7,14 +7,7 @@ using AdVd.GlyphRecognition;
 
 namespace Owls.Player
 {
-	[Serializable]
-	public class GlyphSpellPair
-	{
-		public Glyph glyph;
-		public Spell spell;
-	}
-
-	public class WorldTouchPointer : MonoBehaviour
+	public class SpellCaster : MonoBehaviour
 	{
 		[SerializeField]
 		private ParticleSystem particle;
@@ -35,7 +28,7 @@ namespace Owls.Player
 		private GlyphDrawInput glyphInput = null;
 
 		[SerializeField]
-		private List<GlyphSpellPair> glyphSpellPairs;
+		private List<Spell> selectedSpells;
 
 		private Camera _cam;
 		private TrailRenderer _activeTrail = null;
@@ -47,7 +40,7 @@ namespace Owls.Player
 
 		private void Awake()
 		{
-			FillSpells();
+			GetSpells();
 			particle.Stop();
 			_cam = Camera.main;
 			_oldTrails = new GameObject("Old trails").transform;
@@ -63,7 +56,7 @@ namespace Owls.Player
 				if (touch.phase == TouchPhase.Began) { BeginTouch(touch); }
 				else if (touch.phase == TouchPhase.Moved) { ContinueTouch(touch); }
 				else if (touch.phase == TouchPhase.Ended) { CompleteTouch(touch); }
-				else if (touch.phase == TouchPhase.Stationary) { CancelTouch(); }
+				else if (touch.phase == TouchPhase.Stationary) { StopPointer(); }
 			}
 		}
 
@@ -71,19 +64,26 @@ namespace Owls.Player
 		{
 			if (!_castCurrent) { return; }
 
+			if (_currentSpell is Lightning && !IsStrokeStraight()) 
+			{
+				_castCurrent = false;
+				_currentSpell = null;
+				return; 
+			}
+
 			var spell = Instantiate(_currentSpell);
 			spell.Init(_stroke);
 			_castCurrent = false;
 			_currentSpell = null;
 		}
 
-		private void FillSpells()
+		private void GetSpells()
 		{
-			_spells = new Dictionary<Glyph, Spell>(glyphSpellPairs.Count);
+			_spells = new Dictionary<Glyph, Spell>(selectedSpells.Count);
 
-			foreach (var entry in glyphSpellPairs)
+			foreach (var spell in selectedSpells)
 			{
-				_spells.Add(entry.glyph, entry.spell);
+				_spells.Add(spell.info.glyph, spell);
 			}
 		}
 
@@ -103,21 +103,26 @@ namespace Owls.Player
 		private void CompleteTouch(Touch touch)
 		{
 			Move(touch.position);
-			glyphInput.Cast();
 
-			if (_currentSpell is LightningSpell)
+			if (_currentSpell != null)
 			{
 				_castCurrent = true;
+				StopPointer();
+				return;
 			}
 
-			StopActiveTrail();
-			particle.Stop();
+			glyphInput.Cast();
+			StopPointer();
 		}
 
-		private void CancelTouch()
+		private void StopPointer()
 		{
-			StopActiveTrail();
 			particle.Stop();
+
+			if (_activeTrail == null) { return; }
+
+			_activeTrail.transform.parent = _oldTrails;
+			_activeTrail = null;
 		}
 
 		private void Move(Vector2 screenPos)
@@ -158,14 +163,6 @@ namespace Owls.Player
 			return true;
 		}
 
-		private void StopActiveTrail()
-		{
-			if (_activeTrail == null) { return; }
-
-			_activeTrail.transform.parent = _oldTrails;
-			_activeTrail = null;
-		}
-
 		public void GlyphCastHandler(int index, GlyphMatch match)
 		{
 			if (match == null) { return; }
@@ -174,6 +171,11 @@ namespace Owls.Player
 			if (_spells.ContainsKey(match.target))
 			{
 				_currentSpell = _spells[match.target];
+			}
+
+			if (_currentSpell != null && _currentSpell.info.castImmediately)
+			{
+				_castCurrent = true;
 			}
 
 			if (debuggingInfo) Debug.Log("WorldTouchPointer.OnGlyphCast() called. Source: " + m);

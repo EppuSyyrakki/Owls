@@ -5,7 +5,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 namespace Owls.Spells
 {
-	public class LightningSpell : Spell
+	public class Lightning : Spell
 	{
 		[SerializeField, Range(0.1f, 0.5f)]
 		private float flashTime = 0.25f;
@@ -13,6 +13,7 @@ namespace Owls.Spells
 		[SerializeField]
 		private float flashIntensity = 8f;
 
+		private float _originalIntensity = 0;
 		private const string TAG_GLOBAL_LIGHT = "GlobalLight";
 		private Light2D _globalLight;
 		private LineRenderer _lr;
@@ -29,10 +30,9 @@ namespace Owls.Spells
 			_lr.positionCount = stroke.Count;
 			_globalLight = GameObject.FindGameObjectWithTag(TAG_GLOBAL_LIGHT).GetComponent<Light2D>();
 
-			if (_globalLight == null ) 
-			{ 
-				Debug.LogWarning(name + " could not find Global Light tagged Light2D!"); 
-			}
+			if (_globalLight == null ) { Debug.LogWarning(name + " could not find Global Light tagged Light2D!"); }
+
+			_originalIntensity = _globalLight.intensity;
 		}
 
 		private void Start()
@@ -55,16 +55,18 @@ namespace Owls.Spells
 
 		private void OnDisable()
 		{
-			if (_globalLight.intensity != 1) { _globalLight.intensity = 1; }
+			if (_globalLight.intensity != _originalIntensity) 
+			{ 
+				_globalLight.intensity = _originalIntensity; 
+			}
 		}
 
 		private IEnumerator Flash()
 		{
 			float t = info.lifeTime * flashTime;
-			float intensity = _globalLight.intensity;
 			_globalLight.intensity = flashIntensity;
 			yield return new WaitForSeconds(t);
-			_globalLight.intensity = intensity;
+			_globalLight.intensity = _originalIntensity;
 		}
 	}
 }

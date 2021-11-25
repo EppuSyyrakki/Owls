@@ -139,6 +139,11 @@ PrefabInstance:
       objectReference: {fileID: 725777094}
     - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
         type: 3}
+      propertyPath: debuggingInfo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
+        type: 3}
       propertyPath: deltaTreshold
       value: 0.005
       objectReference: {fileID: 0}
@@ -149,9 +154,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
         type: 3}
-      propertyPath: glyphSpellPairs.Array.size
-      value: 1
+      propertyPath: selectedSpells.Array.size
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
+        type: 3}
+      propertyPath: glyphSpellPairs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
+        type: 3}
+      propertyPath: selectedSpells.Array.data[0]
+      value: 
+      objectReference: {fileID: 8194657820882680979, guid: 885f1776901c9ea48a1decba156d39fe,
+        type: 3}
+    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
+        type: 3}
+      propertyPath: selectedSpells.Array.data[1]
+      value: 
+      objectReference: {fileID: 3756382064644079168, guid: ddd0869fc38a67c4297ff39bbb736e01,
+        type: 3}
     - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
         type: 3}
       propertyPath: glyphSpellPair.Array.data[0].glyph
@@ -175,6 +197,18 @@ PrefabInstance:
       propertyPath: glyphSpellPairs.Array.data[0].spell
       value: 
       objectReference: {fileID: 8194657820882680979, guid: 885f1776901c9ea48a1decba156d39fe,
+        type: 3}
+    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
+        type: 3}
+      propertyPath: glyphSpellPairs.Array.data[1].glyph
+      value: 
+      objectReference: {fileID: 11400000, guid: d5f1a5d955c5c4048a7346423c790e2b,
+        type: 2}
+    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
+        type: 3}
+      propertyPath: glyphSpellPairs.Array.data[1].spell
+      value: 
+      objectReference: {fileID: 3756382064644079168, guid: ddd0869fc38a67c4297ff39bbb736e01,
         type: 3}
     - target: {fileID: 3918892694000362373, guid: a1063e6b4fbee3647866567f171f2752,
         type: 3}
@@ -1001,6 +1035,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6526570057173180514, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: m_text
+      value: xxxx
       objectReference: {fileID: 0}
     - target: {fileID: 6526570057173180517, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
         type: 3}

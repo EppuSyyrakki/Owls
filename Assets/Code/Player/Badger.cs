@@ -13,9 +13,11 @@ namespace Owls.Player
 
 		private const string ANIM_TAKEDAMAGE = "TakeDamage";
 		private const string ANIM_DIE = "Die";
+		private const string ANIM_SHIELD = "Shield";
 		
 		private Animator _animator;
 
+		public bool Invincible { get; set; }
 		public float MaxHealth { get; private set; }
 		public bool IsAlive { get; private set; } = true;
 		public Vector3 Position => transform.position;
@@ -40,7 +42,7 @@ namespace Owls.Player
 
 		public void TakeDamage(float amount)
 		{
-			if (!IsAlive) { return; }
+			if (!IsAlive || Invincible) { return; }
 
 			health = Mathf.Clamp01(health - amount);
 
@@ -62,6 +64,12 @@ namespace Owls.Player
 		{
 			_animator.SetTrigger(ANIM_DIE); 
 			IsAlive = false;
+		}
+
+		public void SetShield(bool value)
+		{
+			Invincible = value;
+			_animator.SetBool(ANIM_SHIELD, value);
 		}
 	}
 }

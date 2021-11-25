@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdVd.GlyphRecognition;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,14 +17,6 @@ namespace Owls.Spells
 		public List<ITargetable> Target { get; private set; }
 		public List<Vector2> Stroke { get; private set; }
 		public bool TimerPassed => timeLived > info.lifeTime;
-
-		private void Awake()
-		{
-			if (info.castType == CastType.NoTouch && info.target == CastTarget.TouchedEnemies)
-			{
-				Debug.LogError(name + " spell can't have cast type as No Touch and target as Touched Enemies!");
-			}
-		}
 
 		public virtual void Update()
 		{
@@ -132,10 +125,12 @@ namespace Owls.Spells
 	[System.Serializable]
 	public struct Info
 	{
+		public Glyph glyph;
 		public CastType castType;
 		public CastTarget target;
 		public float effectRange;
 		public float effectAmount;
 		public float lifeTime;
+		public bool castImmediately;
 	}
 }
