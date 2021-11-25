@@ -6,6 +6,9 @@ namespace Owls.Enemy
 {
     public class EnemySpawner : MonoBehaviour
     {
+		[SerializeField]
+		private AnimationCurve animcurve;
+
 		[SerializeField, Range(1f, 5f)]
 		private float spawnFrequency = 1.5f, spawnPreWait = 3f;
 

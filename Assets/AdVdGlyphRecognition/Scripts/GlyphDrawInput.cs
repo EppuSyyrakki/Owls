@@ -11,7 +11,8 @@ namespace AdVd.GlyphRecognition
 	/// <summary>
 	/// UI component to draw glyphs and find the closest match within a set of stored glyphs using a specific matching method.
 	/// </summary>
-	[RequireComponent(typeof(RectTransform), typeof(Image))]
+	[RequireComponent(typeof(RectTransform))]
+	// [RequireComponent(typeof(Image))]
 	public class GlyphDrawInput : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler {
 
 		List<Vector2> stroke;

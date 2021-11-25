@@ -20,6 +20,9 @@ namespace Owls.Player
 		[SerializeField, Tooltip("Max deviation from a straight line allowed to cast basic spell")]
 		private float swipeAngleMax = 15f;
 
+		[SerializeField]
+		private float strokeTreshold = 0.1f;
+
 		private Camera _cam;
 		private TrailRenderer _activeTrail = null;
 		private List<Vector2> _stroke = null;
@@ -74,6 +77,7 @@ namespace Owls.Player
 				var go = Instantiate(_lookUp.basicSpell);
 				go.GetComponent<Spell>().Init(_stroke);
 			}
+
 			//else if (glyphRrecognition.match(_stroke, out var glyph) 
 			//		var spell = spellLookUp(glyph)
 			//		instantiate(spell)
@@ -90,13 +94,28 @@ namespace Owls.Player
 
 		private void Move(Vector2 screenPos)
 		{
-			Ray ray = _cam.ScreenPointToRay(screenPos);
-			var hit = Physics2D.Raycast(ray.origin, ray.direction * 20f, 40f, worldPlane);
+			var worldPos = _cam.ScreenToWorldPoint(screenPos);
+			transform.position = worldPos;
 
-			if (hit.collider == null) { return; }
+			if (IsOverTreshold(worldPos))
+			{
 
-			_stroke.Add(hit.point);
-			transform.position = hit.point;
+			}
+			
+			//Ray ray = _cam.ScreenPointToRay(screenPos);
+			//var hit = Physics2D.Raycast(ray.origin, ray.direction * 20f, 40f, worldPlane);
+
+			//if (hit.collider == null) { return; }
+
+			//_stroke.Add(hit.point);
+			//transform.position = hit.point;
+		}
+
+		private bool IsOverTreshold(Vector3 newPos)
+		{
+			if (_stroke.Count < 2) { return true; }
+
+			return false;
 		}
 
 		private bool IsStrokeLightning()
