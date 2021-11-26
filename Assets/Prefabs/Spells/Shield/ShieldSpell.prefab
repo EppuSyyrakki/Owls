@@ -57,6 +57,7 @@ MonoBehaviour:
     effectAmount: -1
     lifeTime: 7
     castImmediately: 1
+    manaCost: 0.1
   endOfLifeTime: 0.75
 --- !u!212 &4626128615771150829
 SpriteRenderer:
