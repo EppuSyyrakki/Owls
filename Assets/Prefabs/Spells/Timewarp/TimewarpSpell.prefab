@@ -43,7 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78dc8de78a267774480e53148ec725ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetHitEffect: []
+  targetHitEffect:
+  - {fileID: 5760035585314185878, guid: 3ebcd17413d56fe43839629667638440, type: 3}
   info:
     glyph: {fileID: 11400000, guid: 03663282d64ae1449a6d68a75cafddc1, type: 2}
     castType: 0
