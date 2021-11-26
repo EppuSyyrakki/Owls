@@ -61,7 +61,7 @@ namespace Owls.Enemy
 
 		public Action<int> enemyKilled;
 		public bool IsAlive { get; private set; } = true;
-		public Vector3 Position => transform.position;
+		public Transform Transform => transform;
 		
 		private void Awake()
 		{

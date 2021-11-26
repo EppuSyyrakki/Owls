@@ -4867,7 +4867,7 @@ PrefabInstance:
     - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
       propertyPath: deathFx.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
@@ -4879,8 +4879,7 @@ PrefabInstance:
         type: 3}
       propertyPath: deathFx.Array.data[2]
       value: 
-      objectReference: {fileID: 4741508095253339141, guid: 0c4ab36cc67d95342a16b3dd1c9bc90c,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
       propertyPath: flightPaths.Array.size

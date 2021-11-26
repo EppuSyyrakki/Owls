@@ -30,7 +30,7 @@ namespace Owls.Spells
 			_lr.positionCount = stroke.Count;
 			_globalLight = GameObject.FindGameObjectWithTag(TAG_GLOBAL_LIGHT).GetComponent<Light2D>();
 
-			if (_globalLight == null ) { Debug.LogWarning(name + " could not find Global Light tagged Light2D!"); }
+			if (_globalLight == null ) { Debug.LogError("Lightning could not find Light2D tagged " + TAG_GLOBAL_LIGHT); }
 
 			_originalIntensity = _globalLight.intensity;
 		}
@@ -46,6 +46,8 @@ namespace Owls.Spells
 
 			foreach (var t in Target)
 			{
+				if (t is Player.Badger) { continue; }
+				SpawnHitEffect(t);
 				t.TargetedBySpell(info);
 			}
 
