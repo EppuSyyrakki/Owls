@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3918892694000362378}
   - component: {fileID: 1337170366206072629}
   m_Layer: 0
-  m_Name: WorldTouchPointer
+  m_Name: SpellCaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,6 +51,7 @@ MonoBehaviour:
   strokeTreshold: 20
   debuggingInfo: 0
   glyphInput: {fileID: 0}
+  selectedSpells: []
 --- !u!1 &3918892694373735485
 GameObject:
   m_ObjectHideFlags: 0

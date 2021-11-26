@@ -213,7 +213,7 @@ PrefabInstance:
     - target: {fileID: 3918892694000362373, guid: a1063e6b4fbee3647866567f171f2752,
         type: 3}
       propertyPath: m_Name
-      value: WorldTouchPointer
+      value: SpellCaster
       objectReference: {fileID: 0}
     - target: {fileID: 3918892694000362378, guid: a1063e6b4fbee3647866567f171f2752,
         type: 3}
