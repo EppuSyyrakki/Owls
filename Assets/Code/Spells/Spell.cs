@@ -134,7 +134,7 @@ namespace Owls.Spells
 
 			foreach (var e in targetHitEffect)
 			{
-				Instantiate(e, transform.position, transform.rotation, transform.parent);
+				Instantiate(e, transform.position, transform.rotation, transform);
 			}
 		}
 	}
