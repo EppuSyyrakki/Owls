@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3918892694000362373}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -51,7 +51,9 @@ MonoBehaviour:
   strokeTreshold: 20
   debuggingInfo: 0
   glyphInput: {fileID: 0}
-  selectedSpells: []
+  selectedSpells:
+  - {fileID: 8194657820882680979, guid: 885f1776901c9ea48a1decba156d39fe, type: 3}
+  - {fileID: 3756382064644079168, guid: ddd0869fc38a67c4297ff39bbb736e01, type: 3}
 --- !u!1 &3918892694373735485
 GameObject:
   m_ObjectHideFlags: 0

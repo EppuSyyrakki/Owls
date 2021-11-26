@@ -649,9 +649,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '1256
-
-'
+  m_text: xxxx
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 862b41d9381d7c0499c5f88bad7cc05f, type: 2}
   m_sharedMaterial: {fileID: 2043802465896911714, guid: 862b41d9381d7c0499c5f88bad7cc05f,
@@ -1691,6 +1689,7 @@ GameObject:
   - component: {fileID: 5676653848157561048}
   - component: {fileID: 7934334842099522472}
   - component: {fileID: 3628052422525179655}
+  - component: {fileID: 1635060226164058726}
   m_Layer: 5
   m_Name: ManaBar
   m_TagString: Untagged
@@ -1755,3 +1754,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1635060226164058726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7554881754882062140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb9ea11f9f40154ebfffbdcd040a89a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

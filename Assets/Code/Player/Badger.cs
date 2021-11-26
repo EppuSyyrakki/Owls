@@ -12,7 +12,7 @@ namespace Owls.Player
 		private float health = 1f;
 
 		[SerializeField]
-		private float mana = 1f, manaRegenAmount = 0.05f, manaRegenInterval = 0.1f;
+		private float mana = 1f, manaRegenAmount = 0.01f;
 
 		private const string ANIM_TAKEDAMAGE = "TakeDamage";
 		private const string ANIM_DIE = "Die";
@@ -41,6 +41,7 @@ namespace Owls.Player
 			_animator = GetComponent<Animator>();
 			MaxHealth = health;
 			MaxMana = mana;
+			StartCoroutine(RegenerateMana());
 		}
 
 		private void Die()
@@ -53,9 +54,10 @@ namespace Owls.Player
 		{
 			while (IsAlive)
 			{
-				mana = Mathf.Clamp01(mana + manaRegenAmount);
-				manaChanged?.Invoke(manaRegenAmount, mana);
-				yield return new WaitForSeconds(manaRegenInterval);
+				var amount = manaRegenAmount * Time.deltaTime;
+				mana = Mathf.Clamp01(mana + amount);
+				manaChanged?.Invoke(amount, mana);
+				yield return new WaitForEndOfFrame();
 			}
 		}
 
@@ -103,6 +105,9 @@ namespace Owls.Player
 		{
 			if (mana < amount) { return false; }
 
+			Debug.Log("Mana reduced");
+			mana -= amount;
+			manaChanged?.Invoke(amount, mana);
 			return true;
 		}
 	}

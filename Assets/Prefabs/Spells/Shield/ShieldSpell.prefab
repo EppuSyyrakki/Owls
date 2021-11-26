@@ -59,7 +59,7 @@ MonoBehaviour:
     effectAmount: -1
     lifeTime: 7
     castImmediately: 1
-    manaCost: 0.1
+    manaCost: 0.4
   endOfLifeTime: 0.75
   flashTime: 0.05
   flashColor: {r: 1, g: 0.8536214, b: 0.4764151, a: 0.35}

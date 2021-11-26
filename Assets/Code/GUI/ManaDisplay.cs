@@ -4,28 +4,26 @@ using Owls.Player;
 
 namespace Owls.GUI
 {
-	public class HealthDisplay : MonoBehaviour
+	public class ManaDisplay : MonoBehaviour
 	{
 		private Badger _badger;
-		private float _maxHealth;
 
 		private void Awake()
 		{
 			_badger = FindObjectOfType<Badger>();
-			_maxHealth = _badger.MaxHealth;
 		}
 
 		private void OnEnable()
 		{
-			_badger.healthChanged += HealthChangedHandler;
+			_badger.manaChanged += ManaChangedHandler;
 		}
 
 		private void OnDisable()
 		{
-			_badger.healthChanged -= HealthChangedHandler;
+			_badger.manaChanged -= ManaChangedHandler;
 		}
 
-		private void HealthChangedHandler(float amount, float remaining)
+		private void ManaChangedHandler(float amount, float remaining)
 		{
 			var scale = transform.localScale;
 			scale.x = remaining;
