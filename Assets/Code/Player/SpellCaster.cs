@@ -122,6 +122,7 @@ namespace Owls.Player
 			if (_activeTrail == null) { return; }
 
 			_activeTrail.transform.parent = _oldTrails;
+			_activeTrail.GetComponent<SelfDestruct>().StartTimer();
 			_activeTrail = null;
 		}
 

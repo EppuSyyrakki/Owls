@@ -38,7 +38,9 @@ namespace Owls.Spells
 		{
 			if (!col.CompareTag(TAG_ENEMY)) { return; }
 
-			col.GetComponent<ITargetable>().TargetedBySpell(info);
+			var target = col.GetComponent<ITargetable>();
+			SpawnHitEffect(target);
+			target.TargetedBySpell(info);
 		}
 
 		/// <summary>

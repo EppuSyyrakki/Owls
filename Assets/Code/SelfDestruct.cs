@@ -23,8 +23,7 @@ namespace Owls
 		private bool _timerRunning = false;
 		private bool _destroyTriggered = false;
 
-		// Use this for initialization
-		void Start()
+		private void Start()
 		{
 			if (autoStart && !useTimer) 
 			{
@@ -34,8 +33,7 @@ namespace Owls
 			if (autoStart && useTimer) { StartTimer(); }
 		}
 
-		// Update is called once per frame
-		void Update()
+		private void Update()
 		{
 			if (!_timerRunning || !useTimer) { return; }
 
