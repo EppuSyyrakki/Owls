@@ -5042,7 +5042,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 37d39c5e4d5913e4592a745e37ef66c3, type: 2}
+      objectReference: {fileID: 9100000, guid: 83f611e035de54d4ca34612bbf292eb0, type: 2}
     - target: {fileID: 8308155169735566943, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
       propertyPath: m_RootOrder
