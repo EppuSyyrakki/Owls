@@ -12,7 +12,7 @@ namespace Owls.Player
 		private float health = 1f;
 
 		[SerializeField]
-		private float mana = 1f, manaRegen = 0.1f;
+		private float mana = 1f, manaRegenAmount = 0.05f, manaRegenInterval = 0.1f;
 
 		private const string ANIM_TAKEDAMAGE = "TakeDamage";
 		private const string ANIM_DIE = "Die";
@@ -41,6 +41,22 @@ namespace Owls.Player
 			_animator = GetComponent<Animator>();
 			MaxHealth = health;
 			MaxMana = mana;
+		}
+
+		private void Die()
+		{
+			_animator.SetTrigger(ANIM_DIE);
+			IsAlive = false;
+		}
+
+		private IEnumerator RegenerateMana()
+		{
+			while (IsAlive)
+			{
+				mana = Mathf.Clamp01(mana + manaRegenAmount);
+				manaChanged?.Invoke(manaRegenAmount, mana);
+				yield return new WaitForSeconds(manaRegenInterval);
+			}
 		}
 
 		public void TargetedBySpell(Info info)
@@ -88,12 +104,6 @@ namespace Owls.Player
 			if (mana < amount) { return false; }
 
 			return true;
-		}
-
-		private void Die()
-		{
-			_animator.SetTrigger(ANIM_DIE); 
-			IsAlive = false;
 		}
 	}
 }

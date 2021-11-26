@@ -9,6 +9,8 @@ namespace Owls.Player
 {
 	public class SpellCaster : MonoBehaviour
 	{
+		private const string TAG_PLAYER = "Player";
+
 		[SerializeField]
 		private ParticleSystem particle;
 
@@ -37,6 +39,7 @@ namespace Owls.Player
 		private Spell _currentSpell;
 		private Dictionary<Glyph, Spell> _spells;
 		private bool _castCurrent = false;
+		private Badger _player;
 
 		private void Awake()
 		{
@@ -44,6 +47,7 @@ namespace Owls.Player
 			particle.Stop();
 			_cam = Camera.main;
 			_oldTrails = new GameObject("Old trails").transform;
+			_player = GameObject.FindGameObjectWithTag(TAG_PLAYER).GetComponent<Badger>();
 			glyphInput.OnGlyphCast.AddListener(GlyphCastHandler);
 		}
 
@@ -71,8 +75,16 @@ namespace Owls.Player
 				return; 
 			}
 
-			var spell = Instantiate(_currentSpell);
-			spell.Init(_stroke);
+			if (_player.ReduceMana(_currentSpell.info.manaCost))
+			{
+				var spell = Instantiate(_currentSpell);
+				spell.Init(_stroke);
+			}
+			else
+			{
+				Debug.Log("Spell " + _currentSpell.name + " failed. Not enough mana.");
+			}
+
 			_castCurrent = false;
 			_currentSpell = null;
 		}
