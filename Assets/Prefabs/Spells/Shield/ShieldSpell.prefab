@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetHitEffect:
   - {fileID: 4741508095253339141, guid: 0c4ab36cc67d95342a16b3dd1c9bc90c, type: 3}
+  - {fileID: 5513482505640471157, guid: 1e4c67515d1b1104c9e173ce48cf1316, type: 3}
   info:
     glyph: {fileID: 11400000, guid: d5f1a5d955c5c4048a7346423c790e2b, type: 2}
     castType: 0
@@ -60,7 +61,7 @@ MonoBehaviour:
     manaCost: 0.1
   endOfLifeTime: 0.75
   flashTime: 0.05
-  flashColor: {r: 1, g: 1, b: 1, a: 0.35}
+  flashColor: {r: 1, g: 0.8536214, b: 0.4764151, a: 0.35}
 --- !u!212 &4626128615771150829
 SpriteRenderer:
   m_ObjectHideFlags: 0
