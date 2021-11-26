@@ -123,6 +123,20 @@ namespace Owls.Spells
 				Instantiate(e, t.position, t.rotation, t.parent);
 			}	
 		}
+
+		protected void SpawnHitEffect()
+		{
+			if (targetHitEffect == null)
+			{
+				Debug.LogError(name + " is trying to spawn a hit effect but doesn't have one!");
+				return;
+			}
+
+			foreach (var e in targetHitEffect)
+			{
+				Instantiate(e, transform.position, transform.rotation, transform.parent);
+			}
+		}
 	}
 
 	public enum CastType

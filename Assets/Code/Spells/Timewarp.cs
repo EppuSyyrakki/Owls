@@ -23,6 +23,7 @@ namespace Owls.Spells
 		private void Start()
 		{
 			StartCoroutine(AdjustTime(1, slowedTime, info.lifeTime * 0.2f));
+			SpawnHitEffect();
 		}
 
 		private void OnDisable()
