@@ -13,9 +13,20 @@ namespace Owls.Spells
 		private Badger _badger = null;
 		private bool _endTriggered = false;
 		private float _endTime = 0;
+		private float _flashTime = 0;
+		private SpriteRenderer _sr;
+		private Color _originalColor;
 
+		[Tooltip("When to start the end anim and disable collider as multiplier of lifetime")]
 		[SerializeField, Range(0.1f, 0.9f)]
 		private float endOfLifeTime = 0.75f;
+
+		[Tooltip("Flash time on enemy hit as multiplier of lifetime")]
+		[SerializeField, Range(0.01f, 0.25f)]
+		private float flashTime = 0.05f;
+
+		[SerializeField]
+		private Color flashColor = new Color(1, 1, 1, 0.35f);
 
 		/// <summary>
 		/// Can be used to fetch references to class members or initialize them.
@@ -29,6 +40,9 @@ namespace Owls.Spells
 		private void Start()
 		{
 			_endTime = info.lifeTime * endOfLifeTime;
+			_flashTime = info.lifeTime * flashTime;
+			_sr = GetComponent<SpriteRenderer>();
+			_originalColor = _sr.color;
 			transform.position = Target[0].Transform.position;
 			_badger = Target[0] as Badger;
 			if (_badger == null) { Debug.LogError("Trying to cast Shield on something else than Badger!"); }
@@ -40,7 +54,15 @@ namespace Owls.Spells
 
 			var target = col.GetComponent<ITargetable>();
 			SpawnHitEffect(target);
+			StartCoroutine(FlashShield());
 			target.TargetedBySpell(info);
+		}
+
+		private IEnumerator FlashShield()
+		{
+			_sr.color = flashColor;
+			yield return new WaitForSeconds(_flashTime);
+			_sr.color = _originalColor;
 		}
 
 		/// <summary>

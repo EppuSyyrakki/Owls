@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93ad29deff2d7be4697be5a0aaf6ebbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetHitEffect: {fileID: 4741508095253339141, guid: 0c4ab36cc67d95342a16b3dd1c9bc90c,
-    type: 3}
+  targetHitEffect:
+  - {fileID: 4741508095253339141, guid: 0c4ab36cc67d95342a16b3dd1c9bc90c, type: 3}
   info:
     glyph: {fileID: 11400000, guid: bcf12bef25ce157498a83e770b648c00, type: 2}
     castType: 1

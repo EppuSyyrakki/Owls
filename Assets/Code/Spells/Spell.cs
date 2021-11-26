@@ -11,7 +11,7 @@ namespace Owls.Spells
 		private const string TAG_ENEMY = "Enemy";
 
 		[SerializeField]
-		private GameObject targetHitEffect = null;
+		private List<GameObject> targetHitEffect = null;
 
 		protected float timeLived = 0;
 
@@ -117,8 +117,11 @@ namespace Owls.Spells
 				return;
 			}
 
-			var t = target.Transform;
-			Instantiate(targetHitEffect, t.position, t.rotation, t.parent);
+			foreach (var e in targetHitEffect)
+			{
+				var t = target.Transform;
+				Instantiate(e, t.position, t.rotation, t.parent);
+			}	
 		}
 	}
 
