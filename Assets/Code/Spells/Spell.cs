@@ -10,9 +10,13 @@ namespace Owls.Spells
 		private const string TAG_PLAYER = "Player";
 		private const string TAG_ENEMY = "Enemy";
 
+		[SerializeField]
+		private GameObject targetHitEffect = null;
+
 		protected float timeLived = 0;
 
 		public Info info;
+		
 
 		public List<ITargetable> Target { get; private set; }
 		public List<Vector2> Stroke { get; private set; }
@@ -104,6 +108,17 @@ namespace Owls.Spells
 					Gizmos.DrawLine(Stroke[i], Stroke[i + 1]);
 				}
 			}
+		}
+
+		protected void SpawnHitEffect(ITargetable target)
+		{
+			if (targetHitEffect == null)
+			{
+				Debug.LogError(name + " is trying to spawn a hit effect but doesn't have one!");
+				return;
+			}
+
+			Instantiate(targetHitEffect, target.Transform, target.Transform);
 		}
 	}
 

@@ -20,12 +20,10 @@ namespace Owls.Spells
 
 		private void Start()
 		{
-			Debug.Log("Shield spell created");
-			transform.position = Target[0].Position;
+			transform.position = Target[0].Transform.position;
+			SpawnHitEffect(Target[0]);
 			_badger = Target[0] as Badger;
 			if (_badger == null) { Debug.LogError("Trying to cast Shield on something else than Badger!"); }
-
-			_badger.SetShield(true);
 		}
 
 		/// <summary>
@@ -36,11 +34,6 @@ namespace Owls.Spells
 			// Advance a timer in base. Destroys gameObject if lifetime passed. 
 			// Base.Execute can be called  before or after this spell's logic.
 			base.Update();
-		}
-
-		private void OnDisable()
-		{
-			_badger.SetShield(false);
 		}
 	}
 }
