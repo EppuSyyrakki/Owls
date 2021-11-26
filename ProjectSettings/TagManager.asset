@@ -9,6 +9,7 @@ TagManager:
   - GlobalLight
   - Enemy
   - Ground
+  - SpellCaster
   layers:
   - Default
   - TransparentFX

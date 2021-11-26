@@ -316,7 +316,7 @@ MonoBehaviour:
   castedGlyph: {fileID: 0}
   targetGlyphSet: {fileID: 11400000, guid: fdb051ed4e953d847bbfe8f0f3d18d67, type: 2}
   normalizedGlyphSize: 0.8
-  sampleDistance: 0.2
+  sampleDistance: 0.1
   castOnTap: 0
   overrideThreshold: 0
   threshold: 0.09
@@ -623,6 +623,101 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1635060226164058726, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: spellFailFlashCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635060226164058726, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: spellFailFlashCurve.m_Curve.Array.data[0].time
+      value: -0.00067249493
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635060226164058726, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: spellFailFlashCurve.m_Curve.Array.data[1].time
+      value: 0.36950088
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635060226164058726, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: spellFailFlashCurve.m_Curve.Array.data[2].time
+      value: 0.6270342
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635060226164058726, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: spellFailFlashCurve.m_Curve.Array.data[0].value
+      value: 1.001845
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635060226164058726, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: spellFailFlashCurve.m_Curve.Array.data[1].value
+      value: 0.75724095
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635060226164058726, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: spellFailFlashCurve.m_Curve.Array.data[2].value
+      value: -0.038487844
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635060226164058726, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: spellFailFlashCurve.m_Curve.Array.data[1].inSlope
+      value: -1.5587157
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635060226164058726, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: spellFailFlashCurve.m_Curve.Array.data[0].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635060226164058726, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: spellFailFlashCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635060226164058726, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: spellFailFlashCurve.m_Curve.Array.data[1].outSlope
+      value: -1.5587157
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635060226164058726, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: spellFailFlashCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635060226164058726, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: spellFailFlashCurve.m_Curve.Array.data[0].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635060226164058726, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: spellFailFlashCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635060226164058726, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: spellFailFlashCurve.m_Curve.Array.data[2].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635060226164058726, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: spellFailFlashCurve.m_Curve.Array.data[0].tangentMode
+      value: 136
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635060226164058726, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: spellFailFlashCurve.m_Curve.Array.data[1].tangentMode
+      value: 136
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635060226164058726, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: spellFailFlashCurve.m_Curve.Array.data[2].tangentMode
+      value: 136
+      objectReference: {fileID: 0}
+    - target: {fileID: 3710604889293465741, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6526570056197971798, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
         type: 3}
       propertyPath: m_Pivot.x

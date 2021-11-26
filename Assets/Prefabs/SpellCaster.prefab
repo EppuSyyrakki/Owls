@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1337170366206072629}
   m_Layer: 0
   m_Name: SpellCaster
-  m_TagString: Untagged
+  m_TagString: SpellCaster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,6 +54,7 @@ MonoBehaviour:
   selectedSpells:
   - {fileID: 8194657820882680979, guid: 885f1776901c9ea48a1decba156d39fe, type: 3}
   - {fileID: 3756382064644079168, guid: ddd0869fc38a67c4297ff39bbb736e01, type: 3}
+  - {fileID: 6690252038896262295, guid: 06ec41015b3008544bba311c15dc033d, type: 3}
 --- !u!1 &3918892694373735485
 GameObject:
   m_ObjectHideFlags: 0
