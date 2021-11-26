@@ -123,12 +123,12 @@ namespace Owls.Enemy
 			}
 			else if (_state == State.HitPlayer) 
 			{ 
-				Remove(hitPlayerFx, false);
+				Kill(hitPlayerFx, killedByPlayer: false);
 				IsAlive = false;
 			}
 			else if (_state == State.Killed) 
 			{ 
-				Remove(deathFx, true);
+				Kill(deathFx, killedByPlayer: true);
 				IsAlive = false;
 			}
         }
@@ -144,8 +144,9 @@ namespace Owls.Enemy
 
 		private void MoveOnPath()
         {
-	        if (_currentPathIndex + 1 >= _path3.Length)
-	        {
+			// Have I reached the last point (end) of the path?
+			if (_currentPathIndex + 1 >= _path3.Length)
+			{
 				if (!_attackInvoked) 
 				{ 
 					Invoke(nameof(ChangeToAttackState), waitBeforeAttack);
@@ -154,21 +155,19 @@ namespace Owls.Enemy
 					_t = 0;
 				}
 
-		        // End of path reached, don't move.
 		        return;
 	        }
 
+			// I am somwhere between index and index + 1.
 	        _t += Time.deltaTime;
 	        var time = _t * flightSpeed;
 	        transform.position = Vector3.Lerp(_path3[_currentPathIndex], _path3[_currentPathIndex + 1], time);
 
-	        if (transform.position != _path3[_currentPathIndex + 1])
-	        {
-				// Next point not reached yet, don't change path index.
-		        return;
-	        }
+			// If I haven't reached index + 1, we're still between them so return
+	        if (transform.position != _path3[_currentPathIndex + 1]) { return; }
 
-			// position is equal to next position on path. Increase index so we can move to next point.
+			// If I got this far, I have reached the next point on path.
+			// Increase index so I can start moving towards next point.
 	        _currentPathIndex++;
 	        _t = 0;
         }
@@ -189,14 +188,13 @@ namespace Owls.Enemy
 			_t += Time.deltaTime;
 		}
 
-		private void Remove(List<GameObject> effects, bool killedByPlayer)
+		private void Kill(List<GameObject> effects, bool killedByPlayer)
 		{
 			if (_destroyInvoked) { return; }
 
 			foreach (var e in effects)
 			{
-				var fx = Instantiate(e, transform.position, Quaternion.identity, transform.parent);
-				_spawner.DestroyObject(fx);
+				Instantiate(e, transform.position, Quaternion.identity, transform.parent);
 			}
 
 			if (killedByPlayer)

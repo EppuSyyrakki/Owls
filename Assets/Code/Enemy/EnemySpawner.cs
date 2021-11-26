@@ -14,10 +14,7 @@ namespace Owls.Enemy
 
 		[SerializeField, Range(0.1f, 0.9f)]
 		private float spawnRandomizer = 0.5f;
-
-		[SerializeField]
-		private float deathFxLifeTime = 3f;
-		
+	
 		private BoxCollider2D _edge;
 		private float _spawnTimer = 0f;
 		private float _targetTime = 0f;
@@ -79,11 +76,6 @@ namespace Owls.Enemy
 		private void EnableSpawning()
 		{
 			_spawnEnabled = true;
-		}
-
-		public void DestroyObject(GameObject go)
-		{
-			Destroy(go, deathFxLifeTime);
 		}
 	}
 }

@@ -17,7 +17,6 @@ namespace Owls.Spells
 
 		public Info info;
 		
-
 		public List<ITargetable> Target { get; private set; }
 		public List<Vector2> Stroke { get; private set; }
 		public bool TimerPassed => timeLived > info.lifeTime;
@@ -148,5 +147,6 @@ namespace Owls.Spells
 		public float effectAmount;
 		public float lifeTime;
 		public bool castImmediately;
+		public float manaCost;
 	}
 }
