@@ -1,7 +1,7 @@
 ﻿using System.Collections;
+using System;
 using UnityEngine;
 using System.Collections.Generic;
-using System;
 using Owls.Spells;
 using AdVd.GlyphRecognition;
 
@@ -40,6 +40,8 @@ namespace Owls.Player
 		private Dictionary<Glyph, Spell> _spells;
 		private bool _castCurrent = false;
 		private Badger _player;
+
+		public Action spellCastingFailed;
 
 		private void Awake()
 		{
@@ -82,13 +84,16 @@ namespace Owls.Player
 			}
 			else
 			{
-				Debug.Log("Spell " + _currentSpell.name + " failed. Not enough mana.");
+				spellCastingFailed?.Invoke();
 			}
 
 			_castCurrent = false;
 			_currentSpell = null;
 		}
 
+		/// <summary>
+		/// Builds the spell dictionary.
+		/// </summary>
 		private void GetSpells()
 		{
 			_spells = new Dictionary<Glyph, Spell>(selectedSpells.Count);
@@ -127,6 +132,10 @@ namespace Owls.Player
 			StopPointer();
 		}
 
+		/// <summary>
+		/// Stops particles from emitting, moves the trail to another parent and starts the trail
+		/// self destruct timer.
+		/// </summary>
 		private void StopPointer()
 		{
 			particle.Stop();
@@ -138,6 +147,10 @@ namespace Owls.Player
 			_activeTrail = null;
 		}
 
+		/// <summary>
+		/// Move the gameObject on screen. Adds a stroke point if it is over a distance treshold.
+		/// </summary>
+		/// <param name="screenPos">The position of the movement target in screen space.</param>
 		private void Move(Vector2 screenPos)
 		{
 			Vector2 worldPos = _cam.ScreenToWorldPoint(screenPos);
@@ -146,6 +159,12 @@ namespace Owls.Player
 			if (_stroke.Count < 2 || IsOverTreshold(worldPos)) { _stroke.Add(worldPos); }
 		}
 
+		/// <summary>
+		/// Checks if a position is far enough from the last position to prevent creating too
+		/// many points on fast machines.
+		/// </summary>
+		/// <param name="newPos">The position we check the last position against</param>
+		/// <returns>true if the distance > treshold, otherwise false</returns>
 		private bool IsOverTreshold(Vector2 newPos)
 		{
 			float sqrMag = (_stroke[_stroke.Count - 1] - newPos).sqrMagnitude;
@@ -157,6 +176,10 @@ namespace Owls.Player
 			return isOver;
 		}
 
+		/// <summary>
+		/// Checks all the corners of the stroke are less than a inspector defined angle.
+		/// </summary>
+		/// <returns>true if all corners are below swipeAngleMax, otherwise false</returns>
 		private bool IsStrokeStraight()
 		{
 			for (int i = 0; i < _stroke.Count - 2; i++)
@@ -176,6 +199,13 @@ namespace Owls.Player
 			return true;
 		}
 
+		/// <summary>
+		/// A handler listening to a delegate in the Glyph Draw Input class. It is invoked when touch input ends and
+		/// the drawn glyph is cast against a set. Finds the spell corresponding to the glyph from a dictionary, sets it
+		/// as the current spell.
+		/// </summary>
+		/// <param name="index">Index of the glyph in the glyph set</param>
+		/// <param name="match">The matching glyph and additional info</param>
 		public void GlyphCastHandler(int index, GlyphMatch match)
 		{
 			if (match == null) { return; }
