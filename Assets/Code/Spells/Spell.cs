@@ -118,7 +118,7 @@ namespace Owls.Spells
 				return;
 			}
 
-			Instantiate(targetHitEffect, target.Transform, target.Transform);
+			Instantiate(targetHitEffect, target.Transform.position, Quaternion.identity, null);
 		}
 	}
 

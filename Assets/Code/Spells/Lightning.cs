@@ -47,8 +47,8 @@ namespace Owls.Spells
 			foreach (var t in Target)
 			{
 				if (t is Player.Badger) { continue; }
-				t.TargetedBySpell(info);
 				SpawnHitEffect(t);
+				t.TargetedBySpell(info);
 			}
 
 			Target.Clear();
