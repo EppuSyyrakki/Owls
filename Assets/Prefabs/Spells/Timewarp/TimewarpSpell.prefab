@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetHitEffect:
   - {fileID: 7750296478310380623, guid: a0f5648dc82e1d749b26bc0a8d92a3fd, type: 3}
+  - {fileID: 5760035585314185878, guid: 3ebcd17413d56fe43839629667638440, type: 3}
   info:
     glyph: {fileID: 11400000, guid: 03663282d64ae1449a6d68a75cafddc1, type: 2}
     castType: 0
