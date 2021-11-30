@@ -35,10 +35,10 @@ namespace Owls.GUI
 		private int maxBirds = 9;
 
 		[SerializeField]
-		private float comboMulti = 1.5f;
+		private float comboTime = 0.5f;
 
 		[SerializeField]
-		private float comboTime = 0.5f;
+		private float comboIncrease = 0.5f;
 
 		[SerializeField]
 		private Score scorePrefab = null;
@@ -73,8 +73,7 @@ namespace Owls.GUI
 
 		private void EnemyKilledHandler(int reward, Vector2 screenPos)
 		{
-			float multiplier = _comboLevel > 1 ? comboMulti * _comboLevel : 1;
-			int finalReward = (int)(reward * multiplier);
+			int finalReward = (int)(_comboLevel * reward);
 			_currentScore += finalReward;
 			StopCoroutine(WaitForCombo());
 			StartCoroutine(WaitForCombo());
@@ -104,7 +103,7 @@ namespace Owls.GUI
 
 		private IEnumerator WaitForCombo()
 		{
-			_comboLevel++;
+			_comboLevel += comboIncrease * _comboLevel;
 			yield return new WaitForSeconds(comboTime);
 			_comboLevel = 1;
 		}
