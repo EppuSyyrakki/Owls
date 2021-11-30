@@ -51,8 +51,17 @@ MonoBehaviour:
   score: {fileID: 6526570057173180514}
   birds: {fileID: 6526570057278389264}
   maxBirds: 9
+  comboMulti: 1.5
+  comboTime: 0.5
   scorePrefab: {fileID: 1089947365724089013, guid: 3bff37974bcf94846922f05119bff314,
     type: 3}
+  scoreProperties:
+  - above: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+  - above: 100
+    color: {r: 1, g: 0.9863682, b: 0.10849059, a: 1}
+    size: 1
 --- !u!1 &3710604889293465741
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,16 +13,11 @@ namespace Owls.GUI
 			_text = GetComponent<TMP_Text>();
 		}
 
-		// Use this for initialization
-		void Start()
+		public void Init(int score, ScoreProperty sp)
 		{
-
-		}
-
-		// Update is called once per frame
-		void Update()
-		{
-
+			_text.text = score.ToString();
+			_text.color = sp.color;
+			transform.localScale = new Vector2(sp.size, sp.size);
 		}
 	}
 }

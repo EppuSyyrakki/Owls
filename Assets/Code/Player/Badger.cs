@@ -105,7 +105,6 @@ namespace Owls.Player
 		{
 			if (mana < amount) { return false; }
 
-			Debug.Log("Mana reduced");
 			mana -= amount;
 			manaChanged?.Invoke(amount, mana);
 			return true;

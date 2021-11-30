@@ -21,13 +21,15 @@ namespace Owls.Enemy
 		private float _spawnTimer = 0f;
 		private float _targetTime = 0f;
 		private bool _spawnEnabled = false;
+		private Camera _cam = null;
 
 	    public List<Enemy> enemies = new List<Enemy>();
-		public Action<int> enemyKilled;
+		public Action<int, Vector2> enemyKilled;
 
 		private void Awake()
 		{
 			_edge = GetComponent<BoxCollider2D>();
+			_cam = Camera.main;
 		}
 
 		private void Start()
@@ -80,9 +82,9 @@ namespace Owls.Enemy
 			_spawnEnabled = true;
 		}
 
-		public void EnemyKilledByPlayer(int reward)
+		public void EnemyKilledByPlayer(int reward, Vector3 worldPos)
 		{
-			enemyKilled?.Invoke(reward);
+			enemyKilled?.Invoke(reward, _cam.WorldToScreenPoint(worldPos));
 		}
 	}
 }

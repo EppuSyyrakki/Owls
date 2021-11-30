@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 224307221603704820}
   - component: {fileID: 3881722174702703403}
   - component: {fileID: 1089947365724089013}
+  - component: {fileID: 6144281846498586428}
   - component: {fileID: 8496930662924311798}
   m_Layer: 5
   m_Name: ScoreReward
@@ -58,6 +59,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c98121d190ef746a763aa3a88676c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6144281846498586428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2426198633107411401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c06b71e675dce4f4eb34228d796885d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToDestroy: {fileID: 0}
+  useTimer: 1
+  autoStart: 1
+  targetTime: 2
 --- !u!114 &8496930662924311798
 MonoBehaviour:
   m_ObjectHideFlags: 0

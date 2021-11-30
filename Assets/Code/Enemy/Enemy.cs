@@ -198,7 +198,7 @@ namespace Owls.Enemy
 
 			if (killedByPlayer)
 			{
-				_spawner.EnemyKilledByPlayer(scoreReward);
+				_spawner.EnemyKilledByPlayer(scoreReward, transform.position);
 			}
 
 			Destroy(gameObject, Time.deltaTime);
