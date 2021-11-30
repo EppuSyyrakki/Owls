@@ -14,8 +14,8 @@ namespace Owls.Spells
 		private float flashIntensity = 8f;
 
 		private float _originalIntensity = 0;
-		private const string TAG_GLOBAL_LIGHT = "GlobalLight";
-		private Light2D _globalLight;
+		// private const string TAG_GLOBAL_LIGHT = "GlobalLight";
+		// private Light2D _globalLight;
 		private LineRenderer _lr;
 
 		/// <summary>
@@ -28,11 +28,11 @@ namespace Owls.Spells
 
 			_lr = GetComponent<LineRenderer>();
 			_lr.positionCount = stroke.Count;
-			_globalLight = GameObject.FindGameObjectWithTag(TAG_GLOBAL_LIGHT).GetComponent<Light2D>();
+			// _globalLight = GameObject.FindGameObjectWithTag(TAG_GLOBAL_LIGHT).GetComponent<Light2D>();
 
-			if (_globalLight == null ) { Debug.LogError("Lightning could not find Light2D tagged " + TAG_GLOBAL_LIGHT); }
+			// if (_globalLight == null ) { Debug.LogError("Lightning could not find Light2D tagged " + TAG_GLOBAL_LIGHT); }
 
-			_originalIntensity = _globalLight.intensity;
+			// _originalIntensity = _globalLight.intensity;
 		}
 
 		private void Start()
@@ -52,23 +52,23 @@ namespace Owls.Spells
 			}
 
 			Target.Clear();
-			StartCoroutine(Flash());
+			// StartCoroutine(Flash());
 		}
 
-		private void OnDisable()
-		{
-			if (_globalLight.intensity != _originalIntensity) 
-			{ 
-				_globalLight.intensity = _originalIntensity; 
-			}
-		}
+		//private void OnDisable()
+		//{
+		//	if (_globalLight.intensity != _originalIntensity) 
+		//	{ 
+		//		_globalLight.intensity = _originalIntensity; 
+		//	}
+		//}
 
 		private IEnumerator Flash()
 		{
 			float t = info.lifeTime * flashTime;
-			_globalLight.intensity = flashIntensity;
+			// _globalLight.intensity = flashIntensity;
 			yield return new WaitForSeconds(t);
-			_globalLight.intensity = _originalIntensity;
+			// _globalLight.intensity = _originalIntensity;
 		}
 	}
 }
