@@ -10,10 +10,10 @@ namespace Owls.Spells
 		[SerializeField, Range(0.1f, 0.5f)]
 		private float flashTime = 0.25f;
 
-		[SerializeField]
-		private float flashIntensity = 8f;
+		//[SerializeField]
+		//private float flashIntensity = 8f;
 
-		private float _originalIntensity = 0;
+		// private float _originalIntensity = 0;
 		// private const string TAG_GLOBAL_LIGHT = "GlobalLight";
 		// private Light2D _globalLight;
 		private LineRenderer _lr;
@@ -55,20 +55,12 @@ namespace Owls.Spells
 			// StartCoroutine(Flash());
 		}
 
-		//private void OnDisable()
-		//{
-		//	if (_globalLight.intensity != _originalIntensity) 
-		//	{ 
-		//		_globalLight.intensity = _originalIntensity; 
-		//	}
-		//}
-
 		private IEnumerator Flash()
 		{
 			float t = info.lifeTime * flashTime;
-			// _globalLight.intensity = flashIntensity;
+			// Set the "light"
 			yield return new WaitForSeconds(t);
-			// _globalLight.intensity = _originalIntensity;
+			// Reset the "light"
 		}
 	}
 }

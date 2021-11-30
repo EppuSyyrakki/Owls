@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2446326354035609965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9164160062921512769}
+  - component: {fileID: 8637130512555331055}
+  m_Layer: 5
+  m_Name: ScoreKeeper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &9164160062921512769
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2446326354035609965}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6526570056197971798}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8637130512555331055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2446326354035609965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac01a2e26f5d3444a1f763fa2b322b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: {fileID: 6526570057173180514}
+  birds: {fileID: 6526570057278389264}
+  maxBirds: 9
+  scorePrefab: {fileID: 1089947365724089013, guid: 3bff37974bcf94846922f05119bff314,
+    type: 3}
 --- !u!1 &3710604889293465741
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,6 +164,7 @@ RectTransform:
   - {fileID: 6526570057764927601}
   - {fileID: 2034807328087711446}
   - {fileID: 6526570057331121099}
+  - {fileID: 9164160062921512769}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -596,7 +650,7 @@ GameObject:
   - component: {fileID: 6526570057173180515}
   - component: {fileID: 6526570057173180514}
   m_Layer: 5
-  m_Name: MagicPoints
+  m_Name: Text_CurrentScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -649,7 +703,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: xxxx
+  m_text: 99999
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 862b41d9381d7c0499c5f88bad7cc05f, type: 2}
   m_sharedMaterial: {fileID: 2043802465896911714, guid: 862b41d9381d7c0499c5f88bad7cc05f,
@@ -685,7 +739,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: -5
   m_wordSpacing: 0
@@ -731,7 +785,7 @@ GameObject:
   - component: {fileID: 6526570057278389265}
   - component: {fileID: 6526570057278389264}
   m_Layer: 5
-  m_Name: NumberOfBirds
+  m_Name: Text_CurrentBirds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -784,7 +838,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '6/7
+  m_text: '9 / 9
 
 '
   m_isRightToLeft: 0
@@ -822,7 +876,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: -5
   m_wordSpacing: 0
@@ -1107,7 +1161,7 @@ GameObject:
   - component: {fileID: 6526570057437028639}
   - component: {fileID: 6526570057437028638}
   m_Layer: 5
-  m_Name: Icon_Item_Points
+  m_Name: Icon_Item_Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1769,7 +1823,34 @@ MonoBehaviour:
   spellFailedColor: {r: 1, g: 0, b: 0, a: 1}
   spellFailFlashCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.00067249493
+      value: 1.001845
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.36950088
+      value: 0.75724095
+      inSlope: -1.5587157
+      outSlope: -1.5587157
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6270342
+      value: -0.038487844
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

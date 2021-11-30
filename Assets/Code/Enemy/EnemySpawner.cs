@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Owls.Enemy
 {
@@ -21,7 +23,7 @@ namespace Owls.Enemy
 		private bool _spawnEnabled = false;
 
 	    public List<Enemy> enemies = new List<Enemy>();
-		
+		public Action<int> enemyKilled;
 
 		private void Awake()
 		{
@@ -76,6 +78,11 @@ namespace Owls.Enemy
 		private void EnableSpawning()
 		{
 			_spawnEnabled = true;
+		}
+
+		public void EnemyKilledByPlayer(int reward)
+		{
+			enemyKilled?.Invoke(reward);
 		}
 	}
 }

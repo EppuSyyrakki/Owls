@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2022157400024682575}
   m_Layer: 0
   m_Name: OwlSpawner
-  m_TagString: Untagged
+  m_TagString: EnemySpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,9 +131,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  spawnFrequency: 2
+  spawnFrequency: 1.33
   spawnPreWait: 1
-  spawnRandomizer: 0.5
+  spawnRandomizer: 0.43
   enemies:
   - {fileID: 6902416592946479942, guid: 3d993631cdad8074abc2d27e6584b138, type: 3}
   - {fileID: 3687147190431596773, guid: 380edf0971b533e4d94fd2ac2dcb1d98, type: 3}

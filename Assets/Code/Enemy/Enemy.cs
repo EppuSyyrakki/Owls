@@ -59,7 +59,6 @@ namespace Owls.Enemy
 		private Transform _player;
 		private EnemySpawner _spawner;
 
-		public Action<int> enemyKilled;
 		public bool IsAlive { get; private set; } = true;
 		public Transform Transform => transform;
 		
@@ -199,7 +198,7 @@ namespace Owls.Enemy
 
 			if (killedByPlayer)
 			{
-				enemyKilled?.Invoke(scoreReward);
+				_spawner.EnemyKilledByPlayer(scoreReward);
 			}
 
 			Destroy(gameObject, Time.deltaTime);
