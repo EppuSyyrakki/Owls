@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DistrotionMat
-  m_Shader: {fileID: -6465566751694194690, guid: 34135183797ad1b438c0f29f47449e22,
+  m_Name: HeatDistortionMat
+  m_Shader: {fileID: -6465566751694194690, guid: 641dbb46421a5a547bedb25b3b977639,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,8 +20,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
+    - Texture2D_415c7d54fe0c47b1a7852579416b3bb4:
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -36,9 +36,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - Vector2_0eb879b223ba41c6bb7460785d97d695: {r: 3, g: 3, b: 0, a: 0}
-    - Vector2_2463cc81a65442a9a877b3d2769f11ab: {r: 20, g: 1, b: 0, a: 0}
-    - Vector2_d55dcf7f4cfb41df925ee242277b0a5b: {r: 1, g: 1, b: 0, a: 0}
+    m_Floats:
+    - Vector1_a12671b7442f4e36b2a87445a61414f9: 1
+    m_Colors: []
   m_BuildTextureStacks: []
