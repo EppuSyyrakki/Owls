@@ -38,7 +38,7 @@ Material:
     - Vector2_091b2bfeb8a946fe85c068aa01ce899a: {r: 25, g: 0, b: 0, a: 0}
     - Vector2_362427165a5d415c975ff786f10aa65e: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_59de619d5e874e669be8b1ac6c87f7c5: {r: 0, g: 0, b: 0, a: 0}
-    - Vector3_06dfe610a6ae4e5a945ae9a896f24167: {r: -0.55, g: 0, b: 0, a: 0}
+    - Vector3_06dfe610a6ae4e5a945ae9a896f24167: {r: 0, g: 0, b: 0, a: 0}
     - Vector3_a83ef40aca974b2bbdf36d85995deb09: {r: 0, g: 0, b: 0, a: 0}
     - Vector3_b339691e42244804b52c6c1a13a93492: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
