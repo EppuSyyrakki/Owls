@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -316,6 +317,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      ThreeEyeOwlAttackSpriteSheet_4: 8506506186942357333
+      ThreeEyeOwlAttackSpriteSheet_2: 4974903612911592139
+      ThreeEyeOwlAttackSpriteSheet_1: -4444375150641801564
+      ThreeEyeOwlAttackSpriteSheet_7: -2136476934435665638
+      ThreeEyeOwlAttackSpriteSheet_5: 7533948227680978781
+      ThreeEyeOwlAttackSpriteSheet_0: -4187436961581986332
+      ThreeEyeOwlAttackSpriteSheet_3: 8998935093649236114
+      ThreeEyeOwlAttackSpriteSheet_6: -1680195680497678264
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

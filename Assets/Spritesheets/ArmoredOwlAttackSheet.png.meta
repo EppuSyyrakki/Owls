@@ -57,6 +57,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -388,6 +389,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      ArmoredOwlAttackSheet_4: -3403595329945682791
+      ArmoredOwlAttackSheet_0: 1896817531781264601
+      ArmoredOwlAttackSheet_2: -4514891107816430608
+      ArmoredOwlAttackSheet_7: 8567965218246163552
+      ArmoredOwlAttackSheet_5: 2007114171966090586
+      ArmoredOwlAttackSheet_8: 8962486026609576983
+      ArmoredOwlAttackSheet_10: 1504198894070788735
+      ArmoredOwlAttackSheet_1: -4600428060914252677
+      ArmoredOwlAttackSheet_3: 486668495385528467
+      ArmoredOwlAttackSheet_9: -4790515740187936215
+      ArmoredOwlAttackSheet_6: 236316165791572343
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

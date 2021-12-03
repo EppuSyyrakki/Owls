@@ -72,6 +72,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -508,6 +509,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      HoodedOwlSpriteSheet_10: -6637438726287064295
+      HoodedOwlSpriteSheet_3: -5636627549694255227
+      HoodedOwlSpriteSheet_14: -6603489181397900315
+      HoodedOwlSpriteSheet_15: -3108999675988176846
+      HoodedOwlSpriteSheet_1: -7873717487257111027
+      HoodedOwlSpriteSheet_5: 2500088072649782167
+      HoodedOwlSpriteSheet_6: -6813088805550110026
+      HoodedOwlSpriteSheet_13: -1019129033291158591
+      HoodedOwlSpriteSheet_9: -7862447405616690995
+      HoodedOwlSpriteSheet_12: -5219275568515293563
+      HoodedOwlSpriteSheet_7: -1607361475492194502
+      HoodedOwlSpriteSheet_8: -3535633999769452104
+      HoodedOwlSpriteSheet_2: 8022391540791172845
+      HoodedOwlSpriteSheet_11: -2433066906959429217
+      HoodedOwlSpriteSheet_4: 1375006914605734044
+      HoodedOwlSpriteSheet_0: 6114323715240304597
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -66,6 +66,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -460,6 +461,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      BadgerHitSpriteSheet_6: 5945185015736540147
+      BadgerHitSpriteSheet_0: -2269212612951933803
+      BadgerHitSpriteSheet_12: -3780667021867801687
+      BadgerHitSpriteSheet_11: -5845908376280742361
+      BadgerHitSpriteSheet_9: 3705096052956313019
+      BadgerHitSpriteSheet_8: 8695111882917462352
+      BadgerHitSpriteSheet_3: 723291766942407797
+      BadgerHitSpriteSheet_7: 5778237187592430195
+      BadgerHitSpriteSheet_4: -2044421645479196840
+      BadgerHitSpriteSheet_2: 4758356440110831324
+      BadgerHitSpriteSheet_13: 8786957122009618346
+      BadgerHitSpriteSheet_5: 2924966102330595166
+      BadgerHitSpriteSheet_10: 5784332257424291916
+      BadgerHitSpriteSheet_1: -1400237796595134425
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

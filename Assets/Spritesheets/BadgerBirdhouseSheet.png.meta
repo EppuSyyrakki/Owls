@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -316,6 +317,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      BadgerBirdhouseSheet_5: 8756850142518578667
+      BadgerBirdhouseSheet_7: -4278012813105286041
+      BadgerBirdhouseSheet_1: 1757994616722022917
+      BadgerBirdhouseSheet_6: -4878064144458568311
+      BadgerBirdhouseSheet_2: -5867993541250760740
+      BadgerBirdhouseSheet_3: 3439870292912829961
+      BadgerBirdhouseSheet_0: -2829947188204810099
+      BadgerBirdhouseSheet_4: -3390015182308649665
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -45,6 +45,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -292,6 +293,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      BoneOwlAttackSheet_6: 6369134308335747092
+      BoneOwlAttackSheet_4: -6021855410080656068
+      BoneOwlAttackSheet_3: 3965735372735614134
+      BoneOwlAttackSheet_1: -7690672170989020625
+      BoneOwlAttackSheet_2: -3586936812732636291
+      BoneOwlAttackSheet_0: -5347235010364740071
+      BoneOwlAttackSheet_5: -8249383470980464650
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -69,6 +69,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -484,6 +485,22 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      BlackOwlSpriteSheet_11: -8171694974422940522
+      BlackOwlSpriteSheet_5: 5637497543299049083
+      BlackOwlSpriteSheet_2: -9044883647004236082
+      BlackOwlSpriteSheet_12: -2855788015705859735
+      BlackOwlSpriteSheet_10: -9071786994320697954
+      BlackOwlSpriteSheet_1: 5002590088156481656
+      BlackOwlSpriteSheet_8: -212157294699855731
+      BlackOwlSpriteSheet_9: -5826889861396191042
+      BlackOwlSpriteSheet_3: -3223491383830009857
+      BlackOwlSpriteSheet_7: -5201861625781270899
+      BlackOwlSpriteSheet_6: -1196233839921919432
+      BlackOwlSpriteSheet_0: -5919247334678535016
+      BlackOwlSpriteSheet_13: -1938409980801498711
+      BlackOwlSpriteSheet_4: -1737882038252486823
+      BlackOwlSpriteSheet_14: -8520386955701813366
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

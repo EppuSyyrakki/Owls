@@ -60,6 +60,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -412,6 +413,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      HornedWhiteOwlSpriteSheet_10: -8438787159174096165
+      HornedWhiteOwlSpriteSheet_6: -8009762739512079735
+      HornedWhiteOwlSpriteSheet_1: 1794258653318267299
+      HornedWhiteOwlSpriteSheet_2: 1159311620931455122
+      HornedWhiteOwlSpriteSheet_7: 8870772684164211186
+      HornedWhiteOwlSpriteSheet_3: -3183551239402631874
+      HornedWhiteOwlSpriteSheet_4: -5916440285612740208
+      HornedWhiteOwlSpriteSheet_5: -7128715227981368119
+      HornedWhiteOwlSpriteSheet_9: 5071916166118179720
+      HornedWhiteOwlSpriteSheet_8: -2895318107431338566
+      HornedWhiteOwlSpriteSheet_11: 5888762121648089437
+      HornedWhiteOwlSpriteSheet_0: 7708591083701990655
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
