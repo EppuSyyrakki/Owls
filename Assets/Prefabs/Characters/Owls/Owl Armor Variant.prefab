@@ -4860,6 +4860,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Owl Armor Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3518243204129912960, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4ec20d250982efb44a4afaa800a57202, type: 3}
     - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
       propertyPath: attackSpeed

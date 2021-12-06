@@ -4850,6 +4850,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: IntroOwl
       objectReference: {fileID: 0}
+    - target: {fileID: 3518243204129912960, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3946550093942952319, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
       propertyPath: attackSpeed
