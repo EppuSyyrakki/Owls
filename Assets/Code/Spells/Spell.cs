@@ -15,8 +15,9 @@ namespace Owls.Spells
 
 		protected float timeLived = 0;
 
+		public Sprite icon;
 		public Info info;
-		
+				
 		public List<ITargetable> Target { get; private set; }
 		public List<Vector2> Stroke { get; private set; }
 		public bool TimerPassed => timeLived > info.lifeTime;
