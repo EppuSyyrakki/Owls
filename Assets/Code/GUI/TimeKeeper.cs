@@ -60,7 +60,7 @@ namespace Owls
         {
             TimeEvent?.Invoke(GameTime.CountdownStart);
 
-            while (_countdownTime > -1)
+            while (_countdownTime > 0)
             {
                 _countdownDisplay.text = _countdownTime.ToString();
                 yield return new WaitForSeconds(1);
