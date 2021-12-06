@@ -171,7 +171,7 @@ PrefabInstance:
     - target: {fileID: 2455796434820105186, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
       propertyPath: m_Name
-      value: Countryside
+      value: 1_Countryside
       objectReference: {fileID: 0}
     - target: {fileID: 2455796434820105186, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
@@ -286,6 +286,93 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: levelNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: scoreToPass
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: enemies.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 3824087445381405511, guid: 04656d2fc8345c641981c3bbd5e00460,
+        type: 3}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: enemies.Array.data[1]
+      value: 
+      objectReference: {fileID: 6902416592946479942, guid: 3d993631cdad8074abc2d27e6584b138,
+        type: 3}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: spawnerCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: spawnerCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: spawnerCurve.m_Curve.Array.data[0].value
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: spawnerCurve.m_Curve.Array.data[1].value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: spawnerCurve.m_Curve.Array.data[0].inSlope
+      value: 0.19999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: spawnerCurve.m_Curve.Array.data[1].inSlope
+      value: 0.19999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: spawnerCurve.m_Curve.Array.data[0].outSlope
+      value: 0.19999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: spawnerCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: spawnerCurve.m_Curve.Array.data[1].outSlope
+      value: 0.19999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: spawnerCurve.m_Curve.Array.data[0].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: spawnerCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: spawnerCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 8167320261029503448, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}

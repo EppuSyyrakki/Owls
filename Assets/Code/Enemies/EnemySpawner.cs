@@ -4,25 +4,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Owls.Enemy
+namespace Owls.Enemies
 {
     public class EnemySpawner : MonoBehaviour
     {
 		private const string TAG_TIMEKEEPER = "TimeKeeper";
 
-		[SerializeField]
-		private AnimationCurve spawnCurve;
-
-		[SerializeField]
-		private float curveInterval = 1f;
-	
+		private AnimationCurve _spawnCurve;
+		private float _spawnInterval;	
 		private BoxCollider2D _edge;
 		private bool _spawnEnabled = false;
 		private Camera _cam = null;
 		private TimeKeeper _timeKeeper;
 		private float _maxTime;
+	    private Enemy[] _enemies = null;
 
-	    public List<Enemy> enemies = new List<Enemy>();
 		public event Action<int, Vector2> EnemyKilled;
 
 		private void Awake()
@@ -48,16 +44,16 @@ namespace Owls.Enemy
 		{
 			while (_timeKeeper.TimeRemaining > 0)
 			{				
-				yield return new WaitForSeconds(curveInterval);
+				yield return new WaitForSeconds(_spawnInterval);
 				
 				if (!_spawnEnabled) { continue; }
 
 				float evaluation = (_maxTime - _timeKeeper.TimeRemaining) / _maxTime;
-				float chance = spawnCurve.Evaluate(evaluation);
+				float chance = _spawnCurve.Evaluate(evaluation);
 
 				if (Random.Range(0, 1f) < chance)
 				{
-					Spawn(enemies[Random.Range(0, enemies.Count)]);
+					Spawn(_enemies[Random.Range(0, _enemies.Length)]);
 				}
 			}
 		}
@@ -97,6 +93,13 @@ namespace Owls.Enemy
 		public void EnemyKilledByPlayer(int reward, Vector3 worldPos)
 		{
 			EnemyKilled?.Invoke(reward, _cam.WorldToScreenPoint(worldPos));
+		}
+
+		public void SetSpawnerFields(Enemy[] enemies, AnimationCurve curve, float interval)
+		{
+			_enemies = enemies;
+			_spawnCurve = curve;
+			_spawnInterval = interval;
 		}
 	}
 }

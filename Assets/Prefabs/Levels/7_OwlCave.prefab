@@ -706,7 +706,7 @@ PrefabInstance:
     - target: {fileID: 2455796434820105186, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
       propertyPath: m_Name
-      value: Scenery_OwlCave
+      value: 7_OwlCave
       objectReference: {fileID: 0}
     - target: {fileID: 2455796434820105186, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
@@ -844,6 +844,46 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: scoreToPass
+      value: 14000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: enemies.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 695421084022767141, guid: 401cc675c05965f4cb25c79bedd6ef98,
+        type: 3}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: enemies.Array.data[1]
+      value: 
+      objectReference: {fileID: 695421084022767141, guid: 401cc675c05965f4cb25c79bedd6ef98,
+        type: 3}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: enemies.Array.data[2]
+      value: 
+      objectReference: {fileID: 3687147190431596773, guid: 380edf0971b533e4d94fd2ac2dcb1d98,
+        type: 3}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: enemies.Array.data[3]
+      value: 
+      objectReference: {fileID: 1715360665523275599, guid: 03cedf4a17a6b734abb84155c7b0c318,
+        type: 3}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: enemies.Array.data[4]
+      value: 
+      objectReference: {fileID: 1864216135136565687, guid: e5b887ed106470b47a83a356d484a80c,
+        type: 3}
     - target: {fileID: 8167320261029503448, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
       propertyPath: m_Sprite

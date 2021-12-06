@@ -5,7 +5,7 @@ using Owls.Flight;
 using Random = UnityEngine.Random;
 using Owls.Spells;
 
-namespace Owls.Enemy
+namespace Owls.Enemies
 {
 	public enum State
 	{

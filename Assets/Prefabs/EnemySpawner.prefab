@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8721067814351000223}
   - component: {fileID: 2022157400024682575}
   m_Layer: 0
-  m_Name: OwlSpawner
+  m_Name: EnemySpawner
   m_TagString: EnemySpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -108,8 +108,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2455796434820105196}
   - component: {fileID: 2455796434820105187}
+  - component: {fileID: 6809343582572245131}
   m_Layer: 0
-  m_Name: Scenery
+  m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,6 +152,23 @@ MonoBehaviour:
   totalSpeed: 1.5
   wrapDistance: 40
   effectPrefabs: []
+--- !u!114 &6809343582572245131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2455796434820105186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b825541e3fc20304fae7644ee8924c02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelNumber: 0
+  scoreToPass: 0
+  sceneryPrefab: {fileID: 0}
+  enemies: []
+  spellUnlocks: []
 --- !u!1 &4614905677843342134
 GameObject:
   m_ObjectHideFlags: 0

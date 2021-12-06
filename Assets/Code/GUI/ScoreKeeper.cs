@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using TMPro;
-using Owls.Enemy;
+using Owls.Enemies;
 
 namespace Owls.GUI
 {
@@ -121,6 +121,11 @@ namespace Owls.GUI
 
 			int totalScore = PlayerPrefs.GetInt(KEY_TOTAL_SCORE);
 			PlayerPrefs.SetInt(KEY_TOTAL_SCORE, totalScore + _currentScore);
+		}
+
+		public void SetScore(int score)
+		{
+			PlayerPrefs.SetInt(KEY_TOTAL_SCORE, score);			
 		}
 	}
 }
