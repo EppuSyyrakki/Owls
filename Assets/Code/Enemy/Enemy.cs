@@ -18,6 +18,7 @@ namespace Owls.Enemy
 		private const string ANIM_PREPARE = "PrepareAttack";
 		private const string ANIM_ATTACK = "Attack";
 		private const string TAG_PLAYER = "Player";
+		private const string TAG_KEEPER = "TimeKeeper";
 
 		[SerializeField]
 	    private List<FlightPath> flightPaths = new List<FlightPath>();
@@ -58,6 +59,8 @@ namespace Owls.Enemy
 		private Animator _animator;
 		private Transform _player;
 		private EnemySpawner _spawner;
+		private TimeKeeper _timeKeeper;
+		private bool _paused = false;
 
 		public bool IsAlive { get; private set; } = true;
 		public Transform Transform => transform;
@@ -66,9 +69,16 @@ namespace Owls.Enemy
 		{
 			_animator = GetComponent<Animator>();
 			_player = GameObject.FindGameObjectWithTag(TAG_PLAYER).transform;
+			_timeKeeper = GameObject.FindGameObjectWithTag(TAG_KEEPER).GetComponent<TimeKeeper>();
+			_timeKeeper.TimeEvent += TimeEventHandler;
 			float orthoSize = Camera.main.orthographicSize;
 			_maxY = orthoSize - topSafetyMargin;
 			_minY = -orthoSize + bottomSafetyMargin;
+		}
+
+		private void OnDisable()
+		{
+			_timeKeeper.TimeEvent -= TimeEventHandler;
 		}
 
 		private void Start()
@@ -110,7 +120,7 @@ namespace Owls.Enemy
 
 		private void Update()
         {
-			if (!IsAlive) { return; }
+			if (!IsAlive || _paused) { return; }
 
 	        if (_state == State.Moving) 
 			{ 
@@ -203,6 +213,22 @@ namespace Owls.Enemy
 
 			Destroy(gameObject, Time.deltaTime);
 			_destroyInvoked = true;
+		}
+
+		private void TimeEventHandler(GameTime gt)
+		{
+			if (gt == GameTime.Pause)
+			{
+				_paused = true;
+			}
+			else if (gt == GameTime.Continue)
+			{
+				_paused = false;
+			}
+			else if (gt == GameTime.LevelComplete)
+			{
+				Kill(deathFx, false);
+			}
 		}
 
 		public void SetSpawner(EnemySpawner spawner)

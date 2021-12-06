@@ -23,7 +23,7 @@ namespace Owls.Enemy
 		private float _maxTime;
 
 	    public List<Enemy> enemies = new List<Enemy>();
-		public Action<int, Vector2> enemyKilled;
+		public event Action<int, Vector2> EnemyKilled;
 
 		private void Awake()
 		{
@@ -84,7 +84,11 @@ namespace Owls.Enemy
 			{
 				_spawnEnabled = true;
 			}
-			else if (gt == GameTime.Pause || gt == GameTime.LevelEnd)
+			else if (gt == GameTime.Pause)
+			{
+				_spawnEnabled = false;
+			}
+			else if (gt == GameTime.LevelComplete)
 			{
 				_spawnEnabled = false;
 			}
@@ -92,7 +96,7 @@ namespace Owls.Enemy
 
 		public void EnemyKilledByPlayer(int reward, Vector3 worldPos)
 		{
-			enemyKilled?.Invoke(reward, _cam.WorldToScreenPoint(worldPos));
+			EnemyKilled?.Invoke(reward, _cam.WorldToScreenPoint(worldPos));
 		}
 	}
 }

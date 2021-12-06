@@ -13,7 +13,8 @@ namespace Owls
         LevelStart,
         LevelEnd,
         Pause,
-        Continue
+        Continue,
+        LevelComplete
 	}
 
     public class TimeKeeper : MonoBehaviour
@@ -87,7 +88,8 @@ namespace Owls
                 if (!_isPaused) { _levelTime--; }
             }
 
-            TimeEvent?.Invoke(GameTime.LevelEnd);
+            // TODO: Switch this to GameTime.LevelEnd and trigger the LevelComplete only after the "nest" thing
+            TimeEvent?.Invoke(GameTime.LevelComplete);
         }
 
         public void PauseOrContinue()

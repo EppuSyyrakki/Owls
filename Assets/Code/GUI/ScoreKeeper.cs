@@ -24,6 +24,8 @@ namespace Owls.GUI
 	public class ScoreKeeper : MonoBehaviour
 	{
 		private const string TAG_SPAWNER = "EnemySpawner";
+		private const string TAG_KEEPER = "TimeKeeper";
+		private const string KEY_TOTAL_SCORE = "TotalScore";
 
 		[SerializeField]
 		private TMP_Text score = null;
@@ -49,21 +51,21 @@ namespace Owls.GUI
 		private int _currentBirds = 0;
 		private int _currentScore = 0;
 		private EnemySpawner _spawner = null;
+		private TimeKeeper _timeKeeper = null;
 		private float _comboLevel = 1;
 
 		private void Awake()
 		{
 			_spawner = GameObject.FindGameObjectWithTag(TAG_SPAWNER).GetComponent<EnemySpawner>();
-		}
-
-		private void OnEnable()
-		{
-			_spawner.enemyKilled += EnemyKilledHandler;
+			_timeKeeper = GameObject.FindGameObjectWithTag(TAG_KEEPER).GetComponent<TimeKeeper>();
+			_spawner.EnemyKilled += EnemyKilledHandler;
+			_timeKeeper.TimeEvent += TimeEventHandler;
 		}
 
 		private void OnDisable()
 		{
-			_spawner.enemyKilled += EnemyKilledHandler;
+			_spawner.EnemyKilled -= EnemyKilledHandler;
+			_timeKeeper.TimeEvent -= TimeEventHandler;
 		}
 
 		private void Start()
@@ -106,6 +108,19 @@ namespace Owls.GUI
 			_comboLevel += comboIncrease * _comboLevel;
 			yield return new WaitForSeconds(comboTime);
 			_comboLevel = 1;
+		}
+
+		private void TimeEventHandler(GameTime gt)
+		{
+			if (gt != GameTime.LevelComplete) { return; }
+
+			if (!PlayerPrefs.HasKey(KEY_TOTAL_SCORE))
+			{
+				PlayerPrefs.SetInt(KEY_TOTAL_SCORE, 0);
+			}
+
+			int totalScore = PlayerPrefs.GetInt(KEY_TOTAL_SCORE);
+			PlayerPrefs.SetInt(KEY_TOTAL_SCORE, totalScore + _currentScore);
 		}
 	}
 }
