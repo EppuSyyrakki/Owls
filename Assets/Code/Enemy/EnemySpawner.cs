@@ -8,20 +8,19 @@ namespace Owls.Enemy
 {
     public class EnemySpawner : MonoBehaviour
     {
+		private const string TAG_TIMEKEEPER = "TimeKeeper";
+
 		[SerializeField]
-		private AnimationCurve animcurve;
+		private AnimationCurve spawnCurve;
 
-		[SerializeField, Range(1f, 5f)]
-		private float spawnFrequency = 1.5f, spawnPreWait = 3f;
-
-		[SerializeField, Range(0.1f, 0.9f)]
-		private float spawnRandomizer = 0.5f;
+		[SerializeField]
+		private float curveInterval = 1f;
 	
 		private BoxCollider2D _edge;
-		private float _spawnTimer = 0f;
-		private float _targetTime = 0f;
 		private bool _spawnEnabled = false;
 		private Camera _cam = null;
+		private TimeKeeper _timeKeeper;
+		private float _maxTime;
 
 	    public List<Enemy> enemies = new List<Enemy>();
 		public Action<int, Vector2> enemyKilled;
@@ -30,29 +29,38 @@ namespace Owls.Enemy
 		{
 			_edge = GetComponent<BoxCollider2D>();
 			_cam = Camera.main;
+			_timeKeeper = GameObject.FindGameObjectWithTag(TAG_TIMEKEEPER).GetComponent<TimeKeeper>();
+			_timeKeeper.TimeEvent += TimeEventHandler;
+			_maxTime = _timeKeeper.TimeMax;
+		}
+
+		private void OnDisable()
+		{
+			_timeKeeper.TimeEvent -= TimeEventHandler;
 		}
 
 		private void Start()
 		{
-			Invoke(nameof(EnableSpawning), spawnPreWait);
-			_targetTime = RandomTime();
+			StartCoroutine(EvaluateSpawnChance());
 		}
 
-		// Update is called once per frame
-		void Update()
-        {
-			if (!_spawnEnabled) { return; }
-
-			_spawnTimer += Time.deltaTime;
-
-			if (_spawnTimer > _targetTime)
-			{
-				Spawn(enemies[Random.Range(0, enemies.Count)]);
+		private IEnumerator EvaluateSpawnChance()
+		{
+			while (_timeKeeper.TimeRemaining > 0)
+			{				
+				yield return new WaitForSeconds(curveInterval);
 				
-				_targetTime = RandomTime();
-				_spawnTimer = 0;
+				if (!_spawnEnabled) { continue; }
+
+				float evaluation = (_maxTime - _timeKeeper.TimeRemaining) / _maxTime;
+				float chance = spawnCurve.Evaluate(evaluation);
+
+				if (Random.Range(0, 1f) < chance)
+				{
+					Spawn(enemies[Random.Range(0, enemies.Count)]);
+				}
 			}
-        }
+		}
 
         private void Spawn(Enemy enemy)
 		{
@@ -70,16 +78,16 @@ namespace Owls.Enemy
 			);
 		}
 
-		private float RandomTime()
+		private void TimeEventHandler(GameTime gt)
 		{
-			float variation = Mathf.Abs(spawnFrequency * Random.Range(-spawnRandomizer, spawnRandomizer));
-			float t = Random.Range(spawnFrequency - variation, spawnFrequency + variation);
-			return t;
-		}
-
-		private void EnableSpawning()
-		{
-			_spawnEnabled = true;
+			if (gt == GameTime.CountdownEnd || gt == GameTime.Continue)
+			{
+				_spawnEnabled = true;
+			}
+			else if (gt == GameTime.Pause || gt == GameTime.LevelEnd)
+			{
+				_spawnEnabled = false;
+			}
 		}
 
 		public void EnemyKilledByPlayer(int reward, Vector3 worldPos)

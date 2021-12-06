@@ -35,6 +35,8 @@ namespace Owls
         private bool _isPaused = false;
 
         public event Action<GameTime> TimeEvent;
+        public int TimeRemaining => _levelTime;
+        public int TimeMax => levelTime;
      
         private void Awake()
 		{
