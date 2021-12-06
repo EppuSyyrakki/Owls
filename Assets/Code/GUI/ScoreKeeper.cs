@@ -46,7 +46,13 @@ namespace Owls.GUI
 		private Score scorePrefab = null;
 
 		[SerializeField]
+		private TMP_Text finalScoreDisplay = null;
+
+		[SerializeField]
 		private ScoreProperty[] scoreProperties;
+
+		[SerializeField, Tooltip("Smaller is faster")]
+		private float finalScoreSpeed = 0.08f;
 
 		private int _currentBirds = 0;
 		private int _currentScore = 0;
@@ -120,7 +126,36 @@ namespace Owls.GUI
 			}
 
 			int totalScore = PlayerPrefs.GetInt(KEY_TOTAL_SCORE);
+
+			StartCoroutine(ScoreCount(totalScore));
+		}
+
+		private IEnumerator ScoreCount(int totalScore)
+		{
 			PlayerPrefs.SetInt(KEY_TOTAL_SCORE, totalScore + _currentScore);
+			yield return new WaitForSeconds(1f);
+			var s = "Total Score:\n";
+			finalScoreDisplay.text = s;
+			yield return new WaitForSeconds(1f);
+
+			while (_currentScore > 0)
+			{
+				yield return new WaitForSeconds(finalScoreSpeed);
+
+				if (_currentScore < 100) 
+				{	
+					totalScore += _currentScore;
+					_currentScore = 0;
+				}
+				else
+				{
+					totalScore += 100;
+					_currentScore -= 100;
+				}
+
+				finalScoreDisplay.text = s + totalScore.ToString();
+				UpdateTexts();
+			}
 		}
 
 		public void SetScore(int score)
