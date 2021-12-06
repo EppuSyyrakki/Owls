@@ -54,6 +54,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -364,6 +365,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      BadgerWalkSpriteSheet_3: 7417875539508564067
+      BadgerWalkSpriteSheet_0: 425267905096208273
+      BadgerWalkSpriteSheet_6: 5156069143748335320
+      BadgerWalkSpriteSheet_1: 6850028014701042952
+      BadgerWalkSpriteSheet_5: -2006038527276162314
+      BadgerWalkSpriteSheet_9: -3238422313982931962
+      BadgerWalkSpriteSheet_7: 2004352114412478591
+      BadgerWalkSpriteSheet_8: 2654943514278576941
+      BadgerWalkSpriteSheet_2: 832606278537624073
+      BadgerWalkSpriteSheet_4: 6757497176191784411
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

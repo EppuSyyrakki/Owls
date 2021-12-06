@@ -87,6 +87,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -628,6 +629,28 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      BirdFlyAndSaveSheet_16: -7723216798340360458
+      BirdFlyAndSaveSheet_15: 2422855970515743310
+      BirdFlyAndSaveSheet_14: -921271582034671347
+      BirdFlyAndSaveSheet_20: 95016806519797201
+      BirdFlyAndSaveSheet_18: -3237571979837534982
+      BirdFlyAndSaveSheet_2: -5797400655371455091
+      BirdFlyAndSaveSheet_1: 5197488087388646851
+      BirdFlyAndSaveSheet_9: 8870467119882715303
+      BirdFlyAndSaveSheet_17: -4125377886437075941
+      BirdFlyAndSaveSheet_10: -3561846197880592712
+      BirdFlyAndSaveSheet_0: 6756278619792756958
+      BirdFlyAndSaveSheet_6: 2083413397180139396
+      BirdFlyAndSaveSheet_13: 1858245353406782132
+      BirdFlyAndSaveSheet_4: 477960945697597263
+      BirdFlyAndSaveSheet_19: 8147369265373241793
+      BirdFlyAndSaveSheet_5: 836846810776998379
+      BirdFlyAndSaveSheet_12: -4701311893485771001
+      BirdFlyAndSaveSheet_3: 3022607235308872498
+      BirdFlyAndSaveSheet_7: 7586658883972652643
+      BirdFlyAndSaveSheet_8: -4614785080219022815
+      BirdFlyAndSaveSheet_11: -591494135883568040
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

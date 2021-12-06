@@ -42,6 +42,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -268,6 +269,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      DeathSkeletonSpriteSheet_5: 6302610768798855138
+      DeathSkeletonSpriteSheet_3: 816110346640979328
+      DeathSkeletonSpriteSheet_4: 3784319374789369778
+      DeathSkeletonSpriteSheet_1: -3895126661227425884
+      DeathSkeletonSpriteSheet_0: -3337954672302457973
+      DeathSkeletonSpriteSheet_2: -7543825114869042458
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
