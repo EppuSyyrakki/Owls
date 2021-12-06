@@ -26,6 +26,7 @@ namespace Owls.GUI
 		private const string TAG_SPAWNER = "EnemySpawner";
 		private const string TAG_KEEPER = "TimeKeeper";
 		private const string KEY_TOTAL_SCORE = "TotalScore";
+		private const string KEY_HIGHEST_SPELL_ID = "HighestSpellId";
 
 		[SerializeField]
 		private TMP_Text score = null;
@@ -126,10 +127,8 @@ namespace Owls.GUI
 		{
 			if (gt != GameTime.LevelComplete) { return; }
 
-			if (!PlayerPrefs.HasKey(KEY_TOTAL_SCORE))
-			{
-				PlayerPrefs.SetInt(KEY_TOTAL_SCORE, 0);
-			}
+			if (!PlayerPrefs.HasKey(KEY_TOTAL_SCORE)) { PlayerPrefs.SetInt(KEY_TOTAL_SCORE, 0); }
+			if (!PlayerPrefs.HasKey(KEY_HIGHEST_SPELL_ID)) { PlayerPrefs.SetInt(KEY_HIGHEST_SPELL_ID, 0); }
 
 			int totalScore = PlayerPrefs.GetInt(KEY_TOTAL_SCORE);
 			levelCompleteScreen.SetActive(true);
@@ -139,7 +138,7 @@ namespace Owls.GUI
 
 		private IEnumerator ScoreCount(int totalScore)
 		{
-			PlayerPrefs.SetInt(KEY_TOTAL_SCORE, totalScore + _currentScore);
+			SetPrefs(totalScore + _currentScore, 0);
 			yield return new WaitForSeconds(1f);
 			var s = "Total Score:\n";
 			finalScoreDisplay.text = s + totalScore.ToString();
@@ -167,9 +166,10 @@ namespace Owls.GUI
 			_timeKeeper.LevelCompleted(endFadeDelay);
 		}
 
-		public void SetScore(int score)
+		private void SetPrefs(int score, int highestUnlockedSpellId)
 		{
-			PlayerPrefs.SetInt(KEY_TOTAL_SCORE, score);			
+			PlayerPrefs.SetInt(KEY_TOTAL_SCORE, score);
+			PlayerPrefs.SetInt(KEY_HIGHEST_SPELL_ID, highestUnlockedSpellId);
 		}
 	}
 }

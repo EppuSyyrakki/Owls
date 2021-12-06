@@ -9,14 +9,21 @@ namespace Owls.Levels
 	[CustomEditor(typeof(ScoreKeeper))]
 	public class ScoreKeeperEditor : Editor
 	{
+		private const string KEY_TOTAL_SCORE = "TotalScore";
+		private const string KEY_HIGHEST_SPELL_ID = "HighestSpellId";
+
 		public override void OnInspectorGUI()
 		{
 			base.OnInspectorGUI();
-			var keeper = target as ScoreKeeper;
 
-			if (GUILayout.Button("Reset saved score"))
+			if (GUILayout.Button("Reset saved scores"))
 			{
-				keeper.SetScore(0);
+				PlayerPrefs.SetInt(KEY_TOTAL_SCORE, 0);
+			}
+
+			if (GUILayout.Button("Reset unlocked spells"))
+			{
+				PlayerPrefs.SetInt(KEY_HIGHEST_SPELL_ID, 0);
 			}
 		}
 	}
