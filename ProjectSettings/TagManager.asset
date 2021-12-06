@@ -11,6 +11,7 @@ TagManager:
   - Ground
   - SpellCaster
   - EnemySpawner
+  - TimeKeeper
   layers:
   - Default
   - TransparentFX
