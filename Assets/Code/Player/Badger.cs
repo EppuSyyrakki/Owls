@@ -8,16 +8,18 @@ namespace Owls.Player
 {
 	public class Badger : MonoBehaviour, ITargetable
 	{
+		private const string ANIM_TAKEDAMAGE = "TakeDamage";
+		private const string ANIM_DIE = "Die";
+		private const string TAG_TIMEKEEPER = "TimeKeeper";
+
 		[SerializeField]
 		private float health = 1f;
 
 		[SerializeField]
 		private float mana = 1f, manaRegenAmount = 0.01f;
-
-		private const string ANIM_TAKEDAMAGE = "TakeDamage";
-		private const string ANIM_DIE = "Die";
 		
 		private Animator _animator;
+		private TimeKeeper _timeKeeper;
 
 		public float MaxHealth { get; private set; }
 		public float MaxMana { get; private set; }
@@ -39,6 +41,7 @@ namespace Owls.Player
 		private void Awake()
 		{
 			_animator = GetComponent<Animator>();
+			_timeKeeper = GameObject.FindGameObjectWithTag(TAG_TIMEKEEPER).GetComponent<TimeKeeper>();
 			MaxHealth = health;
 			MaxMana = mana;
 			StartCoroutine(RegenerateMana());

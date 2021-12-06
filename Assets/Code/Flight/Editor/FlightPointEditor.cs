@@ -6,6 +6,9 @@ namespace Owls.Flight
 	[CustomEditor(typeof(FlightPoint))]
 	public class FlightPointEditor : Editor
 	{
+		private const string TAG_FLIGHTSTART = "FlightStart";
+		private const string TAG_FLIGHTEND = "FlightEnd";
+
 		public override void OnInspectorGUI()
 		{
 			base.OnInspectorGUI();
@@ -16,7 +19,7 @@ namespace Owls.Flight
 
 			EditorGUILayout.BeginHorizontal("Button");
 			
-			if (!flightPoint.CompareTag(Names.Tags.FlightStart))	// Don't allow new point before start point
+			if (!flightPoint.CompareTag(TAG_FLIGHTSTART))	// Don't allow new point before start point
 			{
 				if (GUILayout.Button("New point before this"))
 				{
@@ -25,7 +28,7 @@ namespace Owls.Flight
 				}
 			}
 
-			if (!flightPoint.CompareTag(Names.Tags.FlightEnd))	// Don't allow new point after end point
+			if (!flightPoint.CompareTag(TAG_FLIGHTEND))	// Don't allow new point after end point
 			{
 				if (GUILayout.Button("New point after this"))
 				{

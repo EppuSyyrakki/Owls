@@ -65,7 +65,7 @@ namespace Owls.Enemy
 		private void Awake()
 		{
 			_animator = GetComponent<Animator>();
-			_player = GameObject.FindGameObjectWithTag(Names.Tags.Player).transform;
+			_player = GameObject.FindGameObjectWithTag(TAG_PLAYER).transform;
 			float orthoSize = Camera.main.orthographicSize;
 			_maxY = orthoSize - topSafetyMargin;
 			_minY = -orthoSize + bottomSafetyMargin;

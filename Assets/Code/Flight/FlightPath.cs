@@ -7,6 +7,10 @@ namespace Owls.Flight
     [RequireComponent(typeof(LineRenderer))]
     public class FlightPath : MonoBehaviour
     {
+        private const string TAG_FLIGHTSTART = "FlightStart";
+        private const string TAG_FLIGHTEND = "FlightEnd";
+        private const string NAME_MIDPOINT = "MidPoint";
+
         [SerializeField, Range(0.01f, 0.1f), Tooltip("Only used in editor to visualize flight path")]
         private float lineRendererPrecision = 0.01f;
 
@@ -95,8 +99,8 @@ namespace Owls.Flight
         public GameObject CreatePoint(int siblingIndex)
         {
 	        Transform first = null, last = null;
-	        var startName = Names.Tags.FlightStart;
-	        var endName = Names.Tags.FlightEnd;
+	        var startName = TAG_FLIGHTSTART;
+	        var endName = TAG_FLIGHTEND;
 
 	        foreach (Transform child in transform)
 	        {
@@ -110,7 +114,7 @@ namespace Owls.Flight
                 return null;
 	        }
 
-	        var newPoint = new GameObject(Names.Objects.MidPoint, typeof(FlightPoint));
+	        var newPoint = new GameObject(NAME_MIDPOINT, typeof(FlightPoint));
 	        newPoint.GetComponent<FlightPoint>().SetGizmo(gizmoRadius, gizmoColor);
 	        InitNewPoint(newPoint.transform, siblingIndex);
             return newPoint;
