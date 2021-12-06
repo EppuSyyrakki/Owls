@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Owls.Spells;
+using Owls.GUI;
 
 namespace Owls.Player
 {
@@ -11,12 +12,16 @@ namespace Owls.Player
 		private const string ANIM_TAKEDAMAGE = "TakeDamage";
 		private const string ANIM_DIE = "Die";
 		private const string TAG_TIMEKEEPER = "TimeKeeper";
+		private const string TAG_FADER = "Fader";
 
 		[SerializeField]
 		private float health = 1f;
 
 		[SerializeField]
 		private float mana = 1f, manaRegenAmount = 0.01f;
+
+		[SerializeField]
+		private float deathFadeDelay = 2f, deathFadeTime = 2f;
 		
 		private Animator _animator;
 		private TimeKeeper _timeKeeper;
@@ -51,6 +56,9 @@ namespace Owls.Player
 		{
 			_animator.SetTrigger(ANIM_DIE);
 			IsAlive = false;
+			var fader = GameObject.FindGameObjectWithTag(TAG_FADER).GetComponent<Fader>();
+			fader.StartFade(0, 1, deathFadeTime, deathFadeDelay);
+			_timeKeeper.GameOver(deathFadeTime + deathFadeDelay);
 		}
 
 		private IEnumerator RegenerateMana()

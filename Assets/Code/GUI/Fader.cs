@@ -35,12 +35,7 @@ namespace Owls.GUI
 			StartFade(1, 0, autoFadeTime);
 		}
 
-		public void StartFade(float from, float to, float time)
-		{
-			StartCoroutine(Fade(from, to, time));
-		}
-
-		private IEnumerator Fade(float from, float to, float time)
+		private IEnumerator Fade(float from, float to, float time, float delay)
 		{
 			Color startColor = Color.black;
 			Color endColor = Color.black;
@@ -48,15 +43,19 @@ namespace Owls.GUI
 			endColor.a = to;
 			_image.color = startColor;
 			float t = 0;
+			yield return new WaitForSeconds(delay);
 
 			while (t < time)
 			{
-				_image.color = Color.Lerp(startColor, endColor, t / time);								
+				_image.color = Color.Lerp(startColor, endColor, t / time);
 				yield return new WaitForEndOfFrame();
 				t += Time.deltaTime;
 			}
 		}
 
-
+		public void StartFade(float from, float to, float time, float delay = 0)
+		{
+			StartCoroutine(Fade(from, to, time, delay));
+		}
 	}
 }

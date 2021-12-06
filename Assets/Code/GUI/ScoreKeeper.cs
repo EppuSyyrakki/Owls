@@ -49,10 +49,16 @@ namespace Owls.GUI
 		private TMP_Text finalScoreDisplay = null;
 
 		[SerializeField]
+		private GameObject levelCompleteScreen = null;
+
+		[SerializeField]
 		private ScoreProperty[] scoreProperties;
 
 		[SerializeField, Tooltip("Smaller is faster")]
 		private float finalScoreSpeed = 0.08f;
+
+		[SerializeField]
+		private float endFadeDelay = 2f;
 
 		private int _currentBirds = 0;
 		private int _currentScore = 0;
@@ -126,7 +132,8 @@ namespace Owls.GUI
 			}
 
 			int totalScore = PlayerPrefs.GetInt(KEY_TOTAL_SCORE);
-
+			levelCompleteScreen.SetActive(true);
+			levelCompleteScreen.GetComponent<Animation>().Play();
 			StartCoroutine(ScoreCount(totalScore));
 		}
 
@@ -156,6 +163,8 @@ namespace Owls.GUI
 				finalScoreDisplay.text = s + totalScore.ToString();
 				UpdateTexts();
 			}
+
+			_timeKeeper.LevelCompleted(endFadeDelay);
 		}
 
 		public void SetScore(int score)

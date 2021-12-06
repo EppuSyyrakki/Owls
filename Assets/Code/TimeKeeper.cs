@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Owls.GUI;
 
 namespace Owls
 {
@@ -34,6 +35,7 @@ namespace Owls
         private int _levelTime;
         private int _countdownTime;
         private bool _isPaused = false;
+        private SceneLoader _sceneLoader = null;
 
         public event Action<GameTime> TimeEvent;
         public int TimeRemaining => _levelTime;
@@ -44,6 +46,7 @@ namespace Owls
             _levelTime = levelTime;
             _countdownTime = countdownTime;
             _timeDisplay.text = _levelTime.ToString();
+            _sceneLoader = GetComponent<SceneLoader>();
 		}
 
 		private void Start()
@@ -92,11 +95,32 @@ namespace Owls
             TimeEvent?.Invoke(GameTime.LevelComplete);
         }
 
+        private void LoadGameOverScene()
+		{
+            _sceneLoader.LoadScene(Scenes.GameOver, false);
+		}
+
+        private void LoadLevelCompleteScene()
+		{
+            _sceneLoader.LoadScene(Scenes.LevelComplete, false);
+		}
+
         public void PauseOrContinue()
         {
             _isPaused = !_isPaused;
             if (_isPaused) { TimeEvent?.Invoke(GameTime.Pause); }
             else { TimeEvent?.Invoke(GameTime.Continue); }
         }
+
+        public void GameOver(float delayBeforeGameOver)
+		{
+            StopAllCoroutines();
+            Invoke(nameof(LoadGameOverScene), delayBeforeGameOver);
+		}
+
+        public void LevelCompleted(float delayBeforeComplete)
+		{
+            Invoke(nameof(LoadLevelCompleteScene), delayBeforeComplete);
+		}
     }
 }
