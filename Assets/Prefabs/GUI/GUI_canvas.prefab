@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 001de0b59ae3d8c4a92344f7bc040bf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownTime: 3
+  countdownTime: 4
   levelTime: 90
   _timeDisplay: {fileID: 9080919530338200305}
   _countdownDisplay: {fileID: 7794263953167832952}
@@ -1688,7 +1688,7 @@ MonoBehaviour:
   - above: 200
     color: {r: 1, g: 0.75516963, b: 0.109803915, a: 1}
     size: 1.5
-  finalScoreSpeed: 0.08
+  finalScoreSpeed: 0.06
 --- !u!1 &7554881754882062140
 GameObject:
   m_ObjectHideFlags: 0

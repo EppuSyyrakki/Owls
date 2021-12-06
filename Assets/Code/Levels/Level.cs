@@ -17,9 +17,6 @@ namespace Owls.Levels
 		private float curveInterval = 1f;
 
 		[SerializeField]
-		private int levelNumber = 0;
-
-		[SerializeField]
 		private int scoreToPass = 0;
 
 		[SerializeField]
@@ -29,7 +26,6 @@ namespace Owls.Levels
 		private Spell[] spellUnlocks = null;
 
 		public int ScoreToPass => scoreToPass;
-		public int LevelNumber => levelNumber;
 		public Spell[] SpellUnlocks => spellUnlocks;
 		public SceneryController Scenery => GetComponent<SceneryController>();
 

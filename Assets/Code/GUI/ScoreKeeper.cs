@@ -135,7 +135,7 @@ namespace Owls.GUI
 			PlayerPrefs.SetInt(KEY_TOTAL_SCORE, totalScore + _currentScore);
 			yield return new WaitForSeconds(1f);
 			var s = "Total Score:\n";
-			finalScoreDisplay.text = s;
+			finalScoreDisplay.text = s + totalScore.ToString();
 			yield return new WaitForSeconds(1f);
 
 			while (_currentScore > 0)
