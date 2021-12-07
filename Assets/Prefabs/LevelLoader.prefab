@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7719918813805790765}
   - component: {fileID: 7719918813805790764}
   m_Layer: 3
-  m_Name: SceneryLoader
+  m_Name: LevelLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,4 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 939577d282fe7494094c2e07ba81ba0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testScenery: {fileID: 0}
+  testLevel: {fileID: 0}
+  levels:
+  - {fileID: 8923352677839999160, guid: 54692238b3b997b40849d6070494cb04, type: 3}
+  - {fileID: 6130201238073702287, guid: 2308bad8c30c6064fb9473e6ae66666b, type: 3}
+  - {fileID: 8081699932463178827, guid: e9c73b26ff1f01c4c95355e4ec0d7937, type: 3}
+  - {fileID: 430047719120536184, guid: ddd46ac84e95a3744a5b95d8058f3a40, type: 3}
+  - {fileID: 1873695298670950610, guid: 4940970d054fb5d49992dd2670b2fb0f, type: 3}
+  - {fileID: 7870693237625033632, guid: 8a03d50970d5c614a8a4b24c168ba5ff, type: 3}
+  - {fileID: 2476970541382182435, guid: 951d6eadee817644f8b6b56caa662a1b, type: 3}
+  - {fileID: 3892660052949060171, guid: 0a5a27fa5aceebe48a7a68b5a8ddbc31, type: 3}

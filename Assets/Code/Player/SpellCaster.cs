@@ -10,6 +10,7 @@ namespace Owls.Player
 	public class SpellCaster : MonoBehaviour
 	{
 		private const string TAG_PLAYER = "Player";
+		private const string TAG_KEEPER = "TimeKeeper";
 
 		[SerializeField]
 		private ParticleSystem particle;
@@ -40,6 +41,8 @@ namespace Owls.Player
 		private Dictionary<Glyph, Spell> _spells;
 		private bool _castCurrent = false;
 		private Badger _player;
+		private TimeKeeper _timeKeeper = null;
+		private bool _castingDisabled = true;
 
 		public Action spellCastingFailed;
 
@@ -50,11 +53,24 @@ namespace Owls.Player
 			_cam = Camera.main;
 			_oldTrails = new GameObject("Old trails").transform;
 			_player = GameObject.FindGameObjectWithTag(TAG_PLAYER).GetComponent<Badger>();
+			_timeKeeper = GameObject.FindGameObjectWithTag(TAG_KEEPER).GetComponent<TimeKeeper>();
+			_timeKeeper.TimeEvent += TimeEventHandler;
 			glyphInput.OnGlyphCast.AddListener(GlyphCastHandler);
+		}
+
+		private void OnDisable()
+		{
+			_timeKeeper.TimeEvent -= TimeEventHandler;
 		}
 
 		private void Update()
 		{
+			if (_castingDisabled) 
+			{
+				_stroke = null;
+				return; 
+			}
+
 			if (Input.touchCount > 0)
 			{
 				Touch touch = Input.GetTouch(0);
@@ -68,7 +84,7 @@ namespace Owls.Player
 
 		private void LateUpdate()
 		{
-			if (!_castCurrent) { return; }
+			if (!_castCurrent || _castingDisabled) { return; }
 
 			if (_currentSpell is Lightning && !IsStrokeStraight()) 
 			{
@@ -197,6 +213,12 @@ namespace Owls.Player
 
 			if (debuggingInfo) Debug.Log("Stroke straightness check succeeded for " + _stroke.Count + " points.");
 			return true;
+		}
+
+		private void TimeEventHandler(GameTime gt)
+		{
+			if (gt == GameTime.LevelStart || gt == GameTime.Continue) { _castingDisabled = false; }
+			else if (gt == GameTime.LevelComplete || gt == GameTime.Pause) { _castingDisabled = true; }
 		}
 
 		/// <summary>

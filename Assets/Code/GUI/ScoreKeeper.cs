@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using TMPro;
-using Owls.Enemy;
+using Owls.Enemies;
 
 namespace Owls.GUI
 {
@@ -26,6 +26,7 @@ namespace Owls.GUI
 		private const string TAG_SPAWNER = "EnemySpawner";
 		private const string TAG_KEEPER = "TimeKeeper";
 		private const string KEY_TOTAL_SCORE = "TotalScore";
+		private const string KEY_HIGHEST_SPELL_ID = "HighestSpellId";
 
 		[SerializeField]
 		private TMP_Text score = null;
@@ -46,7 +47,16 @@ namespace Owls.GUI
 		private Score scorePrefab = null;
 
 		[SerializeField]
+		private TMP_Text finalScoreDisplay = null;
+
+		[SerializeField]
 		private ScoreProperty[] scoreProperties;
+
+		[SerializeField, Tooltip("Smaller is faster")]
+		private float finalScoreSpeed = 0.08f;
+
+		[SerializeField]
+		private float endFadeDelay = 2f;
 
 		private int _currentBirds = 0;
 		private int _currentScore = 0;
@@ -114,13 +124,47 @@ namespace Owls.GUI
 		{
 			if (gt != GameTime.LevelComplete) { return; }
 
-			if (!PlayerPrefs.HasKey(KEY_TOTAL_SCORE))
-			{
-				PlayerPrefs.SetInt(KEY_TOTAL_SCORE, 0);
-			}
+			if (!PlayerPrefs.HasKey(KEY_TOTAL_SCORE)) { PlayerPrefs.SetInt(KEY_TOTAL_SCORE, 0); }
+			if (!PlayerPrefs.HasKey(KEY_HIGHEST_SPELL_ID)) { PlayerPrefs.SetInt(KEY_HIGHEST_SPELL_ID, 0); }
 
 			int totalScore = PlayerPrefs.GetInt(KEY_TOTAL_SCORE);
-			PlayerPrefs.SetInt(KEY_TOTAL_SCORE, totalScore + _currentScore);
+			StartCoroutine(ScoreCount(totalScore));
+		}
+
+		private IEnumerator ScoreCount(int totalScore)
+		{
+			SetPrefs(totalScore + _currentScore, 0);
+			yield return new WaitForSeconds(1f);
+			var s = "Total Score:\n";
+			finalScoreDisplay.text = s + totalScore.ToString();
+			yield return new WaitForSeconds(1f);
+
+			while (_currentScore > 0)
+			{
+				yield return new WaitForSeconds(finalScoreSpeed);
+
+				if (_currentScore < 100) 
+				{	
+					totalScore += _currentScore;
+					_currentScore = 0;
+				}
+				else
+				{
+					totalScore += 100;
+					_currentScore -= 100;
+				}
+
+				finalScoreDisplay.text = s + totalScore.ToString();
+				UpdateTexts();
+			}
+
+			_timeKeeper.LevelCompleted(endFadeDelay);
+		}
+
+		private void SetPrefs(int score, int highestUnlockedSpellId)
+		{
+			PlayerPrefs.SetInt(KEY_TOTAL_SCORE, score);
+			PlayerPrefs.SetInt(KEY_HIGHEST_SPELL_ID, highestUnlockedSpellId);
 		}
 	}
 }

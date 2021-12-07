@@ -20,12 +20,12 @@ namespace Owls.GUI
 		public void StartGame()
 		{
 			EnableAllButtons(false);
-			Invoke(nameof(LoadGameScene), loadDelay);
+			Invoke(nameof(LoadSpellbook), loadDelay);
 		}
 
-		private void LoadGameScene()
+		private void LoadSpellbook()
 		{
-			_loader.LoadScene(Scenes.Game, false);
+			_loader.LoadScene(Scenes.SpellBook, false);
 		}
 
 		private void EnableAllButtons(bool enable)
