@@ -50,9 +50,6 @@ namespace Owls.GUI
 		private TMP_Text finalScoreDisplay = null;
 
 		[SerializeField]
-		private GameObject levelCompleteScreen = null;
-
-		[SerializeField]
 		private ScoreProperty[] scoreProperties;
 
 		[SerializeField, Tooltip("Smaller is faster")]
@@ -131,8 +128,6 @@ namespace Owls.GUI
 			if (!PlayerPrefs.HasKey(KEY_HIGHEST_SPELL_ID)) { PlayerPrefs.SetInt(KEY_HIGHEST_SPELL_ID, 0); }
 
 			int totalScore = PlayerPrefs.GetInt(KEY_TOTAL_SCORE);
-			levelCompleteScreen.SetActive(true);
-			levelCompleteScreen.GetComponent<Animation>().Play();
 			StartCoroutine(ScoreCount(totalScore));
 		}
 
