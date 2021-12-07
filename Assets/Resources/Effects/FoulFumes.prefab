@@ -10965,7 +10965,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.68030006, g: 0.8113208, b: 0, a: 0.32941177}
+        key0: {r: 0.3357505, g: 0.3962264, b: 0.028034883, a: 0.32941177}
         key1: {r: 0.7743336, g: 1, b: 0, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -14442,7 +14442,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1055122467
   m_SortingLayer: 1
-  m_SortingOrder: 10
+  m_SortingOrder: 30
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
