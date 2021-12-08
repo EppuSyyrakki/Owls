@@ -51,7 +51,6 @@ MonoBehaviour:
   swipeAngleMax: 15
   strokeTreshold: 20
   debuggingInfo: 0
-  glyphInput: {fileID: 0}
   selectedSpells:
   - {fileID: 8194657820882680979, guid: 885f1776901c9ea48a1decba156d39fe, type: 3}
   - {fileID: 3756382064644079168, guid: ddd0869fc38a67c4297ff39bbb736e01, type: 3}

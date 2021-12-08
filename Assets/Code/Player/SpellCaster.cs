@@ -11,6 +11,7 @@ namespace Owls.Player
 	{
 		private const string TAG_PLAYER = "Player";
 		private const string TAG_KEEPER = "TimeKeeper";
+		private const string TAG_SCANVAS = "SpellCanvas";
 
 		[SerializeField]
 		private ParticleSystem particle;
@@ -25,14 +26,12 @@ namespace Owls.Player
 		private float strokeTreshold = 0.1f;
 
 		[SerializeField]
-		private bool debuggingInfo = false;
-
-		[SerializeField]
-		private GlyphDrawInput glyphInput = null;
+		private bool debuggingInfo = false;	
 
 		[SerializeField]
 		private List<Spell> selectedSpells;
 
+		private GlyphDrawInput _glyphInput = null;
 		private Camera _cam;
 		private TrailRenderer _activeTrail = null;
 		private List<Vector2> _stroke = null;
@@ -55,7 +54,8 @@ namespace Owls.Player
 			_player = GameObject.FindGameObjectWithTag(TAG_PLAYER).GetComponent<Badger>();
 			_timeKeeper = GameObject.FindGameObjectWithTag(TAG_KEEPER).GetComponent<TimeKeeper>();
 			_timeKeeper.TimeEvent += TimeEventHandler;
-			glyphInput.OnGlyphCast.AddListener(GlyphCastHandler);
+			_glyphInput = GameObject.FindGameObjectWithTag(TAG_SCANVAS).GetComponent<GlyphDrawInput>();
+			_glyphInput.OnGlyphCast.AddListener(GlyphCastHandler);
 		}
 
 		private void OnDisable()
@@ -144,7 +144,7 @@ namespace Owls.Player
 				return;
 			}
 
-			glyphInput.Cast();
+			_glyphInput.Cast();
 			StopPointer();
 		}
 

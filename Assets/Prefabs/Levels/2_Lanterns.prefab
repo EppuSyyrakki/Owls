@@ -198,6 +198,27 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
+      propertyPath: levelNames.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: spellUnlocks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: levelNames.Array.data[0]
+      value: asdf
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: spellUnlocks.Array.data[0]
+      value: 
+      objectReference: {fileID: 6690252038896262295, guid: 06ec41015b3008544bba311c15dc033d,
+        type: 3}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
       propertyPath: spawnerCurve.m_Curve.Array.size
       value: 37
       objectReference: {fileID: 0}

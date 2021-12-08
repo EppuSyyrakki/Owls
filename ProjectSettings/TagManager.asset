@@ -13,6 +13,8 @@ TagManager:
   - EnemySpawner
   - TimeKeeper
   - Fader
+  - SpellCanvas
+  - LevelLoader
   layers:
   - Default
   - TransparentFX

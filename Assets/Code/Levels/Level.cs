@@ -20,6 +20,9 @@ namespace Owls.Levels
 		private int scoreToPass = 0;
 
 		[SerializeField]
+		private string[] levelNames = null;
+
+		[SerializeField]
 		private Enemy[] enemies = null;
 
 		[SerializeField]
@@ -28,6 +31,13 @@ namespace Owls.Levels
 		public int ScoreToPass => scoreToPass;
 		public Spell[] SpellUnlocks => spellUnlocks;
 		public SceneryController Scenery => GetComponent<SceneryController>();
+		public string RandomLevelName 
+		{ 
+			get
+			{
+				return levelNames[Random.Range(0, levelNames.Length)];
+			} 
+		}
 
 		private void Start()
 		{

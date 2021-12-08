@@ -4,6 +4,13 @@ using Owls.Scenery;
 
 namespace Owls.Levels
 {
+	[System.Serializable]
+	public class LevelInfo
+	{
+		public Level level = null;
+		public int scoreToPass = 0;
+	}
+
 	public class LevelLoader : MonoBehaviour
 	{
 		private const string KEY_TOTAL_SCORE = "TotalScore";
@@ -12,7 +19,7 @@ namespace Owls.Levels
 		private Level testLevel = null;
 
 		[SerializeField]
-		private Level[] levels = null;
+		private LevelInfo[] levels = null;
 
 		public Level CurrentLevel { get; private set; }
 
@@ -42,7 +49,7 @@ namespace Owls.Levels
 
 			for (int i = 0; i < levels.Length; i++)
 			{
-				if (levels[i].ScoreToPass < currentScore) 
+				if (levels[i].scoreToPass < currentScore) 
 				{ 
 					i++;
 					index = i;
@@ -52,10 +59,10 @@ namespace Owls.Levels
 			if (index >= levels.Length) 
 			{
 				Debug.LogWarning("No level set for score of " + currentScore + " - loading last level.");
-				return levels[levels.Length - 1]; 
+				return levels[levels.Length - 1].level; 
 			}
 
-			return levels[index];
+			return levels[index].level;
 		}
 
 		private void CreateScenery(SceneryController scenery)
