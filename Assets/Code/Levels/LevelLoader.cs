@@ -49,7 +49,7 @@ namespace Owls.Levels
 
 			for (int i = 0; i < levels.Length; i++)
 			{
-				if (levels[i].scoreToPass < currentScore) 
+				if (levels[i].scoreToPass <= currentScore) 
 				{ 
 					i++;
 					index = i;

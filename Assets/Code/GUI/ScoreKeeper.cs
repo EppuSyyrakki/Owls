@@ -64,6 +64,8 @@ namespace Owls.GUI
 		private TimeKeeper _timeKeeper = null;
 		private float _comboLevel = 1;
 
+		public int setScoreTo = 0;
+
 		private void Awake()
 		{
 			_spawner = GameObject.FindGameObjectWithTag(TAG_SPAWNER).GetComponent<EnemySpawner>();
