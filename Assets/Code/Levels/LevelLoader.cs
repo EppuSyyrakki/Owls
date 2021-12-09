@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using Owls.Scenery;
 
 namespace Owls.Levels
 {
@@ -7,7 +8,7 @@ namespace Owls.Levels
 	public class LevelInfo
 	{
 		public Level level = null;
-		public int scoreToPass = 0;
+		public int scoreToUnlock = 0;
 	}
 
 	public class LevelLoader : MonoBehaviour
@@ -31,37 +32,23 @@ namespace Owls.Levels
 				return;
 			}
 
-			int currentScore = 0;
-			
-			if (PlayerPrefs.HasKey(KEY_TOTAL_SCORE))
-			{
-				currentScore = PlayerPrefs.GetInt(KEY_TOTAL_SCORE);
-			}
-
-			CurrentLevel = FetchCurrentLevel(currentScore);
-			CreateScenery(CurrentLevel.Scenery);			
+			CurrentLevel = FetchCurrentLevel(PlayerPrefs.GetInt(KEY_TOTAL_SCORE));
+			CreateScenery(CurrentLevel.Scenery);
 		}
 
-		private Level FetchCurrentLevel(int currentScore)
+		private Level FetchCurrentLevel(int totalScore)
 		{
-			int index = 0;
+			Level current = null;
 
 			for (int i = 0; i < levels.Length; i++)
 			{
-				if (levels[i].scoreToPass <= currentScore) 
-				{ 
-					i++;
-					index = i;
-				}				
+				if (totalScore >= levels[i].scoreToUnlock)
+				{
+					current = levels[i].level;
+				}
 			}
 
-			if (index >= levels.Length) 
-			{
-				Debug.LogWarning("No level set for score of " + currentScore + " - loading last level.");
-				return levels[levels.Length - 1].level; 
-			}
-
-			return levels[index].level;
+			return current;
 		}
 
 		private void CreateScenery(SceneryController scenery)

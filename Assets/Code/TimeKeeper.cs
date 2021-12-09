@@ -130,7 +130,7 @@ namespace Owls
 
         private void LoadLevelCompleteScene()
 		{
-            _sceneLoader.LoadScene(Scenes.LevelComplete, false);
+            _sceneLoader.LoadScene(Scenes.LevelComplete, true);
 		}
 
         public void PauseOrContinue()
