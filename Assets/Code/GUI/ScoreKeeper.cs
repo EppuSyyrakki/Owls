@@ -137,9 +137,11 @@ namespace Owls.GUI
 		{
 			SetPrefs(totalScore + _currentScore, 0);
 			yield return new WaitForSeconds(1f);
+			_timeKeeper.LevelCompleted(endFadeDelay);
+			yield return new WaitForSeconds(2f);
 			var s = "Total Score:\n";
 			finalScoreDisplay.text = s + totalScore.ToString();
-			yield return new WaitForSeconds(1f);
+			yield return new WaitForSeconds(2f);
 
 			while (_currentScore > 0)
 			{
@@ -159,8 +161,6 @@ namespace Owls.GUI
 				finalScoreDisplay.text = s + totalScore.ToString();
 				UpdateTexts();
 			}
-
-			_timeKeeper.LevelCompleted(endFadeDelay);
 		}
 
 		private void SetPrefs(int score, int highestUnlockedSpellId)

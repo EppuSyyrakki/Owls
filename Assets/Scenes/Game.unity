@@ -350,10 +350,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4401675488606298342, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: levelTime
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5414450285038213363, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
         type: 3}
       propertyPath: setScoreTo
-      value: 0
+      value: 13000
       objectReference: {fileID: 0}
     - target: {fileID: 6526570056197971798, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
         type: 3}
@@ -1154,77 +1159,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7719918813805790764, guid: 4045a69ee8b09074589188faab85bf99,
-        type: 3}
-      propertyPath: testLevel
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7719918813805790764, guid: 4045a69ee8b09074589188faab85bf99,
-        type: 3}
-      propertyPath: levels.Array.data[1].level
-      value: 
-      objectReference: {fileID: 430047719120536184, guid: ddd46ac84e95a3744a5b95d8058f3a40,
-        type: 3}
-    - target: {fileID: 7719918813805790764, guid: 4045a69ee8b09074589188faab85bf99,
-        type: 3}
-      propertyPath: levels.Array.data[2].level
-      value: 
-      objectReference: {fileID: 8081699932463178827, guid: 580c6fb9e032d7045b62d5c5cedfa68c,
-        type: 3}
-    - target: {fileID: 7719918813805790764, guid: 4045a69ee8b09074589188faab85bf99,
-        type: 3}
-      propertyPath: levels.Array.data[3].level
-      value: 
-      objectReference: {fileID: 7870693237625033632, guid: 8a03d50970d5c614a8a4b24c168ba5ff,
-        type: 3}
-    - target: {fileID: 7719918813805790764, guid: 4045a69ee8b09074589188faab85bf99,
-        type: 3}
-      propertyPath: levels.Array.data[4].level
-      value: 
-      objectReference: {fileID: 1873695298670950610, guid: 4940970d054fb5d49992dd2670b2fb0f,
-        type: 3}
-    - target: {fileID: 7719918813805790764, guid: 4045a69ee8b09074589188faab85bf99,
-        type: 3}
-      propertyPath: levels.Array.data[5].level
-      value: 
-      objectReference: {fileID: 3892660052949060171, guid: 0a5a27fa5aceebe48a7a68b5a8ddbc31,
-        type: 3}
-    - target: {fileID: 7719918813805790764, guid: 4045a69ee8b09074589188faab85bf99,
-        type: 3}
-      propertyPath: levels.Array.data[6].level
-      value: 
-      objectReference: {fileID: 6130201238073702287, guid: 2308bad8c30c6064fb9473e6ae66666b,
-        type: 3}
-    - target: {fileID: 7719918813805790764, guid: 4045a69ee8b09074589188faab85bf99,
-        type: 3}
-      propertyPath: levels.Array.data[1].scoreToPass
-      value: 12000
-      objectReference: {fileID: 0}
-    - target: {fileID: 7719918813805790764, guid: 4045a69ee8b09074589188faab85bf99,
-        type: 3}
-      propertyPath: levels.Array.data[2].scoreToPass
-      value: 18000
-      objectReference: {fileID: 0}
-    - target: {fileID: 7719918813805790764, guid: 4045a69ee8b09074589188faab85bf99,
-        type: 3}
-      propertyPath: levels.Array.data[3].scoreToPass
-      value: 24000
-      objectReference: {fileID: 0}
-    - target: {fileID: 7719918813805790764, guid: 4045a69ee8b09074589188faab85bf99,
-        type: 3}
-      propertyPath: levels.Array.data[4].scoreToPass
-      value: 30000
-      objectReference: {fileID: 0}
-    - target: {fileID: 7719918813805790764, guid: 4045a69ee8b09074589188faab85bf99,
-        type: 3}
-      propertyPath: levels.Array.data[5].scoreToPass
-      value: 36000
-      objectReference: {fileID: 0}
-    - target: {fileID: 7719918813805790764, guid: 4045a69ee8b09074589188faab85bf99,
-        type: 3}
-      propertyPath: levels.Array.data[6].scoreToPass
-      value: 42000
-      objectReference: {fileID: 0}
     - target: {fileID: 7719918813805790765, guid: 4045a69ee8b09074589188faab85bf99,
         type: 3}
       propertyPath: m_RootOrder
