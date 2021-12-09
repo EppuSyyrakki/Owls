@@ -39,10 +39,15 @@ namespace Owls
         [SerializeField]
         private float nameFadeOutTime = 1f;
 
+        [SerializeField]
+        private float gameOverDelay = 2f, levelCompleteDelay = 2f;
+
+        [SerializeField]
+        private GameObject completeScreen = null, gameOverScreen = null;
+
         private int _levelTime;
         private int _countdownTime;
         private bool _isPaused = false;
-        private SceneLoader _sceneLoader = null;
         private LevelLoader _levelLoader = null;
 
         public event Action<GameTime> TimeEvent;
@@ -54,7 +59,6 @@ namespace Owls
             _levelTime = levelTime;
             _countdownTime = countdownTime;
             _timeDisplay.text = _levelTime.ToString();
-            _sceneLoader = GetComponent<SceneLoader>();
             _levelLoader = GameObject.FindGameObjectWithTag(TAG_LOADER).GetComponent<LevelLoader>();
 		}
 
@@ -123,16 +127,6 @@ namespace Owls
             TimeEvent?.Invoke(GameTime.LevelComplete);
         }
 
-        private void LoadGameOverScene()
-		{
-            _sceneLoader.LoadScene(Scenes.GameOver, false);
-		}
-
-        private void LoadLevelCompleteScene()
-		{
-            _sceneLoader.LoadScene(Scenes.LevelComplete, true);
-		}
-
         public void PauseOrContinue()
         {
             _isPaused = !_isPaused;
@@ -140,15 +134,24 @@ namespace Owls
             else { TimeEvent?.Invoke(GameTime.Continue); }
         }
 
-        public void GameOver(float delayBeforeGameOver)
+        public void InvokeGameOver()
 		{
-            StopAllCoroutines();
-            Invoke(nameof(LoadGameOverScene), delayBeforeGameOver);
+            Invoke(nameof(ShowGameOverScreen), gameOverDelay);
 		}
 
-        public void LevelCompleted(float delayBeforeComplete)
+        private void ShowGameOverScreen()
+        {
+            gameOverScreen.SetActive(true);
+        }
+
+        public void InvokeLevelComplete()
 		{
-            Invoke(nameof(LoadLevelCompleteScene), delayBeforeComplete);
+            Invoke(nameof(ShowLevelCompleteScreen), levelCompleteDelay);
 		}
+
+        private void ShowLevelCompleteScreen()
+        {
+            completeScreen.SetActive(true);
+        }
     }
 }

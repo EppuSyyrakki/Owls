@@ -75,7 +75,24 @@ namespace Owls.Spells
 			}
 
 			return newSpells;
-		} 
+		}
+
+		public void CheckNewUnlocksForTotalScore()
+		{
+			int totalScore = PlayerPrefs.GetInt(KEY_TOTAL_SCORE);
+
+			foreach (var s in _spellUnlocks)
+			{
+				int currentState = PlayerPrefs.GetInt(s.Value.name);
+
+				if (totalScore >= s.Key && currentState == 0)
+				{
+					// If the PlayerPref int is 0, the spell hasn't unlocked earlier.
+					// Set it to 2 to indicate it's a new spell.
+					PlayerPrefs.SetInt(s.Value.name, 2);
+				}
+			}
+		}
 	}
 
 	public class SpellComparer : IComparer<Spell>

@@ -55,9 +55,6 @@ namespace Owls.GUI
 		[SerializeField, Tooltip("Smaller is faster")]
 		private float finalScoreSpeed = 0.08f;
 
-		[SerializeField]
-		private float endFadeDelay = 2f;
-
 		private int _currentBirds = 0;
 		private int _currentScore = 0;
 		private EnemySpawner _spawner = null;
@@ -136,8 +133,6 @@ namespace Owls.GUI
 		private IEnumerator ScoreCount(int totalScore)
 		{
 			SetPrefs(totalScore + _currentScore, 0);
-			yield return new WaitForSeconds(1f);
-			_timeKeeper.LevelCompleted(endFadeDelay);
 			yield return new WaitForSeconds(2f);
 			var s = "Total Score:\n";
 			finalScoreDisplay.text = s + totalScore.ToString();
@@ -168,5 +163,7 @@ namespace Owls.GUI
 			PlayerPrefs.SetInt(KEY_TOTAL_SCORE, score);
 			PlayerPrefs.SetInt(KEY_HIGHEST_SPELL_ID, highestUnlockedSpellId);
 		}
+
+		
 	}
 }

@@ -12,7 +12,6 @@ namespace Owls.Player
 		private const string ANIM_TAKEDAMAGE = "TakeDamage";
 		private const string ANIM_DIE = "Die";
 		private const string TAG_TIMEKEEPER = "TimeKeeper";
-		private const string TAG_FADER = "Fader";
 
 		[SerializeField]
 		private float health = 1f;
@@ -20,11 +19,9 @@ namespace Owls.Player
 		[SerializeField]
 		private float mana = 1f, manaRegenAmount = 0.01f;
 
-		[SerializeField]
-		private float deathFadeDelay = 2f, deathFadeTime = 2f;
-		
 		private Animator _animator;
 		private TimeKeeper _timeKeeper;
+		private bool _isPaused = false;
 
 		public float MaxHealth { get; private set; }
 		public float MaxMana { get; private set; }
@@ -52,24 +49,39 @@ namespace Owls.Player
 			StartCoroutine(RegenerateMana());
 		}
 
+		private void OnEnable()
+		{
+			_timeKeeper.TimeEvent += TimeEventHandler;
+		}
+
+		private void OnDisable()
+		{
+			_timeKeeper.TimeEvent -= TimeEventHandler;
+		}
+
 		private void Die()
 		{
 			_animator.SetTrigger(ANIM_DIE);
 			IsAlive = false;
-			var fader = GameObject.FindGameObjectWithTag(TAG_FADER).GetComponent<Fader>();
-			fader.StartFade(0, 1, deathFadeTime, deathFadeDelay);
-			_timeKeeper.GameOver(deathFadeTime + deathFadeDelay);
+			_timeKeeper.InvokeGameOver();
 		}
 
 		private IEnumerator RegenerateMana()
 		{
 			while (IsAlive)
 			{
+				yield return new WaitForEndOfFrame();
+				if (_isPaused) { continue; }
 				var amount = manaRegenAmount * Time.deltaTime;
 				mana = Mathf.Clamp01(mana + amount);
-				manaChanged?.Invoke(amount, mana);
-				yield return new WaitForEndOfFrame();
+				manaChanged?.Invoke(amount, mana);		
 			}
+		}
+
+		private void TimeEventHandler(GameTime gt)
+		{
+			if (gt == GameTime.Pause) { _isPaused = true; }
+			else if (gt == GameTime.Continue) { _isPaused = false; }
 		}
 
 		public void TargetedBySpell(Info info)
