@@ -125,6 +125,7 @@ namespace Owls
 
             // TODO: Switch this to GameTime.LevelEnd and trigger the LevelComplete only after the "nest" thing
             TimeEvent?.Invoke(GameTime.LevelComplete);
+            InvokeLevelComplete();
         }
 
         public void PauseOrContinue()

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using Owls.GUI;
+using Owls.Spells;
+using System.Linq;
 
 namespace Owls.Levels
 {
@@ -10,7 +12,6 @@ namespace Owls.Levels
 	public class ScoreKeeperEditor : Editor
 	{
 		private const string KEY_TOTAL_SCORE = "TotalScore";
-		private const string KEY_HIGHEST_SPELL_ID = "HighestSpellId";
 		private ScoreKeeper _keeper;
 
 		private void Awake()
@@ -29,7 +30,19 @@ namespace Owls.Levels
 
 			if (GUILayout.Button("Reset unlocked spells"))
 			{
-				PlayerPrefs.SetInt(KEY_HIGHEST_SPELL_ID, 0);
+				var spells = new List<Spell>(Resources.LoadAll("", typeof(Spell)).Cast<Spell>().ToArray());
+
+				foreach (var s in spells)
+				{
+					if (s is Lightning)
+					{
+						PlayerPrefs.SetInt(s.name, 2);
+					}
+					else
+					{
+						PlayerPrefs.SetInt(s.name, 0);
+					}					
+				}
 			}
 		}
 	}

@@ -22,6 +22,7 @@ namespace Owls.Levels
 		private LevelInfo[] levels = null;
 
 		public Level CurrentLevel { get; private set; }
+		public LevelInfo[] LevelsInfo => levels;
 
 		private void Awake()
 		{
@@ -61,6 +62,19 @@ namespace Owls.Levels
 			{
 				Instantiate(effect, current.EffectContainer);
 			}
+		}
+
+		public int GetCurrentLevelScore()
+		{
+			foreach (var levelInfo in levels)
+			{
+				if (CurrentLevel == levelInfo.level)
+				{
+					return levelInfo.scoreToUnlock;
+				}
+			}
+
+			return 0;
 		}
 	}
 }

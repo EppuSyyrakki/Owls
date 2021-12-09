@@ -1,6 +1,4 @@
-﻿using Owls.Spells;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -10,23 +8,19 @@ namespace Owls.Spells
 	/// Creates integers in PlayerPrefs for total score and all spell names if they don't exist already.
 	/// For spells, 0 = locked, 1 = unlocked, 2 = unlocked just now.
 	/// </summary>
-	public class SpellUnlocker : MonoBehaviour
+	public class SpellUnlocker
 	{
 		private const string KEY_TOTAL_SCORE = "TotalScore";
 
 		private Dictionary<int, Spell> _spellUnlocks;
 		private SpellComparer _comparer = new SpellComparer();
 
-		private void Awake()
+		public SpellUnlocker()
 		{
 			var spells = new List<Spell>(Resources.LoadAll("", typeof(Spell)).Cast<Spell>().ToArray());
 			spells.Sort(_comparer);
 			EnsureKeysExist(spells);
 			CreateUnlockDictionary(spells);
-
-			// Debug. Call this at the level complete screen while counting the score to reveal new spells
-			// one by one.
-			CheckNewUnlocks(PlayerPrefs.GetInt(KEY_TOTAL_SCORE));
 		}
 
 		/// <summary>

@@ -1,7 +1,10 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Owls.Enemies;
+using Owls.Spells;
+using Owls.Levels;
 
 namespace Owls.GUI
 {
@@ -25,6 +28,7 @@ namespace Owls.GUI
 	{
 		private const string TAG_SPAWNER = "EnemySpawner";
 		private const string TAG_KEEPER = "TimeKeeper";
+		private const string TAG_LOADER = "LevelLoader";
 		private const string KEY_TOTAL_SCORE = "TotalScore";
 		private const string KEY_HIGHEST_SPELL_ID = "HighestSpellId";
 
@@ -59,6 +63,8 @@ namespace Owls.GUI
 		private int _currentScore = 0;
 		private EnemySpawner _spawner = null;
 		private TimeKeeper _timeKeeper = null;
+		private SpellUnlocker _spellUnlocker;
+		private LevelUnlocker _levelUnlocker;
 		private float _comboLevel = 1;
 
 		public int setScoreTo = 0;
@@ -69,6 +75,7 @@ namespace Owls.GUI
 			_timeKeeper = GameObject.FindGameObjectWithTag(TAG_KEEPER).GetComponent<TimeKeeper>();
 			_spawner.EnemyKilled += EnemyKilledHandler;
 			_timeKeeper.TimeEvent += TimeEventHandler;
+			_spellUnlocker = new SpellUnlocker();		
 		}
 
 		private void OnDisable()
@@ -80,6 +87,8 @@ namespace Owls.GUI
 		private void Start()
 		{
 			UpdateTexts();
+			var loader = GameObject.FindGameObjectWithTag(TAG_LOADER).GetComponent<LevelLoader>();
+			_levelUnlocker = new LevelUnlocker(loader.GetCurrentLevelScore());
 		}
 
 		private void EnemyKilledHandler(int reward, Vector2 screenPos)
@@ -124,7 +133,6 @@ namespace Owls.GUI
 			if (gt != GameTime.LevelComplete) { return; }
 
 			if (!PlayerPrefs.HasKey(KEY_TOTAL_SCORE)) { PlayerPrefs.SetInt(KEY_TOTAL_SCORE, 0); }
-			if (!PlayerPrefs.HasKey(KEY_HIGHEST_SPELL_ID)) { PlayerPrefs.SetInt(KEY_HIGHEST_SPELL_ID, 0); }
 
 			int totalScore = PlayerPrefs.GetInt(KEY_TOTAL_SCORE);
 			StartCoroutine(ScoreCount(totalScore));
@@ -132,6 +140,7 @@ namespace Owls.GUI
 
 		private IEnumerator ScoreCount(int totalScore)
 		{
+			bool levelUnlocked = false;
 			SetPrefs(totalScore + _currentScore, 0);
 			yield return new WaitForSeconds(2f);
 			var s = "Total Score:\n";
@@ -153,17 +162,46 @@ namespace Owls.GUI
 					_currentScore -= 100;
 				}
 
+				var newSpells = _spellUnlocker.CheckNewUnlocks(totalScore);
+
+				if (newSpells.Count > 0)
+				{
+					DisplayUnlockedSpells(newSpells);
+				}
+
+				if (!levelUnlocked && _levelUnlocker.CheckNewUnlocks(totalScore, out var level)) 
+				{
+					levelUnlocked = true;
+					DisplayUnlockedLevel(level);
+				}
+
 				finalScoreDisplay.text = s + totalScore.ToString();
 				UpdateTexts();
+			}
+		}
+
+		private void DisplayUnlockedLevel(Level level)
+		{
+			Debug.Log("Unlocked a new level!");
+		}
+
+		private void DisplayUnlockedSpells(List<Spell> spells)
+		{
+			foreach (var s in spells)
+			{
+				var name = s.name.Replace("Spell", "");
+				Debug.Log("Unlocked a new spell: " + name);
 			}
 		}
 
 		private void SetPrefs(int score, int highestUnlockedSpellId)
 		{
 			PlayerPrefs.SetInt(KEY_TOTAL_SCORE, score);
-			PlayerPrefs.SetInt(KEY_HIGHEST_SPELL_ID, highestUnlockedSpellId);
 		}
 
-		
+		public void CheckAllNewSpellUnlocks()
+		{
+			_spellUnlocker.CheckNewUnlocksForTotalScore();
+		}
 	}
 }

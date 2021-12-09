@@ -7,26 +7,33 @@ namespace Owls.GUI
 {
 	public class SpellSlot : MonoBehaviour
 	{
-		[SerializeField]
-		private Spell spell;
+		private Image _image = null;
+		private SpellBook _spellBook = null;
+		private Spell _spell = null;
+		private bool _isLocked = false;
 
-		[SerializeField]
-		private static Sprite lockedSprite;
-
-		private void Start()
+		public void Init(SpellBook book, Spell spell, Sprite lockedSprite)
 		{
-			Input.simulateMouseWithTouches = true;
-			OnValidate();
-		}
+			_image = GetComponent<Image>();
+			_spellBook = book;
+			_spell = spell;
 
-		private void OnValidate()
-		{
-			GetComponent<Image>().sprite = spell.icon;
+			if (lockedSprite != null)
+			{
+				_image.sprite = lockedSprite;
+				_isLocked = true;
+			}
+			else
+			{
+				_image.sprite = spell.icon;
+			}			
 		}
 
 		private void OnMouseDown()
 		{
-			
+			if (_isLocked) { return; }
+
+			_spellBook.SetSpellToPlayerSlot(_spell);
 		}
 	}
 }
