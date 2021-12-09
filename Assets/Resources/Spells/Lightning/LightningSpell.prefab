@@ -49,7 +49,9 @@ MonoBehaviour:
   targetHitEffect:
   - {fileID: 4741508095253339141, guid: 0c4ab36cc67d95342a16b3dd1c9bc90c, type: 3}
   - {fileID: 5513482505640471157, guid: c47d412ac5dc13f4b81fd11b9c69a892, type: 3}
+  scoreToUnlock: 0
   icon: {fileID: 21300000, guid: 1217c97f74d4b8b49b0e66b486ed90ab, type: 3}
+  id: 0
   info:
     glyph: {fileID: 11400000, guid: bcf12bef25ce157498a83e770b648c00, type: 2}
     castType: 1

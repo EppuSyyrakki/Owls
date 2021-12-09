@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 using Owls.Enemies;
-using Owls.Spells;
-using Owls.Scenery;
 
 namespace Owls.Levels
 {
@@ -25,11 +23,7 @@ namespace Owls.Levels
 		[SerializeField]
 		private Enemy[] enemies = null;
 
-		[SerializeField]
-		private Spell[] spellUnlocks = null;
-
 		public int ScoreToPass => scoreToPass;
-		public Spell[] SpellUnlocks => spellUnlocks;
 		public SceneryController Scenery => GetComponent<SceneryController>();
 		public string RandomLevelName 
 		{ 

@@ -13,15 +13,18 @@ namespace Owls.Spells
 		[SerializeField]
 		private List<GameObject> targetHitEffect = null;
 
+		[SerializeField]
+		private int scoreToUnlock = 0;
+
 		protected float timeLived = 0;
 
 		public Sprite icon;
-		public int id;
 		public Info info;
 				
 		public List<ITargetable> Target { get; private set; }
 		public List<Vector2> Stroke { get; private set; }
 		public bool TimerPassed => timeLived > info.lifeTime;
+		public int ScoreToUnlock => scoreToUnlock;
 
 		public virtual void Update()
 		{

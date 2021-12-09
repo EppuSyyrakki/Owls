@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Owls.Scenery
+namespace Owls.Levels
 {
 	[Serializable]
 	public class SceneryThing

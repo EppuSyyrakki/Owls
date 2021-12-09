@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using Owls.Scenery;
 
 namespace Owls.Levels
 {

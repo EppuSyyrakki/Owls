@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Owls.Scenery
+namespace Owls.Levels
 {
 	[RequireComponent(typeof(SpriteRenderer))]
 	public class SceneryItem : MonoBehaviour

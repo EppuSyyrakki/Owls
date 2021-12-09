@@ -27797,6 +27797,7 @@ GameObject:
   - component: {fileID: 2093930646}
   - component: {fileID: 2093930645}
   - component: {fileID: 2093930649}
+  - component: {fileID: 2093930650}
   m_Layer: 5
   m_Name: Spellbook_canvas
   m_TagString: Untagged
@@ -27911,3 +27912,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2093930650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093930644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a9a2e93e7560ea4c85a95dc982b36ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Owls.Scenery
+namespace Owls.Levels
 {
 	public class SceneryController : MonoBehaviour
 	{
