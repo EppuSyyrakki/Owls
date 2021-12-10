@@ -653,6 +653,7 @@ MonoBehaviour:
   levelCompleteDelay: 2
   completeScreen: {fileID: 7739800279955029220}
   gameOverScreen: {fileID: 4985504653124378093}
+  disableOnEndLevel: []
 --- !u!222 &3666762713629151
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2335,7 +2336,7 @@ MonoBehaviour:
     color: {r: 1, g: 0.75516963, b: 0.109803915, a: 1}
     size: 1.5
   finalScoreSpeed: 0.06
-  setScoreTo: 0
+  setScoreTo: 900
 --- !u!222 &538344654383014283
 CanvasRenderer:
   m_ObjectHideFlags: 0

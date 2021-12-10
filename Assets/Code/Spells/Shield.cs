@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Owls.Player;
+using Owls.Enemies;
 
 namespace Owls.Spells
 {
@@ -45,17 +46,23 @@ namespace Owls.Spells
 			_originalColor = _sr.color;
 			transform.position = Target[0].Transform.position;
 			_badger = Target[0] as Badger;
+			_badger.Regenerating = false;
 			if (_badger == null) { Debug.LogError("Trying to cast Shield on something else than Badger!"); }
+		}
+
+		private void OnDisable()
+		{
+			_badger.Regenerating = true;
 		}
 
 		private void OnTriggerEnter2D(Collider2D col)
 		{
 			if (!col.CompareTag(TAG_ENEMY)) { return; }
 
-			var target = col.GetComponent<ITargetable>();
+			var target = col.GetComponent<Enemy>();
 			SpawnHitEffect(target);
 			StartCoroutine(FlashShield());
-			target.TargetedBySpell(info);
+			target.KillDirect();	
 		}
 
 		private IEnumerator FlashShield()

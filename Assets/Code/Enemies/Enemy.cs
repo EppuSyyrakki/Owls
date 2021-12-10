@@ -241,5 +241,10 @@ namespace Owls.Enemies
 			if (info.effectAmount > 0) { return; }
 			_state = State.Killed;
 		}
+
+		public void KillDirect()
+		{
+			Kill(deathFx, false);
+		}
 	}
 }

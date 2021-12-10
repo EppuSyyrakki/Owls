@@ -45,6 +45,9 @@ namespace Owls
         [SerializeField]
         private GameObject completeScreen = null, gameOverScreen = null;
 
+        [SerializeField]
+        private GameObject[] disableOnEndLevel = null;
+
         private int _levelTime;
         private int _countdownTime;
         private bool _isPaused = false;
@@ -142,6 +145,7 @@ namespace Owls
 
         private void ShowGameOverScreen()
         {
+            DisableObjects();
             gameOverScreen.SetActive(true);
         }
 
@@ -152,7 +156,16 @@ namespace Owls
 
         private void ShowLevelCompleteScreen()
         {
+            DisableObjects();
             completeScreen.SetActive(true);
         }
+
+        private void DisableObjects()
+		{
+            foreach (var go in disableOnEndLevel)
+			{
+                go.SetActive(false);
+			}
+		}
     }
 }

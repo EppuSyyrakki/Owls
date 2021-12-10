@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Owls.Spells;
-using Owls.GUI;
 
 namespace Owls.Player
 {
@@ -22,6 +21,7 @@ namespace Owls.Player
 		private Animator _animator;
 		private TimeKeeper _timeKeeper;
 		private bool _isPaused = false;
+		public bool Regenerating { private get; set; } = true;
 
 		public float MaxHealth { get; private set; }
 		public float MaxMana { get; private set; }
@@ -71,7 +71,7 @@ namespace Owls.Player
 			while (IsAlive)
 			{
 				yield return new WaitForEndOfFrame();
-				if (_isPaused) { continue; }
+				if (_isPaused || !Regenerating) { continue; }
 				var amount = manaRegenAmount * Time.deltaTime;
 				mana = Mathf.Clamp01(mana + amount);
 				manaChanged?.Invoke(amount, mana);		
