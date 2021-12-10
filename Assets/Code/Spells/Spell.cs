@@ -42,7 +42,7 @@ namespace Owls.Spells
 			{
 				Stroke = new List<Vector2>(1);
 				Stroke.Add(stroke[0]);
-				transform.position = Stroke[0];
+
 			}
 
 			if (info.target == CastTarget.Player)

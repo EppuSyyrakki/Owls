@@ -7,6 +7,7 @@ namespace Owls.Spells
 	public class Fireball : Spell
 	{
 		private const string TAG_SOURCE = "SpellSource";
+		private const string TAG_ENEMY = "Enemy";
 
 		[SerializeField]
 		private GameObject explosion = null;
@@ -14,8 +15,10 @@ namespace Owls.Spells
 		[SerializeField]
 		private float flightSpeed = 20f;
 
+		[SerializeField]
+		private float killDelay = 0.25f;
+
 		private Vector2 _source;
-		private Vector2 _targetPosition;
 		private bool _contact = false;
 
 		/// <summary>
@@ -41,13 +44,45 @@ namespace Owls.Spells
 			if (!_contact)
 			{
 				var delta = Time.deltaTime * flightSpeed;
-				var newPos = Vector2.MoveTowards(_source, _targetPosition, delta);
+				var newPos = Vector3.MoveTowards(transform.position, Stroke[0], delta);
 				transform.position = newPos;
 
-				if ((Vector2)transform.position == _targetPosition)
+				if ((Vector2)transform.position == Stroke[0])
 				{
 					_contact = true;
 				}
+			}
+		}
+
+		private void OnTriggerEnter2D(Collider2D collision)
+		{
+			if (!collision.gameObject.CompareTag(TAG_ENEMY)) { return; }
+
+			var collisionTarget = collision.GetComponent<ITargetable>();
+
+			if (!Target.Contains(collisionTarget))
+			{
+				Target.Add(collisionTarget);
+			}
+
+			if (!_contact) 
+			{ 
+				Explode(); 
+			}
+		}
+
+		private void Explode()
+		{
+			GetComponent<CircleCollider2D>().radius = info.effectRange;
+		}
+
+		private IEnumerator KillTargets()
+		{
+			yield return new WaitForSeconds(killDelay);
+
+			foreach (var t in Target)
+			{
+				t.TargetedBySpell(info);
 			}
 		}
 	}

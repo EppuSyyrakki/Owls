@@ -21,6 +21,7 @@ namespace Owls.Spells
 			base.Init(stroke);
 
 			GetComponent<CircleCollider2D>().radius = info.effectRange;
+			transform.position = Stroke[0];
 		}
 
 		/// <summary>
