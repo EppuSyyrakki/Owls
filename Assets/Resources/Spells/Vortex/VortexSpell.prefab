@@ -59,6 +59,7 @@ MonoBehaviour:
     lifeTime: 5
     castImmediately: 0
     manaCost: 0.33
+  vortexStrength: 0.876
 --- !u!58 &2903113195450161579
 CircleCollider2D:
   m_ObjectHideFlags: 0
