@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
 
 namespace Owls.Spells
 {
@@ -9,6 +8,9 @@ namespace Owls.Spells
 	{
 		[SerializeField, Range(0.1f, 0.5f)]
 		private float flashTime = 0.25f;
+
+		[SerializeField]
+		private GameObject flashObject = null;
 
 		//[SerializeField]
 		//private float flashIntensity = 8f;
