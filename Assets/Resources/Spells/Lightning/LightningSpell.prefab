@@ -61,6 +61,8 @@ MonoBehaviour:
     castImmediately: 1
     manaCost: 0.1
   flashTime: 0.25
+  flashObject: {fileID: 1679995571293498947, guid: f3d8a3c819432b74fbd04061a3e1d32d,
+    type: 3}
 --- !u!120 &6329843866113282793
 LineRenderer:
   m_ObjectHideFlags: 0
