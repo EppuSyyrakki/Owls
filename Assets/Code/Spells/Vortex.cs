@@ -13,6 +13,8 @@ namespace Owls.Spells
 		{
 			// base.init should be run before doing Init logic for this class.
 			base.Init(stroke);
+
+			GetComponent<CircleCollider2D>().radius = info.effectRange;
 		}
 
 		/// <summary>
