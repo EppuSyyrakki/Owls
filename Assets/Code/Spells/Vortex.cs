@@ -9,6 +9,9 @@ namespace Owls.Spells
 	{
 		private const string TAG_ENEMY = "Enemy";
 
+		[SerializeField, Range(0, 1f)]
+		private float vortexStrength = 0.3f;
+
 		/// <summary>
 		/// Can be used to fetch references to class members or initialize them.
 		/// </summary>
@@ -18,7 +21,6 @@ namespace Owls.Spells
 			base.Init(stroke);
 
 			GetComponent<CircleCollider2D>().radius = info.effectRange;
-
 		}
 
 		/// <summary>
@@ -37,9 +39,19 @@ namespace Owls.Spells
 				if (enemy == null) { continue; }
 
 				var enemyPos = enemy.transform.position;
-				var maxDelta = enemy.FlightSpeed  * 2 * Time.deltaTime;
+				var maxDelta = vortexStrength * enemy.FlightSpeed * Time.deltaTime;
 				var newPos = Vector3.MoveTowards(enemyPos, transform.position, maxDelta);
 				enemy.transform.position = newPos;
+			}
+		}
+
+		private void OnDisable()
+		{
+			foreach (var target in Target)
+			{
+				if (!(target is Enemy e)) { continue; }
+
+				e.FlightInterrupted = false;
 			}
 		}
 
@@ -47,7 +59,10 @@ namespace Owls.Spells
 		{
 			if (!collision.gameObject.CompareTag(TAG_ENEMY)) { return; }
 
-			Target.Add(collision.GetComponent<ITargetable>());
+			var enemy = collision.GetComponent<Enemy>();
+			Target.Add(enemy);
+			enemy.InitVortex(transform.position);
+			enemy.FlightInterrupted = true;
 		}
 	}
 }

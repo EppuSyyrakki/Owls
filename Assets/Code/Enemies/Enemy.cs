@@ -62,6 +62,7 @@ namespace Owls.Enemies
 		private TimeKeeper _timeKeeper;
 		private bool _paused = false;
 
+		public bool FlightInterrupted { private get; set; } = false;
 		public bool IsAlive { get; private set; } = true;
 		public Transform Transform => transform;
 		public float FlightSpeed => flightSpeed;
@@ -154,6 +155,8 @@ namespace Owls.Enemies
 
 		private void MoveOnPath()
         {
+			if (FlightInterrupted) { return; }
+
 			// Have I reached the last point (end) of the path?
 			if (_currentPathIndex + 1 >= _path3.Length)
 			{
@@ -246,6 +249,11 @@ namespace Owls.Enemies
 		public void KillDirect()
 		{
 			Kill(deathFx, false);
+		}
+
+		public void InitVortex(Vector2 position)
+		{
+			_path3[_currentPathIndex] = position;
 		}
 	}
 }
