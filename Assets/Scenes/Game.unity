@@ -676,6 +676,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4401675488606298342, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
         type: 3}
+      propertyPath: levelTime
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401675488606298342, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
       propertyPath: disableOnEndLevel.Array.size
       value: 5
       objectReference: {fileID: 0}
