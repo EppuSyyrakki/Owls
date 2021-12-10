@@ -7,11 +7,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SceneAdjustmentMat
-  m_Shader: {fileID: -6465566751694194690, guid: 8211b6826d71eac4687717b7af984fa6,
+  m_Name: LightningFlashMaterial2
+  m_Shader: {fileID: -6465566751694194690, guid: 032c078c38f437642b0ebde952be9a2f,
     type: 3}
   m_ShaderKeywords: 
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -41,15 +41,12 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - Vector2_02ceb47fb0144f04ad43c1b89be9b3a5: {r: 9.39, g: 0, b: 0, a: 0}
-    - Vector2_091b2bfeb8a946fe85c068aa01ce899a: {r: 25, g: 0, b: 0, a: 0}
-    - Vector2_362427165a5d415c975ff786f10aa65e: {r: 0, g: 0, b: 0, a: 0}
-    - Vector2_59de619d5e874e669be8b1ac6c87f7c5: {r: 0, g: 0, b: 0, a: 0}
-    - Vector3_06dfe610a6ae4e5a945ae9a896f24167: {r: 9.5, g: 0, b: 0, a: 0}
-    - Vector3_a83ef40aca974b2bbdf36d85995deb09: {r: 0, g: 0, b: 0, a: 0}
-    - Vector3_b339691e42244804b52c6c1a13a93492: {r: -47.72, g: 4.11, b: 0, a: 0}
+    - Vector2_02ceb47fb0144f04ad43c1b89be9b3a5: {r: 100, g: 0, b: 0, a: 0}
+    - Vector2_091b2bfeb8a946fe85c068aa01ce899a: {r: 6, g: 0, b: 0, a: 0}
+    - Vector3_06dfe610a6ae4e5a945ae9a896f24167: {r: 300, g: 80, b: 0, a: 0}
+    - Vector3_b339691e42244804b52c6c1a13a93492: {r: 1, g: 200, b: 1, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &6872202092621344938
+--- !u!114 &4144183216990346676
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
