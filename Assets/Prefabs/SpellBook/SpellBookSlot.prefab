@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9643e794ef69b5b4eaa3830523778e6a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -89,3 +89,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 388f71df09b67a1409c9edb1bb4db406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSpellBookSlot: 1
+  lockedSlot: {fileID: 21300000, guid: 5ef0211a89a70c0488f0bd7b0fab8e30, type: 3}
+  emptySlot: {fileID: 21300000, guid: 9643e794ef69b5b4eaa3830523778e6a, type: 3}

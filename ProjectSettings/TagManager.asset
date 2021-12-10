@@ -15,6 +15,7 @@ TagManager:
   - Fader
   - SpellCanvas
   - LevelLoader
+  - SpellBook
   layers:
   - Default
   - TransparentFX

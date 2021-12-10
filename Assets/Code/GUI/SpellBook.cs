@@ -15,7 +15,7 @@ namespace Owls.GUI
 		private Transform spellGrid = null;
 
 		[SerializeField]
-		private Sprite lockedSprite = null;
+		private SpellSlot[] playerSlots = null;
 
 		private Dictionary<Spell, int> _spells;
 		private SpellComparer _comparer = new SpellComparer();
@@ -38,15 +38,8 @@ namespace Owls.GUI
 		{
 			foreach (var spellPair in _spells)
 			{
-				var newSlot = Instantiate(spellSlotPrefab, spellGrid);
-				Sprite icon = null;
-
-				if (spellPair.Value == 0)
-				{
-					icon = lockedSprite;
-				}
-
-				newSlot.Init(this, spellPair.Key, icon);
+				var newSlot = Instantiate(spellSlotPrefab, spellGrid);				
+				newSlot.Set(spellPair.Key, spellPair.Value);
 			}
 		}
 
@@ -82,7 +75,24 @@ namespace Owls.GUI
 
 		public void SetSpellToPlayerSlot(Spell spell)
 		{
-			Debug.Log("Simulating adding spell " + spell.name + " to player slot.");
+			foreach (var slot in playerSlots)
+			{
+				if (slot.Spell == spell) { return; }
+			}
+
+			foreach (var slot in playerSlots)
+			{
+				if (slot.Spell == null)
+				{
+					slot.Set(spell, 1);
+					return;
+				}
+			}
+		}
+
+		public void SetSlotToEmpty(SpellSlot slot)
+		{
+			slot.Set(null, -1);
 		}
 	}
 }
