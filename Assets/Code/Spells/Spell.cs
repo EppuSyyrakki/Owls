@@ -57,6 +57,10 @@ namespace Owls.Spells
 			{
 				RaycastForTouchedTargets();
 			}
+			else if (info.target == CastTarget.None)
+			{
+				Target = new List<ITargetable>();
+			}
 		}
 
 		private void FindPlayerTarget()
@@ -147,7 +151,7 @@ namespace Owls.Spells
 
 	public enum CastType
 	{
-		NoTouch,
+		Other,
 		Swipe,
 		Tap
 	}
