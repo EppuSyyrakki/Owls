@@ -16,6 +16,7 @@ TagManager:
   - SpellCanvas
   - LevelLoader
   - SpellBook
+  - SpellSource
   layers:
   - Default
   - TransparentFX

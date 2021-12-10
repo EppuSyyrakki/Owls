@@ -9,8 +9,8 @@ namespace Owls.Spells
 	{
 		private const string TAG_ENEMY = "Enemy";
 
-		[SerializeField, Range(0, 1f)]
-		private float vortexStrength = 0.3f;
+		[SerializeField, Range(0.5f, 1f)]
+		private float vortexStrength = 0.8f;
 
 		/// <summary>
 		/// Can be used to fetch references to class members or initialize them.

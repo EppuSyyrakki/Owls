@@ -45,14 +45,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetHitEffect: []
-  scoreToUnlock: 0
+  scoreToUnlock: 666
   icon: {fileID: 0}
   info:
-    glyph: {fileID: 0}
-    castType: 0
+    glyph: {fileID: 11400000, guid: 54c8a110abd73dc48b3d3c4105624156, type: 2}
+    castType: 2
     target: 0
     effectRange: 0
-    effectAmount: 0
-    lifeTime: 0
+    effectAmount: -1
+    lifeTime: 20
     castImmediately: 0
     manaCost: 0
+  explosion: {fileID: 0}
+  flightSpeed: 20
