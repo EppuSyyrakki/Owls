@@ -21,7 +21,12 @@ namespace Owls.Levels
 		[SerializeField]
 		private Enemy[] enemies = null;
 
+		[SerializeField]
+		private int levelTime = 90;
+
 		public SceneryController Scenery => GetComponent<SceneryController>();
+		public int LevelTime => levelTime; 
+
 		public string RandomLevelName 
 		{ 
 			get
