@@ -54,7 +54,7 @@ namespace Owls.Spells
 			}
 
 			Target.Clear();
-			// StartCoroutine(Flash());
+			if (flashObject != null) { StartCoroutine(Flash()); }
 		}
 
 		private IEnumerator Flash()
