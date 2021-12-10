@@ -60,9 +60,9 @@ namespace Owls.Spells
 		private IEnumerator Flash()
 		{
 			float t = info.lifeTime * flashTime;
-			// Set the "light"
+			var flash = Instantiate(flashObject);
 			yield return new WaitForSeconds(t);
-			// Reset the "light"
+			Destroy(flash);
 		}
 	}
 }
