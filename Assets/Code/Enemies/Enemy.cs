@@ -64,6 +64,7 @@ namespace Owls.Enemies
 
 		public bool IsAlive { get; private set; } = true;
 		public Transform Transform => transform;
+		public float FlightSpeed => flightSpeed;
 		
 		private void Awake()
 		{
