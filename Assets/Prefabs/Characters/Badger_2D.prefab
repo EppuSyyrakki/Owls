@@ -14882,7 +14882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   mana: 1
-  manaRegenAmount: 0.1
+  manaRegenAmount: 0.08
 --- !u!212 &8471682413505465428
 SpriteRenderer:
   m_ObjectHideFlags: 0
