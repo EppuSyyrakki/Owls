@@ -18,6 +18,7 @@ namespace Owls.Enemies
 		private TimeKeeper _timeKeeper;
 		private float _maxTime;
 	    private Enemy[] _enemies = null;
+		private Coroutine _spawning = null;
 
 		public event Action<int, Vector2> EnemyKilled;
 
@@ -26,8 +27,7 @@ namespace Owls.Enemies
 			_edge = GetComponent<BoxCollider2D>();
 			_cam = Camera.main;
 			_timeKeeper = GameObject.FindGameObjectWithTag(TAG_TIMEKEEPER).GetComponent<TimeKeeper>();
-			_timeKeeper.TimeEvent += TimeEventHandler;
-			_maxTime = _timeKeeper.TimeMax;
+			_timeKeeper.TimeEvent += TimeEventHandler;		
 		}
 
 		private void OnDisable()
@@ -37,7 +37,15 @@ namespace Owls.Enemies
 
 		private void Start()
 		{
-			StartCoroutine(EvaluateSpawnChance());
+			_maxTime = _timeKeeper.TimeMax;			
+		}
+
+		private void Update()
+		{
+			if (_spawning == null && _spawnEnabled)
+			{
+				_spawning = StartCoroutine(EvaluateSpawnChance());
+			}
 		}
 
 		private IEnumerator EvaluateSpawnChance()

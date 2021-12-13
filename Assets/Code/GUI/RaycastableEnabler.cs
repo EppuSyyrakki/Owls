@@ -6,6 +6,8 @@ namespace Owls.GUI
 {
 	public class RaycastableEnabler : MonoBehaviour
 	{
+
+
 		private void OnEnable()
 		{
 			var images = GetComponentsInChildren<Image>();
