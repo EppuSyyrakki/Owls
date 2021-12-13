@@ -26,10 +26,7 @@ namespace Owls
 
         [SerializeField]
         private int countdownTime = 3;
-
-        [SerializeField]
-        private int levelTime = 90;
-        
+       
         [SerializeField]
         private TMP_Text _timeDisplay = null;
 
@@ -48,25 +45,25 @@ namespace Owls
         [SerializeField]
         private GameObject[] disableOnEndLevel = null;
 
-        private int _levelTime;
+        private int _timeRemaining;
         private int _countdownTime;
         private bool _isPaused = false;
         private LevelLoader _levelLoader = null;
 
         public event Action<GameTime> TimeEvent;
-        public int TimeRemaining => _levelTime;
-        public int TimeMax => levelTime;
+        public int TimeRemaining => _timeRemaining;
+        public int TimeMax => _levelLoader.CurrentLevel.LevelTime;
      
         private void Awake()
-		{
-            _levelTime = levelTime;
-            _countdownTime = countdownTime;
-            _timeDisplay.text = _levelTime.ToString();
+		{         
+            _countdownTime = countdownTime;           
             _levelLoader = GameObject.FindGameObjectWithTag(TAG_LOADER).GetComponent<LevelLoader>();
 		}
 
 		private void Start()
-		{       
+		{
+            _timeRemaining = TimeMax;
+            _timeDisplay.text = _timeRemaining.ToString();
             StartCoroutine(CountCountdown());
 		}
 
@@ -118,12 +115,12 @@ namespace Owls
         {
             TimeEvent?.Invoke(GameTime.LevelStart);
 
-            while (_levelTime > -1)
+            while (_timeRemaining > -1)
             {
-                _timeDisplay.text = _levelTime.ToString();
+                _timeDisplay.text = _timeRemaining.ToString();
                 yield return new WaitForSeconds(1);
 
-                if (!_isPaused) { _levelTime--; }
+                if (!_isPaused) { _timeRemaining--; }
             }
 
             // TODO: Switch this to GameTime.LevelEnd and trigger the LevelComplete only after the "nest" thing
