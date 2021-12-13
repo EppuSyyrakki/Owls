@@ -55,13 +55,19 @@ MonoBehaviour:
     glyph: {fileID: 11400000, guid: 54c8a110abd73dc48b3d3c4105624156, type: 2}
     castType: 2
     target: 0
-    effectRange: 0
+    effectRange: 2
     effectAmount: -1
-    lifeTime: 20
+    lifeTime: 5
     castImmediately: 0
     manaCost: 0
-  explosion: {fileID: 0}
+  explosion: {fileID: 3474449681068754730, guid: 5535db73038474a4391348dfb5612e92,
+    type: 3}
+  removeOnExplosion:
+  - {fileID: 2605391550852001047}
+  - {fileID: 2605391551327895772}
+  - {fileID: 2605391550966559364}
   flightSpeed: 20
+  killDelay: 0.15
 --- !u!58 &5727838721311079110
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -171,6 +177,24 @@ PrefabInstance:
 --- !u!4 &2605391550852001046 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2928705241533194139, guid: ac90b2281611d7047a22a0377f13a8b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 904357289056498317}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &2605391550852001047 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2928705241533194138, guid: ac90b2281611d7047a22a0377f13a8b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 904357289056498317}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2605391550966559364 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2928705241645121545, guid: ac90b2281611d7047a22a0377f13a8b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 904357289056498317}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2605391551327895772 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2928705241334116945, guid: ac90b2281611d7047a22a0377f13a8b4,
     type: 3}
   m_PrefabInstance: {fileID: 904357289056498317}
   m_PrefabAsset: {fileID: 0}

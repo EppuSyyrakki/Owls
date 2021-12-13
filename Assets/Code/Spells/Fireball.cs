@@ -13,6 +13,9 @@ namespace Owls.Spells
 		private GameObject explosion = null;
 
 		[SerializeField]
+		private Component[] removeOnExplosion = null;
+
+		[SerializeField]
 		private float flightSpeed = 20f;
 
 		[SerializeField]
@@ -30,6 +33,7 @@ namespace Owls.Spells
 			base.Init(stroke);
 			_source = GameObject.FindGameObjectWithTag(TAG_SOURCE).transform.position;
 			transform.position = _source;
+			transform.right = Stroke[0] - _source;
 		}
 
 		/// <summary>
@@ -47,9 +51,10 @@ namespace Owls.Spells
 				var newPos = Vector3.MoveTowards(transform.position, Stroke[0], delta);
 				transform.position = newPos;
 
-				if ((Vector2)transform.position == Stroke[0])
+				if (transform.position == (Vector3)Stroke[0])
 				{
 					_contact = true;
+					Explode();
 				}
 			}
 		}
@@ -66,20 +71,23 @@ namespace Owls.Spells
 			}
 
 			if (!_contact) 
-			{ 
-				Explode(); 
+			{
+				_contact = true;
+				Explode();
 			}
 		}
 
 		private void Explode()
 		{
 			GetComponent<CircleCollider2D>().radius = info.effectRange;
+			Instantiate(explosion, transform);
+			Invoke(nameof(KillTargets), killDelay);
+
+			foreach (Component c in removeOnExplosion) { Destroy(c, killDelay); }
 		}
 
-		private IEnumerator KillTargets()
+		private void KillTargets()
 		{
-			yield return new WaitForSeconds(killDelay);
-
 			foreach (var t in Target)
 			{
 				t.TargetedBySpell(info);
