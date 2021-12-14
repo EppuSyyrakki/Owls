@@ -56,18 +56,18 @@ MonoBehaviour:
     glyph: {fileID: 11400000, guid: 54c8a110abd73dc48b3d3c4105624156, type: 2}
     castType: 2
     target: 0
-    effectRange: 3
+    effectRange: 2
     effectAmount: -1
     lifeTime: 5
     castImmediately: 0
-    manaCost: 0
+    manaCost: 0.3
   explosion: {fileID: 3474449681068754730, guid: 5535db73038474a4391348dfb5612e92,
     type: 3}
   removeOnExplosion:
   - {fileID: 2605391550852001047}
   - {fileID: 2605391551327895772}
-  flightSpeed: 20
-  killDelay: 0.15
+  flightSpeed: 35
+  killDelay: 0.1
 --- !u!58 &5727838721311079110
 CircleCollider2D:
   m_ObjectHideFlags: 0
