@@ -9,12 +9,12 @@ namespace Owls.Enemies
     public class EnemySpawner : MonoBehaviour
     {
 		private const string TAG_TIMEKEEPER = "TimeKeeper";
+		private const string TAG_CLEARCAM = "ScreenClearCam";
 
 		private AnimationCurve _spawnCurve;
 		private float _spawnInterval;	
 		private BoxCollider2D _edge;
 		private bool _spawnEnabled = false;
-		private Camera _cam = null;
 		private TimeKeeper _timeKeeper;
 		private float _maxTime;
 	    private Enemy[] _enemies = null;
@@ -25,7 +25,6 @@ namespace Owls.Enemies
 		private void Awake()
 		{
 			_edge = GetComponent<BoxCollider2D>();
-			_cam = Camera.main;
 			_timeKeeper = GameObject.FindGameObjectWithTag(TAG_TIMEKEEPER).GetComponent<TimeKeeper>();
 			_timeKeeper.TimeEvent += TimeEventHandler;		
 		}
@@ -100,7 +99,7 @@ namespace Owls.Enemies
 
 		public void EnemyKilledByPlayer(int reward, Vector3 worldPos)
 		{
-			EnemyKilled?.Invoke(reward, _cam.WorldToScreenPoint(worldPos));
+			EnemyKilled?.Invoke(reward, worldPos);
 		}
 
 		public void SetSpawnerFields(Enemy[] enemies, AnimationCurve curve, float interval)

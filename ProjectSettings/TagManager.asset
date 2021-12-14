@@ -17,6 +17,7 @@ TagManager:
   - LevelLoader
   - SpellBook
   - SpellSource
+  - ScreenClearCam
   layers:
   - Default
   - TransparentFX

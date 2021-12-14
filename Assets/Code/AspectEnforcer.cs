@@ -15,7 +15,6 @@ namespace Owls.Code
 			float currentRatio = (float)Screen.width / (float)Screen.height;
 			float scaleHeight = currentRatio / targetRatio;
 			var cam = GetComponent<Camera>();
-			var scalers = FindObjectsOfType<CanvasScaler>();
 
 			if (scaleHeight < 1f)
 			{
@@ -25,11 +24,6 @@ namespace Owls.Code
 				rect.x = 0;
 				rect.y = (1f - scaleHeight) / 2f;
 				cam.rect = rect;
-
-				foreach (var scaler in scalers)
-				{
-
-				}
 			}
 		}
 	}

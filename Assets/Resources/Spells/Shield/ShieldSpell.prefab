@@ -55,7 +55,6 @@ MonoBehaviour:
   - {fileID: 5513482505640471157, guid: 1e4c67515d1b1104c9e173ce48cf1316, type: 3}
   scoreToUnlock: 1000
   icon: {fileID: 21300000, guid: 6f566635db9eaf847a303d971fe0e33d, type: 3}
-  id: 1
   info:
     glyph: {fileID: 11400000, guid: d5f1a5d955c5c4048a7346423c790e2b, type: 2}
     castType: 0
@@ -155,7 +154,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.47
+  m_Radius: 2.75
 --- !u!50 &-6311676866846035120
 Rigidbody2D:
   serializedVersion: 4
