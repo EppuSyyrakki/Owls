@@ -56,7 +56,7 @@ MonoBehaviour:
     glyph: {fileID: 11400000, guid: 54c8a110abd73dc48b3d3c4105624156, type: 2}
     castType: 2
     target: 0
-    effectRange: 2
+    effectRange: 3
     effectAmount: -1
     lifeTime: 5
     castImmediately: 0
