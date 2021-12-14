@@ -14,11 +14,16 @@ namespace Owls.GUI
 		[SerializeField]
 		private float loadDelay = 0.5f;
 
+		[SerializeField]
+		private float enableButtonsDelay = 0.75f;
+
         private SceneLoader _loader = null;
 
 		private void Awake()
 		{
 			_loader = GetComponent<SceneLoader>();
+			EnableAllButtons(false);
+			Invoke(nameof(InvokeEnable), enableButtonsDelay);
 		}
 
 		private void LoadSpellbook()
@@ -64,6 +69,11 @@ namespace Owls.GUI
 			}
 
 			PlayerPrefs.SetInt(KEY_TOTAL_SCORE, 0);
+		}
+
+		private void InvokeEnable()
+		{
+			EnableAllButtons(true);
 		}
 	}
 }
