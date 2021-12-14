@@ -47,10 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetHitEffect:
   - {fileID: 5895984583631774451, guid: 4537bbcab19c87d4aa64f5185daa7fc4, type: 3}
-  - {fileID: 2740472844853973616, guid: f863be239e430eb45bea7de2dbf4e4b5, type: 3}
   scoreToUnlock: 2000
   icon: {fileID: 21300000, guid: 15164291a84064140b842e399f17418c, type: 3}
-  id: 2
   info:
     glyph: {fileID: 11400000, guid: 03663282d64ae1449a6d68a75cafddc1, type: 2}
     castType: 0
