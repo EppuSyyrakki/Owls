@@ -84,3 +84,6 @@ TagManager:
   - name: Gestures
     uniqueID: 363220291
     locked: 0
+  - name: GUI
+    uniqueID: 1827840177
+    locked: 0

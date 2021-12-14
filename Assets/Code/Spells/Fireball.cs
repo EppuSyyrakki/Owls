@@ -81,16 +81,20 @@ namespace Owls.Spells
 		{
 			GetComponent<CircleCollider2D>().radius = info.effectRange;
 			Instantiate(explosion, transform);
-			Invoke(nameof(KillTargets), killDelay);
+			StartCoroutine(KillTargets());
 
 			foreach (Component c in removeOnExplosion) { Destroy(c, killDelay); }
 		}
 
-		private void KillTargets()
+		private IEnumerator KillTargets()
 		{
+			yield return new WaitForSeconds(killDelay);
+
 			foreach (var t in Target)
 			{
 				t.TargetedBySpell(info);
+				SpawnHitEffect(t);
+				yield return new WaitForEndOfFrame();
 			}
 		}
 	}
