@@ -19,6 +19,7 @@ namespace Owls.Enemies
 		private float _maxTime;
 	    private Enemy[] _enemies = null;
 		private Coroutine _spawning = null;
+		private Camera _cam = null;
 
 		public event Action<int, Vector2> EnemyKilled;
 
@@ -26,7 +27,8 @@ namespace Owls.Enemies
 		{
 			_edge = GetComponent<BoxCollider2D>();
 			_timeKeeper = GameObject.FindGameObjectWithTag(TAG_TIMEKEEPER).GetComponent<TimeKeeper>();
-			_timeKeeper.TimeEvent += TimeEventHandler;		
+			_timeKeeper.TimeEvent += TimeEventHandler;
+			_cam = Camera.main;
 		}
 
 		private void OnDisable()
@@ -99,7 +101,8 @@ namespace Owls.Enemies
 
 		public void EnemyKilledByPlayer(int reward, Vector3 worldPos)
 		{
-			EnemyKilled?.Invoke(reward, worldPos);
+			var screenPos = _cam.WorldToScreenPoint(worldPos);
+			EnemyKilled?.Invoke(reward, screenPos);
 		}
 
 		public void SetSpawnerFields(Enemy[] enemies, AnimationCurve curve, float interval)

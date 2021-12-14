@@ -138,6 +138,7 @@ namespace Owls
         public void InvokeGameOver()
 		{
             Invoke(nameof(ShowGameOverScreen), gameOverDelay);
+            TimeEvent?.Invoke(GameTime.LevelComplete);
 		}
 
         private void ShowGameOverScreen()
