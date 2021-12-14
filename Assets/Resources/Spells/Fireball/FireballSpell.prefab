@@ -49,13 +49,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetHitEffect:
   - {fileID: 4741508095253339141, guid: f5ec8cfd9b871a249bf0dd915e17bbe4, type: 3}
+  - {fileID: 7324951023830387243, guid: d452b5d062bfbc94b948d57eda1c640b, type: 3}
   scoreToUnlock: 666
   icon: {fileID: 21300000, guid: 4e491b50a7b28bd46a8c74876ff4b0a5, type: 3}
   info:
     glyph: {fileID: 11400000, guid: 54c8a110abd73dc48b3d3c4105624156, type: 2}
     castType: 2
     target: 0
-    effectRange: 2
+    effectRange: 3
     effectAmount: -1
     lifeTime: 5
     castImmediately: 0
@@ -65,7 +66,6 @@ MonoBehaviour:
   removeOnExplosion:
   - {fileID: 2605391550852001047}
   - {fileID: 2605391551327895772}
-  - {fileID: 2605391550966559364}
   flightSpeed: 20
   killDelay: 0.15
 --- !u!58 &5727838721311079110
@@ -183,12 +183,6 @@ Transform:
 --- !u!212 &2605391550852001047 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2928705241533194138, guid: ac90b2281611d7047a22a0377f13a8b4,
-    type: 3}
-  m_PrefabInstance: {fileID: 904357289056498317}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &2605391550966559364 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2928705241645121545, guid: ac90b2281611d7047a22a0377f13a8b4,
     type: 3}
   m_PrefabInstance: {fileID: 904357289056498317}
   m_PrefabAsset: {fileID: 0}
