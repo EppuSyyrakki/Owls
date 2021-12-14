@@ -8,6 +8,8 @@ namespace Owls.GUI
 {
 	public class SpellBook : MonoBehaviour
 	{
+		private const string TAG_DELIVERY = "SpellDelivery";
+
 		[SerializeField]
 		private SpellSlot spellSlotPrefab = null;
 
@@ -19,6 +21,7 @@ namespace Owls.GUI
 
 		private Dictionary<Spell, int> _spells;
 		private SpellComparer _comparer = new SpellComparer();
+		private SpellDelivery _delivery = null;
 
 		private void Awake()
 		{
@@ -32,6 +35,11 @@ namespace Owls.GUI
 			{
 				Destroy(gridChild.gameObject);
 			}
+
+			var deliveryObject = new GameObject(TAG_DELIVERY);
+			deliveryObject.tag = TAG_DELIVERY;
+			_delivery = deliveryObject.AddComponent(typeof(SpellDelivery)) as SpellDelivery;
+			DontDestroyOnLoad(deliveryObject);
 		}
 
 		private void Start()
@@ -93,6 +101,11 @@ namespace Owls.GUI
 		public void SetSlotToEmpty(SpellSlot slot)
 		{
 			slot.Set(null, -1);
+		}
+
+		public void DeliverSpells()
+		{		
+			_delivery.SetSpells(playerSlots);
 		}
 	}
 }

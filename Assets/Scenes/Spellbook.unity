@@ -208,6 +208,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &316266846 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5995396676563479035, guid: 388f82d677f6b9b458692da1773f3bba,
+    type: 3}
+  m_PrefabInstance: {fileID: 5995396676611201172}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76920fd6fb9fc7d479e6bf28dabf33c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +453,18 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!114 &1669249809 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5995396677202673678, guid: 388f82d677f6b9b458692da1773f3bba,
+    type: 3}
+  m_PrefabInstance: {fileID: 5995396676611201172}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e2304a4617fec5449eab130377020d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1672932279
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,6 +778,61 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookCover
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995396676563479032, guid: 388f82d677f6b9b458692da1773f3bba,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995396676563479032, guid: 388f82d677f6b9b458692da1773f3bba,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995396676563479032, guid: 388f82d677f6b9b458692da1773f3bba,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1669249809}
+    - target: {fileID: 5995396676563479032, guid: 388f82d677f6b9b458692da1773f3bba,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 316266846}
+    - target: {fileID: 5995396676563479032, guid: 388f82d677f6b9b458692da1773f3bba,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995396676563479032, guid: 388f82d677f6b9b458692da1773f3bba,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeliverSpells
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995396676563479032, guid: 388f82d677f6b9b458692da1773f3bba,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: LoadSelectedScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995396676563479032, guid: 388f82d677f6b9b458692da1773f3bba,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Owls.GUI.SpellBook, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995396676563479032, guid: 388f82d677f6b9b458692da1773f3bba,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Owls.GUI.SceneLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995396676563479032, guid: 388f82d677f6b9b458692da1773f3bba,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995396676563479032, guid: 388f82d677f6b9b458692da1773f3bba,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5995396677202673664, guid: 388f82d677f6b9b458692da1773f3bba,
         type: 3}

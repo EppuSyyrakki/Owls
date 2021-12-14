@@ -4,6 +4,8 @@ using UnityEngine;
 using System.Collections.Generic;
 using Owls.Spells;
 using AdVd.GlyphRecognition;
+using UnityEngine.UI;
+using Owls.GUI;
 
 namespace Owls.Player
 {
@@ -12,6 +14,8 @@ namespace Owls.Player
 		private const string TAG_PLAYER = "Player";
 		private const string TAG_KEEPER = "TimeKeeper";
 		private const string TAG_SCANVAS = "SpellCanvas";
+		private const string TAG_SPELLGRID = "SpellGrid";
+		private const string TAG_DELIVERY = "SpellDelivery";
 
 		[SerializeField]
 		private ParticleSystem particle;
@@ -26,11 +30,15 @@ namespace Owls.Player
 		private float strokeTreshold = 0.1f;
 
 		[SerializeField]
-		private bool debuggingInfo = false;	
+		private bool debuggingInfo = false;
+
+		[SerializeField]
+		private bool getSpellsFromBook = true;
 
 		[SerializeField]
 		private List<Spell> selectedSpells;
 
+		private Transform _spellGrid = null;
 		private GlyphDrawInput _glyphInput = null;
 		private Camera _cam;
 		private TrailRenderer _activeTrail = null;
@@ -42,12 +50,12 @@ namespace Owls.Player
 		private Badger _player;
 		private TimeKeeper _timeKeeper = null;
 		private bool _castingDisabled = true;
+		private SpellDelivery _delivery = null;
 
 		public Action spellCastingFailed;
 
 		private void Awake()
-		{
-			GetSpells();
+		{		
 			particle.Stop();
 			_cam = Camera.main;
 			_oldTrails = new GameObject("Old trails").transform;
@@ -56,11 +64,19 @@ namespace Owls.Player
 			_timeKeeper.TimeEvent += TimeEventHandler;
 			_glyphInput = GameObject.FindGameObjectWithTag(TAG_SCANVAS).GetComponent<GlyphDrawInput>();
 			_glyphInput.OnGlyphCast.AddListener(GlyphCastHandler);
+			_spellGrid = GameObject.FindGameObjectWithTag(TAG_SPELLGRID).transform;
+		}
+
+		private void Start()
+		{
+			BuildSpellLists();
+			PopulateSpellSlots();
 		}
 
 		private void OnDisable()
 		{
 			_timeKeeper.TimeEvent -= TimeEventHandler;
+			if (_delivery != null) { Destroy(_delivery.gameObject); }
 		}
 
 		private void Update()
@@ -107,11 +123,38 @@ namespace Owls.Player
 			_currentSpell = null;
 		}
 
-		/// <summary>
-		/// Builds the spell dictionary.
-		/// </summary>
-		private void GetSpells()
+		private void PopulateSpellSlots()
 		{
+			var slotTemplate = _spellGrid.transform.GetChild(0).gameObject.GetComponent<GameSpellSlot>();
+			slotTemplate.Icon = selectedSpells[0].icon;
+
+			for (int i = 1; i < selectedSpells.Count; i++)
+			{
+				var slot = Instantiate(slotTemplate, _spellGrid);
+				slot.Icon = selectedSpells[i].icon;
+			}
+		}
+
+		private void BuildSpellLists()
+		{
+			if (getSpellsFromBook)
+			{
+				_delivery = GameObject.FindGameObjectWithTag(TAG_DELIVERY).GetComponent<SpellDelivery>();
+			}
+			
+			selectedSpells = new List<Spell>();
+
+			if (getSpellsFromBook)
+			{
+				foreach (var spell in _delivery.Spells)
+				{
+					if (spell == null) { continue; }
+
+					selectedSpells.Add(spell);
+				}
+
+			}
+
 			_spells = new Dictionary<Glyph, Spell>(selectedSpells.Count);
 
 			foreach (var spell in selectedSpells)

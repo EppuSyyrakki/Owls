@@ -100,15 +100,18 @@ namespace Owls
             var ornament = _levelNameDisplay.transform.GetChild(0).GetComponent<Image>();
             Color oFrom = ornament.color;
             Color oTo = new Color(oFrom.r, oFrom.g, oFrom.b, 0);
-            float t = 0;
+            float time = 0;
 
-            while (t < nameFadeOutTime)
+            while (nameFadeOutTime > time)
 			{
-                _levelNameDisplay.color = Color.Lerp(tFrom, tTo, t / nameFadeOutTime);
-                ornament.color = Color.Lerp(oFrom, oTo, t / nameFadeOutTime);
+                var t = time / nameFadeOutTime;
+                _levelNameDisplay.color = Color.Lerp(tFrom, tTo, t);
+                ornament.color = Color.Lerp(oFrom, oTo, t);
                 yield return new WaitForEndOfFrame();
-                t += Time.deltaTime;
+                time += Time.deltaTime;
 			}
+
+            _levelNameDisplay.enabled = false;
 		}
 
         private IEnumerator CountLevelTime()

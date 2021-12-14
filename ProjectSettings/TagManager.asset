@@ -18,6 +18,8 @@ TagManager:
   - SpellBook
   - SpellSource
   - ScreenClearCam
+  - SpellGrid
+  - SpellDelivery
   layers:
   - Default
   - TransparentFX
