@@ -6,9 +6,10 @@ using UnityEngine.EventSystems;
 
 namespace Owls.GUI
 {
-	public class SpellSlot : MonoBehaviour, IPointerClickHandler
+	public class SpellSlot : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 	{
 		private const string TAG_BOOK = "SpellBook";
+		private const string TAG_HELP = "SpellHelp";
 
 		[SerializeField]
 		private bool isSpellBookSlot = true;
@@ -16,17 +17,40 @@ namespace Owls.GUI
 		[SerializeField]
 		private Sprite lockedSlot = null, emptySlot = null;
 
+		[SerializeField]
+		private float holdForHelpTime = 0.75f;
+
 		private Image _image = null;
 		private SpellBook _spellBook = null;
+		private SpellHelp _spellHelp = null;
 		private Spell _spell = null;
 		private bool _isLocked = false;
+		private float _holdTime = 0f;
+		private bool _pointerHeld = false;
+		private bool _helpEnabled = false;
 
 		public Spell Spell => _spell;
 
 		private void Awake()
 		{
-			var bookCanvas = GameObject.FindGameObjectWithTag(TAG_BOOK);
-			_spellBook = bookCanvas.GetComponent<SpellBook>();
+			var bookObj = GameObject.FindGameObjectWithTag(TAG_BOOK);
+			var helpObj = GameObject.FindGameObjectWithTag(TAG_HELP);
+			_spellBook = bookObj.GetComponent<SpellBook>();
+			_spellHelp = helpObj.GetComponent<SpellHelp>();
+		}
+
+		private void Update()
+		{
+			if (!_pointerHeld || _isLocked) { return; }
+			
+			_holdTime += Time.deltaTime;
+
+			if (_holdTime >= holdForHelpTime)
+			{
+				_spellHelp.DisplayHelp(_spell.help.name, _spell.help.text, _spell.info.manaCost, _spell.icon);
+				_helpEnabled = true;
+				ResetPointer();
+			}						
 		}
 
 		/// <summary>
@@ -55,18 +79,39 @@ namespace Owls.GUI
 			}			
 		}
 
-		public void OnPointerClick(PointerEventData eventData)
+		public void OnPointerDown(PointerEventData eventData)
 		{
-			if (_isLocked) { return; }
+			_pointerHeld = true;
+		}
 
-			if (!isSpellBookSlot)
+		public void OnPointerUp(PointerEventData eventData)
+		{
+			if (_helpEnabled) { return; }
+
+			if (!_isLocked && _holdTime < holdForHelpTime)
 			{
-				_spellBook.SetSlotToEmpty(this);
+				if (!isSpellBookSlot)
+				{
+					_spellBook.SetSlotToEmpty(this);
+				}
+				else
+				{
+					_spellBook.SetSpellToPlayerSlot(_spell);
+				}
 			}
-			else 
-			{
-				_spellBook.SetSpellToPlayerSlot(_spell);
-			}
+
+			ResetPointer();
+		}
+
+		public void DisableHelp()
+		{
+			_helpEnabled = false;
+		}
+
+		private void ResetPointer()
+		{
+			_pointerHeld = false;
+			_holdTime = 0;
 		}
 	}
 }

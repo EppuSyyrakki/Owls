@@ -11,11 +11,13 @@ namespace Owls.GUI
 		[SerializeField]
 		private CanvasGroup disableGroup = null;
 
+		private bool _generalHelpEnabled = false;
+
 		private void Update()
 		{
-			if (!disableGroup.interactable && Input.GetKeyDown(KeyCode.Escape))
+			if (_generalHelpEnabled && Input.GetKeyDown(KeyCode.Escape))
 			{
-				HideHelp();
+				HideHelp(); 
 			}
 		}
 
@@ -24,6 +26,7 @@ namespace Owls.GUI
 			helpScreen.SetActive(true);
 			disableGroup.interactable = false;
 			disableGroup.alpha = 0.25f;
+			_generalHelpEnabled = true;
 		}
 
 		public void HideHelp()
@@ -31,6 +34,7 @@ namespace Owls.GUI
 			helpScreen.SetActive(false);
 			disableGroup.interactable = true;
 			disableGroup.alpha = 1f;
+			_generalHelpEnabled = false;
 		}
 	}
 }

@@ -20,6 +20,7 @@ namespace Owls.Spells
 
 		public Sprite icon;
 		public Info info;
+		public SpellDescription help;
 				
 		public List<ITargetable> Target { get; private set; }
 		public List<Vector2> Stroke { get; private set; }
@@ -175,5 +176,13 @@ namespace Owls.Spells
 		public float lifeTime;
 		public bool castImmediately;
 		public float manaCost;
+	}
+
+	[System.Serializable]
+	public class SpellDescription
+	{
+		public string name = "";
+		[TextArea(2, 10)]
+		public string text = "";
 	}
 }

@@ -61,6 +61,14 @@ MonoBehaviour:
     lifeTime: 5
     castImmediately: 0
     manaCost: 0.3
+  help:
+    name: Fireball
+    text: 'Creates a fireball that burns all enemies within its radius. After drawing
+      the triangle glyph, tap the screen to launch it.
+
+
+      The fireball will
+      detonate on contact with an enemy or if it reaches the tapped position.'
   explosion: {fileID: 3474449681068754730, guid: 5535db73038474a4391348dfb5612e92,
     type: 3}
   removeOnExplosion:

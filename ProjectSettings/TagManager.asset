@@ -20,6 +20,7 @@ TagManager:
   - ScreenClearCam
   - SpellGrid
   - SpellDelivery
+  - SpellHelp
   layers:
   - Default
   - TransparentFX

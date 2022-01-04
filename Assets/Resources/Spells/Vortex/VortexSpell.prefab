@@ -59,6 +59,17 @@ MonoBehaviour:
     lifeTime: 5
     castImmediately: 0
     manaCost: 0.33
+  help:
+    name: Vortex
+    text: 'Creates a vortex that sucks all nearby enemies inside it for a few seconds.
+
+
+      Draw
+      a spiral and tap anywhere to cast the vortex to that location.
+
+
+      Does
+      not do damage to enemies.'
   vortexStrength: 0.876
 --- !u!58 &2903113195450161579
 CircleCollider2D:

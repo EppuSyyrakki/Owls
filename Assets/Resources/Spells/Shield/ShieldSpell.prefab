@@ -64,6 +64,18 @@ MonoBehaviour:
     lifeTime: 7
     castImmediately: 1
     manaCost: 0.4
+  help:
+    name: Shield
+    text: 'Casts a protective shield on the badger by drawing a circle.
+
+
+      Enemies
+      destroyed by the shield will not yield points.
+
+
+      Mana will not regenerate
+      while the shield is active, but you can still cast other spells as long as
+      your mana pool allows it.'
   endOfLifeTime: 0.75
   flashTime: 0.05
   flashColor: {r: 1, g: 0.8536214, b: 0.4764151, a: 0.35}
