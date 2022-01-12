@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 namespace Owls.Flight
 {
@@ -11,8 +12,8 @@ namespace Owls.Flight
         private const string TAG_FLIGHTEND = "FlightEnd";
         private const string NAME_MIDPOINT = "MidPoint";
 
-        [SerializeField, Range(0.01f, 0.1f), Tooltip("Only used in editor to visualize flight path")]
-        private float lineRendererPrecision = 0.01f;
+        [SerializeField]
+        private float lineRendererPrecision = 512;
 
         [SerializeField, Range(0.01f, 0.2f), Tooltip("Only used in editor to visualize flight path")]
         private float lineWidth = 0.05f;
@@ -39,7 +40,6 @@ namespace Owls.Flight
         private void Awake()
 		{
 			_lr = GetComponent<LineRenderer>();
-			DrawPath();
 		}
 
         private void OnDrawGizmos()
@@ -53,13 +53,13 @@ namespace Owls.Flight
 			}
 		}
 
-		private void SetFlightPoints()
+		private void SetFlightPointsList()
         {
 	        _points.Clear();
 	        _points.AddRange(GetComponentsInChildren<FlightPoint>());
         }
 
-        private void SetPointsV2()
+        private void SetPointsV2List()
         {
             _pointsV2.Clear();
 
@@ -81,13 +81,13 @@ namespace Owls.Flight
         
         public void DrawPath()
         {
-            SetFlightPoints();
-            SetPointsV2();
+            SetFlightPointsList();
+            SetPointsV2List();
 
 	        if (_pointsV2.Count < 2) { Debug.Log("Can't draw flight path. Too few control points."); }
 	        if (_lr == null) { _lr = GetComponent<LineRenderer>(); }
 
-            var points2 = FlightBezier.PointList2(_pointsV2, lineRendererPrecision);
+            var points2 = FlightBezier.PointList2(_pointsV2, 1 / (lineRendererPrecision - 1));
             _lr.positionCount = points2.Count;
 
             for (int i = 0; i < _lr.positionCount; i++)
@@ -122,7 +122,7 @@ namespace Owls.Flight
 
         public void SetGizmos()
         {
-            SetFlightPoints();
+            SetFlightPointsList();
 
 	        foreach (var fp in _points)
 	        {

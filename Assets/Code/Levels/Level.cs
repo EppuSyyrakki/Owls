@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
-using Owls.Enemies;
+using Owls.Birds;
 using Owls.Scenery;
 
 namespace Owls.Levels
@@ -19,10 +19,13 @@ namespace Owls.Levels
 		private string[] levelNames = null;
 
 		[SerializeField]
-		private Enemy[] enemies = null;
+		private Bird[] enemies = null;
 
 		[SerializeField]
 		private int levelTime = 90;
+
+		[SerializeField]
+		private int maxBirds = 6;
 
 		public SceneryController Scenery => GetComponent<SceneryController>();
 		public int LevelTime => levelTime; 
@@ -37,8 +40,9 @@ namespace Owls.Levels
 
 		private void Start()
 		{
-			var spawner = GameObject.FindGameObjectWithTag(TAG_SPAWNER).GetComponent<EnemySpawner>();
-			spawner.SetSpawnerFields(enemies, spawnerCurve, curveInterval);
+			var spawner = GameObject.FindGameObjectWithTag(TAG_SPAWNER).GetComponent<BirdSpawner>();
+			int birdInterval = levelTime / (maxBirds + 2);
+			spawner.SetSpawnerFields(enemies, spawnerCurve, curveInterval, maxBirds, birdInterval);
 		}
 	}
 }

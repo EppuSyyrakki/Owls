@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Owls.Enemies;
+using Owls.Birds;
 using Owls.Spells;
 using Owls.Levels;
 
@@ -30,13 +30,12 @@ namespace Owls.GUI
 		private const string TAG_KEEPER = "TimeKeeper";
 		private const string TAG_LOADER = "LevelLoader";
 		private const string KEY_TOTAL_SCORE = "TotalScore";
-		private const string KEY_HIGHEST_SPELL_ID = "HighestSpellId";
 
 		[SerializeField]
-		private TMP_Text score = null;
+		private TMP_Text scoreText = null;
 
 		[SerializeField]
-		private TMP_Text birds = null;
+		private TMP_Text birdsText = null;
 
 		[SerializeField]
 		private int maxBirds = 9;
@@ -61,9 +60,8 @@ namespace Owls.GUI
 
 		private int _currentBirds = 0;
 		private int _currentScore = 0;
-		private EnemySpawner _spawner = null;
+		private BirdSpawner _birdSpawner = null;
 		private TimeKeeper _timeKeeper = null;
-		private SpellUnlocker _spellUnlocker;
 		private LevelUnlocker _levelUnlocker;
 		private float _comboLevel = 1;
 
@@ -71,16 +69,15 @@ namespace Owls.GUI
 
 		private void Awake()
 		{
-			_spawner = GameObject.FindGameObjectWithTag(TAG_SPAWNER).GetComponent<EnemySpawner>();
+			_birdSpawner = GameObject.FindGameObjectWithTag(TAG_SPAWNER).GetComponent<BirdSpawner>();
 			_timeKeeper = GameObject.FindGameObjectWithTag(TAG_KEEPER).GetComponent<TimeKeeper>();
-			_spawner.EnemyKilled += EnemyKilledHandler;
+			_birdSpawner.EnemyKilled += EnemyKilledHandler;
 			_timeKeeper.TimeEvent += TimeEventHandler;
-			_spellUnlocker = new SpellUnlocker();		
 		}
 
 		private void OnDisable()
 		{
-			_spawner.EnemyKilled -= EnemyKilledHandler;
+			_birdSpawner.EnemyKilled -= EnemyKilledHandler;
 			_timeKeeper.TimeEvent -= TimeEventHandler;
 		}
 
@@ -117,8 +114,8 @@ namespace Owls.GUI
 
 		private void UpdateTexts()
 		{
-			birds.text = _currentBirds + " / " + maxBirds;
-			score.text = _currentScore.ToString();
+			birdsText.text = _currentBirds + " / " + maxBirds;
+			scoreText.text = _currentScore.ToString();
 		}
 
 		private IEnumerator WaitForCombo()
@@ -140,8 +137,9 @@ namespace Owls.GUI
 
 		private IEnumerator ScoreCount(int totalScore)
 		{
+			SpellUnlocker spellUnlocker = new SpellUnlocker();
 			bool levelUnlocked = false;
-			SetPrefs(totalScore + _currentScore, 0);
+			SaveScore(totalScore + _currentScore);
 			yield return new WaitForSeconds(2f);
 			var s = "Total Score:\n";
 			finalScoreDisplay.text = s + totalScore.ToString();
@@ -162,7 +160,7 @@ namespace Owls.GUI
 					_currentScore -= 100;
 				}
 
-				var newSpells = _spellUnlocker.CheckNewUnlocks(totalScore);
+				List<Spell> newSpells = spellUnlocker.CheckNewUnlocks(totalScore);
 
 				if (newSpells.Count > 0)
 				{
@@ -194,14 +192,9 @@ namespace Owls.GUI
 			}
 		}
 
-		private void SetPrefs(int score, int highestUnlockedSpellId)
+		private void SaveScore(int score)
 		{
 			PlayerPrefs.SetInt(KEY_TOTAL_SCORE, score);
-		}
-
-		public void CheckAllNewSpellUnlocks()
-		{
-			_spellUnlocker.CheckNewUnlocksForTotalScore();
 		}
 	}
 }

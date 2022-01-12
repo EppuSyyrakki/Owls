@@ -50,11 +50,11 @@ namespace Owls.Spells
 			{
 				FindPlayerTarget();
 			}
-			else if (info.target == CastTarget.AllEnemies)
+			else if (info.target == CastTarget.All)
 			{
 				FindAllEnemyTargets();
 			}
-			else if (info.target == CastTarget.TouchedEnemies)
+			else if (info.target == CastTarget.Touched)
 			{
 				RaycastForTouchedTargets();
 			}
@@ -161,8 +161,8 @@ namespace Owls.Spells
 	{
 		None,
 		Player,
-		TouchedEnemies,
-		AllEnemies
+		Touched,
+		All,
 	}
 
 	[System.Serializable]

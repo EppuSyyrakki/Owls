@@ -2227,8 +2227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac01a2e26f5d3444a1f763fa2b322b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: {fileID: 6526570057173180514}
-  birds: {fileID: 6526570057278389264}
+  scoreText: {fileID: 6526570057173180514}
+  birdsText: {fileID: 6526570057278389264}
   maxBirds: 9
   comboTime: 0.5
   comboIncrease: 0.5

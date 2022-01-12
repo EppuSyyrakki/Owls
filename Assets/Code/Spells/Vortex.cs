@@ -1,4 +1,4 @@
-﻿using Owls.Enemies;
+﻿using Owls.Birds;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,7 +35,7 @@ namespace Owls.Spells
 
 			foreach (var target in Target)
 			{
-				var enemy = target as Enemy;
+				var enemy = target as Bird;
 
 				if (enemy == null) { continue; }
 
@@ -50,7 +50,7 @@ namespace Owls.Spells
 		{
 			foreach (var target in Target)
 			{
-				if (!(target is Enemy e)) { continue; }
+				if (!(target is Bird e)) { continue; }
 
 				e.FlightInterrupted = false;
 			}
@@ -60,7 +60,7 @@ namespace Owls.Spells
 		{
 			if (!collision.gameObject.CompareTag(TAG_ENEMY)) { return; }
 
-			var enemy = collision.GetComponent<Enemy>();
+			var enemy = collision.GetComponent<Bird>();
 			Target.Add(enemy);
 			enemy.InitVortex(transform.position);
 			enemy.FlightInterrupted = true;

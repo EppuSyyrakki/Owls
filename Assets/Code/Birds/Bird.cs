@@ -5,7 +5,7 @@ using Owls.Flight;
 using Random = UnityEngine.Random;
 using Owls.Spells;
 
-namespace Owls.Enemies
+namespace Owls.Birds
 {
 	public enum State
 	{
@@ -13,12 +13,15 @@ namespace Owls.Enemies
 	}
 
 	[RequireComponent(typeof(SpriteRenderer), typeof(Animator))]
-    public class Enemy : MonoBehaviour, ITargetable
+    public class Bird : MonoBehaviour, ITargetable
     {
 		private const string ANIM_PREPARE = "PrepareAttack";
 		private const string ANIM_ATTACK = "Attack";
 		private const string TAG_PLAYER = "Player";
 		private const string TAG_KEEPER = "TimeKeeper";
+
+		[SerializeField]
+		private bool isEnemy = true;
 
 		[SerializeField]
 	    private List<FlightPath> flightPaths = new List<FlightPath>();
@@ -58,7 +61,7 @@ namespace Owls.Enemies
 		private float _maxY, _minY;
 		private Animator _animator;
 		private Transform _player;
-		private EnemySpawner _spawner;
+		private BirdSpawner _spawner;
 		private TimeKeeper _timeKeeper;
 		private bool _paused = false;
 
@@ -87,20 +90,23 @@ namespace Owls.Enemies
 		{
 			if (flightPaths.Count == 0)
 			{
-				Debug.LogWarning("No FlightPaths found for " + gameObject.name);
+				Debug.LogWarning("No FlightPaths found for Bird " + gameObject.name);
 				_state = State.Killed;
 				return;
 			}
 
-			if (animationOverride == null)
+			if (!isEnemy && animationOverride == null)
 			{
-				Debug.LogWarning("No Animation Override Controller found for " + gameObject.name);
+				Debug.LogWarning("No Animation Override Controller found for Bird " + gameObject.name);
 				_state = State.Killed;
 				return;
 			}
+			else
+			{
+				_animator.runtimeAnimatorController = animationOverride;
+			}
 
-			_state = State.Moving;
-			_animator.runtimeAnimatorController = animationOverride;
+			_state = State.Moving;			
 			GetPath3();
 			transform.position = _path3[_currentPathIndex];
 		}
@@ -121,36 +127,54 @@ namespace Owls.Enemies
 		}
 
 		private void Update()
-        {
+		{
 			if (!IsAlive || _paused) { return; }
 
-	        if (_state == State.Moving) 
-			{ 
-				MoveOnPath(); 
+			if (isEnemy) { EnemyBehaviour(); }
+			else { BirdyBehaviour(); }
+		}
+
+		private void BirdyBehaviour()
+		{
+			if (_state == State.Moving)
+			{
+				MoveOnPath();
 			}
-			else if (_state == State.Attacking) 
-			{ 
-				Attack(); 
+		}
+
+		private void EnemyBehaviour()
+		{
+			if (_state == State.Moving)
+			{
+				MoveOnPath();
 			}
-			else if (_state == State.HitPlayer) 
-			{ 
+			else if (_state == State.Attacking)
+			{
+				Attack();
+			}
+			else if (_state == State.HitPlayer)
+			{
 				Kill(hitPlayerFx, killedByPlayer: false);
 				IsAlive = false;
 			}
-			else if (_state == State.Killed) 
-			{ 
+			else if (_state == State.Killed)
+			{
 				Kill(deathFx, killedByPlayer: true);
 				IsAlive = false;
 			}
-        }
+		}
 
 		private void OnTriggerEnter2D(Collider2D col)
 		{
 			if (!col.gameObject.CompareTag(TAG_PLAYER)) { return; }
 
-			var target = col.gameObject.GetComponent<Player.Badger>();
-			target.TakeDamage(damage);
-			_state = State.HitPlayer;
+			if (isEnemy)
+			{
+				var target = col.gameObject.GetComponent<Player.Badger>();
+				target.TakeDamage(damage);
+				_state = State.HitPlayer;
+			}
+			
 		}
 
 		private void MoveOnPath()
@@ -160,14 +184,20 @@ namespace Owls.Enemies
 			// Have I reached the last point (end) of the path?
 			if (_currentPathIndex + 1 >= _path3.Length)
 			{
-				if (!_attackInvoked) 
+				if (!_attackInvoked && isEnemy) 
 				{ 
 					Invoke(nameof(ChangeToAttackState), waitBeforeAttack);
 					_animator.SetTrigger(ANIM_PREPARE);
 					_attackInvoked = true;
 					_t = 0;
+					return;
 				}
 
+				if (!isEnemy)
+				{
+					// TODO...
+				}
+			
 		        return;
 	        }
 
@@ -235,7 +265,7 @@ namespace Owls.Enemies
 			}
 		}
 
-		public void SetSpawner(EnemySpawner spawner)
+		public void SetSpawner(BirdSpawner spawner)
 		{
 			_spawner = spawner;
 		}

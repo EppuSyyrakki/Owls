@@ -4,21 +4,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Owls.Enemies
+namespace Owls.Birds
 {
-    public class EnemySpawner : MonoBehaviour
+    public class BirdSpawner : MonoBehaviour
     {
 		private const string TAG_TIMEKEEPER = "TimeKeeper";
-		private const string TAG_CLEARCAM = "ScreenClearCam";
 
+		[SerializeField]
+		private Bird birdyPrefab = null;
+
+		private int _spawnedBirds;
+		private int _maxBirds;
+		private float _birdInterval;
 		private AnimationCurve _spawnCurve;
 		private float _spawnInterval;	
 		private BoxCollider2D _edge;
 		private bool _spawnEnabled = false;
-		private TimeKeeper _timeKeeper;
+		private TimeKeeper _timeKeeper = null;
 		private float _maxTime;
-	    private Enemy[] _enemies = null;
-		private Coroutine _spawning = null;
+	    private Bird[] _enemies = null;
+		private Coroutine _owlSpawning = null;
+		private Coroutine _birdSpawning = null;
 		private Camera _cam = null;
 
 		public event Action<int, Vector2> EnemyKilled;
@@ -43,10 +49,11 @@ namespace Owls.Enemies
 
 		private void Update()
 		{
-			if (_spawning == null && _spawnEnabled)
-			{
-				_spawning = StartCoroutine(EvaluateSpawnChance());
-			}
+			if (!_spawnEnabled) { return; }
+
+			if (_owlSpawning == null) { _owlSpawning = StartCoroutine(EvaluateSpawnChance()); }
+
+			if (_birdSpawning == null) { _birdSpawning = StartCoroutine(BirdSpawnTimer()); }
 		}
 
 		private IEnumerator EvaluateSpawnChance()
@@ -67,20 +74,34 @@ namespace Owls.Enemies
 			}
 		}
 
-        private void Spawn(Enemy enemy)
+		private IEnumerator BirdSpawnTimer()
+		{
+			float timer = 0;
+
+			while (_spawnedBirds < _maxBirds)
+			{
+				if (timer > (_spawnedBirds + 1) * _birdInterval)
+				{
+					Spawn(birdyPrefab);
+					_spawnedBirds++;
+				}
+
+				timer += Time.deltaTime;
+				yield return new WaitForEndOfFrame();
+			}
+		}
+
+        private void Spawn(Bird enemy)
 		{
 			var pos = RandomPosition();
 			var go = Instantiate(enemy.gameObject, pos, Quaternion.identity, transform);
-			go.GetComponent<Enemy>().SetSpawner(this);
+			go.GetComponent<Bird>().SetSpawner(this);
 		}
 
 		private Vector2 RandomPosition()
 		{
 			var bounds = _edge.bounds;
-			return new Vector2(
-				Random.Range(bounds.min.x, bounds.max.x),
-				Random.Range(bounds.min.y, bounds.max.y)
-			);
+			return new Vector2( Random.Range(bounds.min.x, bounds.max.x), Random.Range(bounds.min.y, bounds.max.y));
 		}
 
 		private void TimeEventHandler(GameTime gt)
@@ -105,11 +126,13 @@ namespace Owls.Enemies
 			EnemyKilled?.Invoke(reward, screenPos);
 		}
 
-		public void SetSpawnerFields(Enemy[] enemies, AnimationCurve curve, float interval)
+		public void SetSpawnerFields(Bird[] enemies, AnimationCurve curve, float interval, int maxBirds, int birdInterval)
 		{
 			_enemies = enemies;
 			_spawnCurve = curve;
 			_spawnInterval = interval;
+			_maxBirds = maxBirds;
+			_birdInterval = birdInterval;
 		}
 	}
 }

@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79397d65a6c530b428950d9fc4973ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  birdyPrefab: {fileID: 5521828386415196756, guid: 352bc74e87efcdf4dbff11727c6d48c3,
+    type: 3}
 --- !u!61 &2022157400024682575
 BoxCollider2D:
   m_ObjectHideFlags: 0

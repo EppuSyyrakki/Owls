@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Owls.Player;
-using Owls.Enemies;
+using Owls.Birds;
 
 namespace Owls.Spells
 {
@@ -59,7 +59,7 @@ namespace Owls.Spells
 		{
 			if (!col.CompareTag(TAG_ENEMY)) { return; }
 
-			var target = col.GetComponent<Enemy>();
+			var target = col.GetComponent<Bird>();
 			SpawnHitEffect(target);
 			StartCoroutine(FlashShield());
 			target.KillDirect();	
