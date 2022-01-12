@@ -28,6 +28,7 @@ namespace Owls.Birds
 		private Camera _cam = null;
 
 		public event Action<int, Vector2> EnemyKilled;
+		public event Action BirdySpawned;
 
 		private void Awake()
 		{
@@ -80,10 +81,11 @@ namespace Owls.Birds
 
 			while (_spawnedBirds < _maxBirds)
 			{
-				if (timer > (_spawnedBirds + 1) * _birdInterval)
+				if (timer > ((float)_spawnedBirds + 1f) * _birdInterval)
 				{
 					Spawn(birdyPrefab);
 					_spawnedBirds++;
+					BirdySpawned?.Invoke();
 				}
 
 				timer += Time.deltaTime;

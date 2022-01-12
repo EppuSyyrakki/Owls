@@ -37,8 +37,7 @@ namespace Owls.GUI
 		[SerializeField]
 		private TMP_Text birdsText = null;
 
-		[SerializeField]
-		private int maxBirds = 9;
+		
 
 		[SerializeField]
 		private float comboTime = 0.5f;
@@ -60,6 +59,7 @@ namespace Owls.GUI
 
 		private int _currentBirds = 0;
 		private int _currentScore = 0;
+		private int _maxBirds = 9;
 		private BirdSpawner _birdSpawner = null;
 		private TimeKeeper _timeKeeper = null;
 		private LevelUnlocker _levelUnlocker;
@@ -85,6 +85,7 @@ namespace Owls.GUI
 		{
 			UpdateTexts();
 			var loader = GameObject.FindGameObjectWithTag(TAG_LOADER).GetComponent<LevelLoader>();
+			_maxBirds = loader.CurrentLevel.MaxBirds;
 			_levelUnlocker = new LevelUnlocker(loader.GetCurrentLevelScore());
 		}
 
@@ -114,7 +115,7 @@ namespace Owls.GUI
 
 		private void UpdateTexts()
 		{
-			birdsText.text = _currentBirds + " / " + maxBirds;
+			birdsText.text = _currentBirds + " / " + _maxBirds;
 			scoreText.text = _currentScore.ToString();
 		}
 

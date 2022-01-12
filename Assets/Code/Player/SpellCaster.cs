@@ -38,6 +38,9 @@ namespace Owls.Player
 		[SerializeField]
 		private List<Spell> selectedSpells;
 
+		[SerializeField]
+		private float tapMaxTime = 0.2f;
+
 		private Transform _spellGrid = null;
 		private GlyphDrawInput _glyphInput = null;
 		private Camera _cam;
@@ -51,6 +54,7 @@ namespace Owls.Player
 		private TimeKeeper _timeKeeper = null;
 		private bool _castingDisabled = true;
 		private SpellDelivery _delivery = null;
+		private float _touchStartTime;
 
 		public Action spellCastingFailed;
 
@@ -140,19 +144,14 @@ namespace Owls.Player
 			if (getSpellsFromBook)
 			{
 				_delivery = GameObject.FindGameObjectWithTag(TAG_DELIVERY).GetComponent<SpellDelivery>();
-			}
-			
-			selectedSpells = new List<Spell>();
+				selectedSpells = new List<Spell>();
 
-			if (getSpellsFromBook)
-			{
 				foreach (var spell in _delivery.Spells)
 				{
 					if (spell == null) { continue; }
 
 					selectedSpells.Add(spell);
 				}
-
 			}
 
 			_spells = new Dictionary<Glyph, Spell>(selectedSpells.Count);
@@ -165,6 +164,7 @@ namespace Owls.Player
 
 		private void BeginTouch(Touch touch)
 		{
+			_touchStartTime = Time.realtimeSinceStartup;
 			_stroke = new List<Vector2>();
 			Move(touch.position);
 			particle.Play();
@@ -185,6 +185,11 @@ namespace Owls.Player
 				_castCurrent = true;
 				StopPointer();
 				return;
+			}
+
+			if (Time.realtimeSinceStartup - _touchStartTime < tapMaxTime)
+			{
+
 			}
 
 			_glyphInput.Cast();

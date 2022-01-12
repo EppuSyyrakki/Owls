@@ -28,7 +28,8 @@ namespace Owls.Levels
 		private int maxBirds = 6;
 
 		public SceneryController Scenery => GetComponent<SceneryController>();
-		public int LevelTime => levelTime; 
+		public int LevelTime => levelTime;
+		public int MaxBirds => maxBirds;
 
 		public string RandomLevelName 
 		{ 

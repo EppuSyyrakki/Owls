@@ -95,17 +95,18 @@ namespace Owls.Birds
 				return;
 			}
 
-			if (!isEnemy && animationOverride == null)
+			if (isEnemy)
 			{
-				Debug.LogWarning("No Animation Override Controller found for Bird " + gameObject.name);
-				_state = State.Killed;
-				return;
-			}
-			else
-			{
+				if (animationOverride == null)
+				{
+					Debug.LogWarning("No Animation Override Controller found for Bird " + gameObject.name);
+					_state = State.Killed;
+					return;
+				}
+
 				_animator.runtimeAnimatorController = animationOverride;
 			}
-
+			
 			_state = State.Moving;			
 			GetPath3();
 			transform.position = _path3[_currentPathIndex];

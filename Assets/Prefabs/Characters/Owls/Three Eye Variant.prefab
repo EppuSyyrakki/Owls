@@ -4847,6 +4847,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 1096655560722393748, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
+      propertyPath: animationOverride
+      value: 
+      objectReference: {fileID: 22100000, guid: 20f33f92657367b448f685c3c6e4e95c,
+        type: 2}
+    - target: {fileID: 1096655560722393748, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
       propertyPath: flightPaths.Array.size
       value: 1
       objectReference: {fileID: 0}
