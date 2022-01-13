@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5192966692503980560
 Transform:
   m_ObjectHideFlags: 0
@@ -4845,10 +4845,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+    - target: {fileID: 698027851492418584, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096655560722393748, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: animationOverride
+      value: 
+      objectReference: {fileID: 22100000, guid: 4cf4871a10cd3d748a865d8aa8c4d16b,
+        type: 2}
     - target: {fileID: 1203326170542532374, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
       propertyPath: m_Name
       value: IntroOwl
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513916054033215116, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3518243204129912960, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
@@ -4909,6 +4925,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7772438533054457417, guid: b54e745f0f16e874aad5fe96d6753ca5,
         type: 3}
+    - target: {fileID: 4594361732552119569, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5350819179134436460, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
@@ -4984,11 +5005,22 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5605408348430823013, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5971646903821760297, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7325521231673738652, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 69aaac0677e65ff4abd20868eae2a1b1, type: 2}
+      objectReference: {fileID: 22100000, guid: 4cf4871a10cd3d748a865d8aa8c4d16b,
+        type: 2}
     - target: {fileID: 8308155169735566943, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
       propertyPath: m_RootOrder
@@ -5042,6 +5074,11 @@ PrefabInstance:
     - target: {fileID: 8308155169735566943, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850974748966744777, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
