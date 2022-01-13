@@ -4847,10 +4847,55 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 1096655560722393748, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
+      propertyPath: flightSpeed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096655560722393748, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
       propertyPath: animationOverride
       value: 
       objectReference: {fileID: 22100000, guid: 0330e2cb8631b954dac2f2444b71341a,
         type: 2}
+    - target: {fileID: 1096655560722393748, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: deathFx.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096655560722393748, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: deathFx.Array.data[0]
+      value: 
+      objectReference: {fileID: 1568288446607928975, guid: dac36fe65bb67d445960f308bf84ea7d,
+        type: 3}
+    - target: {fileID: 1096655560722393748, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: deathFx.Array.data[1]
+      value: 
+      objectReference: {fileID: 7772438533054457417, guid: 501bc2bbf8aefbe4fa8b4db9386f432e,
+        type: 3}
+    - target: {fileID: 1096655560722393748, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: hitPlayerFx.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096655560722393748, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: flightPaths.Array.data[0]
+      value: 
+      objectReference: {fileID: 6514970619091594926, guid: 55b06da8ed89a9f4fb87b1bdb7091de6,
+        type: 3}
+    - target: {fileID: 1096655560722393748, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: hitPlayerFx.Array.data[0]
+      value: 
+      objectReference: {fileID: 7772438533054457417, guid: 501bc2bbf8aefbe4fa8b4db9386f432e,
+        type: 3}
+    - target: {fileID: 1096655560722393748, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
+        type: 3}
+      propertyPath: hitPlayerFx.Array.data[1]
+      value: 
+      objectReference: {fileID: 1568288446607928975, guid: dac36fe65bb67d445960f308bf84ea7d,
+        type: 3}
     - target: {fileID: 1203326170542532374, guid: 1d75f67c5a8f81a4eb2c1acac0710bb2,
         type: 3}
       propertyPath: m_Name
