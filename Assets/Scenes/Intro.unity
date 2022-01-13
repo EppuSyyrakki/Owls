@@ -276,6 +276,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6475603114464324281, guid: add2476071f0ff04b9eba0a213db8fb6,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d90a18d6cb21e5d4181f45aedf267357, type: 3}
     - target: {fileID: 7812524139597043631, guid: add2476071f0ff04b9eba0a213db8fb6,
         type: 3}
       propertyPath: m_Color.b
@@ -551,6 +556,11 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 1.54
       objectReference: {fileID: 0}
+    - target: {fileID: 6475603114464324281, guid: add2476071f0ff04b9eba0a213db8fb6,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d90a18d6cb21e5d4181f45aedf267357, type: 3}
     - target: {fileID: 7812524139597043631, guid: add2476071f0ff04b9eba0a213db8fb6,
         type: 3}
       propertyPath: m_Color.b
@@ -15674,6 +15684,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6475603114464324281, guid: add2476071f0ff04b9eba0a213db8fb6,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c72e7eaedd9bc346bdf52e05f8417d1, type: 3}
     - target: {fileID: 7812524139597043631, guid: add2476071f0ff04b9eba0a213db8fb6,
         type: 3}
       propertyPath: m_Color.b
@@ -15892,6 +15907,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6475603114464324281, guid: add2476071f0ff04b9eba0a213db8fb6,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c72e7eaedd9bc346bdf52e05f8417d1, type: 3}
     - target: {fileID: 7812524139597043631, guid: add2476071f0ff04b9eba0a213db8fb6,
         type: 3}
       propertyPath: m_Color.b
@@ -15988,6 +16008,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6475603114464324281, guid: add2476071f0ff04b9eba0a213db8fb6,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d90a18d6cb21e5d4181f45aedf267357, type: 3}
     - target: {fileID: 7812524139597043631, guid: add2476071f0ff04b9eba0a213db8fb6,
         type: 3}
       propertyPath: m_Color.b
@@ -25872,6 +25897,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6475603114464324281, guid: add2476071f0ff04b9eba0a213db8fb6,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c72e7eaedd9bc346bdf52e05f8417d1, type: 3}
     - target: {fileID: 7812524139597043631, guid: add2476071f0ff04b9eba0a213db8fb6,
         type: 3}
       propertyPath: m_Color.b
@@ -25968,6 +25998,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6475603114464324281, guid: add2476071f0ff04b9eba0a213db8fb6,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d90a18d6cb21e5d4181f45aedf267357, type: 3}
     - target: {fileID: 7812524139597043631, guid: add2476071f0ff04b9eba0a213db8fb6,
         type: 3}
       propertyPath: m_Color.b
