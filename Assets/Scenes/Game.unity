@@ -134,6 +134,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
         type: 3}
+      propertyPath: tapMaxTime
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
+        type: 3}
       propertyPath: getSpellsFromBook
       value: 0
       objectReference: {fileID: 0}

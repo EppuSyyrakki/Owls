@@ -56,7 +56,7 @@ namespace Owls.Birds
 	    private int _currentPathIndex = 0;
 	    private Vector3[] _path3;
 	    private float _t = 0;
-		private bool _attackInvoked = false, _destroyInvoked = false;
+		private bool _attackInvoked = false, _destroyInvoked = false, captureInvoked = false;
 		private State _state = State.Moving;
 		private float _maxY, _minY;
 		private Animator _animator;
@@ -69,6 +69,7 @@ namespace Owls.Birds
 		public bool IsAlive { get; private set; } = true;
 		public Transform Transform => transform;
 		public float FlightSpeed => flightSpeed;
+		public bool IsEnemy => isEnemy;
 		
 		private void Awake()
 		{
@@ -174,8 +175,7 @@ namespace Owls.Birds
 				var target = col.gameObject.GetComponent<Player.Badger>();
 				target.TakeDamage(damage);
 				_state = State.HitPlayer;
-			}
-			
+			}			
 		}
 
 		private void MoveOnPath()
@@ -248,6 +248,11 @@ namespace Owls.Birds
 
 			Destroy(gameObject, Time.deltaTime);
 			_destroyInvoked = true;
+		}
+
+		public void CaptureBirdy()
+		{
+			_spawner.BirdySavedByPlayer(transform.position);
 		}
 
 		private void TimeEventHandler(GameTime gt)

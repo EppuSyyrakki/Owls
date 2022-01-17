@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5521828386415196756}
   - component: {fileID: 7083516766964725163}
   - component: {fileID: 7083516766964725165}
-  m_Layer: 0
+  - component: {fileID: 2147133200611230373}
+  m_Layer: 6
   m_Name: Birdy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,11 +53,11 @@ MonoBehaviour:
   - {fileID: 6514970619091594926, guid: da385cf7baefb4b4db922f1dbe927ec7, type: 3}
   deathFx: []
   hitPlayerFx: []
-  flightSpeed: 40
+  flightSpeed: 10
   waitBeforeAttack: 0.25
   attackSpeed: 30
   damage: 0.1
-  scoreReward: 100
+  scoreReward: -100
   bottomSafetyMargin: 2
   topSafetyMargin: 0.5
   animationOverride: {fileID: 0}
@@ -133,3 +134,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &2147133200611230373
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7083516766964725160}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.4}
+  serializedVersion: 2
+  m_Radius: 0.5

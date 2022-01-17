@@ -37,8 +37,6 @@ namespace Owls.GUI
 		[SerializeField]
 		private TMP_Text birdsText = null;
 
-		
-
 		[SerializeField]
 		private float comboTime = 0.5f;
 
@@ -59,7 +57,7 @@ namespace Owls.GUI
 
 		private int _currentBirds = 0;
 		private int _currentScore = 0;
-		private int _maxBirds = 9;
+		private int _maxBirds = 99;
 		private BirdSpawner _birdSpawner = null;
 		private TimeKeeper _timeKeeper = null;
 		private LevelUnlocker _levelUnlocker;
@@ -72,21 +70,23 @@ namespace Owls.GUI
 			_birdSpawner = GameObject.FindGameObjectWithTag(TAG_SPAWNER).GetComponent<BirdSpawner>();
 			_timeKeeper = GameObject.FindGameObjectWithTag(TAG_KEEPER).GetComponent<TimeKeeper>();
 			_birdSpawner.EnemyKilled += EnemyKilledHandler;
+			_birdSpawner.BirdySaved += BirdySavedHandler;
 			_timeKeeper.TimeEvent += TimeEventHandler;
 		}
 
 		private void OnDisable()
 		{
 			_birdSpawner.EnemyKilled -= EnemyKilledHandler;
+			_birdSpawner.BirdySaved -= BirdySavedHandler;
 			_timeKeeper.TimeEvent -= TimeEventHandler;
 		}
 
 		private void Start()
-		{
-			UpdateTexts();
+		{			
 			var loader = GameObject.FindGameObjectWithTag(TAG_LOADER).GetComponent<LevelLoader>();
 			_maxBirds = loader.CurrentLevel.MaxBirds;
 			_levelUnlocker = new LevelUnlocker(loader.GetCurrentLevelScore());
+			UpdateTexts();
 		}
 
 		private void EnemyKilledHandler(int reward, Vector2 screenPos)
@@ -96,6 +96,13 @@ namespace Owls.GUI
 			StopCoroutine(WaitForCombo());
 			StartCoroutine(WaitForCombo());
 			SpawnScoreObject(finalReward, screenPos);
+			UpdateTexts();
+		}
+
+		private void BirdySavedHandler(Vector2 screenPos)
+		{
+			Debug.Log("Birdy saved!");
+			_currentBirds++;
 			UpdateTexts();
 		}
 

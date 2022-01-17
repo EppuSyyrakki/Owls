@@ -6,6 +6,7 @@ using Owls.Spells;
 using AdVd.GlyphRecognition;
 using UnityEngine.UI;
 using Owls.GUI;
+using Owls.Birds;
 
 namespace Owls.Player
 {
@@ -55,6 +56,7 @@ namespace Owls.Player
 		private bool _castingDisabled = true;
 		private SpellDelivery _delivery = null;
 		private float _touchStartTime;
+		private LayerMask _birdyLayer = 1 << 5;
 
 		public Action spellCastingFailed;
 
@@ -186,10 +188,12 @@ namespace Owls.Player
 				StopPointer();
 				return;
 			}
-
-			if (Time.realtimeSinceStartup - _touchStartTime < tapMaxTime)
+			else if (Time.realtimeSinceStartup - _touchStartTime < tapMaxTime
+				&& _stroke.Count < 3)
 			{
+				if (debuggingInfo) { Debug.Log("Tap detected: " + (Time.realtimeSinceStartup - _touchStartTime)); }
 
+				DetectBirdyAtTouch();
 			}
 
 			_glyphInput.Cast();
@@ -238,6 +242,21 @@ namespace Owls.Player
 			if (debuggingInfo) Debug.Log(string.Format("sqrMagnitude: {0}, treshold: {1}", sqrMag, treshold));
 
 			return isOver;
+		}
+
+		private void DetectBirdyAtTouch()
+		{
+			var cols = Physics2D.OverlapPointAll(_stroke[_stroke.Count - 1]);
+
+			foreach (var col in cols)
+			{
+				if (col.TryGetComponent(typeof(Bird), out var component) 
+					&& component is Bird bird && !bird.IsEnemy)
+				{
+					bird.CaptureBirdy();
+					return;
+				}
+			}
 		}
 
 		/// <summary>

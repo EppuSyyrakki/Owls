@@ -28,7 +28,7 @@ namespace Owls.Birds
 		private Camera _cam = null;
 
 		public event Action<int, Vector2> EnemyKilled;
-		public event Action BirdySpawned;
+		public event Action<Vector2> BirdySaved;
 
 		private void Awake()
 		{
@@ -89,7 +89,6 @@ namespace Owls.Birds
 				{
 					Spawn(birdyPrefab);
 					_spawnedBirds++;
-					BirdySpawned?.Invoke();
 				}
 
 				timer += Time.deltaTime;				
@@ -129,6 +128,12 @@ namespace Owls.Birds
 		{
 			var screenPos = _cam.WorldToScreenPoint(worldPos);
 			EnemyKilled?.Invoke(reward, screenPos);
+		}
+
+		public void BirdySavedByPlayer(Vector3 worldPos)
+		{
+			var screenPos = _cam.WorldToScreenPoint(worldPos);			
+			BirdySaved?.Invoke(worldPos);
 		}
 
 		public void SetSpawnerFields(Bird[] enemies, AnimationCurve curve, float interval, int maxBirds, int birdInterval)
