@@ -22,6 +22,7 @@ TagManager:
   - SpellDelivery
   - SpellHelp
   - Birdy
+  - BirdHouse
   layers:
   - Default
   - TransparentFX

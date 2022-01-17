@@ -51,7 +51,8 @@ MonoBehaviour:
   flightPaths:
   - {fileID: 6514970619091594926, guid: e031d96187f9d82409316e67ffc085da, type: 3}
   - {fileID: 6514970619091594926, guid: da385cf7baefb4b4db922f1dbe927ec7, type: 3}
-  deathFx: []
+  deathFx:
+  - {fileID: 7772438533054457417, guid: b54e745f0f16e874aad5fe96d6753ca5, type: 3}
   hitPlayerFx: []
   flightSpeed: 10
   waitBeforeAttack: 0.25

@@ -9,6 +9,7 @@ namespace Owls.Birds
     public class BirdSpawner : MonoBehaviour
     {
 		private const string TAG_TIMEKEEPER = "TimeKeeper";
+		private const string TAG_BIRDHOUSE = "BirdHouse";
 
 		[SerializeField]
 		private Bird birdyPrefab = null;
@@ -27,6 +28,8 @@ namespace Owls.Birds
 		private Coroutine _birdSpawning = null;
 		private Camera _cam = null;
 
+		public Transform BirdHouse { get; private set; }
+
 		public event Action<int, Vector2> EnemyKilled;
 		public event Action<Vector2> BirdySaved;
 
@@ -36,6 +39,7 @@ namespace Owls.Birds
 			_timeKeeper = GameObject.FindGameObjectWithTag(TAG_TIMEKEEPER).GetComponent<TimeKeeper>();
 			_timeKeeper.TimeEvent += TimeEventHandler;
 			_cam = Camera.main;
+			BirdHouse = GameObject.FindGameObjectWithTag(TAG_BIRDHOUSE).transform;
 		}
 
 		private void OnDisable()

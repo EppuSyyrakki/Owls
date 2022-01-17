@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5515090850087059978}
   m_Layer: 0
   m_Name: Birdhouse door
-  m_TagString: Untagged
+  m_TagString: BirdHouse
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14870,7 +14870,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2893395689118411216
 Transform:
   m_ObjectHideFlags: 0
@@ -14998,7 +14998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6577723270308465401
 Transform:
   m_ObjectHideFlags: 0
@@ -15290,7 +15290,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.2, y: -0.7}
-  m_Size: {x: 4, y: 2}
+  m_Size: {x: 3.5, y: 1.75}
   m_Direction: 1
 --- !u!50 &6868041411822994663
 Rigidbody2D:
@@ -15323,7 +15323,7 @@ AudioSource:
   m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a355409e47335c9409b674240f1f9096, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e82f900d6a2259647b56d15829197e41, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

@@ -139,17 +139,21 @@ namespace Owls.GUI
 
 			if (!PlayerPrefs.HasKey(KEY_TOTAL_SCORE)) { PlayerPrefs.SetInt(KEY_TOTAL_SCORE, 0); }
 
-			int totalScore = PlayerPrefs.GetInt(KEY_TOTAL_SCORE);
-			StartCoroutine(ScoreCount(totalScore));
+			
+			StartCoroutine(ScoreCount());
 		}
 
-		private IEnumerator ScoreCount(int totalScore)
+		private IEnumerator ScoreCount()
 		{
 			SpellUnlocker spellUnlocker = new SpellUnlocker();
+			int totalScore = PlayerPrefs.GetInt(KEY_TOTAL_SCORE);
 			bool levelUnlocked = false;
-			SaveScore(totalScore + _currentScore);
+			float bonusMulti = _currentBirds * 0.1f + 1f;
+			float score = totalScore + (_currentScore * bonusMulti);
+			SaveScore((int)score);
 			yield return new WaitForSeconds(2f);
-			var s = "Total Score:\n";
+			var s = string.Format("Score: {0}\n Birdy Bonus: {1}x\n Total Score: {2}",
+				_currentScore, bonusMulti, totalScore);
 			finalScoreDisplay.text = s + totalScore.ToString();
 			yield return new WaitForSeconds(2f);
 
@@ -158,13 +162,17 @@ namespace Owls.GUI
 				yield return new WaitForSeconds(finalScoreSpeed);
 
 				if (_currentScore < 100) 
-				{	
-					totalScore += _currentScore;
+				{
+					int amount = (int)(_currentScore * bonusMulti);
+					Debug.Log(amount);
+					totalScore += amount;
 					_currentScore = 0;
 				}
 				else
 				{
-					totalScore += 100;
+					int amount = (int)(100 * bonusMulti);
+					Debug.Log(amount);
+					totalScore += amount;
 					_currentScore -= 100;
 				}
 
@@ -181,9 +189,13 @@ namespace Owls.GUI
 					DisplayUnlockedLevel(level);
 				}
 
-				finalScoreDisplay.text = s + totalScore.ToString();
+				s = string.Format("Score: {0}\n Birdy Bonus: {1}x\n Total Score: {2}",
+					_currentScore, bonusMulti, totalScore);
+				finalScoreDisplay.text = s;
 				UpdateTexts();
 			}
+
+			SaveScore(totalScore);
 		}
 
 		private void DisplayUnlockedLevel(Level level)

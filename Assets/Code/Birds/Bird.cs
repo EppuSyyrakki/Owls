@@ -9,7 +9,7 @@ namespace Owls.Birds
 {
 	public enum State
 	{
-		Moving, Attacking, HitPlayer, Killed
+		Moving, Attacking, HitPlayer, Killed, Saved
 	}
 
 	[RequireComponent(typeof(SpriteRenderer), typeof(Animator))]
@@ -17,6 +17,7 @@ namespace Owls.Birds
     {
 		private const string ANIM_PREPARE = "PrepareAttack";
 		private const string ANIM_ATTACK = "Attack";
+		private const string ANIM_SAVED = "Saved";
 		private const string TAG_PLAYER = "Player";
 		private const string TAG_KEEPER = "TimeKeeper";
 
@@ -56,11 +57,12 @@ namespace Owls.Birds
 	    private int _currentPathIndex = 0;
 	    private Vector3[] _path3;
 	    private float _t = 0;
-		private bool _attackInvoked = false, _destroyInvoked = false, captureInvoked = false;
+		private bool _attackInvoked = false, _destroyInvoked = false, _captureInvoked = false;
 		private State _state = State.Moving;
 		private float _maxY, _minY;
 		private Animator _animator;
 		private Transform _player;
+		private Transform _birdHouse;
 		private BirdSpawner _spawner;
 		private TimeKeeper _timeKeeper;
 		private bool _paused = false;
@@ -132,20 +134,6 @@ namespace Owls.Birds
 		{
 			if (!IsAlive || _paused) { return; }
 
-			if (isEnemy) { EnemyBehaviour(); }
-			else { BirdyBehaviour(); }
-		}
-
-		private void BirdyBehaviour()
-		{
-			if (_state == State.Moving)
-			{
-				MoveOnPath();
-			}
-		}
-
-		private void EnemyBehaviour()
-		{
 			if (_state == State.Moving)
 			{
 				MoveOnPath();
@@ -164,6 +152,30 @@ namespace Owls.Birds
 				Kill(deathFx, killedByPlayer: true);
 				IsAlive = false;
 			}
+			else if (_state == State.Saved)
+			{
+				SaveBirdy();
+			}
+		}
+
+		private void SaveBirdy()
+		{
+			if (_captureInvoked) { return; }
+
+			transform.position = Vector3.MoveTowards(transform.position, _birdHouse.position, flightSpeed * 0.01f);
+
+			if (transform.position == _birdHouse.position)
+			{
+				InvokeCapture();
+			}
+		}
+
+		private void InvokeCapture()
+		{
+			_captureInvoked = true;
+			_animator.SetTrigger(ANIM_SAVED);
+			_spawner.BirdySavedByPlayer(transform.position);
+			Destroy(gameObject, 3f);
 		}
 
 		private void OnTriggerEnter2D(Collider2D col)
@@ -196,7 +208,7 @@ namespace Owls.Birds
 
 				if (!isEnemy)
 				{
-					// TODO...
+					Destroy(gameObject);
 				}
 			
 		        return;
@@ -250,11 +262,6 @@ namespace Owls.Birds
 			_destroyInvoked = true;
 		}
 
-		public void CaptureBirdy()
-		{
-			_spawner.BirdySavedByPlayer(transform.position);
-		}
-
 		private void TimeEventHandler(GameTime gt)
 		{
 			if (gt == GameTime.Pause)
@@ -290,6 +297,12 @@ namespace Owls.Birds
 		public void InitVortex(Vector2 position)
 		{
 			_path3[_currentPathIndex] = position;
+		}
+
+		public void CaptureBirdy()
+		{
+			_state = State.Saved;
+			_birdHouse = _spawner.BirdHouse;			
 		}
 	}
 }
