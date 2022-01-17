@@ -49,6 +49,8 @@ namespace Owls
         private int _countdownTime;
         private bool _isPaused = false;
         private LevelLoader _levelLoader = null;
+        private Coroutine _countdown = null;
+        private Coroutine _timer = null;
 
         public event Action<GameTime> TimeEvent;
         public int TimeRemaining => _timeRemaining;
@@ -64,7 +66,7 @@ namespace Owls
 		{
             _timeRemaining = TimeMax;
             _timeDisplay.text = _timeRemaining.ToString();
-            StartCoroutine(CountCountdown());
+            _countdown = StartCoroutine(CountCountdown());
 		}
 
         private void Update()
@@ -90,7 +92,7 @@ namespace Owls
 
             TimeEvent?.Invoke(GameTime.CountdownEnd);
             StartCoroutine(FadeOutLevelName());
-            StartCoroutine(CountLevelTime());
+            _timer = StartCoroutine(CountLevelTime());
         }
 
         private IEnumerator FadeOutLevelName()
@@ -140,6 +142,7 @@ namespace Owls
 
         public void InvokeGameOver()
 		{
+            StopCoroutine(_countdown);
             Invoke(nameof(ShowGameOverScreen), gameOverDelay);
             TimeEvent?.Invoke(GameTime.LevelComplete);
 		}
