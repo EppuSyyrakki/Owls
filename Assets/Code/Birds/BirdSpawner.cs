@@ -81,6 +81,10 @@ namespace Owls.Birds
 
 			while (_spawnedBirds < _maxBirds)
 			{
+				yield return new WaitForEndOfFrame();
+
+				if (!_spawnEnabled) { continue; }
+
 				if (timer > ((float)_spawnedBirds + 1f) * _birdInterval)
 				{
 					Spawn(birdyPrefab);
@@ -88,8 +92,7 @@ namespace Owls.Birds
 					BirdySpawned?.Invoke();
 				}
 
-				timer += Time.deltaTime;
-				yield return new WaitForEndOfFrame();
+				timer += Time.deltaTime;				
 			}
 		}
 
