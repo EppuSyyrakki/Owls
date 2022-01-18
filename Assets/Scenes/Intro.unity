@@ -10618,6 +10618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 845414300}
   - component: {fileID: 845414299}
+  - component: {fileID: 845414301}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -10702,6 +10703,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &845414301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845414298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!4 &902261998 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1892292699445179494, guid: add2476071f0ff04b9eba0a213db8fb6,
@@ -15758,7 +15779,8 @@ AudioSource:
   m_GameObject: {fileID: 1483592898}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -877854833507642867, guid: df6ee81803c23814cad17da9b6e6ec14,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 00fb53a7e617e244f8bf579b1f71dc22, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
