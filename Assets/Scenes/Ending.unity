@@ -10545,7 +10545,8 @@ AudioSource:
   m_GameObject: {fileID: 613978658}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -877854833507642867, guid: df6ee81803c23814cad17da9b6e6ec14,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 6f56f5e8b6227a1458f873d572d421e5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -11185,6 +11186,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1449787307}
     m_Modifications:
+    - target: {fileID: 2734771898874105860, guid: fcdfbe5019c33494691d95f382f11e0c,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 2044315160375938698, guid: df6ee81803c23814cad17da9b6e6ec14,
+        type: 2}
     - target: {fileID: 3357061594799007418, guid: fcdfbe5019c33494691d95f382f11e0c,
         type: 3}
       propertyPath: m_Name
