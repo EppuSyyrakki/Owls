@@ -39,9 +39,6 @@ namespace Owls.Player
 		[SerializeField]
 		private List<Spell> selectedSpells;
 
-		[SerializeField]
-		private float tapMaxTime = 0.2f;
-
 		private Transform _spellGrid = null;
 		private GlyphDrawInput _glyphInput = null;
 		private Camera _cam;
@@ -56,7 +53,6 @@ namespace Owls.Player
 		private bool _castingDisabled = true;
 		private SpellDelivery _delivery = null;
 		private float _touchStartTime;
-		private LayerMask _birdyLayer = 1 << 5;
 
 		public Action spellCastingFailed;
 
@@ -188,8 +184,7 @@ namespace Owls.Player
 				StopPointer();
 				return;
 			}
-			else if (Time.realtimeSinceStartup - _touchStartTime < tapMaxTime
-				&& _stroke.Count < 3)
+			else if (_stroke.Count < 3)
 			{
 				if (debuggingInfo) { Debug.Log("Tap detected: " + (Time.realtimeSinceStartup - _touchStartTime)); }
 

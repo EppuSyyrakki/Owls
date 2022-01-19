@@ -55,8 +55,8 @@ namespace Owls.GUI
 		[SerializeField, Tooltip("Smaller is faster")]
 		private float finalScoreSpeed = 0.08f;
 
-		private int _currentBirds = 0;
 		private int _currentScore = 0;
+		private int _currentBirds = 0;
 		private int _maxBirds = 99;
 		private BirdSpawner _birdSpawner = null;
 		private TimeKeeper _timeKeeper = null;
@@ -93,6 +93,9 @@ namespace Owls.GUI
 		{
 			int finalReward = (int)(_comboLevel * reward);
 			_currentScore += finalReward;
+
+			if (_currentScore < 0) { _currentScore = 0; }
+
 			StopCoroutine(WaitForCombo());
 			StartCoroutine(WaitForCombo());
 			SpawnScoreObject(finalReward, screenPos);
