@@ -162,7 +162,8 @@ namespace Owls.Birds
 		{
 			if (_captureInvoked) { return; }
 
-			transform.position = Vector3.MoveTowards(transform.position, _birdHouse.position, flightSpeed * 0.01f);
+			var speed = attackSpeed * Time.deltaTime;
+			transform.position = Vector3.MoveTowards(transform.position, _birdHouse.position, speed);
 
 			if (transform.position == _birdHouse.position)
 			{

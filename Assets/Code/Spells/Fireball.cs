@@ -93,6 +93,8 @@ namespace Owls.Spells
 
 			foreach (var t in Target)
 			{
+				if (!t.Transform.CompareTag(TAG_ENEMY)) { continue; }
+
 				t.TargetedBySpell(info);
 				SpawnHitEffect(t);
 				yield return new WaitForEndOfFrame();
