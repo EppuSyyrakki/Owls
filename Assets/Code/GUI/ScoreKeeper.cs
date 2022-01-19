@@ -91,13 +91,15 @@ namespace Owls.GUI
 
 		private void EnemyKilledHandler(int reward, Vector2 screenPos)
 		{
-			int finalReward = (int)(_comboLevel * reward);
+			int finalReward = reward > 0 ? (int)(_comboLevel * reward) : reward;			
 			_currentScore += finalReward;
 
 			if (_currentScore < 0) { _currentScore = 0; }
 
 			StopCoroutine(WaitForCombo());
-			StartCoroutine(WaitForCombo());
+
+			if (reward > 0) StartCoroutine(WaitForCombo());
+
 			SpawnScoreObject(finalReward, screenPos);
 			UpdateTexts();
 		}
