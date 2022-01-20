@@ -220,7 +220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &127909477
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5821,6 +5821,7 @@ GameObject:
   - component: {fileID: 603814818}
   - component: {fileID: 603814817}
   - component: {fileID: 603814816}
+  - component: {fileID: 603814819}
   m_Layer: 5
   m_Name: SoundFx
   m_TagString: Untagged
@@ -5893,19 +5894,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 603814817}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1215198490}
-        m_TargetAssemblyTypeName: Owls.GUI.MenuController, Assembly-CSharp
-        m_MethodName: ResetScoreAndSpells
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &603814817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5944,6 +5933,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 603814814}
   m_CullTransparentMesh: 1
+--- !u!114 &603814819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603814814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f239283687e8f2342bb7eaccdcfa7e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 2044315160375938698, guid: df6ee81803c23814cad17da9b6e6ec14,
+    type: 2}
 --- !u!1 &643141090
 GameObject:
   m_ObjectHideFlags: 0
@@ -11054,7 +11057,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &971926030
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11457,6 +11460,7 @@ GameObject:
   - component: {fileID: 1225272250}
   - component: {fileID: 1225272249}
   - component: {fileID: 1225272248}
+  - component: {fileID: 1225272251}
   m_Layer: 5
   m_Name: Music
   m_TagString: Untagged
@@ -11529,19 +11533,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1225272249}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1215198490}
-        m_TargetAssemblyTypeName: Owls.GUI.MenuController, Assembly-CSharp
-        m_MethodName: StartGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1225272249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11580,6 +11572,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225272246}
   m_CullTransparentMesh: 1
+--- !u!114 &1225272251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225272246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f239283687e8f2342bb7eaccdcfa7e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 0}
 --- !u!1 &1232135462
 GameObject:
   m_ObjectHideFlags: 0
@@ -11820,19 +11825,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1759527145}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1215198490}
-        m_TargetAssemblyTypeName: Owls.GUI.MenuController, Assembly-CSharp
-        m_MethodName: QuitGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1759527145
 MonoBehaviour:
   m_ObjectHideFlags: 0
