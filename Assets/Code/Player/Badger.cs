@@ -21,8 +21,9 @@ namespace Owls.Player
 		private Animator _animator;
 		private TimeKeeper _timeKeeper;
 		private bool _isPaused = false;
-		public bool Regenerating { private get; set; } = true;
+		private float _animationSpeed = 0;
 
+		public bool Regenerating { private get; set; } = true;
 		public float MaxHealth { get; private set; }
 		public float MaxMana { get; private set; }
 		public bool IsAlive { get; private set; } = true;
@@ -44,14 +45,10 @@ namespace Owls.Player
 		{
 			_animator = GetComponent<Animator>();
 			_timeKeeper = GameObject.FindGameObjectWithTag(TAG_TIMEKEEPER).GetComponent<TimeKeeper>();
+			_timeKeeper.TimeEvent += TimeEventHandler;
 			MaxHealth = health;
 			MaxMana = mana;
 			StartCoroutine(RegenerateMana());
-		}
-
-		private void OnEnable()
-		{
-			_timeKeeper.TimeEvent += TimeEventHandler;
 		}
 
 		private void OnDisable()
@@ -80,8 +77,17 @@ namespace Owls.Player
 
 		private void TimeEventHandler(GameTime gt)
 		{
-			if (gt == GameTime.Pause) { _isPaused = true; }
-			else if (gt == GameTime.Continue) { _isPaused = false; }
+			if (gt == GameTime.Pause) 
+			{ 
+				_isPaused = true;
+				_animationSpeed = _animator.speed;
+				_animator.speed = 0;
+			}
+			else if (gt == GameTime.Continue) 
+			{ 
+				_isPaused = false;
+				_animator.speed = _animationSpeed;
+			}
 		}
 
 		public void TargetedBySpell(Info info)

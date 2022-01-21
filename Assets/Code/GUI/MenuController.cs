@@ -23,7 +23,7 @@ namespace Owls.GUI
 		[SerializeField]
 		private Button muteMusicButton = null, unmuteMusicButton = null, muteFxButton = null, unmuteFxButton = null;
 
-        private SceneLoader _loader = null;
+		private SceneLoader _loader = null;
 
 		private void Awake()
 		{

@@ -83,9 +83,9 @@ namespace Owls.Player
 
 		private void Update()
 		{
-			if (_castingDisabled) 
+			if (_castingDisabled)
 			{
-				_stroke = null;
+				_stroke = new List<Vector2>();
 				return; 
 			}
 
@@ -279,8 +279,14 @@ namespace Owls.Player
 
 		private void TimeEventHandler(GameTime gt)
 		{
-			if (gt == GameTime.LevelStart || gt == GameTime.Continue) { _castingDisabled = false; }
-			else if (gt == GameTime.LevelComplete || gt == GameTime.Pause) { _castingDisabled = true; }
+			if (gt == GameTime.LevelStart || gt == GameTime.Continue) 
+			{ 
+				_castingDisabled = false; 
+			}
+			else if (gt == GameTime.LevelComplete || gt == GameTime.Pause) 
+			{ 
+				_castingDisabled = true; 
+			}
 		}
 
 		/// <summary>

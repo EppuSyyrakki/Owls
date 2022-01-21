@@ -66,6 +66,7 @@ namespace Owls.Birds
 		private BirdSpawner _spawner;
 		private TimeKeeper _timeKeeper;
 		private bool _paused = false;
+		private float _animationSpeed = 0;
 
 		public bool FlightInterrupted { private get; set; } = false;
 		public bool IsAlive { get; private set; } = true;
@@ -268,9 +269,12 @@ namespace Owls.Birds
 			if (gt == GameTime.Pause)
 			{
 				_paused = true;
+				_animationSpeed = _animator.speed;
+				_animator.speed = 0;
 			}
 			else if (gt == GameTime.Continue)
 			{
+				_animator.speed = _animationSpeed;
 				_paused = false;
 			}
 			else if (gt == GameTime.LevelComplete)

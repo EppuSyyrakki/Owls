@@ -55,6 +55,7 @@ namespace Owls
         public event Action<GameTime> TimeEvent;
         public int TimeRemaining => _timeRemaining;
         public int TimeMax => _levelLoader.CurrentLevel.LevelTime;
+        public bool IsPaused => _isPaused;
      
         private void Awake()
 		{         
@@ -68,14 +69,6 @@ namespace Owls
             _timeDisplay.text = _timeRemaining.ToString();
             _countdown = StartCoroutine(CountCountdown());
 		}
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Menu))
-            {
-                PauseOrContinue();
-            }
-        }
 
         private IEnumerator CountCountdown()
         {

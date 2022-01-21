@@ -6,6 +6,8 @@ namespace Owls.Scenery
 {
 	public class SceneryController : MonoBehaviour
 	{
+		private const string TAG_TIMEKEEPER = "TimeKeeper";
+
 		[SerializeField, Range(0.1f, 10f)]
 		private float totalSpeed = 10f;
 
@@ -13,8 +15,8 @@ namespace Owls.Scenery
 		private float wrapDistance = 40f;
 
 		private List<SceneryItem> _movingItems = new List<SceneryItem>();
-		//private float _currentSpeed = 0;
-		//private float _groundSpeed = 0;
+		private bool _isPaused;
+		private TimeKeeper _timeKeeper;
 		
 		public List<GameObject> effectPrefabs = new List<GameObject>();
 
@@ -42,6 +44,13 @@ namespace Owls.Scenery
 			}
 
 			EffectContainer = new GameObject("Effect Container").transform;
+			_timeKeeper = GameObject.FindGameObjectWithTag(TAG_TIMEKEEPER).GetComponent<TimeKeeper>();
+			_timeKeeper.TimeEvent += TimeEventHandler;
+		}
+
+		private void OnDisable()
+		{
+			_timeKeeper.TimeEvent -= TimeEventHandler;
 		}
 
 		private GameObject DuplicateItem(GameObject obj, float xPos)
@@ -52,6 +61,8 @@ namespace Owls.Scenery
 
 		private void Update()
 		{
+			if (_isPaused) { return; }
+
 			foreach (var item in _movingItems)
 			{
 				Vector3 translation;
@@ -66,6 +77,18 @@ namespace Owls.Scenery
 				}
 
 				item.transform.Translate(translation);
+			}
+		}
+
+		private void TimeEventHandler(GameTime gt)
+		{
+			if (gt == GameTime.Pause)
+			{
+				_isPaused = true;
+			}
+			else if (gt == GameTime.Continue)
+			{
+				_isPaused = false;
 			}
 		}
 	}

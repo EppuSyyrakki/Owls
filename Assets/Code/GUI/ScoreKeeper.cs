@@ -106,7 +106,6 @@ namespace Owls.GUI
 
 		private void BirdySavedHandler(Vector2 screenPos)
 		{
-			Debug.Log("Birdy saved!");
 			_currentBirds++;
 			UpdateTexts();
 		}
@@ -143,7 +142,6 @@ namespace Owls.GUI
 			if (gt != GameTime.LevelComplete) { return; }
 
 			if (!PlayerPrefs.HasKey(KEY_TOTAL_SCORE)) { PlayerPrefs.SetInt(KEY_TOTAL_SCORE, 0); }
-
 			
 			StartCoroutine(ScoreCount());
 		}
@@ -169,14 +167,12 @@ namespace Owls.GUI
 				if (_currentScore < 100) 
 				{
 					int amount = (int)(_currentScore * bonusMulti);
-					Debug.Log(amount);
 					totalScore += amount;
 					_currentScore = 0;
 				}
 				else
 				{
 					int amount = (int)(100 * bonusMulti);
-					Debug.Log(amount);
 					totalScore += amount;
 					_currentScore -= 100;
 				}
