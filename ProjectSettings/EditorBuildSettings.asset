@@ -17,10 +17,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Spellbook.unity
     guid: 302da15c8aea87c4ba0bba8766502605
-  - enabled: 1
-    path: Assets/Scenes/gameOver.unity
-    guid: 8d6671f6b1d9faf488bcf24cb5812048
-  - enabled: 1
-    path: Assets/Scenes/levelCompleted.unity
-    guid: 8891ca1f2632e984c845abd0f649eca6
   m_configObjects: {}
