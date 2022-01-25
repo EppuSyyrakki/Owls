@@ -71,10 +71,5 @@ namespace Owls.GUI
 			pauseMenu.SetActive(_timeKeeper.IsPaused);
 			showMenuButton.gameObject.SetActive(!_timeKeeper.IsPaused);
 		}
-
-		public void ReturnToMenu()
-		{
-			// Do confirmation dialog
-		}
 	}
 }
