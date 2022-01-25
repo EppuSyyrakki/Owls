@@ -32,6 +32,9 @@ namespace Owls.GUI
 		private const string KEY_TOTAL_SCORE = "TotalScore";
 
 		[SerializeField]
+		private UnlockReward rewardPrefab = null; 
+
+		[SerializeField]
 		private TMP_Text scoreText = null;
 
 		[SerializeField]
@@ -181,7 +184,7 @@ namespace Owls.GUI
 
 				if (newSpells.Count > 0)
 				{
-					DisplayUnlockedSpells(newSpells);
+					foreach(var spell in newSpells) { DisplayUnlockedSpell(spell); }					
 				}
 
 				if (!levelUnlocked && _levelUnlocker.CheckNewUnlocks(totalScore, out var level)) 
@@ -201,16 +204,16 @@ namespace Owls.GUI
 
 		private void DisplayUnlockedLevel(Level level)
 		{
-			Debug.Log("Unlocked a new level!");
+			var reward = Instantiate(rewardPrefab, transform);
+			reward.Text = "New Level Unlocked!";
+			reward.ShowImage = false;
 		}
 
-		private void DisplayUnlockedSpells(List<Spell> spells)
+		private void DisplayUnlockedSpell(Spell spell)
 		{
-			foreach (var s in spells)
-			{
-				var name = s.name.Replace("Spell", "");
-				Debug.Log("Unlocked a new spell: " + name);
-			}
+			var reward = Instantiate(rewardPrefab, transform);
+			reward.ShowImage = true;
+			reward.Sprite = spell.icon;
 		}
 
 		private void SaveScore(int score)

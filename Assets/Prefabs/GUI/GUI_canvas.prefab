@@ -3148,7 +3148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3810336811095545550
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4594,6 +4594,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac01a2e26f5d3444a1f763fa2b322b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rewardPrefab: {fileID: 6890258343788609272, guid: 475d3ac2016dc324fbed6c39520f2658,
+    type: 3}
   scoreText: {fileID: 6526570057173180514}
   birdsText: {fileID: 6526570057278389264}
   comboTime: 0.5
