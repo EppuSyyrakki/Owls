@@ -3506,6 +3506,7 @@ GameObject:
   - component: {fileID: 6526570056197971803}
   - component: {fileID: 3575948621005050173}
   - component: {fileID: 4595312341376972292}
+  - component: {fileID: 2036961080671251539}
   m_Layer: 5
   m_Name: GUI_canvas
   m_TagString: Untagged
@@ -3620,6 +3621,8 @@ MonoBehaviour:
   unmuteMusicButton: {fileID: 6184468580125486517}
   muteFxButton: {fileID: 6670842738222121607}
   unmuteFxButton: {fileID: 1010906952952556292}
+  confirmationPrefab: {fileID: 7412757675093902687, guid: 3c1dae14afca1b64f8e4b88f29c7f9ab,
+    type: 3}
 --- !u!114 &4595312341376972292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3637,6 +3640,21 @@ MonoBehaviour:
     type: 2}
   defaultFxVolume: 0
   defaultMusicVolume: -2
+--- !u!114 &2036961080671251539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6526570056197971802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76920fd6fb9fc7d479e6bf28dabf33c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tapScreenToLoad: 0
+  sceneToLoad: 1
+  additiveLoad: 0
 --- !u!1 &6526570056989377840
 GameObject:
   m_ObjectHideFlags: 0
