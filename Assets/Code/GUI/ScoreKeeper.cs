@@ -65,6 +65,7 @@ namespace Owls.GUI
 		private TimeKeeper _timeKeeper = null;
 		private LevelUnlocker _levelUnlocker;
 		private float _comboLevel = 1;
+		private bool _countPaused = false;
 
 		public int setScoreTo = 0;
 
@@ -167,6 +168,8 @@ namespace Owls.GUI
 			{
 				yield return new WaitForSeconds(finalScoreSpeed);
 
+				if (_countPaused) { continue; }
+
 				if (_currentScore < 100) 
 				{
 					int amount = (int)(_currentScore * bonusMulti);
@@ -207,6 +210,8 @@ namespace Owls.GUI
 			var reward = Instantiate(rewardPrefab, transform);
 			reward.Text = "New Level Unlocked!";
 			reward.ShowImage = false;
+			_countPaused = true;
+			Invoke(nameof(ContinueCount), reward.PauseTime);
 		}
 
 		private void DisplayUnlockedSpell(Spell spell)
@@ -214,6 +219,13 @@ namespace Owls.GUI
 			var reward = Instantiate(rewardPrefab, transform);
 			reward.ShowImage = true;
 			reward.Sprite = spell.icon;
+			_countPaused = true;
+			Invoke(nameof(ContinueCount), reward.PauseTime);
+		}
+
+		private void ContinueCount()
+		{
+			_countPaused = false;
 		}
 
 		private void SaveScore(int score)

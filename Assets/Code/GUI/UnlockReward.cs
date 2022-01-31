@@ -17,12 +17,13 @@ namespace Owls.GUI
 		[SerializeField]
 		private AnimationCurve outCurve;
 
-		public Image _image = null;
-		public TMP_Text _text = null;
+		private Image _image = null;
+		private TMP_Text _text = null;
 
 		public string Text { set { _text.text = value; } }
 		public bool ShowImage { set { _image.gameObject.SetActive(value); } }
 		public Sprite Sprite { set { _image.sprite = value; } }
+		public float PauseTime => waitTime;
 
 		private void Awake()
 		{
