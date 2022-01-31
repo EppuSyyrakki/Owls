@@ -12,7 +12,7 @@ namespace Owls.GUI
 		private const string TAG_HELP = "SpellHelp";
 
 		[SerializeField]
-		private bool isSpellBookSlot = true;
+		private bool isSpellBookSlot = true, isLightningSlot = false;
 
 		[SerializeField]
 		private Sprite lockedSlot = null, emptySlot = null;
@@ -73,6 +73,11 @@ namespace Owls.GUI
 			{
 				_image.sprite = emptySlot;
 			}
+			else if (status == 2)
+			{
+				_image.sprite = spell.icon;
+				transform.GetChild(0).gameObject.SetActive(true);
+			}
 			else
 			{
 				_image.sprite = spell.icon;
@@ -90,7 +95,7 @@ namespace Owls.GUI
 
 			if (!_isLocked && _holdTime < holdForHelpTime)
 			{
-				if (!isSpellBookSlot)
+				if (!isSpellBookSlot && !isLightningSlot)
 				{
 					_spellBook.SetSlotToEmpty(this);
 				}

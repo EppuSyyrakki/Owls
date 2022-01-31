@@ -20,14 +20,14 @@ namespace Owls.GUI
 		private SpellSlot[] playerSlots = null;
 
 		private Dictionary<Spell, int> _spells;
-		private SpellComparer _comparer = new SpellComparer();
 		private SpellDelivery _delivery = null;
 
 		private void Awake()
 		{
 			Input.simulateMouseWithTouches = true;
 			var spells = new List<Spell>(Resources.LoadAll("", typeof(Spell)).Cast<Spell>().ToArray());
-			spells.Sort(_comparer);
+			var comparer = new SpellComparer();
+			spells.Sort(comparer);
 			EnsureKeysExist(spells);
 			_spells = CreateSpellDictionary(spells);
 
@@ -46,8 +46,13 @@ namespace Owls.GUI
 		{
 			foreach (var spellPair in _spells)
 			{
-				var newSlot = Instantiate(spellSlotPrefab, spellGrid);				
+				var newSlot = Instantiate(spellSlotPrefab, spellGrid);
 				newSlot.Set(spellPair.Key, spellPair.Value);
+
+				if (spellPair.Key is Lightning)
+				{
+					SetSpellToPlayerSlot(spellPair.Key);
+				}
 			}
 		}
 
@@ -58,8 +63,12 @@ namespace Owls.GUI
 			foreach (var spell in spells)
 			{
 				var status = PlayerPrefs.GetInt(spell.name);
-
 				dictionary.Add(spell, status);
+
+				if (status == 2)
+				{
+					PlayerPrefs.SetInt(spell.name, 1);
+				}
 			}
 
 			return dictionary;
