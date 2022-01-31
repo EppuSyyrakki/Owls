@@ -870,6 +870,11 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2433008703013917947, guid: 388f82d677f6b9b458692da1773f3bba,
+        type: 3}
+      propertyPath: isLightningSlot
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2627494518817512934, guid: 388f82d677f6b9b458692da1773f3bba,
         type: 3}
       propertyPath: m_AnchorMax.y
