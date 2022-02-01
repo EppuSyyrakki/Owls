@@ -37,7 +37,10 @@ namespace Owls.Player
 		private bool getSpellsFromBook = true;
 
 		[SerializeField]
-		private List<Spell> selectedSpells;
+		private GameSpellSlot slotTemplate = null;
+
+		[SerializeField]
+		private List<Spell> selectedSpells;	
 
 		private Transform _spellGrid = null;
 		private GlyphDrawInput _glyphInput = null;
@@ -46,13 +49,14 @@ namespace Owls.Player
 		private List<Vector2> _stroke = null;
 		private Transform _oldTrails;
 		private Spell _currentSpell;
-		private Dictionary<Glyph, Spell> _spells;
+		private Dictionary<Glyph, GameSpellSlot> _spells;
 		private bool _castCurrent = false;
 		private Badger _player;
 		private TimeKeeper _timeKeeper = null;
 		private bool _castingDisabled = true;
 		private SpellDelivery _delivery = null;
 		private float _touchStartTime;
+		private GameSpellSlot _currentlyCastingSlot = null;
 
 		public Action spellCastingFailed;
 
@@ -72,7 +76,6 @@ namespace Owls.Player
 		private void Start()
 		{
 			BuildSpellLists();
-			PopulateSpellSlots();
 		}
 
 		private void OnDisable()
@@ -106,6 +109,7 @@ namespace Owls.Player
 
 			if (_currentSpell is Lightning && !IsStrokeStraight()) 
 			{
+				_currentlyCastingSlot.ShowSelectedEffect(false);
 				_castCurrent = false;
 				_currentSpell = null;
 				return; 
@@ -121,20 +125,9 @@ namespace Owls.Player
 				spellCastingFailed?.Invoke();
 			}
 
+			_currentlyCastingSlot.ShowSelectedEffect(false);
 			_castCurrent = false;
 			_currentSpell = null;
-		}
-
-		private void PopulateSpellSlots()
-		{
-			var slotTemplate = _spellGrid.transform.GetChild(0).gameObject.GetComponent<GameSpellSlot>();
-			slotTemplate.Icon = selectedSpells[0].icon;
-
-			for (int i = 1; i < selectedSpells.Count; i++)
-			{
-				var slot = Instantiate(slotTemplate, _spellGrid);
-				slot.Icon = selectedSpells[i].icon;
-			}
 		}
 
 		private void BuildSpellLists()
@@ -152,11 +145,14 @@ namespace Owls.Player
 				}
 			}
 
-			_spells = new Dictionary<Glyph, Spell>(selectedSpells.Count);
+			_spells = new Dictionary<Glyph, GameSpellSlot>(selectedSpells.Count);
 
 			foreach (var spell in selectedSpells)
 			{
-				_spells.Add(spell.info.glyph, spell);
+				var slot = Instantiate(slotTemplate, _spellGrid);
+				slot.Icon = spell.icon;
+				slot.Spell = spell;
+				_spells.Add(spell.info.glyph, slot);
 			}
 		}
 
@@ -299,11 +295,12 @@ namespace Owls.Player
 		public void GlyphCastHandler(int index, GlyphMatch match)
 		{
 			if (match == null) { return; }
-			string m = match.target.name;
 
-			if (_spells.ContainsKey(match.target))
+			if (_spells.TryGetValue(match.target, out GameSpellSlot slot))
 			{
-				_currentSpell = _spells[match.target];
+				_currentSpell = slot.Spell;
+				_currentlyCastingSlot = slot;
+				_currentlyCastingSlot.ShowSelectedEffect(true);
 			}
 
 			if (_currentSpell != null && _currentSpell.info.castImmediately)
@@ -311,7 +308,7 @@ namespace Owls.Player
 				_castCurrent = true;
 			}
 
-			if (debuggingInfo) Debug.Log("WorldTouchPointer.OnGlyphCast() called. Source: " + m);
+			if (debuggingInfo) Debug.Log("SpellCaster.OnGlyphCast() called. Source: " + match.target.name);
 		}
 	}
 }
