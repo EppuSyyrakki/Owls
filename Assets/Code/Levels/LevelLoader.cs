@@ -7,7 +7,7 @@ namespace Owls.Levels
 	[System.Serializable]
 	public class LevelInfo
 	{
-		public Level level = null;
+		public string levelName = null;
 		public int scoreToUnlock = 0;
 	}
 
@@ -45,7 +45,7 @@ namespace Owls.Levels
 			{
 				if (totalScore >= levels[i].scoreToUnlock)
 				{
-					current = levels[i].level;
+					current = Resources.Load("Levels/" + levels[i].levelName, typeof(Level)) as Level;
 				}
 			}
 
@@ -68,7 +68,7 @@ namespace Owls.Levels
 		{
 			foreach (var levelInfo in levels)
 			{
-				if (CurrentLevel == levelInfo.level)
+				if (CurrentLevel.gameObject.name == levelInfo.levelName)
 				{
 					return levelInfo.scoreToUnlock;
 				}

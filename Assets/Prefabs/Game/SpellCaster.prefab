@@ -51,7 +51,7 @@ MonoBehaviour:
   swipeAngleMax: 15
   strokeTreshold: 20
   debuggingInfo: 0
-  getSpellsFromBook: 0
+  getSpellsFromBook: 1
   slotTemplate: {fileID: 8826586467837093875, guid: aa0cfc96fa9096241b27b51a844f1da7,
     type: 3}
   selectedSpells:

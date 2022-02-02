@@ -190,10 +190,10 @@ namespace Owls.GUI
 					foreach(var spell in newSpells) { DisplayUnlockedSpell(spell); }					
 				}
 
-				if (!levelUnlocked && _levelUnlocker.CheckNewUnlocks(totalScore, out var level)) 
+				if (!levelUnlocked && _levelUnlocker.CheckNewUnlocks(totalScore, out var levelName)) 
 				{
 					levelUnlocked = true;
-					DisplayUnlockedLevel(level);
+					DisplayUnlockedLevel(levelName);
 				}
 
 				s = string.Format("Score: {0}\n Birdy Bonus: {1}x\n Total Score: {2}",
@@ -205,10 +205,11 @@ namespace Owls.GUI
 			SaveScore(totalScore);
 		}
 
-		private void DisplayUnlockedLevel(Level level)
+		private void DisplayUnlockedLevel(string name)
 		{
 			var reward = Instantiate(rewardPrefab, transform);
-			reward.Text = "New Level Unlocked!";
+			int nameStartIndex = name.IndexOf("_");
+			reward.Text = "New Level Unlocked: " + name.Substring(nameStartIndex + 1);
 			reward.ShowImage = false;
 			_countPaused = true;
 			Invoke(nameof(ContinueCount), reward.PauseTime);

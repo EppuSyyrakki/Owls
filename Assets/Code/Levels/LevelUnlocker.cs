@@ -16,15 +16,15 @@ namespace Owls.Levels
 			_currentLevel = currentLevel;
 		}
 
-		public bool CheckNewUnlocks(int totalScore, out Level level)
+		public bool CheckNewUnlocks(int totalScore, out string levelName)
 		{
-			level = null;
+			levelName = "";
 
 			foreach (var l in _levels)
 			{
 				if (l.scoreToUnlock > _currentLevel && totalScore >= l.scoreToUnlock)
 				{
-					level = l.level;
+					levelName = l.levelName;
 					return true;
 				}
 			}
