@@ -851,6 +851,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
+      propertyPath: levelTime
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
       propertyPath: scoreToPass
       value: 14000
       objectReference: {fileID: 0}
