@@ -45,20 +45,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testLevel: {fileID: 0}
-  levels:
-  - levelName: 1_Countryside
-    scoreToUnlock: 0
-  - levelName: 2_Forest
-    scoreToUnlock: 3000
-  - levelName: 3_Swamp
-    scoreToUnlock: 6000
-  - levelName: 4_OwlCave
-    scoreToUnlock: 9000
-  - levelName: 5_Graveyard
-    scoreToUnlock: 12000
-  - levelName: 6_WinterRuins
-    scoreToUnlock: 15000
-  - levelName: 7_Lanterns
-    scoreToUnlock: 18000
-  - levelName: 8_OwlCastle
-    scoreToUnlock: 21000

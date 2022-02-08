@@ -20,6 +20,12 @@ namespace Owls.Spells
 			EnsureKeysExist(_unlocks.Spells);
 		}
 
+		public SpellUnlocker(Unlocks unlocks)
+		{
+			_unlocks = unlocks;
+			EnsureKeysExist(_unlocks.Spells);
+		}
+
 		/// <summary>
 		/// Make sure there's an entry in PlayerPrefs for TotalScore and every spell name in a list.
 		/// </summary>
@@ -51,7 +57,7 @@ namespace Owls.Spells
 					// If the PlayerPref int is 0, the spell hasn't unlocked earlier.
 					// Set it to 2 to indicate it's a new spell.
 					PlayerPrefs.SetInt(s.name, 2);
-					var newSpell = Resources.Load("Spells/" + s.name, typeof(Spell)) as Spell;
+					var newSpell = Resources.Load("Spells/" + s.name + "/" + s.name, typeof(Spell)) as Spell;
 					newSpells.Add(newSpell);
 				}
 			}

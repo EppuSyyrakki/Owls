@@ -208,8 +208,7 @@ namespace Owls.GUI
 		private void DisplayUnlockedLevel(string name)
 		{
 			var reward = Instantiate(rewardPrefab, transform);
-			int nameStartIndex = name.IndexOf("_");
-			reward.Text = "New Level Unlocked: " + name.Substring(nameStartIndex + 1);
+			reward.Text = "New Level Unlocked: " + name.Substring(name.IndexOf("_") + 1);
 			reward.ShowImage = false;
 			_countPaused = true;
 			Invoke(nameof(ContinueCount), reward.PauseTime);
