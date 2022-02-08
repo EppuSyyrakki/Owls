@@ -64,7 +64,7 @@ MonoBehaviour:
     manaCost: 0.1
   help:
     name: 
-    text: 'Creates an Ice SPherel that kills the first enemy it hits, freezing all
+    text: 'Creates an Ice Sphere that kills the first enemy it hits, freezing all
       others momentarily within its radius. After drawing the pentagram glyph, tap
       the screen to launch it.
 
