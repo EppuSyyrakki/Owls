@@ -12,37 +12,24 @@ namespace Owls.Spells
 	{
 		private const string KEY_TOTAL_SCORE = "TotalScore";
 
-		private Dictionary<Spell, int> _spellUnlocks;
-		private SpellComparer _comparer = new SpellComparer();
+		private Unlocks _unlocks;
 
 		public SpellUnlocker()
 		{
-			var spells = new List<Spell>(Resources.LoadAll("", typeof(Spell)).Cast<Spell>().ToArray());
-			spells.Sort(_comparer);
-			EnsureKeysExist(spells);
-			CreateUnlockDictionary(spells);
+			_unlocks = Resources.Load("Unlocks", typeof(Unlocks)) as Unlocks;
+			EnsureKeysExist(_unlocks.Spells);
 		}
 
 		/// <summary>
 		/// Make sure there's an entry in PlayerPrefs for TotalScore and every spell name in a list.
 		/// </summary>
-		private static void EnsureKeysExist(List<Spell> spells)
+		private static void EnsureKeysExist(List<UnlockInfo> spells)
 		{
 			if (!PlayerPrefs.HasKey(KEY_TOTAL_SCORE)) { PlayerPrefs.SetInt(KEY_TOTAL_SCORE, 0); }
 
 			foreach (var s in spells)
 			{
 				if (!PlayerPrefs.HasKey(s.name)) { PlayerPrefs.SetInt(s.name, 0); }
-			}
-		}
-
-		private void CreateUnlockDictionary(List<Spell> spells)
-		{
-			_spellUnlocks = new Dictionary<Spell, int>();
-
-			foreach (var s in spells)
-			{
-				_spellUnlocks.Add(s, s.ScoreToUnlock);
 			}
 		}
 
@@ -55,16 +42,17 @@ namespace Owls.Spells
 		{
 			var newSpells = new List<Spell>();
 
-			foreach (var s in _spellUnlocks)
+			foreach (var s in _unlocks.Spells)
 			{
-				int currentState = PlayerPrefs.GetInt(s.Key.name);
+				int currentState = PlayerPrefs.GetInt(s.name);
 				
-				if (totalScore >= s.Value && currentState == 0) 
+				if (totalScore >= s.scoreToUnlock && currentState == 0) 
 				{
 					// If the PlayerPref int is 0, the spell hasn't unlocked earlier.
 					// Set it to 2 to indicate it's a new spell.
-					PlayerPrefs.SetInt(s.Key.name, 2);
-					newSpells.Add(s.Key);
+					PlayerPrefs.SetInt(s.name, 2);
+					var newSpell = Resources.Load("Spells/" + s.name, typeof(Spell)) as Spell;
+					newSpells.Add(newSpell);
 				}
 			}
 
@@ -75,25 +63,17 @@ namespace Owls.Spells
 		{
 			int totalScore = PlayerPrefs.GetInt(KEY_TOTAL_SCORE);
 
-			foreach (var s in _spellUnlocks)
+			foreach (var s in _unlocks.Spells)
 			{
-				int currentState = PlayerPrefs.GetInt(s.Key.name);
+				int currentState = PlayerPrefs.GetInt(s.name);
 
-				if (totalScore >= s.Value && currentState == 0)
+				if (totalScore >= s.scoreToUnlock && currentState == 0)
 				{
 					// If the PlayerPref int is 0, the spell hasn't unlocked earlier.
 					// Set it to 2 to indicate it's a new spell.
-					PlayerPrefs.SetInt(s.Key.name, 2);
+					PlayerPrefs.SetInt(s.name, 2);
 				}
 			}
-		}
-	}
-
-	public class SpellComparer : IComparer<Spell>
-	{
-		public int Compare(Spell x, Spell y)
-		{
-			return x.ScoreToUnlock.CompareTo(y.ScoreToUnlock);
 		}
 	}
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6690252038896262295}
   - component: {fileID: 8583958782412644247}
   m_Layer: 0
-  m_Name: TimewarpSpell
+  m_Name: Timewarp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

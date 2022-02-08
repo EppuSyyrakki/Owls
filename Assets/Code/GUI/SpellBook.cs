@@ -25,9 +25,7 @@ namespace Owls.GUI
 		private void Awake()
 		{
 			Input.simulateMouseWithTouches = true;
-			var spells = new List<Spell>(Resources.LoadAll("", typeof(Spell)).Cast<Spell>().ToArray());
-			var comparer = new SpellComparer();
-			spells.Sort(comparer);
+			var spells = LoadSpells();
 			EnsureKeysExist(spells);
 			_spells = CreateSpellDictionary(spells);
 
@@ -56,6 +54,37 @@ namespace Owls.GUI
 			}
 		}
 
+		private List<Spell> LoadSpells()
+		{
+			var unlocks = Resources.Load("Unlocks", typeof(Unlocks)) as Unlocks;
+			var spells = new List<Spell>(unlocks.Spells.Count);
+
+			foreach(var info in unlocks.Spells)
+			{
+				string path = "Spells/" + info.name + "/" + info.name;
+				var spell = Resources.Load(path, typeof(Spell)) as Spell;
+				spells.Add(spell);
+			}
+
+			return spells;
+		}
+
+		private static void EnsureKeysExist(List<Spell> spells)
+		{
+			foreach (var s in spells)
+			{
+				if (PlayerPrefs.HasKey(s.name)) { continue; }
+
+				if (s is Lightning)
+				{
+					PlayerPrefs.SetInt(s.name, 2);
+					continue;
+				}
+
+				PlayerPrefs.SetInt(s.name, 0);
+			}
+		}
+
 		private Dictionary<Spell, int> CreateSpellDictionary(List<Spell> spells)
 		{
 			var dictionary = new Dictionary<Spell, int>(spells.Count);
@@ -72,23 +101,7 @@ namespace Owls.GUI
 			}
 
 			return dictionary;
-		}
-
-		private static void EnsureKeysExist(List<Spell> spells)
-		{
-			foreach (var s in spells)
-			{
-				if (PlayerPrefs.HasKey(s.name)) { continue; }
-				
-				if (s is Lightning) 
-				{ 
-					PlayerPrefs.SetInt(s.name, 2);
-					continue;
-				}
-
-				PlayerPrefs.SetInt(s.name, 0); 				
-			}
-		}
+		}		
 
 		public void SetSpellToPlayerSlot(Spell spell)
 		{

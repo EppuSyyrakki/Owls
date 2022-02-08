@@ -7,7 +7,7 @@ namespace Owls.Levels
 	{
 		private const string TAG_LOADER = "LevelLoader";
 
-		private LevelInfo[] _levels;
+		private UnlockInfo[] _levels;
 		private int _currentLevel = 0;
 
 		public LevelUnlocker(int currentLevel)
@@ -24,7 +24,7 @@ namespace Owls.Levels
 			{
 				if (l.scoreToUnlock > _currentLevel && totalScore >= l.scoreToUnlock)
 				{
-					levelName = l.levelName;
+					levelName = l.name;
 					return true;
 				}
 			}

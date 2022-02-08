@@ -4,13 +4,6 @@ using Owls.Scenery;
 
 namespace Owls.Levels
 {
-	[System.Serializable]
-	public class LevelInfo
-	{
-		public string levelName = null;
-		public int scoreToUnlock = 0;
-	}
-
 	public class LevelLoader : MonoBehaviour
 	{
 		private const string KEY_TOTAL_SCORE = "TotalScore";
@@ -18,11 +11,10 @@ namespace Owls.Levels
 		[SerializeField]
 		private Level testLevel = null;
 
-		[SerializeField]
-		private LevelInfo[] levels = null;
+		private UnlockInfo[] _levels = null;
 
 		public Level CurrentLevel { get; private set; }
-		public LevelInfo[] LevelsInfo => levels;
+		public UnlockInfo[] LevelsInfo => _levels;
 
 		private void Awake()
 		{
@@ -33,6 +25,8 @@ namespace Owls.Levels
 				return;
 			}
 
+			var unlocks = Resources.Load("Unlocks", typeof(Unlocks)) as Unlocks;
+			_levels = unlocks.Levels.ToArray();
 			CurrentLevel = FetchCurrentLevel(PlayerPrefs.GetInt(KEY_TOTAL_SCORE));
 			CreateScenery(CurrentLevel.Scenery);
 		}
@@ -41,11 +35,11 @@ namespace Owls.Levels
 		{
 			Level current = null;
 
-			for (int i = 0; i < levels.Length; i++)
+			for (int i = 0; i < _levels.Length; i++)
 			{
-				if (totalScore >= levels[i].scoreToUnlock)
+				if (totalScore >= _levels[i].scoreToUnlock)
 				{
-					current = Resources.Load("Levels/" + levels[i].levelName, typeof(Level)) as Level;
+					current = Resources.Load("Levels/" + _levels[i].name, typeof(Level)) as Level;
 				}
 			}
 
@@ -66,9 +60,9 @@ namespace Owls.Levels
 
 		public int GetCurrentLevelScore()
 		{
-			foreach (var levelInfo in levels)
+			foreach (var levelInfo in _levels)
 			{
-				if (CurrentLevel.gameObject.name == levelInfo.levelName)
+				if (CurrentLevel.gameObject.name == levelInfo.name)
 				{
 					return levelInfo.scoreToUnlock;
 				}

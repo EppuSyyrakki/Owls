@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6329843866113282793}
   - component: {fileID: -7218854400983069544}
   m_Layer: 0
-  m_Name: LightningSpell
+  m_Name: Lightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
