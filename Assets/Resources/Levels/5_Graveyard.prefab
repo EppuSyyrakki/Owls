@@ -561,7 +561,7 @@ PrefabInstance:
     - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
       propertyPath: levelNames.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
@@ -577,6 +577,11 @@ PrefabInstance:
         type: 3}
       propertyPath: levelNames.Array.data[2]
       value: At the Cemetery Gates
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: levelNames.Array.data[3]
+      value: Barren Boneyard
       objectReference: {fileID: 0}
     - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
