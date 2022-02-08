@@ -1211,6 +1211,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookCover
       objectReference: {fileID: 0}
+    - target: {fileID: 5995396676563479035, guid: 388f82d677f6b9b458692da1773f3bba,
+        type: 3}
+      propertyPath: sceneToLoad
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5995396676563479039, guid: 388f82d677f6b9b458692da1773f3bba,
         type: 3}
       propertyPath: m_AnchoredPosition.x
