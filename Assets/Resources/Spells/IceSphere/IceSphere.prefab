@@ -48,7 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d750d8215668604280b1b14429991e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetHitEffect: []
+  targetHitEffect:
+  - {fileID: 1692699876276152717, guid: d06f11a10e114de4b8a0fa9e48cc0f3a, type: 3}
   icon: {fileID: 21300000, guid: 91aeb902659adf6448c49727031f0d99, type: 3}
   info:
     glyph: {fileID: 11400000, guid: 1b42f65d8b4499b4f86f6dcdb1bcfc5d, type: 2}
@@ -56,7 +57,7 @@ MonoBehaviour:
     target: 0
     effectRange: 3
     effectAmount: -1
-    lifeTime: 5
+    lifeTime: 3
     castImmediately: 0
     manaCost: 0.3
   help:
@@ -75,6 +76,8 @@ MonoBehaviour:
   flightSpeed: 20
   killDelay: 0.25
   freezeTime: 4
+  freezeEffect: {fileID: 1692699876276152717, guid: 37551df0931755b499fc3265f68a570b,
+    type: 3}
 --- !u!58 &5727838721311079110
 CircleCollider2D:
   m_ObjectHideFlags: 0

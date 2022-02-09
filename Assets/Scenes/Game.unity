@@ -132,17 +132,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
-        type: 3}
-      propertyPath: getSpellsFromBook
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
-        type: 3}
-      propertyPath: selectedSpells.Array.data[1]
-      value: 
-      objectReference: {fileID: -4192314238271592117, guid: 95c59d8bfdc47fa4bb9f137e91c911aa,
-        type: 3}
     - target: {fileID: 3918892694000362373, guid: a1063e6b4fbee3647866567f171f2752,
         type: 3}
       propertyPath: m_Name
@@ -361,11 +350,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5414450285038213363, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
-        type: 3}
-      propertyPath: setScoreTo
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6526570056197971798, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1074,16 +1058,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5498388958433463600, guid: 2b59e1afbbe65af44b1d37e2bdda6faf,
-        type: 3}
-      propertyPath: alpha
-      value: 0.072
-      objectReference: {fileID: 0}
-    - target: {fileID: 5498388958433463600, guid: 2b59e1afbbe65af44b1d37e2bdda6faf,
-        type: 3}
-      propertyPath: overrideThreshold
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5498388958433463603, guid: 2b59e1afbbe65af44b1d37e2bdda6faf,
         type: 3}
       propertyPath: m_Pivot.x

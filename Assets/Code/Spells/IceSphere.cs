@@ -25,6 +25,9 @@ namespace Owls.Spells
 		[SerializeField]
 		private float freezeTime = 4f;
 
+		[SerializeField]
+		private GameObject freezeEffect = null;
+
 		private Vector2 _source;
 		private bool _contact = false;
 
@@ -72,13 +75,14 @@ namespace Owls.Spells
 			if (!_contact) 
 			{
 				bird.TargetedBySpell(info);
+				SpawnHitEffect(bird);
 				_contact = true;
 				Explode();
 			}
 			else
 			{
 				bird.FreezeForSeconds(freezeTime);
-				SpawnHitEffect(target as ITargetable);
+				Instantiate(freezeEffect, bird.transform.position, Quaternion.identity, transform);
 			}
 		}
 
