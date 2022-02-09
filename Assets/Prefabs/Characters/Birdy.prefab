@@ -4826,6 +4826,7 @@ GameObject:
   - component: {fileID: 7083516766964725165}
   - component: {fileID: 2147133200611230373}
   - component: {fileID: 24002085246805684}
+  - component: {fileID: -800139605729834724}
   m_Layer: 6
   m_Name: Birdy
   m_TagString: Untagged
@@ -5062,3 +5063,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-800139605729834724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7083516766964725160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baabae53dc96a1445b12f9bd03283487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colors:
+  - {r: 0.6839622, g: 0.9559017, b: 1, a: 0}
+  - {r: 0.36320752, g: 0.8625627, b: 1, a: 0}
+  - {r: 1, g: 0.8088096, b: 0.3726415, a: 0}
+  - {r: 1, g: 0.3726415, b: 0.7063206, a: 0}
+  - {r: 0.838146, g: 1, b: 0.5613208, a: 0}

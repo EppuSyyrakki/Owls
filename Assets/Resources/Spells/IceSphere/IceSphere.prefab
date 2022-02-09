@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 127065739746651254}
-  - component: {fileID: -6099897007148306326}
+  - component: {fileID: -4192314238271592117}
   - component: {fileID: 5727838721311079110}
   - component: {fileID: 4545751580420782733}
   - component: {fileID: 7794420562032670620}
@@ -36,7 +36,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-6099897007148306326
+--- !u!114 &-4192314238271592117
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,34 +45,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 49634239181635491}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c1cdc427cfb8444c824eb2a59ec30a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d750d8215668604280b1b14429991e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetHitEffect:
-  - {fileID: 1692699876276152717, guid: d06f11a10e114de4b8a0fa9e48cc0f3a, type: 3}
-  - {fileID: 4741508095253339141, guid: f5ec8cfd9b871a249bf0dd915e17bbe4, type: 3}
-  scoreToUnlock: 3000
-  icon: {fileID: 21300000, guid: 91aeb902659adf6448c49727031f0d99, type: 3}
+  targetHitEffect: []
+  icon: {fileID: 0}
   info:
-    glyph: {fileID: 11400000, guid: 1b42f65d8b4499b4f86f6dcdb1bcfc5d, type: 2}
-    castType: 2
+    glyph: {fileID: 0}
+    castType: 0
     target: 0
-    effectRange: 3
-    effectAmount: -1
-    lifeTime: 5
+    effectRange: 0
+    effectAmount: 0
+    lifeTime: 0
     castImmediately: 0
-    manaCost: 0.1
+    manaCost: 0
   help:
     name: 
-    text: 'Creates an Ice Sphere that kills the first enemy it hits, freezing all
-      others momentarily within its radius. After drawing the pentagram glyph, tap
-      the screen to launch it.
-
-
-      The Ice Sphere will burst on contact with
-      an enemy or if it reaches the tapped position.'
-  explosion: {fileID: 6416457679666931783, guid: ea12eb043b772944ab7a5564a6a1ce25,
-    type: 3}
+    text: 
+  explosion: {fileID: 0}
   removeOnExplosion: []
   flightSpeed: 20
   killDelay: 0.25
