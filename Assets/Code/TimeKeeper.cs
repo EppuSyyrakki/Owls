@@ -137,7 +137,7 @@ namespace Owls
 		{
             StopCoroutine(_countdown);
             Invoke(nameof(ShowGameOverScreen), gameOverDelay);
-            TimeEvent?.Invoke(GameTime.LevelComplete);
+            TimeEvent?.Invoke(GameTime.LevelEnd);
 		}
 
         private void ShowGameOverScreen()

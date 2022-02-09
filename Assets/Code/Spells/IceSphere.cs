@@ -82,7 +82,7 @@ namespace Owls.Spells
 			else
 			{
 				bird.FreezeForSeconds(freezeTime);
-				Instantiate(freezeEffect, bird.transform.position, Quaternion.identity, transform);
+				Instantiate(freezeEffect, bird.transform.position, Quaternion.identity, bird.transform);
 			}
 		}
 
