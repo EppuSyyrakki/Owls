@@ -59,7 +59,6 @@ namespace Owls.Levels
 				{
 					int currentIndex = unlocks.Levels.IndexOf(level);
 					currentStory = transform.GetChild(currentIndex).gameObject;
-					break;
 				}
 			}
 
