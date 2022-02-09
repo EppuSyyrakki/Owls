@@ -12,6 +12,7 @@ namespace Owls.Levels
 	public class ScoreKeeperEditor : Editor
 	{
 		private const string KEY_TOTAL_SCORE = "TotalScore";
+		private const string KEY_STORY_PLAYED = "_story_played";
 		private ScoreKeeper _keeper;
 
 		private void Awake()
@@ -42,6 +43,16 @@ namespace Owls.Levels
 					{
 						PlayerPrefs.SetInt(s.name, 0);
 					}					
+				}
+			}
+
+			if (GUILayout.Button("Reset story progress"))
+			{
+				var unlocks = Resources.Load("", typeof(Unlocks)) as Unlocks;
+
+				foreach (var level in unlocks.Levels)
+				{
+					PlayerPrefs.SetInt(level.name + KEY_STORY_PLAYED, 0);
 				}
 			}
 		}

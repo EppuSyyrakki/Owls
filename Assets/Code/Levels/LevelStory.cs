@@ -1,12 +1,8 @@
 using Owls.GUI;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Owls.Levels
 {
-	// TODO: Create a static method to check if we need to load LevelStories scene at all. Only load it if there's a story
     public class LevelStory : MonoBehaviour
     {
 		private const string KEY_STORY_PLAYED = "_story_played";
@@ -15,34 +11,30 @@ namespace Owls.Levels
         [SerializeField]
         private Unlocks unlocks = null;
 
-		[SerializeField]
-		private float waitTime = 8f;
-
 		private SceneLoader _loader;
+		private bool _skipEnabled = false;
 
 		private void Awake()
 		{
-			EnsureKeysExist();
+			EnsureKeysExist(unlocks);
 			int totalScore = PlayerPrefs.GetInt(KEY_TOTAL_SCORE);
-			float loadGameDelay = 0f;
-
-			if (CurrentLevelStoryPlayed(totalScore, out var story))
-			{
-				story.SetActive(true);
-				loadGameDelay = waitTime;
-			}
-
-			_loader = GetComponent<SceneLoader>();
-			Invoke(nameof(LoadGameScene), loadGameDelay);
+			var story = CurrentLevelStoryPlayed(totalScore);
+			story.SetActive(true);
+			Invoke(nameof(EnableSkip), 0.25f);
 		}
 
-		private void EnsureKeysExist()
+		private void Update()
 		{
-			if (!PlayerPrefs.HasKey(KEY_TOTAL_SCORE))
-			{
-				PlayerPrefs.SetInt(KEY_TOTAL_SCORE, 0);
-			}
+			if (!_skipEnabled) { return; }
 
+			if (Input.touchCount > 0 || Input.anyKeyDown)
+			{
+				GetComponent<SceneLoader>().LoadSelectedScene();
+			}
+		}
+
+		private static void EnsureKeysExist(Unlocks unlocks)
+		{
 			foreach (var level in unlocks.Levels)
 			{
 				if (PlayerPrefs.HasKey(level.name + KEY_STORY_PLAYED))
@@ -54,10 +46,9 @@ namespace Owls.Levels
 			}
 		}
 
-		private bool CurrentLevelStoryPlayed(int totalScore, out GameObject currentStory)
+		private GameObject CurrentLevelStoryPlayed(int totalScore)
 		{
-			currentStory = null;
-			bool hasUnplayedStory = false;
+			GameObject currentStory = null;
 
 			foreach (var level in unlocks.Levels)
 			{
@@ -68,17 +59,39 @@ namespace Owls.Levels
 				{
 					int currentIndex = unlocks.Levels.IndexOf(level);
 					currentStory = transform.GetChild(currentIndex).gameObject;
+					break;
+				}
+			}
+
+			return currentStory;
+		}
+
+		private void EnableSkip()
+		{
+			_skipEnabled = true;
+		}
+
+		public static bool HasNewStory()
+		{			
+			var unlocks = Resources.Load("Unlocks", typeof(Unlocks)) as Unlocks;
+			EnsureKeysExist(unlocks);
+			int totalScore = PlayerPrefs.GetInt(KEY_TOTAL_SCORE);
+			bool hasUnplayedStory = false;
+
+			foreach (var level in unlocks.Levels)
+			{
+				int storyStatus = PlayerPrefs.GetInt(level.name + KEY_STORY_PLAYED);
+				bool levelStoryPlayed = storyStatus == 1 ? true : false;
+
+				if (totalScore >= level.scoreToUnlock && !levelStoryPlayed)
+				{
+					int currentIndex = unlocks.Levels.IndexOf(level);
 					hasUnplayedStory = true;
 					break;
 				}
 			}
 
 			return hasUnplayedStory;
-		}
-
-		private void LoadGameScene()
-		{
-			_loader.LoadSelectedScene();
 		}
 	}
 }
