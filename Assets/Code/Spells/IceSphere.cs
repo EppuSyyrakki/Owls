@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Owls.Birds;
 
 namespace Owls.Spells
 {
@@ -20,6 +21,9 @@ namespace Owls.Spells
 
 		[SerializeField]
 		private float killDelay = 0.25f;
+
+		[SerializeField]
+		private float freezeTime = 4f;
 
 		private Vector2 _source;
 		private bool _contact = false;
@@ -61,20 +65,20 @@ namespace Owls.Spells
 
 		private void OnTriggerEnter2D(Collider2D collision)
 		{
-			if (!collision.TryGetComponent(typeof(ITargetable), out var target) 
-				|| !(target is ITargetable)) { return; }
+			if (!collision.TryGetComponent(typeof(ITargetable), out var target)) { return; }
 
-			var collisionTarget = target as ITargetable;
-
-			if (!Target.Contains(collisionTarget))
-			{
-				Target.Add(collisionTarget);
-			}
+			if (!(target is Bird bird)) { return; }
 
 			if (!_contact) 
 			{
+				bird.TargetedBySpell(info);
 				_contact = true;
 				Explode();
+			}
+			else
+			{
+				bird.FreezeForSeconds(freezeTime);
+				SpawnHitEffect(target as ITargetable);
 			}
 		}
 
@@ -82,23 +86,9 @@ namespace Owls.Spells
 		{
 			GetComponent<CircleCollider2D>().radius = info.effectRange;
 			Instantiate(explosion, transform);
-			StartCoroutine(KillTargets());
+			GetComponentInChildren<SpriteRenderer>().enabled = false;
 
 			foreach (Component c in removeOnExplosion) { Destroy(c, killDelay); }
-		}
-
-		private IEnumerator KillTargets()
-		{
-			yield return new WaitForSeconds(killDelay);
-
-			foreach (var t in Target)
-			{
-				if (!t.Transform.CompareTag(TAG_ENEMY)) { continue; }
-
-				t.TargetedBySpell(info);
-				SpawnHitEffect(t);
-				yield return new WaitForEndOfFrame();
-			}
 		}
 	}
 }

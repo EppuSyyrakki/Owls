@@ -32,6 +32,8 @@ MonoBehaviour:
   spells:
   - name: Lightning
     scoreToUnlock: 0
+  - name: IceSphere
+    scoreToUnlock: 1000
   - name: Shield
     scoreToUnlock: 2500
   - name: Timewarp

@@ -49,23 +49,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetHitEffect: []
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 91aeb902659adf6448c49727031f0d99, type: 3}
   info:
-    glyph: {fileID: 0}
-    castType: 0
+    glyph: {fileID: 11400000, guid: 1b42f65d8b4499b4f86f6dcdb1bcfc5d, type: 2}
+    castType: 2
     target: 0
-    effectRange: 0
-    effectAmount: 0
-    lifeTime: 0
+    effectRange: 3
+    effectAmount: -1
+    lifeTime: 5
     castImmediately: 0
-    manaCost: 0
+    manaCost: 0.3
   help:
-    name: 
-    text: 
-  explosion: {fileID: 0}
-  removeOnExplosion: []
+    name: Ice Sphere
+    text: 'Draw a square and tap to launch. Kills the first enemy it comes to contact
+      with and freezes others in range.
+
+
+      If it doesn''t touch any enemies,
+      it will just freeze everyone in range once it reaches the tapped position.'
+  explosion: {fileID: 6416457679666931783, guid: ea12eb043b772944ab7a5564a6a1ce25,
+    type: 3}
+  removeOnExplosion:
+  - {fileID: 622821210651431341}
+  - {fileID: 622821210441081845}
   flightSpeed: 20
   killDelay: 0.25
+  freezeTime: 4
 --- !u!58 &5727838721311079110
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -272,6 +281,18 @@ PrefabInstance:
 --- !u!4 &622821210318142567 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2928705241533194139, guid: 80b4f221d59380c43a42377849c0c4df,
+    type: 3}
+  m_PrefabInstance: {fileID: 2305963342167958524}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &622821210441081845 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2928705241645121545, guid: 80b4f221d59380c43a42377849c0c4df,
+    type: 3}
+  m_PrefabInstance: {fileID: 2305963342167958524}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &622821210651431341 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2928705241334116945, guid: 80b4f221d59380c43a42377849c0c4df,
     type: 3}
   m_PrefabInstance: {fileID: 2305963342167958524}
   m_PrefabAsset: {fileID: 0}
