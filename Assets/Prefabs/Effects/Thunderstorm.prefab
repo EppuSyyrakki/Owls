@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1943062592301201173}
   m_Layer: 0
-  m_Name: Stormcloud
+  m_Name: Thunderstorm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943062594012973131}
   serializedVersion: 8
-  lengthInSec: 3
+  lengthInSec: 5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -201,8 +201,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 150
-      minScalar: 115.74
+      scalar: 200
+      minScalar: 150
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -701,7 +701,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 23.9, y: 0.52, z: 1}
+    m_Scale: {x: 16.97, y: 0.52, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -1059,7 +1059,7 @@ ParticleSystem:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-      cycleCount: 7
+      cycleCount: 10
       repeatInterval: 0.3
       probability: 1
   SizeModule:
@@ -1396,20 +1396,20 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 0, g: 0.8125162, b: 1, a: 1}
-        key1: {r: 0, g: 0.98099947, b: 1, a: 0.25882354}
-        key2: {r: 1, g: 1, b: 1, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 0}
-        key4: {r: 0, g: 0, b: 0, a: 0}
-        key5: {r: 0, g: 0, b: 0, a: 0}
-        key6: {r: 0, g: 0, b: 0, a: 0}
+        key1: {r: 0.3042903, g: 0, b: 1, a: 0.25882354}
+        key2: {r: 0.6676779, g: 0, b: 1, a: 0}
+        key3: {r: 0, g: 0.98099947, b: 1, a: 0}
+        key4: {r: 0.6367924, g: 0.79498637, b: 1, a: 0}
+        key5: {r: 0, g: 1, b: 0.99999976, a: 0}
+        key6: {r: 1, g: 1, b: 1, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 30455
-        ctime2: 65535
-        ctime3: 0
-        ctime4: 0
-        ctime5: 0
-        ctime6: 0
+        ctime1: 16191
+        ctime2: 22552
+        ctime3: 30455
+        ctime4: 44718
+        ctime5: 52428
+        ctime6: 65535
         ctime7: 0
         atime0: 0
         atime1: 65535
@@ -1420,7 +1420,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 3
+        m_NumColorKeys: 7
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
@@ -2774,8 +2774,8 @@ ParticleSystem:
     strength:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 80
-      minScalar: 50
+      scalar: 130
+      minScalar: 120
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2931,7 +2931,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     separateAxes: 0
-    frequency: 0.5
+    frequency: 25.9
     damping: 1
     octaves: 1
     octaveMultiplier: 0.5
@@ -2940,7 +2940,7 @@ ParticleSystem:
     scrollSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.3
+      scalar: 15
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4151,7 +4151,7 @@ ParticleSystem:
     widthOverTrail:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.9
+      scalar: 3.52
       minScalar: 1
       maxCurve:
         serializedVersion: 2
