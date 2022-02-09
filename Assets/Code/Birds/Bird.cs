@@ -68,7 +68,7 @@ namespace Owls.Birds
 		private bool _paused = false;
 		private float _animationSpeed = 0;
 
-		public bool FlightInterrupted { private get; set; } = false;
+		public bool FlightInterrupted { get; set; } = false;
 		public bool IsAlive { get; private set; } = true;
 		public Transform Transform => transform;
 		public float FlightSpeed => flightSpeed;
@@ -238,6 +238,8 @@ namespace Owls.Birds
 
 		private void Attack()
 		{
+			if (FlightInterrupted) { return; }
+
 			var time = _t * attackSpeed * 0.1f;
 			var self = transform.position;
 			var player = _player.position;
@@ -308,6 +310,17 @@ namespace Owls.Birds
 		{
 			_state = State.Saved;
 			_birdHouse = _spawner.BirdHouse;			
+		}
+
+		public void FreezeForSeconds(float time)
+		{
+			FlightInterrupted = true;
+			Invoke(nameof(UnFreeze), time);
+		}
+
+		private void UnFreeze()
+		{
+			FlightInterrupted = false;
 		}
 	}
 }

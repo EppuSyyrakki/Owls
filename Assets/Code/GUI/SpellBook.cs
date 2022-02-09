@@ -1,7 +1,5 @@
 ﻿using Owls.Spells;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace Owls.GUI
@@ -9,6 +7,7 @@ namespace Owls.GUI
 	public class SpellBook : MonoBehaviour
 	{
 		private const string TAG_DELIVERY = "SpellDelivery";
+		private const string KEY_TOTAL_SCORE = "TotalScore";
 
 		[SerializeField]
 		private SpellSlot spellSlotPrefab = null;
@@ -71,6 +70,11 @@ namespace Owls.GUI
 
 		private static void EnsureKeysExist(List<Spell> spells)
 		{
+			if (!PlayerPrefs.HasKey(KEY_TOTAL_SCORE))
+			{
+				PlayerPrefs.SetInt(KEY_TOTAL_SCORE, 0);
+			}
+
 			foreach (var s in spells)
 			{
 				if (PlayerPrefs.HasKey(s.name)) { continue; }

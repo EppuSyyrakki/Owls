@@ -132,7 +132,7 @@ MonoBehaviour:
   threshold: 0.09
   matchingMethod: 3
   generator: 0
-  alpha: 0.1
+  alpha: 0.072
   sf: 1
   OnGlyphCast:
     m_PersistentCalls:

@@ -25,7 +25,9 @@ namespace Owls.Player
 
 		public bool Regenerating { private get; set; } = true;
 		public float MaxHealth { get; private set; }
+		public float CurrentHealth => health;
 		public float MaxMana { get; private set; }
+		public float CurrentMana => mana;
 		public bool IsAlive { get; private set; } = true;
 		public Transform Transform => transform;
 
