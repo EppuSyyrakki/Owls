@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetHitEffect:
   - {fileID: 1692699876276152717, guid: d06f11a10e114de4b8a0fa9e48cc0f3a, type: 3}
+  - {fileID: 4741508095253339141, guid: f5ec8cfd9b871a249bf0dd915e17bbe4, type: 3}
   icon: {fileID: 21300000, guid: 91aeb902659adf6448c49727031f0d99, type: 3}
   info:
     glyph: {fileID: 11400000, guid: 1b42f65d8b4499b4f86f6dcdb1bcfc5d, type: 2}
@@ -59,7 +60,7 @@ MonoBehaviour:
     effectAmount: -1
     lifeTime: 3
     castImmediately: 0
-    manaCost: 0.3
+    manaCost: 0.2
   help:
     name: Ice Sphere
     text: 'Draw a square and tap to launch. Kills the first enemy it comes to contact
@@ -68,7 +69,7 @@ MonoBehaviour:
 
       If it doesn''t touch any enemies,
       it will just freeze everyone in range once it reaches the tapped position.'
-  explosion: {fileID: 6416457679666931783, guid: ea12eb043b772944ab7a5564a6a1ce25,
+  explosion: {fileID: 3560195703020440616, guid: 6e70833458019c24c8ee9831f93bd4e8,
     type: 3}
   removeOnExplosion:
   - {fileID: 622821210651431341}
@@ -126,7 +127,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2044315160375938698, guid: df6ee81803c23814cad17da9b6e6ec14,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 415abe74dadd8dc4bab6859a0502c02e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c779e868113ec954a85f09833f47254c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
