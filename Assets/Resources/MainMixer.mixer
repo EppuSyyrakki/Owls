@@ -37,6 +37,8 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: eccdeace762f776499914b241cb2d195
     name: MusicVolume
+  - guid: 05a8d8ba88279e447ac5fb494b9887e6
+    name: MusicPitch
   - guid: 78fe53c794342054ea084f1eff035e47
     name: FxVolume
   m_AudioMixerGroupViews:
@@ -92,8 +94,10 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 99f04d5352ddf8a49ab42ef68b7d8ad4
   m_FloatValues:
+    a7414fe482431e141b8f494999daf2a7: 1
+    ea09dea5c63bd3f4ead6e8e0a2bb28ef: 1
     04f50b7bc11f68e4d98dc2f3676c4f63: -1.5191216
-    eccdeace762f776499914b241cb2d195: -2.2889833
+    eccdeace762f776499914b241cb2d195: -1.761301
   m_TransitionOverrides: {}
 --- !u!244 &1293815042204270321
 AudioMixerEffectController:
