@@ -36,6 +36,8 @@ MonoBehaviour:
     scoreToUnlock: 1000
   - name: Shield
     scoreToUnlock: 2500
+  - name: Heal
+    scoreToUnlock: 4000
   - name: Timewarp
     scoreToUnlock: 6000
   - name: Fireball
