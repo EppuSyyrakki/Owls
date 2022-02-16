@@ -527,6 +527,11 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 0.91
       objectReference: {fileID: 0}
+    - target: {fileID: 116987458297955830, guid: 3b3518388e9a5374ebce44248a8c3aef,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f3d51cad6490a6d4fafd8702fcd481c3, type: 3}
     - target: {fileID: 1404590034696384787, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
       propertyPath: m_Sprite
