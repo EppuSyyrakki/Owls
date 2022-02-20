@@ -12,7 +12,9 @@ namespace Owls.GUI
 		MainMenu = 1,
 		Game = 2,
 		SpellBook = 3,
-		LevelStories = 4
+		LevelStories = 4,
+		Prologue = 5,
+		Epilogue = 6
 	}
 
     public class SceneLoader : MonoBehaviour

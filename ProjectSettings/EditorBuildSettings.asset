@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelStories.unity
     guid: 259219b4be54882478446d24b17e8a51
+  - enabled: 1
+    path: Assets/Scenes/Prologue.unity
+    guid: 334021896dcc07a40af818ed5c0ffcf9
+  - enabled: 1
+    path: Assets/Scenes/Epilogue.unity
+    guid: 1b524dacc1669ae4ca57293be3a600fe
   m_configObjects: {}
