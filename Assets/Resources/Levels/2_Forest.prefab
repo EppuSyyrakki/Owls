@@ -333,13 +333,13 @@ PrefabInstance:
         type: 3}
       propertyPath: enemies.Array.data[0]
       value: 
-      objectReference: {fileID: 931417533400801452, guid: 04656d2fc8345c641981c3bbd5e00460,
+      objectReference: {fileID: 781247950252735246, guid: 380edf0971b533e4d94fd2ac2dcb1d98,
         type: 3}
     - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
       propertyPath: enemies.Array.data[1]
       value: 
-      objectReference: {fileID: 931417533400801452, guid: c0f443f1211fd4f4898316bf507fcf91,
+      objectReference: {fileID: 2315952709985657436, guid: e5b887ed106470b47a83a356d484a80c,
         type: 3}
     - target: {fileID: 6809343582572245131, guid: 3b3518388e9a5374ebce44248a8c3aef,
         type: 3}
