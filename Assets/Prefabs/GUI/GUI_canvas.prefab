@@ -975,7 +975,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8317953438635730584}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Owls.GUI.LevelCompleteButton, Assembly-CSharp
         m_MethodName: ContinueToNextScene
         m_Mode: 1
@@ -4529,7 +4529,7 @@ MonoBehaviour:
     color: {r: 1, g: 0.75516963, b: 0.109803915, a: 1}
     size: 1.5
   finalScoreSpeed: 0.06
-  setScoreTo: 81000
+  setScoreTo: 0
 --- !u!222 &538344654383014283
 CanvasRenderer:
   m_ObjectHideFlags: 0

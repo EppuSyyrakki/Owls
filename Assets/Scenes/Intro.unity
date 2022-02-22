@@ -5536,6 +5536,8 @@ GameObject:
   - component: {fileID: 570499214}
   - component: {fileID: 570499215}
   - component: {fileID: 570499216}
+  - component: {fileID: 570499218}
+  - component: {fileID: 570499217}
   m_Layer: 0
   m_Name: IntroTimeline
   m_TagString: Untagged
@@ -5613,6 +5615,35 @@ MonoBehaviour:
   tapScreenToLoad: 1
   sceneToLoad: 1
   additiveLoad: 0
+--- !u!114 &570499217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570499213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 678a695922d4fbe4588c6babf6fb28b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fxGroup: {fileID: 2044315160375938698, guid: df6ee81803c23814cad17da9b6e6ec14, type: 2}
+  musicGroup: {fileID: -877854833507642867, guid: df6ee81803c23814cad17da9b6e6ec14,
+    type: 2}
+  defaultFxVolume: 0
+  defaultMusicVolume: -5
+--- !u!114 &570499218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570499213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37504c66f827f4743b83fe32fd174cec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &608770967
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -49,7 +49,7 @@ namespace Owls.Levels
 
 			if (GUILayout.Button("Reset story progress"))
 			{
-				var unlocks = Resources.Load("", typeof(Unlocks)) as Unlocks;
+				var unlocks = Resources.Load("Unlocks", typeof(Unlocks)) as Unlocks;
 
 				foreach (var level in unlocks.Levels)
 				{
