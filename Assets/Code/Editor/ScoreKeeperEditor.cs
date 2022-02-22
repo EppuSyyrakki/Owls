@@ -13,6 +13,7 @@ namespace Owls.Levels
 	{
 		private const string KEY_TOTAL_SCORE = "TotalScore";
 		private const string KEY_STORY_PLAYED = "_story_played";
+		private const string KEY_PROLOGUE_PLAYED = "ProloguePlayed";
 		private ScoreKeeper _keeper;
 
 		private void Awake()
@@ -54,6 +55,8 @@ namespace Owls.Levels
 				{
 					PlayerPrefs.SetInt(level.name + KEY_STORY_PLAYED, 0);
 				}
+
+				PlayerPrefs.SetInt(KEY_PROLOGUE_PLAYED, 0);
 			}
 		}
 	}
