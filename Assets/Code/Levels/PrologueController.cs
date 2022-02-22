@@ -14,7 +14,10 @@ namespace  Owls.Levels
 
 		[SerializeField]
 		private float inputDelay = 0.5f;
-		
+
+		[SerializeField]
+		private bool isEpilogue = false;
+	
 		private void Start()
 		{
 			_loader = GetComponent<SceneLoader>();
@@ -38,9 +41,9 @@ namespace  Owls.Levels
 
 		public void LoadNextScene()
 		{
-			if (_returnToMenu)
+			if (_returnToMenu || isEpilogue)
 			{
-				_loader.LoadScene(Scenes.MainMenu, false);				
+				_loader.LoadScene(Scenes.MainMenu, false);	
 			}
 			else
 			{

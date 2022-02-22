@@ -23,6 +23,7 @@ TagManager:
   - SpellHelp
   - Birdy
   - BirdHouse
+  - ScoreKeeper
   layers:
   - Default
   - TransparentFX

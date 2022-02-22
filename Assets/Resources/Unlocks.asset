@@ -28,7 +28,7 @@ MonoBehaviour:
   - name: 7_Lanterns
     scoreToUnlock: 60000
   - name: 8_OwlCastle
-    scoreToUnlock: 70000
+    scoreToUnlock: 80000
   spells:
   - name: Lightning
     scoreToUnlock: 0

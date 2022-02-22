@@ -66,8 +66,11 @@ namespace Owls.GUI
 		private LevelUnlocker _levelUnlocker;
 		private float _comboLevel = 1;
 		private bool _countPaused = false;
-
+		private bool _currentLevelIsFinal = false;
+		
 		public int setScoreTo = 0;
+
+		public bool GameCompleted { get; private set; }
 
 		private void Awake()
 		{
@@ -90,6 +93,7 @@ namespace Owls.GUI
 			var loader = GameObject.FindGameObjectWithTag(TAG_LOADER).GetComponent<LevelLoader>();
 			_maxBirds = loader.CurrentLevel.MaxBirds;
 			_levelUnlocker = new LevelUnlocker(loader.GetCurrentLevelScore());
+			_currentLevelIsFinal = loader.CurrentLevel.IsFinalLevel;
 			UpdateTexts();
 		}
 
@@ -152,12 +156,15 @@ namespace Owls.GUI
 
 		private IEnumerator ScoreCount()
 		{
+			if (_currentLevelIsFinal) { GameCompleted = true; }
+
 			SpellUnlocker spellUnlocker = new SpellUnlocker();
 			int totalScore = PlayerPrefs.GetInt(KEY_TOTAL_SCORE);
 			bool levelUnlocked = false;
 			float bonusMulti = _currentBirds * 0.1f + 1f;
 			float score = totalScore + (_currentScore * bonusMulti);
-			SaveScore((int)score);
+			SaveScore((int)score);			
+
 			yield return new WaitForSeconds(2f);
 			var s = string.Format("Score: {0}\n Birdy Bonus: {1}x\n Total Score: {2}",
 				_currentScore, bonusMulti, totalScore);
@@ -200,9 +207,7 @@ namespace Owls.GUI
 					_currentScore, bonusMulti, totalScore);
 				finalScoreDisplay.text = s;
 				UpdateTexts();
-			}
-
-			SaveScore(totalScore);
+			}			
 		}
 
 		private void DisplayUnlockedLevel(string name)

@@ -10499,6 +10499,8 @@ GameObject:
   - component: {fileID: 613978661}
   - component: {fileID: 613978662}
   - component: {fileID: 613978663}
+  - component: {fileID: 613978665}
+  - component: {fileID: 613978664}
   m_Layer: 0
   m_Name: Ending_Sceneries
   m_TagString: Untagged
@@ -10705,6 +10707,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &613978664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613978658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76920fd6fb9fc7d479e6bf28dabf33c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tapScreenToLoad: 0
+  sceneToLoad: 0
+  additiveLoad: 0
+--- !u!114 &613978665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613978658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1e24b1971aa28244a1f8db03f752894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputDelay: 0.5
+  isEpilogue: 1
 --- !u!1 &641709369
 GameObject:
   m_ObjectHideFlags: 0
