@@ -5631,7 +5631,7 @@ MonoBehaviour:
   musicGroup: {fileID: -877854833507642867, guid: df6ee81803c23814cad17da9b6e6ec14,
     type: 2}
   defaultFxVolume: 0
-  defaultMusicVolume: -5
+  defaultMusicVolume: -3
 --- !u!114 &570499218
 MonoBehaviour:
   m_ObjectHideFlags: 0
