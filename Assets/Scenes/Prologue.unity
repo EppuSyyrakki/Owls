@@ -192,7 +192,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -415,7 +415,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -569,7 +569,8 @@ AudioSource:
   m_GameObject: {fileID: 449192658}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -877854833507642867, guid: df6ee81803c23814cad17da9b6e6ec14,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: e654418443e3220458158c26c719cadf, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1252,7 +1253,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1998,7 +1999,8 @@ AudioSource:
   m_GameObject: {fileID: 1904301185}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2044315160375938698, guid: df6ee81803c23814cad17da9b6e6ec14,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: f4784c95dae6d3f4dbfa0a799bf47f63, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -2424,7 +2426,8 @@ AudioSource:
   m_GameObject: {fileID: 1972799469}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -877854833507642867, guid: df6ee81803c23814cad17da9b6e6ec14,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 86837f3633aa2cc43ba3f0437987e7e9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.197
@@ -2524,6 +2527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputDelay: 0.5
+  isEpilogue: 0
 --- !u!114 &1972799478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2607,7 +2611,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2761,7 +2765,8 @@ AudioSource:
   m_GameObject: {fileID: 2143511877}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2044315160375938698, guid: df6ee81803c23814cad17da9b6e6ec14,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: b6ef0c79f1d069a4293e15bc00aa2973, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.24

@@ -3511,8 +3511,6 @@ GameObject:
   - component: {fileID: 3575948621005050173}
   - component: {fileID: 4595312341376972292}
   - component: {fileID: 2036961080671251539}
-  - component: {fileID: 954079307}
-  - component: {fileID: 2928311331855459510}
   m_Layer: 5
   m_Name: GUI_canvas
   m_TagString: Untagged
@@ -3659,36 +3657,6 @@ MonoBehaviour:
   tapScreenToLoad: 0
   sceneToLoad: 1
   additiveLoad: 0
---- !u!114 &954079307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6526570056197971802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b6c6832e7c977840986ae332d1e70b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedFactor: 0.1
-  speedThreshold: 1.05
-  timeThreshold: 20
---- !u!114 &2928311331855459510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6526570056197971802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b6c6832e7c977840986ae332d1e70b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedFactor: 0.1
-  speedThreshold: 1.05
-  timeThreshold: 20
 --- !u!1 &6526570057173180516
 GameObject:
   m_ObjectHideFlags: 0

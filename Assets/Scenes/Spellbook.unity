@@ -515,6 +515,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1415637592, guid: 388f82d677f6b9b458692da1773f3bba, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 2044315160375938698, guid: df6ee81803c23814cad17da9b6e6ec14,
+        type: 2}
     - target: {fileID: 2627494518817512934, guid: 388f82d677f6b9b458692da1773f3bba,
         type: 3}
       propertyPath: m_AnchorMax.y
