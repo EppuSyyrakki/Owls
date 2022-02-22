@@ -16,31 +16,31 @@ MonoBehaviour:
   - name: 1_Countryside
     scoreToUnlock: 0
   - name: 2_Forest
-    scoreToUnlock: 5000
+    scoreToUnlock: 8000
   - name: 3_Swamp
-    scoreToUnlock: 10000
+    scoreToUnlock: 16000
   - name: 4_OwlCave
-    scoreToUnlock: 15000
+    scoreToUnlock: 26000
   - name: 5_Graveyard
-    scoreToUnlock: 20000
+    scoreToUnlock: 36000
   - name: 6_WinterRuins
-    scoreToUnlock: 25000
+    scoreToUnlock: 48000
   - name: 7_Lanterns
-    scoreToUnlock: 30000
+    scoreToUnlock: 60000
   - name: 8_OwlCastle
-    scoreToUnlock: 35000
+    scoreToUnlock: 70000
   spells:
   - name: Lightning
     scoreToUnlock: 0
   - name: Shield
-    scoreToUnlock: 2500
-  - name: Heal
-    scoreToUnlock: 4000
-  - name: IceSphere
-    scoreToUnlock: 5000
-  - name: Timewarp
     scoreToUnlock: 6000
+  - name: Heal
+    scoreToUnlock: 12000
+  - name: IceSphere
+    scoreToUnlock: 18000
+  - name: Timewarp
+    scoreToUnlock: 30000
   - name: Fireball
-    scoreToUnlock: 8000
+    scoreToUnlock: 40000
   - name: Vortex
-    scoreToUnlock: 12500
+    scoreToUnlock: 50000
