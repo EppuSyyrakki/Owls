@@ -34,9 +34,9 @@ MonoBehaviour:
     scoreToUnlock: 0
   - name: Shield
     scoreToUnlock: 6000
-  - name: Heal
-    scoreToUnlock: 12000
   - name: IceSphere
+    scoreToUnlock: 12000
+  - name: Heal
     scoreToUnlock: 18000
   - name: Timewarp
     scoreToUnlock: 30000
