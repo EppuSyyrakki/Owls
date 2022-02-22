@@ -27,9 +27,13 @@ namespace Owls.Levels
 		[SerializeField]
 		private int maxBirds = 6;
 
+		[SerializeField]
+		private bool finalLevel = false;
+
 		public SceneryController Scenery => GetComponent<SceneryController>();
 		public int LevelTime => levelTime;
 		public int MaxBirds => maxBirds;
+		public bool IsFinalLevel => finalLevel;
 
 		public string RandomLevelName 
 		{ 

@@ -863,6 +863,7 @@ GameObject:
   - component: {fileID: 2819707620151630545}
   - component: {fileID: 5766266884383187303}
   - component: {fileID: 45407108580973649}
+  - component: {fileID: 8317953438635730584}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -974,18 +975,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5414450285038213363}
-        m_TargetAssemblyTypeName: Owls.GUI.ScoreKeeper, Assembly-CSharp
-        m_MethodName: CheckAllNewSpellUnlocks
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 45407108580973649}
         m_TargetAssemblyTypeName: Owls.GUI.SceneLoader, Assembly-CSharp
         m_MethodName: LoadSelectedScene
@@ -1013,6 +1002,19 @@ MonoBehaviour:
   tapScreenToLoad: 0
   sceneToLoad: 3
   additiveLoad: 0
+--- !u!114 &8317953438635730584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53716774240560608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddac95069b7d8524a848c9fc72e3ca52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreKeeper: {fileID: 5414450285038213363}
 --- !u!1 &67199676597373975
 GameObject:
   m_ObjectHideFlags: 0
@@ -3510,6 +3512,7 @@ GameObject:
   - component: {fileID: 4595312341376972292}
   - component: {fileID: 2036961080671251539}
   - component: {fileID: 954079307}
+  - component: {fileID: 2928311331855459510}
   m_Layer: 5
   m_Name: GUI_canvas
   m_TagString: Untagged
@@ -3657,6 +3660,21 @@ MonoBehaviour:
   sceneToLoad: 1
   additiveLoad: 0
 --- !u!114 &954079307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6526570056197971802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6c6832e7c977840986ae332d1e70b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedFactor: 0.1
+  speedThreshold: 1.05
+  timeThreshold: 20
+--- !u!114 &2928311331855459510
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4483,7 +4501,7 @@ GameObject:
   - component: {fileID: 6009373707593770161}
   m_Layer: 0
   m_Name: ScoreKeeper
-  m_TagString: Untagged
+  m_TagString: ScoreKeeper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4543,7 +4561,7 @@ MonoBehaviour:
     color: {r: 1, g: 0.75516963, b: 0.109803915, a: 1}
     size: 1.5
   finalScoreSpeed: 0.06
-  setScoreTo: 0
+  setScoreTo: 15000
 --- !u!222 &538344654383014283
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4858,7 +4876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2377830909454174772
 RectTransform:
   m_ObjectHideFlags: 0
