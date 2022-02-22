@@ -37,7 +37,6 @@ namespace Owls.GUI
 
         public void LoadSelectedScene()
 		{
-			Debug.Log("Loading selected scene: " + sceneToLoad.ToString());
 			var mode = additiveLoad ? LoadSceneMode.Additive : LoadSceneMode.Single;
 			SceneManager.LoadScene((int)sceneToLoad, mode);
 		}
