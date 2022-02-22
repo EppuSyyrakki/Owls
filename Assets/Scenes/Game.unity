@@ -132,29 +132,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
-        type: 3}
-      propertyPath: getSpellsFromBook
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
-        type: 3}
-      propertyPath: selectedSpells.Array.data[1]
-      value: 
-      objectReference: {fileID: -7387057605203109015, guid: 9bbcaca8d41a7fa4da98b40086b8cba4,
-        type: 3}
-    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
-        type: 3}
-      propertyPath: selectedSpells.Array.data[2]
-      value: 
-      objectReference: {fileID: 3756382064644079168, guid: ddd0869fc38a67c4297ff39bbb736e01,
-        type: 3}
-    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
-        type: 3}
-      propertyPath: selectedSpells.Array.data[4]
-      value: 
-      objectReference: {fileID: 6230330129964245280, guid: 73cae8b289ab5fd449166a9ea6797f49,
-        type: 3}
     - target: {fileID: 3918892694000362373, guid: a1063e6b4fbee3647866567f171f2752,
         type: 3}
       propertyPath: m_Name
@@ -377,6 +354,11 @@ PrefabInstance:
         type: 3}
       propertyPath: defaultMusicVolume
       value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5414450285038213363, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: setScoreTo
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6526570056197971798, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
         type: 3}
