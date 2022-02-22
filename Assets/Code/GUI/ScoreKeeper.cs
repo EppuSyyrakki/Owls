@@ -168,7 +168,7 @@ namespace Owls.GUI
 			yield return new WaitForSeconds(2f);
 			var s = string.Format("Score: {0}\n Birdy Bonus: {1}x\n Total Score: {2}",
 				_currentScore, bonusMulti, totalScore);
-			finalScoreDisplay.text = s + totalScore.ToString();
+			finalScoreDisplay.text = s;
 			yield return new WaitForSeconds(2f);
 
 			while (_currentScore > 0)

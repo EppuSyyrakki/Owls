@@ -51,13 +51,13 @@ MonoBehaviour:
   swipeAngleMax: 15
   strokeTreshold: 20
   debuggingInfo: 0
-  getSpellsFromBook: 0
+  getSpellsFromBook: 1
   slotTemplate: {fileID: 8826586467837093875, guid: aa0cfc96fa9096241b27b51a844f1da7,
     type: 3}
   selectedSpells:
   - {fileID: 8194657820882680979, guid: 885f1776901c9ea48a1decba156d39fe, type: 3}
-  - {fileID: -4192314238271592117, guid: 95c59d8bfdc47fa4bb9f137e91c911aa, type: 3}
-  - {fileID: 6690252038896262295, guid: 06ec41015b3008544bba311c15dc033d, type: 3}
+  - {fileID: -7387057605203109015, guid: 9bbcaca8d41a7fa4da98b40086b8cba4, type: 3}
+  - {fileID: 3756382064644079168, guid: ddd0869fc38a67c4297ff39bbb736e01, type: 3}
   - {fileID: 3524960558214369749, guid: 581da45a891f23e4fb260e9922050488, type: 3}
   - {fileID: 6230330129964245280, guid: 73cae8b289ab5fd449166a9ea6797f49, type: 3}
 --- !u!1 &3918892694373735485

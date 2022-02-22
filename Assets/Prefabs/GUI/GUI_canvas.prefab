@@ -975,9 +975,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 45407108580973649}
-        m_TargetAssemblyTypeName: Owls.GUI.SceneLoader, Assembly-CSharp
-        m_MethodName: LoadSelectedScene
+      - m_Target: {fileID: 8317953438635730584}
+        m_TargetAssemblyTypeName: Owls.GUI.LevelCompleteButton, Assembly-CSharp
+        m_MethodName: ContinueToNextScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4561,7 +4561,7 @@ MonoBehaviour:
     color: {r: 1, g: 0.75516963, b: 0.109803915, a: 1}
     size: 1.5
   finalScoreSpeed: 0.06
-  setScoreTo: 15000
+  setScoreTo: 81000
 --- !u!222 &538344654383014283
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4876,7 +4876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2377830909454174772
 RectTransform:
   m_ObjectHideFlags: 0
