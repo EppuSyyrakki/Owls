@@ -48,37 +48,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d750d8215668604280b1b14429991e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetHitEffect:
-  - {fileID: 1692699876276152717, guid: d06f11a10e114de4b8a0fa9e48cc0f3a, type: 3}
-  - {fileID: 4741508095253339141, guid: f5ec8cfd9b871a249bf0dd915e17bbe4, type: 3}
-  icon: {fileID: 21300000, guid: 91aeb902659adf6448c49727031f0d99, type: 3}
+  targetHitEffect: []
+  icon: {fileID: 0}
   info:
-    glyph: {fileID: 11400000, guid: 1b42f65d8b4499b4f86f6dcdb1bcfc5d, type: 2}
-    castType: 2
+    glyph: {fileID: 0}
+    castType: 0
     target: 0
-    effectRange: 3
-    effectAmount: -1
-    lifeTime: 3
+    effectRange: 0
+    effectAmount: 0
+    lifeTime: 0
     castImmediately: 0
-    manaCost: 0.2
+    manaCost: 0
   help:
-    name: Ice Sphere
-    text: 'Draw a square and tap to launch. Kills the first enemy it comes to contact
-      with and freezes others in range.
-
-
-      If it doesn''t touch any enemies,
-      it will just freeze everyone in range once it reaches the tapped position.'
-  explosion: {fileID: 3560195703020440616, guid: 6e70833458019c24c8ee9831f93bd4e8,
-    type: 3}
-  removeOnExplosion:
-  - {fileID: 622821210651431341}
-  - {fileID: 622821210441081845}
+    name: 
+    text: Draw a wide rectangle and tap. The Ice Sphere will destroy the owl it hits
+      and freeze the owls on its radius for a short while.
+  explosion: {fileID: 0}
+  removeOnExplosion: []
   flightSpeed: 20
   killDelay: 0.25
   freezeTime: 4
-  freezeEffect: {fileID: 1692699876276152717, guid: 37551df0931755b499fc3265f68a570b,
-    type: 3}
+  freezeEffect: {fileID: 0}
 --- !u!58 &5727838721311079110
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -285,18 +275,6 @@ PrefabInstance:
 --- !u!4 &622821210318142567 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2928705241533194139, guid: 80b4f221d59380c43a42377849c0c4df,
-    type: 3}
-  m_PrefabInstance: {fileID: 2305963342167958524}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &622821210441081845 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2928705241645121545, guid: 80b4f221d59380c43a42377849c0c4df,
-    type: 3}
-  m_PrefabInstance: {fileID: 2305963342167958524}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &622821210651431341 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2928705241334116945, guid: 80b4f221d59380c43a42377849c0c4df,
     type: 3}
   m_PrefabInstance: {fileID: 2305963342167958524}
   m_PrefabAsset: {fileID: 0}
