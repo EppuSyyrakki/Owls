@@ -81,18 +81,18 @@ namespace Owls.GUI
 
 		private void LoadSpellbook()
 		{
-			_loader.LoadScene(Scenes.SpellBook, false);
+			_loader.LoadScene(Scenes.SpellBook);
 		}
 
 		public void LoadPrologue()
 		{
-			_loader.LoadScene(Scenes.Prologue, false);
+			_loader.LoadScene(Scenes.Prologue);
 		}
 
 		public void ShowPrologue()
 		{
 			DontDestroyOnLoad(this);
-			_loader.LoadScene(Scenes.Prologue, false);
+			_loader.LoadScene(Scenes.Prologue);
 			Invoke(nameof(FindController), 0.25f);
 		}
 

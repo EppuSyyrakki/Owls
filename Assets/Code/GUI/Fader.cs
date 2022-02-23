@@ -15,17 +15,16 @@ namespace Owls.GUI
 		[SerializeField]
 		private float autoFadeTime = 1f;
 
-		private Image _image = null;
+		private CanvasGroup _group = null;
 
 		private void Awake()
 		{
-			_image = GetComponent<Image>();
-			Color color = Color.black;
+			float alpha = 0;
 			
-			if (startFromBlack) { color.a = 1; }
-			else { color.a = 0; }
+			if (startFromBlack) { alpha = 1;}
 
-			_image.color = color;
+			_group = GetComponent<CanvasGroup>();
+			_group.alpha = alpha;
 		}
 
 		private void Start()
@@ -37,17 +36,15 @@ namespace Owls.GUI
 
 		private IEnumerator Fade(float from, float to, float time, float delay)
 		{
-			Color startColor = Color.black;
-			Color endColor = Color.black;
-			startColor.a = from;
-			endColor.a = to;
-			_image.color = startColor;
+			from = Mathf.Clamp01(from);
+			to = Mathf.Clamp01(to);
+			_group.alpha = from;
 			float t = 0;
 			yield return new WaitForSeconds(delay);
 
 			while (t < time)
 			{
-				_image.color = Color.Lerp(startColor, endColor, t / time);
+				_group.alpha = Mathf.Lerp(from, to, t / time);
 				yield return new WaitForEndOfFrame();
 				t += Time.deltaTime;
 			}

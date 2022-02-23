@@ -43,12 +43,12 @@ namespace  Owls.Levels
 		{
 			if (_returnToMenu || isEpilogue)
 			{
-				_loader.LoadScene(Scenes.MainMenu, false);	
+				_loader.LoadScene(Scenes.MainMenu);	
 			}
 			else
 			{
 				PlayerPrefs.SetInt(KEY_PROLOGUE_PLAYED, 1);
-				_loader.LoadScene(Scenes.SpellBook, false);
+				_loader.LoadScene(Scenes.SpellBook);
 			}
 		}
 

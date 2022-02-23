@@ -14,7 +14,7 @@ namespace Owls.GUI
 
 			if (_scoreKeeper.GameCompleted)
 			{
-				loader.LoadScene(Scenes.Epilogue, false);
+				loader.LoadScene(Scenes.Epilogue);
 			}
 			else
 			{

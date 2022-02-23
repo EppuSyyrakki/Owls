@@ -13,7 +13,7 @@ namespace Owls.Levels
 
             if (LevelStory.HasNewStory())
 			{
-                loader.LoadScene(Scenes.LevelStories, false);
+                loader.LoadScene(Scenes.LevelStories);
                 return;
 			}
 
