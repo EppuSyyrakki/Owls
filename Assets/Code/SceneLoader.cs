@@ -33,6 +33,7 @@ namespace Owls
 		private float fadeOutTime = 0.75f;
 
 		private Fader _fader = null;
+		private bool _tapped = false;
 
 		private void Awake()
 		{
@@ -44,16 +45,22 @@ namespace Owls
 		{
 			if (!tapScreenToLoad) { return; }
 
-			if (Input.touchCount > 0) { LoadSelectedScene(); }
+			if (Input.touchCount > 0 && !_tapped) 
+			{
+				_tapped = true;
+				LoadSelectedScene(); 
+			}
 		}
 
         public void LoadSelectedScene()
 		{
+			Debug.Log("Load Selected scene called: " + sceneToLoad);
 			StartCoroutine(LoadSceneInBackground((int)sceneToLoad));
 		}
 
 		public void LoadScene(Scenes scene)
 		{
+			Debug.Log("Loading scene " + scene);
 			StartCoroutine(LoadSceneInBackground((int)scene));
 		}
 

@@ -13,6 +13,7 @@ namespace Owls.Levels
 
 		private SceneLoader _loader;
 		private bool _skipEnabled = false;
+		private bool _skipped = false;
 
 		private void Awake()
 		{
@@ -27,8 +28,9 @@ namespace Owls.Levels
 		{
 			if (!_skipEnabled) { return; }
 
-			if (Input.touchCount > 0 || Input.anyKeyDown)
+			if (Input.touchCount > 0 && !_skipped)
 			{
+				_skipped = true;
 				GetComponent<SceneLoader>().LoadSelectedScene();
 			}
 		}
