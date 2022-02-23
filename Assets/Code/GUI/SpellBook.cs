@@ -35,12 +35,13 @@ namespace Owls.GUI
 
 			var deliveryObject = new GameObject(TAG_DELIVERY);
 			deliveryObject.tag = TAG_DELIVERY;
-			_delivery = deliveryObject.AddComponent(typeof(SpellDelivery)) as SpellDelivery;
-			DontDestroyOnLoad(deliveryObject);
+			_delivery = deliveryObject.AddComponent(typeof(SpellDelivery)) as SpellDelivery;			
 		}
 
 		private void Start()
 		{
+			DontDestroyOnLoad(_delivery);
+
 			foreach (var spellPair in _spells)
 			{
 				var newSlot = Instantiate(spellSlotPrefab, spellGrid);

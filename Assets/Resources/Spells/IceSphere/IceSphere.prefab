@@ -49,26 +49,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetHitEffect: []
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 91aeb902659adf6448c49727031f0d99, type: 3}
   info:
-    glyph: {fileID: 0}
-    castType: 0
+    glyph: {fileID: 11400000, guid: 1b42f65d8b4499b4f86f6dcdb1bcfc5d, type: 2}
+    castType: 2
     target: 0
-    effectRange: 0
-    effectAmount: 0
-    lifeTime: 0
+    effectRange: 3
+    effectAmount: -1
+    lifeTime: 3
     castImmediately: 0
-    manaCost: 0
+    manaCost: 0.25
   help:
-    name: 
+    name: Ice Sphere
     text: Draw a wide rectangle and tap. The Ice Sphere will destroy the owl it hits
       and freeze the owls on its radius for a short while.
-  explosion: {fileID: 0}
+  explosion: {fileID: 3560195703020440616, guid: 6e70833458019c24c8ee9831f93bd4e8,
+    type: 3}
   removeOnExplosion: []
   flightSpeed: 20
   killDelay: 0.25
   freezeTime: 4
-  freezeEffect: {fileID: 0}
+  freezeEffect: {fileID: 1692699876276152717, guid: 37551df0931755b499fc3265f68a570b,
+    type: 3}
 --- !u!58 &5727838721311079110
 CircleCollider2D:
   m_ObjectHideFlags: 0

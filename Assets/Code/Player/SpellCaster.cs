@@ -4,7 +4,6 @@ using UnityEngine;
 using System.Collections.Generic;
 using Owls.Spells;
 using AdVd.GlyphRecognition;
-using UnityEngine.UI;
 using Owls.GUI;
 using Owls.Birds;
 
@@ -81,6 +80,7 @@ namespace Owls.Player
 		private void OnDisable()
 		{
 			_timeKeeper.TimeEvent -= TimeEventHandler;
+			
 			if (_delivery != null) { Destroy(_delivery.gameObject); }
 		}
 
