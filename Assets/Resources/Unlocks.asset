@@ -24,20 +24,20 @@ MonoBehaviour:
   - name: 5_Graveyard
     scoreToUnlock: 36000
   - name: 6_WinterRuins
-    scoreToUnlock: 48000
+    scoreToUnlock: 50000
   - name: 7_Lanterns
-    scoreToUnlock: 60000
+    scoreToUnlock: 65000
   - name: 8_OwlCastle
-    scoreToUnlock: 80000
+    scoreToUnlock: 85000
   spells:
   - name: Lightning
     scoreToUnlock: 0
   - name: Shield
-    scoreToUnlock: 6000
-  - name: Heal
-    scoreToUnlock: 12000
+    scoreToUnlock: 8000
   - name: IceSphere
-    scoreToUnlock: 18000
+    scoreToUnlock: 14000
+  - name: Heal
+    scoreToUnlock: 20000
   - name: Timewarp
     scoreToUnlock: 30000
   - name: Fireball
