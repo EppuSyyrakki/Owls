@@ -252,12 +252,8 @@ namespace Owls.Birds
 		{
 			if (FlightInterrupted) { return; }
 
-			var time = _t * attackSpeed * 0.1f;
-			var self = transform.position;
-			var position = _attackTarget;
-			var target = transform.TransformPoint((position - self).normalized);
-			transform.position = Vector3.Lerp(_path3[_currentPathIndex], target, time);
-			_t += Time.deltaTime;
+			float maxDelta = attackSpeed * Time.deltaTime;
+			transform.position = Vector3.MoveTowards(transform.position, _attackTarget, maxDelta);
 
 			if (_subverted && transform.position == _path3[0])
 			{
@@ -334,10 +330,12 @@ namespace Owls.Birds
 			FlightSpeed = flightSpeed * multiplier;
 		}
 
-		public void Subvert()
+		public void Subvert(Info info)
 		{
 			_subverted = true;
-			GetComponent<Rigidbody2D>().useFullKinematicContacts = true;
+			Destroy(GetComponent<PolygonCollider2D>());
+			CircleCollider2D newCollider = gameObject.AddComponent(typeof(CircleCollider2D)) as CircleCollider2D;
+			newCollider.radius = info.effectRange;
 			GetComponent<SpriteRenderer>().flipX = true;
 			_attackTarget = _path3[0];
 			_state = State.Attacking;

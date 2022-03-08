@@ -177,11 +177,14 @@ namespace Owls.Player
 			if (_currentSpell != null)
 			{
 				if (_currentSpell.info.castType == CastType.Tap 
-					&& _currentSpell.info.target == CastTarget.Touched
-					&& DetectOwlAtTouch())
+					&& _currentSpell.info.target == CastTarget.Touched)
 				{
-					_castCurrent = true;
-					StopPointer();
+					if (DetectOwlAtTouch())
+					{
+						_castCurrent = true;
+						StopPointer();
+					}
+					
 					return;
 				}
 

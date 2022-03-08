@@ -51,7 +51,6 @@ MonoBehaviour:
   targetHitEffect:
   - {fileID: 4741508095253339141, guid: f5ec8cfd9b871a249bf0dd915e17bbe4, type: 3}
   - {fileID: 7324951023830387243, guid: d452b5d062bfbc94b948d57eda1c640b, type: 3}
-  scoreToUnlock: 2000
   icon: {fileID: 21300000, guid: 4e491b50a7b28bd46a8c74876ff4b0a5, type: 3}
   info:
     glyph: {fileID: 11400000, guid: 54c8a110abd73dc48b3d3c4105624156, type: 2}
@@ -103,7 +102,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 49634239181635491}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0

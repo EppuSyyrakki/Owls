@@ -15,7 +15,7 @@ namespace Owls.Spells
 			// base.init should be run before doing Init logic for this class.
 			base.Init(stroke);
 			Bird b = Target[0] as Bird;
-			b.Subvert();
+			b.Subvert(info);
 			SpawnHitEffect(b.transform);
 		}
 

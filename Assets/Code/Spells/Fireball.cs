@@ -59,9 +59,9 @@ namespace Owls.Spells
 			}
 		}
 
-		private void OnTriggerEnter2D(Collider2D collision)
+		private void OnCollisionEnter2D(Collision2D collision)
 		{
-			if (!collision.TryGetComponent(typeof(ITargetable), out var target) 
+			if (!collision.gameObject.TryGetComponent(typeof(ITargetable), out var target) 
 				|| !(target is ITargetable)) { return; }
 
 			var collisionTarget = target as ITargetable;

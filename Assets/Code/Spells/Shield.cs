@@ -55,11 +55,11 @@ namespace Owls.Spells
 			_badger.Regenerating = true;
 		}
 
-		private void OnTriggerEnter2D(Collider2D col)
+		private void OnCollisionEnter2D(Collision2D col)
 		{
-			if (!col.CompareTag(TAG_ENEMY)) { return; }
+			if (!col.gameObject.CompareTag(TAG_ENEMY)) { return; }
 
-			var target = col.GetComponent<Bird>();
+			var target = col.gameObject.GetComponent<Bird>();
 			SpawnHitEffect(target);
 			StartCoroutine(FlashShield());
 			target.KillDirect();	
