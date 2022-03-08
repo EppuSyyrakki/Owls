@@ -176,6 +176,15 @@ namespace Owls.Player
 
 			if (_currentSpell != null)
 			{
+				if (_currentSpell.info.castType == CastType.Tap 
+					&& _currentSpell.info.target == CastTarget.Touched
+					&& DetectOwlAtTouch())
+				{
+					_castCurrent = true;
+					StopPointer();
+					return;
+				}
+
 				_castCurrent = true;
 				StopPointer();
 				return;
@@ -248,6 +257,22 @@ namespace Owls.Player
 					return;
 				}
 			}
+		}
+
+		private bool DetectOwlAtTouch()
+		{
+			var cols = Physics2D.OverlapPointAll(_stroke[_stroke.Count - 1]);
+
+			foreach (var col in cols)
+			{
+				if (col.TryGetComponent(typeof(Bird), out var component)
+					&& component is Bird bird && bird.IsEnemy)
+				{
+					return true;
+				}
+			}
+
+			return false;
 		}
 
 		/// <summary>

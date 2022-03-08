@@ -41,9 +41,9 @@ namespace Owls.Spells
 			}
 			if (info.castType == CastType.Tap)
 			{
-				Stroke = new List<Vector2>(1);
+				Stroke = new List<Vector2>(2);
 				Stroke.Add(stroke[0]);
-
+				Stroke.Add(stroke[1]);
 			}
 
 			if (info.target == CastTarget.Player)
@@ -146,6 +146,20 @@ namespace Owls.Spells
 			foreach (var e in targetHitEffect)
 			{
 				Instantiate(e, transform.position, transform.rotation, transform);
+			}
+		}
+
+		protected void SpawnHitEffect(Transform parent)
+		{
+			if (targetHitEffect == null)
+			{
+				Debug.LogError(name + " is trying to spawn a hit effect but doesn't have one!");
+				return;
+			}
+
+			foreach (var e in targetHitEffect)
+			{
+				Instantiate(e, parent.position, parent.rotation, parent);
 			}
 		}
 	}

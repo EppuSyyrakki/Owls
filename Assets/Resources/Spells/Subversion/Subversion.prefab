@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1622536859408364156
+--- !u!1 &3762033699762743469
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8655640832090282079}
-  - component: {fileID: 1868814012229115298}
+  - component: {fileID: 754714448776682036}
+  - component: {fileID: 9076946847852439875}
   m_Layer: 0
-  m_Name: BloodMagic
+  m_Name: Subversion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8655640832090282079
+--- !u!4 &754714448776682036
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1622536859408364156}
+  m_GameObject: {fileID: 3762033699762743469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,34 +32,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1868814012229115298
+--- !u!114 &9076946847852439875
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1622536859408364156}
+  m_GameObject: {fileID: 3762033699762743469}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a8247467de81064fafc6a47b5936122, type: 3}
+  m_Script: {fileID: 11500000, guid: fd2542b9788da0c40a1192b13cbd37f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetHitEffect: []
-  icon: {fileID: 0}
+  targetHitEffect:
+  - {fileID: 2093550483856167460, guid: e6190c4646076f149a2e4b4b5559a4c6, type: 3}
+  icon: {fileID: 21300000, guid: ea0cd796e11a5f9469e008d907893e06, type: 3}
   info:
-    glyph: {fileID: 0}
-    castType: 0
-    target: 1
+    glyph: {fileID: 11400000, guid: 844c1a08830d28a449d49bf4a87ce5f6, type: 2}
+    castType: 2
+    target: 2
     effectRange: 0
-    effectAmount: 0.5
-    lifeTime: 2
-    castImmediately: 1
-    manaCost: 0
+    effectAmount: 0
+    lifeTime: 5
+    castImmediately: 0
+    manaCost: 0.4
   help:
-    name: Blood Magic
-    text: 'Gain 0.5 mana by sacrificing 0.5 health. No mana cost. With great risk
-      comes great power.
+    name: Subversion
+    text: 'Turns a single owl to an ally, sending it back and killing all other birds
+      it touches.
 
 
-      Draw a V glyph to draw on the strength of Blood
-      Magic.'
+      Draw a wide open C glyph and tap on an enemy to cast it.'

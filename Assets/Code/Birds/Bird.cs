@@ -4,6 +4,7 @@ using UnityEngine;
 using Owls.Flight;
 using Random = UnityEngine.Random;
 using Owls.Spells;
+using System.Linq;
 
 namespace Owls.Birds
 {
@@ -20,6 +21,7 @@ namespace Owls.Birds
 		private const string ANIM_SAVED = "Saved";
 		private const string TAG_PLAYER = "Player";
 		private const string TAG_KEEPER = "TimeKeeper";
+		private const string TAG_ENEMY = "Enemy";
 
 		[SerializeField]
 		private bool isEnemy = true;
@@ -61,12 +63,13 @@ namespace Owls.Birds
 		private State _state = State.Moving;
 		private float _maxY, _minY;
 		private Animator _animator;
-		private Transform _player;
 		private Transform _birdHouse;
 		private BirdSpawner _spawner;
 		private TimeKeeper _timeKeeper;
 		private bool _paused = false;
 		private float _animationSpeed = 0;
+		private bool _subverted = false;
+		private Vector3 _attackTarget;
 
 		public bool FlightInterrupted { get; set; } = false;
 		public bool IsAlive { get; private set; } = true;
@@ -77,7 +80,7 @@ namespace Owls.Birds
 		private void Awake()
 		{
 			_animator = GetComponent<Animator>();
-			_player = GameObject.FindGameObjectWithTag(TAG_PLAYER).transform;
+			_attackTarget = GameObject.FindGameObjectWithTag(TAG_PLAYER).transform.position;			
 			_timeKeeper = GameObject.FindGameObjectWithTag(TAG_KEEPER).GetComponent<TimeKeeper>();
 			_timeKeeper.TimeEvent += TimeEventHandler;
 			float orthoSize = Camera.main.orthographicSize;
@@ -183,15 +186,22 @@ namespace Owls.Birds
 
 		private void OnCollisionEnter2D(Collision2D collision)
 		{
-			Debug.Log("Bird hit " + collision.gameObject.name);
-			if (!collision.gameObject.CompareTag(TAG_PLAYER)) { return; }
-
-			if (isEnemy)
+			if (collision.gameObject.CompareTag(TAG_PLAYER)) 
 			{
-				var target = collision.gameObject.GetComponent<Player.Badger>();
-				target.TakeDamage(damage);
-				_state = State.HitPlayer;
-			}			
+				if (isEnemy)
+				{
+					var target = collision.gameObject.GetComponent<Player.Badger>();
+					target.TakeDamage(damage);
+					_state = State.HitPlayer;
+				}
+			}
+			else if (_subverted && collision.gameObject.CompareTag(TAG_ENEMY))
+			{
+				Bird b = collision.gameObject.GetComponent<Bird>();
+				Info info = new Info { effectAmount = -1 };
+				b.TargetedBySpell(info);
+			}
+						
 		}
 
 		private void MoveOnPath()
@@ -244,10 +254,15 @@ namespace Owls.Birds
 
 			var time = _t * attackSpeed * 0.1f;
 			var self = transform.position;
-			var player = _player.position;
-			var target = transform.TransformPoint((player - self).normalized);
-			transform.position = Vector3.Lerp(_path3[_path3.Length - 1], target, time);
+			var position = _attackTarget;
+			var target = transform.TransformPoint((position - self).normalized);
+			transform.position = Vector3.Lerp(_path3[_currentPathIndex], target, time);
 			_t += Time.deltaTime;
+
+			if (_subverted && transform.position == _path3[0])
+			{
+				KillDirect();
+			}
 		}
 
 		private void Kill(List<GameObject> effects, bool killedByPlayer)
@@ -317,6 +332,15 @@ namespace Owls.Birds
 		public void ChangeFlightSpeed(float multiplier)
 		{
 			FlightSpeed = flightSpeed * multiplier;
+		}
+
+		public void Subvert()
+		{
+			_subverted = true;
+			GetComponent<Rigidbody2D>().useFullKinematicContacts = true;
+			GetComponent<SpriteRenderer>().flipX = true;
+			_attackTarget = _path3[0];
+			_state = State.Attacking;
 		}
 
 		public void FreezeForSeconds(float time)
