@@ -57,7 +57,7 @@ MonoBehaviour:
     effectAmount: -1
     lifeTime: 5
     castImmediately: 1
-    manaCost: 0.6
+    manaCost: 0.4
   help:
     name: Storm
     text: 'Unleashes the power of nature by invoking 10 lightning strikes from the
@@ -136,6 +136,11 @@ PrefabInstance:
     - target: {fileID: 1943062594012973132, guid: 142cbcd85f575af4da63ee09214d3f45,
         type: 3}
       propertyPath: TriggerModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943062594012973132, guid: 142cbcd85f575af4da63ee09214d3f45,
+        type: 3}
+      propertyPath: CollisionModule.m_Bounce.scalar
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1943062594012973132, guid: 142cbcd85f575af4da63ee09214d3f45,

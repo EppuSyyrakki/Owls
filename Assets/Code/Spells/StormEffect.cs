@@ -27,12 +27,7 @@ namespace Owls.Spells
 			if (b == null) { return; }
 
 			b.TargetedBySpell(_info);
-			SendMessageUpwards("HitByStorm", b);
-
-			//foreach (var effect in _hitEffects)
-			//{
-			//	Instantiate(effect, other.transform);
-			//}		
+			SendMessageUpwards("HitByStorm", b);	
 		}
 	}
 }

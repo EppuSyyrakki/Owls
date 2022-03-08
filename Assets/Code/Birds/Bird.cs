@@ -181,13 +181,14 @@ namespace Owls.Birds
 			Destroy(gameObject, 3f);
 		}
 
-		private void OnTriggerEnter2D(Collider2D col)
+		private void OnCollisionEnter2D(Collision2D collision)
 		{
-			if (!col.gameObject.CompareTag(TAG_PLAYER)) { return; }
+			Debug.Log("Bird hit " + collision.gameObject.name);
+			if (!collision.gameObject.CompareTag(TAG_PLAYER)) { return; }
 
 			if (isEnemy)
 			{
-				var target = col.gameObject.GetComponent<Player.Badger>();
+				var target = collision.gameObject.GetComponent<Player.Badger>();
 				target.TakeDamage(damage);
 				_state = State.HitPlayer;
 			}			
