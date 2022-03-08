@@ -24,6 +24,7 @@ namespace Owls.Player
 		private float _animationSpeed = 0;
 
 		public bool Regenerating { private get; set; } = true;
+		private float ManaRegenRate { get; set; }
 		public float MaxHealth { get; private set; }
 		public float CurrentHealth => health;
 		public float MaxMana { get; private set; }
@@ -50,6 +51,7 @@ namespace Owls.Player
 			_timeKeeper.TimeEvent += TimeEventHandler;
 			MaxHealth = health;
 			MaxMana = mana;
+			ManaRegenRate = manaRegenAmount;
 			StartCoroutine(RegenerateMana());
 		}
 
@@ -71,11 +73,11 @@ namespace Owls.Player
 			{
 				yield return new WaitForEndOfFrame();
 				if (_isPaused || !Regenerating) { continue; }
-				var amount = manaRegenAmount * Time.deltaTime;
+				var amount = ManaRegenRate * Time.deltaTime;
 				mana = Mathf.Clamp01(mana + amount);
 				manaChanged?.Invoke(amount, mana);		
 			}
-		}
+		}		
 
 		private void TimeEventHandler(GameTime gt)
 		{
@@ -139,6 +141,17 @@ namespace Owls.Player
 			mana -= amount;
 			manaChanged?.Invoke(amount, mana);
 			return true;
+		}
+
+		public void AddMana(float amount)
+		{
+			mana = Mathf.Clamp01(mana + amount);
+			manaChanged?.Invoke(amount, mana);
+		}
+
+		public void SetManaRegen(float multiplier)
+		{
+			ManaRegenRate = manaRegenAmount * multiplier;
 		}
 	}
 }

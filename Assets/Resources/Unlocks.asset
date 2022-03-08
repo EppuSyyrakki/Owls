@@ -33,7 +33,7 @@ MonoBehaviour:
   - name: Lightning
     scoreToUnlock: 0
   - name: Shield
-    scoreToUnlock: 8000
+    scoreToUnlock: 4000
   - name: IceSphere
     scoreToUnlock: 14000
   - name: Heal

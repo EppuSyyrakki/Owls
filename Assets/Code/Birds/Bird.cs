@@ -71,7 +71,7 @@ namespace Owls.Birds
 		public bool FlightInterrupted { get; set; } = false;
 		public bool IsAlive { get; private set; } = true;
 		public Transform Transform => transform;
-		public float FlightSpeed => flightSpeed;
+		public float FlightSpeed { get; private set; }
 		public bool IsEnemy => isEnemy;
 		
 		private void Awake()
@@ -83,6 +83,7 @@ namespace Owls.Birds
 			float orthoSize = Camera.main.orthographicSize;
 			_maxY = orthoSize - topSafetyMargin;
 			_minY = -orthoSize + bottomSafetyMargin;
+			FlightSpeed = flightSpeed;
 		}
 
 		private void OnDisable()
@@ -218,7 +219,7 @@ namespace Owls.Birds
 
 			// I am somwhere between index and index + 1.
 	        _t += Time.deltaTime;
-	        var time = _t * flightSpeed;
+	        var time = _t * FlightSpeed;
 	        transform.position = Vector3.Lerp(_path3[_currentPathIndex], _path3[_currentPathIndex + 1], time);
 
 			// If I haven't reached index + 1, we're still between them so return
@@ -310,6 +311,11 @@ namespace Owls.Birds
 		{
 			_state = State.Saved;
 			_birdHouse = _spawner.BirdHouse;			
+		}
+
+		public void ChangeFlightSpeed(float multiplier)
+		{
+			FlightSpeed = flightSpeed * multiplier;
 		}
 
 		public void FreezeForSeconds(float time)

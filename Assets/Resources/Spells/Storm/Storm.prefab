@@ -1,0 +1,158 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &738348343136658368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7634350964029379666}
+  - component: {fileID: 2770546215404201143}
+  m_Layer: 0
+  m_Name: Storm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7634350964029379666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738348343136658368}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6676884904021507852}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2770546215404201143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738348343136658368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbb0f0d997c9254685706985a1e8940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetHitEffect:
+  - {fileID: 4741508095253339141, guid: 0c4ab36cc67d95342a16b3dd1c9bc90c, type: 3}
+  - {fileID: 7772438533054457417, guid: b54e745f0f16e874aad5fe96d6753ca5, type: 3}
+  icon: {fileID: 0}
+  info:
+    glyph: {fileID: 0}
+    castType: 2
+    target: 0
+    effectRange: 0
+    effectAmount: -1
+    lifeTime: 5
+    castImmediately: 1
+    manaCost: 0.6
+  help:
+    name: Storm
+    text: 'Unleashes the power of nature by invoking 10 lightning strikes from the
+      sky. Kills all birds that are unlucky enough to get caught in them.
+
+
+      Draw
+      a Z to cast it.'
+--- !u!1001 &5070536769794525209
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7634350964029379666}
+    m_Modifications:
+    - target: {fileID: 1943062592301201170, guid: 142cbcd85f575af4da63ee09214d3f45,
+        type: 3}
+      propertyPath: m_Name
+      value: Thunderstorm
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943062592301201173, guid: 142cbcd85f575af4da63ee09214d3f45,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943062592301201173, guid: 142cbcd85f575af4da63ee09214d3f45,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943062592301201173, guid: 142cbcd85f575af4da63ee09214d3f45,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943062592301201173, guid: 142cbcd85f575af4da63ee09214d3f45,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943062592301201173, guid: 142cbcd85f575af4da63ee09214d3f45,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943062592301201173, guid: 142cbcd85f575af4da63ee09214d3f45,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943062592301201173, guid: 142cbcd85f575af4da63ee09214d3f45,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943062592301201173, guid: 142cbcd85f575af4da63ee09214d3f45,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943062592301201173, guid: 142cbcd85f575af4da63ee09214d3f45,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943062592301201173, guid: 142cbcd85f575af4da63ee09214d3f45,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943062592301201173, guid: 142cbcd85f575af4da63ee09214d3f45,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943062594012973132, guid: 142cbcd85f575af4da63ee09214d3f45,
+        type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943062594012973132, guid: 142cbcd85f575af4da63ee09214d3f45,
+        type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943062594012973132, guid: 142cbcd85f575af4da63ee09214d3f45,
+        type: 3}
+      propertyPath: TriggerModule.primitives.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 142cbcd85f575af4da63ee09214d3f45, type: 3}
+--- !u!4 &6676884904021507852 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1943062592301201173, guid: 142cbcd85f575af4da63ee09214d3f45,
+    type: 3}
+  m_PrefabInstance: {fileID: 5070536769794525209}
+  m_PrefabAsset: {fileID: 0}
