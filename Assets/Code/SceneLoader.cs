@@ -54,13 +54,11 @@ namespace Owls
 
         public void LoadSelectedScene()
 		{
-			Debug.Log("Load Selected scene called: " + sceneToLoad);
 			StartCoroutine(LoadSceneInBackground((int)sceneToLoad));
 		}
 
 		public void LoadScene(Scenes scene)
 		{
-			Debug.Log("Loading scene " + scene);
 			StartCoroutine(LoadSceneInBackground((int)scene));
 		}
 
