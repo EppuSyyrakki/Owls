@@ -35,12 +35,20 @@ MonoBehaviour:
   - name: Shield
     scoreToUnlock: 4000
   - name: IceSphere
-    scoreToUnlock: 14000
+    scoreToUnlock: 10000
   - name: Heal
-    scoreToUnlock: 20000
+    scoreToUnlock: 14000
   - name: Timewarp
-    scoreToUnlock: 30000
+    scoreToUnlock: 20000
   - name: Fireball
-    scoreToUnlock: 40000
+    scoreToUnlock: 27000
   - name: Vortex
-    scoreToUnlock: 50000
+    scoreToUnlock: 32000
+  - name: BloodMagic
+    scoreToUnlock: 44000
+  - name: Storm
+    scoreToUnlock: 52000
+  - name: ManaWind
+    scoreToUnlock: 60000
+  - name: Subversion
+    scoreToUnlock: 70000

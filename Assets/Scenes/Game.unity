@@ -145,9 +145,21 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
         type: 3}
+      propertyPath: selectedSpells.Array.data[2]
+      value: 
+      objectReference: {fileID: 6201120957617049358, guid: 9b41508dd84d3f34cb36ad70a9772083,
+        type: 3}
+    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
+        type: 3}
       propertyPath: selectedSpells.Array.data[3]
       value: 
-      objectReference: {fileID: -7387057605203109015, guid: 9bbcaca8d41a7fa4da98b40086b8cba4,
+      objectReference: {fileID: 2770546215404201143, guid: 285182ae323fab041a88fbcf4babd0f6,
+        type: 3}
+    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
+        type: 3}
+      propertyPath: selectedSpells.Array.data[4]
+      value: 
+      objectReference: {fileID: 1868814012229115298, guid: e336f442db5cff44d9840a85f69eeb3e,
         type: 3}
     - target: {fileID: 3918892694000362373, guid: a1063e6b4fbee3647866567f171f2752,
         type: 3}

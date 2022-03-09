@@ -44,10 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a8247467de81064fafc6a47b5936122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetHitEffect: []
-  icon: {fileID: 0}
+  targetHitEffect:
+  - {fileID: 1568288446607928975, guid: 2838a77e6a7ae33428ea1e8afdc748b3, type: 3}
+  icon: {fileID: 21300000, guid: dd1b59265e641a740aa333e7b5c3c675, type: 3}
   info:
-    glyph: {fileID: 0}
+    glyph: {fileID: 11400000, guid: fbf143804a2251b42a0538e38a76d8ff, type: 2}
     castType: 0
     target: 1
     effectRange: 0

@@ -47,10 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetHitEffect:
   - {fileID: 4741508095253339141, guid: 0c4ab36cc67d95342a16b3dd1c9bc90c, type: 3}
-  - {fileID: 7772438533054457417, guid: b54e745f0f16e874aad5fe96d6753ca5, type: 3}
-  icon: {fileID: 0}
+  - {fileID: 5513482505640471157, guid: c47d412ac5dc13f4b81fd11b9c69a892, type: 3}
+  icon: {fileID: 21300000, guid: e49a14ac8af06be4e923ccfb081b7af7, type: 3}
   info:
-    glyph: {fileID: 0}
+    glyph: {fileID: 11400000, guid: 949fbd7e201a01a45b4ca477f97f4d73, type: 2}
     castType: 2
     target: 0
     effectRange: 0
@@ -60,8 +60,8 @@ MonoBehaviour:
     manaCost: 0.4
   help:
     name: Storm
-    text: 'Unleashes the power of nature by invoking 10 lightning strikes from the
-      sky. Kills all birds that are unlucky enough to get caught in them.
+    text: 'Unleashes the power of nature by invoking lightning strikes from the sky.
+      Kills all birds that are unlucky enough to get caught in them.
 
 
       Draw
