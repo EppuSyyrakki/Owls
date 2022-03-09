@@ -15,15 +15,17 @@ namespace Owls.Spells
 			// base.init should be run before doing Init logic for this class.
 			base.Init(stroke);
 
-			Badger p = Target[0] as Badger;
+			Badger badger = Target[0] as Badger;
 
-			if (p == null)
+			if (badger == null)
 			{
 				Debug.LogError(name + " tried targeting something other than Player!");
+				return;
 			}
 
-			p.AddMana(info.effectAmount);
-			p.TakeDamage(-info.effectAmount);
+			badger.AddMana(info.effectAmount);
+			badger.TakeDamage(-info.effectAmount);
+			SpawnHitEffect();
 		}
 
 		/// <summary>

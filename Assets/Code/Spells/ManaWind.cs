@@ -34,6 +34,8 @@ namespace Owls.Spells
 			{
 				SetFlightSpeed(target, enemySpeedMultiplier);
 			}
+
+			SpawnHitEffect();
 		}
 
 		/// <summary>
