@@ -24,7 +24,7 @@ namespace Owls.Spells
 			}
 
 			badger.AddMana(info.effectAmount);
-			badger.TakeDamage(-info.effectAmount);
+			badger.TakeDamage(info.effectAmount);
 			SpawnHitEffect();
 		}
 
