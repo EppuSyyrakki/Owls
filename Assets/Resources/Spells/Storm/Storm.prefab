@@ -57,7 +57,7 @@ MonoBehaviour:
     effectAmount: -1
     lifeTime: 5
     castImmediately: 1
-    manaCost: 0.4
+    manaCost: 0.5
   help:
     name: Storm
     text: 'Unleashes the power of nature by invoking lightning strikes from the sky.

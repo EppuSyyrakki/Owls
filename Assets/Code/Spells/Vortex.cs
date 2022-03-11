@@ -9,8 +9,10 @@ namespace Owls.Spells
 	{
 		private const string TAG_ENEMY = "Enemy";
 
-		[SerializeField, Range(0.5f, 1f)]
+		[SerializeField, Range(0.5f, 1.5f)]
 		private float vortexStrength = 0.8f;
+
+		private Dictionary<Bird, Vector3> positions;
 
 		/// <summary>
 		/// Can be used to fetch references to class members or initialize them.
@@ -22,6 +24,7 @@ namespace Owls.Spells
 
 			GetComponent<CircleCollider2D>().radius = info.effectRange;
 			transform.position = Stroke[0];
+			positions = new Dictionary<Bird, Vector3>();
 		}
 
 		/// <summary>
@@ -33,37 +36,36 @@ namespace Owls.Spells
 			// Base.Execute can be called  before or after this spell's logic.
 			base.Update();
 
-			foreach (var target in Target)
+			foreach (var pair in positions)
 			{
-				var enemy = target as Bird;
+				if (pair.Key == null) { continue; }
 
-				if (enemy == null) { continue; }
-
-				var enemyPos = enemy.transform.position;
-				var maxDelta = vortexStrength * enemy.FlightSpeed * Time.deltaTime;
-				var newPos = Vector3.MoveTowards(enemyPos, transform.position, maxDelta);
-				enemy.transform.position = newPos;
+				var enemyPos = pair.Key.transform.position;
+				var maxDelta = vortexStrength * pair.Key.FlightSpeed * Time.deltaTime;				
+				var newPos = Vector3.MoveTowards(enemyPos, pair.Value, maxDelta);
+				pair.Key.transform.position = newPos;
 			}
 		}
 
 		private void OnDisable()
 		{
-			foreach (var target in Target)
+			foreach (var pair in positions)
 			{
-				if (!(target is Bird e)) { continue; }
+				if (pair.Key == null) { continue; }
 
-				e.FlightInterrupted = false;
+				pair.Key.FlightInterrupted = false;
 			}
 		}
 
-		private void OnTriggerEnter2D(Collider2D collision)
+		private void OnCollisionEnter2D(Collision2D collision)
 		{
 			if (!collision.gameObject.CompareTag(TAG_ENEMY)) { return; }
 
-			var enemy = collision.GetComponent<Bird>();
-			Target.Add(enemy);
-			enemy.InitVortex(transform.position);
-			enemy.FlightInterrupted = true;
+			var bird = collision.gameObject.GetComponent<Bird>();
+			Vector3 randomPos = transform.TransformPoint(Random.insideUnitCircle * (info.effectRange * 0.5f));
+			positions.Add(bird, randomPos);
+			bird.InitVortex(randomPos);
+			bird.FlightInterrupted = true;
 		}
 	}
 }

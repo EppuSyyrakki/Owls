@@ -52,7 +52,7 @@ MonoBehaviour:
     castType: 0
     target: 3
     effectRange: 0
-    effectAmount: 2
+    effectAmount: 3
     lifeTime: 8
     castImmediately: 1
     manaCost: 0.6

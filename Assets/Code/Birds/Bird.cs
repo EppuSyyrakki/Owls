@@ -314,9 +314,20 @@ namespace Owls.Birds
 			Kill(deathFx, false);
 		}
 
-		public void InitVortex(Vector2 position)
+		public void InitVortex(Vector3 vortex)
 		{
-			_path3[_currentPathIndex] = position;
+			Vector3 change = vortex - transform.position;
+
+			for (int i = _currentPathIndex; i < _path3.Length; i++)
+			{
+				Vector3 point = _path3[i];
+				point += change;
+				_path3[i] = point;
+
+				//Vector3 point = _path3[i];
+				//Vector3 halfway = (point - position) / 2 + position;
+				//_path3[i] = halfway;
+			}
 		}
 
 		public void CaptureBirdy()

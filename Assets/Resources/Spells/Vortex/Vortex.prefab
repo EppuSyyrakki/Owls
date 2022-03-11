@@ -54,11 +54,11 @@ MonoBehaviour:
     glyph: {fileID: 11400000, guid: dd87b7c81ebf3ea40a3f682c63fbe952, type: 2}
     castType: 2
     target: 0
-    effectRange: 3
+    effectRange: 2
     effectAmount: 0
-    lifeTime: 5
+    lifeTime: 4
     castImmediately: 0
-    manaCost: 0.33
+    manaCost: 0.4
   help:
     name: Vortex
     text: 'Creates a vortex that sucks all nearby enemies inside it for a few seconds.
@@ -70,7 +70,7 @@ MonoBehaviour:
 
       Does
       not do damage to enemies.'
-  vortexStrength: 0.876
+  vortexStrength: 0.814
 --- !u!58 &2903113195450161579
 CircleCollider2D:
   m_ObjectHideFlags: 0

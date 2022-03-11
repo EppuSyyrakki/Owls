@@ -66,11 +66,11 @@ namespace Owls.Spells
 			}
 		}
 
-		private void OnTriggerEnter2D(Collider2D collision)
+		private void OnCollisionEnter2D(Collision2D collision)
 		{
-			if (!collision.TryGetComponent(typeof(ITargetable), out var target)) { return; }
+			if (!collision.gameObject.TryGetComponent(typeof(Bird), out var component)) { return; }
 
-			if (!(target is Bird bird)) { return; }
+			if (!(component is Bird bird)) { return; }
 
 			if (!_contact) 
 			{

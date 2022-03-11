@@ -62,7 +62,7 @@ namespace Owls.Spells
 		private void OnCollisionEnter2D(Collision2D collision)
 		{
 			if (!collision.gameObject.TryGetComponent(typeof(ITargetable), out var target) 
-				|| !(target is ITargetable)) { return; }
+				|| !(target is ITargetable) || !collision.gameObject.CompareTag(TAG_ENEMY)) { return; }
 
 			var collisionTarget = target as ITargetable;
 
