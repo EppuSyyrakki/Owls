@@ -61,8 +61,7 @@ namespace Owls.Spells
 
 		private void OnCollisionEnter2D(Collision2D collision)
 		{
-			if (!collision.gameObject.TryGetComponent(typeof(ITargetable), out var target) 
-				|| !(target is ITargetable) || !collision.gameObject.CompareTag(TAG_ENEMY)) { return; }
+			if (!collision.gameObject.TryGetComponent(typeof(ITargetable), out var target)) { return; }
 
 			var collisionTarget = target as ITargetable;
 
@@ -93,7 +92,7 @@ namespace Owls.Spells
 
 			foreach (var t in Target)
 			{
-				if (!t.Transform.CompareTag(TAG_ENEMY)) { continue; }
+				// if (!t.Transform.CompareTag(TAG_ENEMY)) { continue; }
 
 				t.TargetedBySpell(info);
 				SpawnHitEffect(t);
