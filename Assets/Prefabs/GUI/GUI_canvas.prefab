@@ -4535,7 +4535,7 @@ MonoBehaviour:
     color: {r: 1, g: 0.75516963, b: 0.109803915, a: 1}
     size: 1.5
   finalScoreSpeed: 0.06
-  setScoreTo: 84000
+  setScoreTo: 0
 --- !u!222 &538344654383014283
 CanvasRenderer:
   m_ObjectHideFlags: 0
