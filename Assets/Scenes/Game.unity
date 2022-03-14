@@ -135,19 +135,19 @@ PrefabInstance:
     - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
         type: 3}
       propertyPath: getSpellsFromBook
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
         type: 3}
       propertyPath: selectedSpells.Array.data[1]
       value: 
-      objectReference: {fileID: 3524960558214369749, guid: 581da45a891f23e4fb260e9922050488,
+      objectReference: {fileID: -7387057605203109015, guid: 9bbcaca8d41a7fa4da98b40086b8cba4,
         type: 3}
     - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
         type: 3}
       propertyPath: selectedSpells.Array.data[2]
       value: 
-      objectReference: {fileID: 6201120957617049358, guid: 9b41508dd84d3f34cb36ad70a9772083,
+      objectReference: {fileID: -4192314238271592117, guid: 95c59d8bfdc47fa4bb9f137e91c911aa,
         type: 3}
     - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
         type: 3}
@@ -407,15 +407,30 @@ PrefabInstance:
         -
         Duration of the level is indicated in the top right corner of the screen.'
       objectReference: {fileID: 0}
+    - target: {fileID: 3526580947743796795, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 550
+      objectReference: {fileID: 0}
+    - target: {fileID: 3526580947743796795, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4595312341376972292, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
         type: 3}
       propertyPath: defaultMusicVolume
       value: -3
       objectReference: {fileID: 0}
+    - target: {fileID: 5127206918748257588, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5414450285038213363, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
         type: 3}
       propertyPath: setScoreTo
-      value: 0
+      value: 84000
       objectReference: {fileID: 0}
     - target: {fileID: 6526570056197971798, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
         type: 3}
@@ -645,6 +660,23 @@ PrefabInstance:
     - target: {fileID: 6526570057680456440, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359984455192497172, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: m_text
+      value: 'Score: 0
+
+        Birdy Bonus: 0x
+
+        Total Score: 0
+
+        Next
+        Unlock: 0'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739800279955029220, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

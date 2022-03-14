@@ -163,11 +163,12 @@ namespace Owls.GUI
 			bool levelUnlocked = false;
 			float bonusMulti = _currentBirds * 0.1f + 1f;
 			float score = totalScore + (_currentScore * bonusMulti);
-			SaveScore((int)score);			
+			string nextUnlock = spellUnlocker.GetNextUnlockScore(totalScore);
+			SaveScore((int)score);	
 
 			yield return new WaitForSeconds(2f);
-			var s = string.Format("Score: {0}\n Birdy Bonus: {1}x\n Total Score: {2}",
-				_currentScore, bonusMulti, totalScore);
+			var s = string.Format("Score: {0}\n Birdy Bonus: {1}x\n Total Score: {2}\n Next Unlock: {3}",
+				_currentScore, bonusMulti, totalScore, nextUnlock);
 			finalScoreDisplay.text = s;
 			yield return new WaitForSeconds(2f);
 
@@ -203,10 +204,12 @@ namespace Owls.GUI
 					DisplayUnlockedLevel(levelName);
 				}
 
-				s = string.Format("Score: {0}\n Birdy Bonus: {1}x\n Total Score: {2}",
-					_currentScore, bonusMulti, totalScore);
+				nextUnlock = spellUnlocker.GetNextUnlockScore(totalScore);
+				s = string.Format("Score: {0}\n Birdy Bonus: {1}x\n Total Score: {2}\n Next Unlock: {3}",
+				_currentScore, bonusMulti, totalScore, nextUnlock);
 				finalScoreDisplay.text = s;
 				UpdateTexts();
+				
 			}			
 		}
 

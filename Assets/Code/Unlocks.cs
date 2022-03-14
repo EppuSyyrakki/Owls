@@ -41,5 +41,13 @@ namespace Owls
 
 			return -1;
 		}
+
+		public List<UnlockInfo> GetCombinedList()
+		{
+			List<UnlockInfo> combinedList = new List<UnlockInfo>(levels.Count + spells.Count);
+			combinedList.AddRange(levels);
+			combinedList.AddRange(spells);
+			return combinedList.OrderBy(x => x.scoreToUnlock).ToList();
+		}
 	}
 }

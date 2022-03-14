@@ -57,9 +57,9 @@ MonoBehaviour:
   selectedSpells:
   - {fileID: 8194657820882680979, guid: 885f1776901c9ea48a1decba156d39fe, type: 3}
   - {fileID: -7387057605203109015, guid: 9bbcaca8d41a7fa4da98b40086b8cba4, type: 3}
-  - {fileID: 3756382064644079168, guid: ddd0869fc38a67c4297ff39bbb736e01, type: 3}
-  - {fileID: 3524960558214369749, guid: 581da45a891f23e4fb260e9922050488, type: 3}
-  - {fileID: 6230330129964245280, guid: 73cae8b289ab5fd449166a9ea6797f49, type: 3}
+  - {fileID: -4192314238271592117, guid: 95c59d8bfdc47fa4bb9f137e91c911aa, type: 3}
+  - {fileID: 2770546215404201143, guid: 285182ae323fab041a88fbcf4babd0f6, type: 3}
+  - {fileID: 1868814012229115298, guid: e336f442db5cff44d9840a85f69eeb3e, type: 3}
 --- !u!1 &3918892694373735485
 GameObject:
   m_ObjectHideFlags: 0

@@ -157,12 +157,16 @@ MonoBehaviour:
     owls.
 
 
-    - Avoid killing little birdies, instead save them by tapping on them
-    to score more points in level completion.
+    - Spells and levels unlock by scoring more points.
 
 
-    - Duration of the level is indicated
-    in the top right corner of the screen.'
+    - Avoid
+    killing little birdies, instead save them by tapping on them to score more points
+    on level completion.
+
+
+    - Duration of the level is indicated in the top right
+    corner of the screen.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c98363ce607248e449b0f520f6646e88, type: 2}
   m_sharedMaterial: {fileID: 8009234765949305787, guid: c98363ce607248e449b0f520f6646e88,
@@ -1001,7 +1005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tapScreenToLoad: 0
   sceneToLoad: 3
-  additiveLoad: 0
+  fadeOutTime: 0.75
 --- !u!114 &8317953438635730584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3028,8 +3032,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.25}
   m_AnchorMax: {x: 0.5, y: 0.25}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1200, y: 500}
+  m_AnchoredPosition: {x: 0, y: 20}
+  m_SizeDelta: {x: 1200, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &669466546029061062
 CanvasRenderer:
@@ -3059,11 +3063,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score: 99999
+  m_text: 'Score: 0
 
-    Score: 999998787
+    Birdy Bonus: 0x
 
-    Score: 9999978'
+    Total Score: 0
+
+    Next Unlock: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c98363ce607248e449b0f520f6646e88, type: 2}
   m_sharedMaterial: {fileID: 8009234765949305787, guid: c98363ce607248e449b0f520f6646e88,
@@ -3495,7 +3501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tapScreenToLoad: 0
   sceneToLoad: 1
-  additiveLoad: 0
+  fadeOutTime: 0.75
 --- !u!1 &6526570056197971802
 GameObject:
   m_ObjectHideFlags: 0
@@ -3641,7 +3647,7 @@ MonoBehaviour:
   musicGroup: {fileID: -877854833507642867, guid: df6ee81803c23814cad17da9b6e6ec14,
     type: 2}
   defaultFxVolume: 0
-  defaultMusicVolume: -5
+  defaultMusicVolume: -3
 --- !u!114 &2036961080671251539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3656,7 +3662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tapScreenToLoad: 0
   sceneToLoad: 1
-  additiveLoad: 0
+  fadeOutTime: 0.75
 --- !u!1 &6526570057173180516
 GameObject:
   m_ObjectHideFlags: 0
@@ -4529,7 +4535,7 @@ MonoBehaviour:
     color: {r: 1, g: 0.75516963, b: 0.109803915, a: 1}
     size: 1.5
   finalScoreSpeed: 0.06
-  setScoreTo: 0
+  setScoreTo: 84000
 --- !u!222 &538344654383014283
 CanvasRenderer:
   m_ObjectHideFlags: 0

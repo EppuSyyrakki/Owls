@@ -39,6 +39,23 @@ namespace Owls.Spells
 			}
 		}
 
+		public string GetNextUnlockScore(int totalScore)
+		{
+			List<UnlockInfo> all = _unlocks.GetCombinedList();
+			int nextUnlock;
+			
+			for (int i = 0; i < all.Count; i++)
+			{
+				nextUnlock = all[i].scoreToUnlock;
+
+				if (nextUnlock == 0 || totalScore > nextUnlock) { continue; }
+
+				return nextUnlock.ToString();
+			}
+
+			return "-";
+		}
+
 		/// <summary>
 		/// Checks if new spells have been unlocked at a given total score.
 		/// </summary>
