@@ -93,13 +93,31 @@ namespace Owls.GUI
 		{
 			DontDestroyOnLoad(this);
 			_loader.LoadScene(Scenes.Prologue);
-			Invoke(nameof(FindController), 0.25f);
+			StartCoroutine(FindController());
 		}
 
-		private void FindController()
+		private IEnumerator FindController()
 		{
-			var controller = FindObjectOfType<PrologueController>();
-			controller.ReturnToMenu(this);
+			int timesTried = 0;
+
+			while (true)
+			{
+				timesTried++;
+				var controller = FindObjectOfType<PrologueController>();
+
+				if (controller != null)
+				{
+					controller.ReturnToMenu(this);
+					break;
+				}
+
+				if (timesTried > 10)
+				{
+					break;
+				}
+
+				yield return new WaitForSeconds(0.25f);
+			}				
 		}
 
 		public void ResetScoreAndSpells()

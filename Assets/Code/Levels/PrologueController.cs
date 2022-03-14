@@ -13,7 +13,7 @@ namespace  Owls.Levels
 		private bool _returnToMenu = false;
 
 		[SerializeField]
-		private float inputDelay = 0.5f;
+		private float inputDelay = 2f;
 
 		[SerializeField]
 		private bool isEpilogue = false;
@@ -55,7 +55,8 @@ namespace  Owls.Levels
 		public void ReturnToMenu(MenuController controller)
 		{
 			_returnToMenu = true;
-			Destroy(controller.gameObject);
+			_inputEnabled = true;
+			Destroy(controller.gameObject, 2f);
 		}
 	}
 }

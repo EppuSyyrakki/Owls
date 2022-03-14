@@ -72,7 +72,7 @@ namespace Owls
 				yield return null;
 			}
 
-			_fader.StopAllCoroutines();
+			// _fader.StopAllCoroutines();
 		}
     }
 }
