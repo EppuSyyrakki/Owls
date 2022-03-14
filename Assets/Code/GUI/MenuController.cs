@@ -104,15 +104,17 @@ namespace Owls.GUI
 
 		public void ResetScoreAndSpells()
 		{
-			var spells = new List<Spell>(Resources.LoadAll("", typeof(Spell)).Cast<Spell>().ToArray());
+			var loaded = Resources.Load("Unlocks", typeof(Unlocks));
+			var unlocks = loaded as Unlocks;
 
-			foreach (var s in spells)
+			foreach (var info in unlocks.Spells)
 			{
-				if (s is Lightning) { PlayerPrefs.SetInt(s.name, 2); }
-				else { PlayerPrefs.SetInt(s.name, 0); }
+				if (info.scoreToUnlock == 0) { PlayerPrefs.SetInt(info.name, 2); }
+				else { PlayerPrefs.SetInt(info.name, 0); }
 			}
 
 			PlayerPrefs.SetInt(KEY_TOTAL_SCORE, 0);
+			PlayerPrefs.SetInt(KEY_PROLOGUE_PLAYED, 0);
 		}
 
 		public void StartGame()

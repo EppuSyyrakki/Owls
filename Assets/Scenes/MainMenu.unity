@@ -11826,6 +11826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tapScreenToLoad: 0
   sceneToLoad: 1
+  fadeOutTime: 0.75
 --- !u!114 &1215198490
 MonoBehaviour:
   m_ObjectHideFlags: 0
