@@ -48,6 +48,8 @@ namespace Owls.GUI
 				yield return new WaitForEndOfFrame();
 				t += Time.deltaTime;
 			}
+
+			_group.alpha = to;
 		}
 
 		public void StartFade(float from, float to, float time, float delay = 0)

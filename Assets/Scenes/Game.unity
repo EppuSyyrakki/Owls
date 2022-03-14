@@ -132,35 +132,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
-        type: 3}
-      propertyPath: getSpellsFromBook
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
-        type: 3}
-      propertyPath: selectedSpells.Array.data[1]
-      value: 
-      objectReference: {fileID: -7387057605203109015, guid: 9bbcaca8d41a7fa4da98b40086b8cba4,
-        type: 3}
-    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
-        type: 3}
-      propertyPath: selectedSpells.Array.data[2]
-      value: 
-      objectReference: {fileID: -4192314238271592117, guid: 95c59d8bfdc47fa4bb9f137e91c911aa,
-        type: 3}
-    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
-        type: 3}
-      propertyPath: selectedSpells.Array.data[3]
-      value: 
-      objectReference: {fileID: 2770546215404201143, guid: 285182ae323fab041a88fbcf4babd0f6,
-        type: 3}
-    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
-        type: 3}
-      propertyPath: selectedSpells.Array.data[4]
-      value: 
-      objectReference: {fileID: 1868814012229115298, guid: e336f442db5cff44d9840a85f69eeb3e,
-        type: 3}
     - target: {fileID: 3918892694000362373, guid: a1063e6b4fbee3647866567f171f2752,
         type: 3}
       propertyPath: m_Name
@@ -379,59 +350,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 410887756, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6, type: 3}
-      propertyPath: m_text
-      value: '- Use your finger to cast spells.
-
-
-        - Every spell has a different
-        glyph for you to draw in order to cast the spell.
-
-
-        - Spells, mana
-        and health can be seen in the bottom of the screen.
-
-
-        - Score points
-        by destroying corrupted owls.
-
-
-        - Spells and levels unlock by scoring
-        more points.
-
-
-        - Avoid killing little birdies, instead save them
-        by tapping on them to score more points on level completion.
-
-
-        -
-        Duration of the level is indicated in the top right corner of the screen.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 3526580947743796795, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 550
-      objectReference: {fileID: 0}
-    - target: {fileID: 3526580947743796795, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4595312341376972292, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
-        type: 3}
-      propertyPath: defaultMusicVolume
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5127206918748257588, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5414450285038213363, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
-        type: 3}
-      propertyPath: setScoreTo
-      value: 84000
-      objectReference: {fileID: 0}
     - target: {fileID: 6526570056197971798, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
         type: 3}
       propertyPath: m_Pivot.x
@@ -660,23 +578,6 @@ PrefabInstance:
     - target: {fileID: 6526570057680456440, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7359984455192497172, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
-        type: 3}
-      propertyPath: m_text
-      value: 'Score: 0
-
-        Birdy Bonus: 0x
-
-        Total Score: 0
-
-        Next
-        Unlock: 0'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7739800279955029220, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
