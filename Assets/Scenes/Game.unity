@@ -355,9 +355,59 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 67199676597373975, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163382229506147004, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305618556015256285, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126967926619410936, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126967926619410936, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830274907651904105, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 77.1075
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830274907651904105, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 62.7989
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830274907651904105, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.5773
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830274907651904105, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -4.3722
+      objectReference: {fileID: 0}
     - target: {fileID: 5414450285038213363, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
         type: 3}
       propertyPath: setScoreTo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5704168669033856424, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6526570056197971798, guid: 214bc0a9f16cfe041b9c5cbc607ac7e6,

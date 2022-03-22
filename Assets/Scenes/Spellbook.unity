@@ -954,6 +954,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: Owls.Levels.StoryCheck, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 6129951778063110713, guid: 388f82d677f6b9b458692da1773f3bba,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129951778063110713, guid: 388f82d677f6b9b458692da1773f3bba,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199553220809396098, guid: 388f82d677f6b9b458692da1773f3bba,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199553220809396098, guid: 388f82d677f6b9b458692da1773f3bba,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 42
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 388f82d677f6b9b458692da1773f3bba, type: 3}
 --- !u!114 &5995396676611201173 stripped

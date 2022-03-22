@@ -65,8 +65,8 @@ MonoBehaviour:
 
 
       Draw
-      or swipe a line on screen to cast it. The line must be relatively straight
-      for the casting to succeed.'
+      or swipe a line on screen to cast it. The line must be relatively horizontal
+      and straight for the casting to succeed.'
   flashTime: 0.25
   flashObject: {fileID: 1679995571293498947, guid: f3d8a3c819432b74fbd04061a3e1d32d,
     type: 3}
