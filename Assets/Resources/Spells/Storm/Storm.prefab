@@ -57,7 +57,7 @@ MonoBehaviour:
     effectAmount: -1
     lifeTime: 5
     castImmediately: 1
-    manaCost: 0.5
+    manaCost: 0.3
   help:
     name: Storm
     text: 'Unleashes the power of nature by invoking lightning strikes from the sky.
@@ -65,7 +65,7 @@ MonoBehaviour:
 
 
       Draw
-      a Z to cast it.'
+      a Z to cast it. Prevents mana regeneration while active.'
 --- !u!1001 &5070536769794525209
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -58,5 +58,5 @@ MonoBehaviour:
     manaCost: 0.5
   help:
     name: Heal
-    text: Heals the badger by 0.3. Draw an infinity glyph to cast it.
+    text: Heals the badger by 30%. Draw an infinity glyph to cast it.
   healTime: 1

@@ -1,4 +1,5 @@
 ﻿using Owls.Birds;
+using Owls.Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ namespace Owls.Spells
 		private float vortexStrength = 0.8f;
 
 		private Dictionary<Bird, Vector3> positions;
+		private Badger _badger = null;
 
 		/// <summary>
 		/// Can be used to fetch references to class members or initialize them.
@@ -25,6 +27,13 @@ namespace Owls.Spells
 			GetComponent<CircleCollider2D>().radius = info.effectRange;
 			transform.position = Stroke[0];
 			positions = new Dictionary<Bird, Vector3>();
+		}
+
+		private void Start()
+		{
+			_badger = GameObject.FindGameObjectWithTag("Player").GetComponent<Badger>();
+			if (_badger == null) { Debug.LogError("Vortex couldn't find Badger to prevent regeneration!"); }
+			_badger.Regenerating = false;
 		}
 
 		/// <summary>
@@ -55,6 +64,8 @@ namespace Owls.Spells
 
 				pair.Key.FlightInterrupted = false;
 			}
+
+			_badger.Regenerating = true;
 		}
 
 		private void OnCollisionEnter2D(Collision2D collision)

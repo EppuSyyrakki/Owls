@@ -137,6 +137,12 @@ PrefabInstance:
       propertyPath: getSpellsFromBook
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
+        type: 3}
+      propertyPath: selectedSpells.Array.data[1]
+      value: 
+      objectReference: {fileID: 3524960558214369749, guid: 581da45a891f23e4fb260e9922050488,
+        type: 3}
     - target: {fileID: 3918892694000362373, guid: a1063e6b4fbee3647866567f171f2752,
         type: 3}
       propertyPath: m_Name

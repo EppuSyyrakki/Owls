@@ -1,4 +1,5 @@
 ﻿using Owls.Birds;
+using Owls.Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ namespace Owls.Spells
 {
 	public class Storm : Spell
 	{
-		
+		Badger _badger = null; 
 
 		/// <summary>
 		/// Can be used to fetch references to class members or initialize them.
@@ -18,6 +19,18 @@ namespace Owls.Spells
 			base.Init(stroke);
 			var stormEffect = GetComponentInChildren<StormEffect>();
 			stormEffect.Init(info);
+		}
+
+		private void Start()
+		{
+			_badger = GameObject.FindGameObjectWithTag("Player").GetComponent<Badger>();
+			if (_badger == null) { Debug.LogError("Storm couldn't find Badger to prevent regeneration!"); }
+			_badger.Regenerating = false;
+		}
+
+		private void OnDisable()
+		{
+			_badger.Regenerating = true;
 		}
 
 		/// <summary>

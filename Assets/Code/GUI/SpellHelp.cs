@@ -46,7 +46,7 @@ namespace Owls.GUI
 			helpScreen.SetActive(true);
 			spellName.text = name;
 			spellText.text = description;
-			spellCost.text = "Mana cost: " + cost;
+			spellCost.text = "Mana cost: " + cost * 100f + "%";
 			spellIcon.sprite = icon;			
 			disableGroup.interactable = false;
 			disableGroup.alpha = 0.25f;

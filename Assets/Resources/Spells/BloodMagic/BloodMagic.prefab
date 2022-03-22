@@ -58,7 +58,7 @@ MonoBehaviour:
     manaCost: 0
   help:
     name: Blood Magic
-    text: 'Gain 0.5 mana by sacrificing 0.5 health. No mana cost. With great risk
+    text: 'Gain 50% mana by sacrificing 50% health. No mana cost. With great risk
       comes great power.
 
 
