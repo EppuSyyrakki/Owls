@@ -64,6 +64,8 @@ namespace Owls
 
 		private IEnumerator LoadSceneInBackground(int index)
 		{
+			Debug.Log("Loading scene " + index);
+
 			_fader.StartFade(0, 1, fadeOutTime);
 			AsyncOperation load = SceneManager.LoadSceneAsync(index);
 

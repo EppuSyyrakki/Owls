@@ -11,6 +11,7 @@ namespace  Owls.Levels
 		private SceneLoader _loader;
 		private bool _inputEnabled = false;
 		private bool _returnToMenu = false;
+		private bool _touched = false;
 
 		[SerializeField]
 		private float inputDelay = 2f;
@@ -28,8 +29,9 @@ namespace  Owls.Levels
 		{
 			if (!_inputEnabled) { return; }
 
-			if (Input.touchCount > 0)
+			if (Input.touchCount > 0 && !_touched)
 			{
+				_touched = true;
 				LoadNextScene();
 			}
 		}
