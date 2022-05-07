@@ -2,8 +2,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Owls.Code
+namespace Owls
 {
+	/// <summary>
+	/// Using this will require another camera with a lower (-1) priority than the Main Camera.
+	/// 
+	/// </summary>
 	public class AspectEnforcer : MonoBehaviour
 	{
 		[SerializeField]
