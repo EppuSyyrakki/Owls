@@ -139,9 +139,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
         type: 3}
+      propertyPath: selectedSpells.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
+        type: 3}
       propertyPath: selectedSpells.Array.data[1]
       value: 
-      objectReference: {fileID: 3524960558214369749, guid: 581da45a891f23e4fb260e9922050488,
+      objectReference: {fileID: 2770546215404201143, guid: 285182ae323fab041a88fbcf4babd0f6,
+        type: 3}
+    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
+        type: 3}
+      propertyPath: selectedSpells.Array.data[2]
+      value: 
+      objectReference: {fileID: -7387057605203109015, guid: 9bbcaca8d41a7fa4da98b40086b8cba4,
+        type: 3}
+    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
+        type: 3}
+      propertyPath: selectedSpells.Array.data[3]
+      value: 
+      objectReference: {fileID: 3756382064644079168, guid: ddd0869fc38a67c4297ff39bbb736e01,
+        type: 3}
+    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
+        type: 3}
+      propertyPath: selectedSpells.Array.data[4]
+      value: 
+      objectReference: {fileID: 6201120957617049358, guid: 9b41508dd84d3f34cb36ad70a9772083,
+        type: 3}
+    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
+        type: 3}
+      propertyPath: selectedSpells.Array.data[5]
+      value: 
+      objectReference: {fileID: -7387057605203109015, guid: 9bbcaca8d41a7fa4da98b40086b8cba4,
+        type: 3}
+    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
+        type: 3}
+      propertyPath: selectedSpells.Array.data[6]
+      value: 
+      objectReference: {fileID: -7387057605203109015, guid: 9bbcaca8d41a7fa4da98b40086b8cba4,
+        type: 3}
+    - target: {fileID: 1337170366206072629, guid: a1063e6b4fbee3647866567f171f2752,
+        type: 3}
+      propertyPath: selectedSpells.Array.data[7]
+      value: 
+      objectReference: {fileID: 6690252038896262295, guid: 06ec41015b3008544bba311c15dc033d,
         type: 3}
     - target: {fileID: 3918892694000362373, guid: a1063e6b4fbee3647866567f171f2752,
         type: 3}
@@ -1362,6 +1403,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7719918813805790764, guid: 4045a69ee8b09074589188faab85bf99,
+        type: 3}
+      propertyPath: testLevel
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7719918813805790765, guid: 4045a69ee8b09074589188faab85bf99,
         type: 3}
       propertyPath: m_RootOrder
