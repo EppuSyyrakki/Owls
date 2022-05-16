@@ -27,7 +27,7 @@ namespace Owls.GUI
 		private bool _isLocked = false;
 		private float _holdTime = 0f;
 		private bool _pointerHeld = false;
-		private bool _helpEnabled = false;
+		// private bool _helpEnabled = false;
 
 		public Spell Spell => _spell;
 
@@ -48,8 +48,8 @@ namespace Owls.GUI
 			if (_holdTime >= holdForHelpTime)
 			{
 				_spellHelp.DisplayHelp(_spell.help.name, _spell.help.text, _spell.info.manaCost, _spell.icon);
-				_helpEnabled = true;
-				ResetPointer();
+				//_helpEnabled = true;
+				// ResetPointer();
 			}						
 		}
 
@@ -86,13 +86,13 @@ namespace Owls.GUI
 
 		public void OnPointerDown(PointerEventData eventData)
 		{
+			if (eventData.pointerEnter != gameObject) { return; }
+
 			_pointerHeld = true;
 		}
 
 		public void OnPointerUp(PointerEventData eventData)
 		{
-			if (_helpEnabled) { return; }
-
 			if (!_isLocked && _holdTime < holdForHelpTime)
 			{
 				if (!isSpellBookSlot && !isLightningSlot)
@@ -110,7 +110,8 @@ namespace Owls.GUI
 
 		public void DisableHelp()
 		{
-			_helpEnabled = false;
+			// _helpEnabled = false;
+			ResetPointer();
 		}
 
 		private void ResetPointer()

@@ -14738,7 +14738,8 @@ AudioSource:
   m_GameObject: {fileID: 5995396677896660365}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2044315160375938698, guid: df6ee81803c23814cad17da9b6e6ec14,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 3f2a0ad7cd5c84041b1052f6a40ecd4e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.347
@@ -15019,12 +15020,17 @@ PrefabInstance:
     - target: {fileID: 955520690002663966, guid: 67e178664fccbd94d9f3af25a517a9ef,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 32
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 955520690002663966, guid: 67e178664fccbd94d9f3af25a517a9ef,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 28
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 1317346380822926242, guid: 67e178664fccbd94d9f3af25a517a9ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1398475522576856182, guid: 67e178664fccbd94d9f3af25a517a9ef,
         type: 3}
@@ -15054,12 +15060,12 @@ PrefabInstance:
     - target: {fileID: 4303950482650548133, guid: 67e178664fccbd94d9f3af25a517a9ef,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 32
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 4303950482650548133, guid: 67e178664fccbd94d9f3af25a517a9ef,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 28
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 4438489847424334947, guid: 67e178664fccbd94d9f3af25a517a9ef,
         type: 3}
@@ -15070,6 +15076,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 108
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438489847424334948, guid: 67e178664fccbd94d9f3af25a517a9ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2473846806234087951}
+    - target: {fileID: 4438489847424334948, guid: 67e178664fccbd94d9f3af25a517a9ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: LoadStoryOrGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 4438489847424334948, guid: 67e178664fccbd94d9f3af25a517a9ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Owls.Levels.StoryCheck, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4438489849002223339, guid: 67e178664fccbd94d9f3af25a517a9ef,
         type: 3}
@@ -15351,7 +15372,8 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 64
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2449186607870989734, guid: 67e178664fccbd94d9f3af25a517a9ef, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 67e178664fccbd94d9f3af25a517a9ef, type: 3}
 --- !u!1 &5995396676563479038 stripped
 GameObject:

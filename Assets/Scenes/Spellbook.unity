@@ -634,11 +634,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1415637592, guid: 388f82d677f6b9b458692da1773f3bba, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 2044315160375938698, guid: df6ee81803c23814cad17da9b6e6ec14,
-        type: 2}
     - target: {fileID: 2627494518817512934, guid: 388f82d677f6b9b458692da1773f3bba,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -939,52 +934,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookCover
       objectReference: {fileID: 0}
-    - target: {fileID: 5995396676563479032, guid: 388f82d677f6b9b458692da1773f3bba,
+    - target: {fileID: 8999147595244815934, guid: 388f82d677f6b9b458692da1773f3bba,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 5995396676611201173}
-    - target: {fileID: 5995396676563479032, guid: 388f82d677f6b9b458692da1773f3bba,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: LoadStoryOrGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 5995396676563479032, guid: 388f82d677f6b9b458692da1773f3bba,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Owls.Levels.StoryCheck, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6129951778063110713, guid: 388f82d677f6b9b458692da1773f3bba,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 48
-      objectReference: {fileID: 0}
-    - target: {fileID: 6129951778063110713, guid: 388f82d677f6b9b458692da1773f3bba,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 42
-      objectReference: {fileID: 0}
-    - target: {fileID: 7199553220809396098, guid: 388f82d677f6b9b458692da1773f3bba,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 48
-      objectReference: {fileID: 0}
-    - target: {fileID: 7199553220809396098, guid: 388f82d677f6b9b458692da1773f3bba,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 42
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 388f82d677f6b9b458692da1773f3bba, type: 3}
---- !u!114 &5995396676611201173 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2473846806234087951, guid: 388f82d677f6b9b458692da1773f3bba,
-    type: 3}
-  m_PrefabInstance: {fileID: 5995396676611201172}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11b685d31f2e00542b8a5577f4882d1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
